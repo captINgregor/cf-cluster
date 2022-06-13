@@ -1,0 +1,88 @@
+#####################
+# Support War Event #
+##################### 
+add_namespace = war_support_event
+
+news_event = {
+	id = war_support_event.1
+	title = war_support_event.1.title
+	desc = war_support_event.1.desc
+	picture = report_event_japanese_chinese_surrender
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = { #ally supports war
+		name = war_support_event.1.a
+		trigger = {
+			FROM = {
+				is_in_faction_with = ROOT
+			}
+		}
+	}
+	option = { #major supports war
+		name = war_support_event.1.b
+		trigger = {
+			FROM = {
+				AND = {
+					is_major = yes
+					NOT = { is_in_faction_with = ROOT }
+				}
+			}
+		}
+	}
+	option = { #minor supports war
+		name = war_support_event.1.c
+		trigger = {
+			FROM = {
+				AND = {
+					is_major = no
+					NOT = { is_in_faction_with = ROOT }
+				}
+			}
+		}
+	}
+}
+
+
+########################
+# Disapprove War Event #
+######################## 
+add_namespace = war_disapproval_event
+
+news_event = {
+	id = war_disapproval_event.1
+	title = war_disapproval_event.1.title
+	desc = war_disapproval_event.1.desc
+	picture = report_event_japanese_chinese_surrender
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = { #ally disapproves war
+		name = war_disapproval_event.1.a
+		trigger = {
+			FROM = {
+				is_in_faction_with = ROOT
+			}
+		}
+	}
+	option = { #major disapproves war
+		name = war_disapproval_event.1.b
+		trigger = {
+			FROM = {
+				is_major = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+	}
+	option = { #minor disapproves war
+		name = war_disapproval_event.1.c
+		trigger = {
+			FROM = {
+				is_major = no
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+	}
+}

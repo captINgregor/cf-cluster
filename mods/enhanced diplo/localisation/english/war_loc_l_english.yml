@@ -1,0 +1,24 @@
+﻿l_english:
+
+###############
+# Support War #
+###############
+EDA_WAR_SUPPORT_TITLE:0 "Support War"
+EDA_WAR_SUPPORT_ACTION_DESC:0 "Support this country's war goal(s)"
+EDA_WAR_SUPPORT_SEND_DESC:0 "Formally announce that we support §Y[THIS.GetName]'s§! offensive war. \n\n Will result in an §Gincreased§! opinion from §Y[THIS.GetName]§! and will §Gincrease§! their war support."
+
+EDA_WAR_SUPPORT_TOOLTIP_1:0 "We have not voiced our opinion on §Y[THIS.GetName]'s§! war."
+EDA_WAR_SUPPORT_TOOLTIP_2:0 "§Y[THIS.GetName]§! is not at war with us."
+###########################################################################
+
+
+
+################
+# Denounce War #
+################
+EDA_WAR_DENOUNCE_TITLE:0 "Denounce War"
+EDA_WAR_DENOUNCE_ACTION_DESC:0 "Denounce this country's war goal(s)"
+EDA_WAR_DENOUNCE_SEND_DESC:0 "Formally announce that we disapprove of §Y[THIS.GetName]'s§! offensive war. \n\n Will result in an §Gdecreased§! opinion from §Y[THIS.GetName]§!."
+
+EDA_WAR_DENOUNCE_TOOLTIP_1:0 "We have not voiced our opinion on §Y[THIS.GetName]'s§! war."
+EDA_WAR_DENOUNCE_TOOLTIP_2:0 "§Y[THIS.GetName]§! is not at war with us."

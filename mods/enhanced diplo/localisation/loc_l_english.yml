@@ -1,0 +1,35 @@
+﻿l_english:
+  EMPTY_SPACE_TOOLTIP:0 ""
+
+  EDA_EMPTY_SPACE_1_TITLE:0 ""
+  EDA_EMPTY_SPACE_1_ACTION_DESC:0 ""
+
+  EDA_EMPTY_SPACE_2_TITLE:0 ""
+  EDA_EMPTY_SPACE_2_ACTION_DESC:0 ""
+
+  EDA_EMPTY_SPACE_3_TITLE:0 ""
+  EDA_EMPTY_SPACE_3_ACTION_DESC:0 ""
+
+  EDA_EMPTY_SPACE_4_TITLE:0 ""
+  EDA_EMPTY_SPACE_4_ACTION_DESC:0 ""
+
+  EDA_EMPTY_SPACE_5_TITLE:0 ""
+  EDA_EMPTY_SPACE_5_ACTION_DESC:0 ""
+
+###############################################################################
+
+#####################
+# Opinion Modifiers #
+#####################
+  demilitarized_country_modifier:0 "Demilitarized by Overlord"
+  remilitarized_country_modifier:0 "Remilitarized by Overlord"
+
+  complemented_country_modifier:0 "Complemented"
+  insulted_country_modifier:0 "Insulted"
+
+  denounced_country_modifier:0 "Denounced War Goal(s)"
+  major_supported_country_modifier:0 "Supported War Goal(s)"
+  minor_supported_country_modifier:0 "Supported War Goal(s)"
+
+  given_building_country_modifier:0 "Recieved Building"
+  given_manpower_country_modifier:0 "Recieved Manpower"
