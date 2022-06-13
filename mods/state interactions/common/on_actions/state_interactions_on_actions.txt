@@ -1,0 +1,47 @@
+on_actions = {
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = next_border_war_allowed_in_this_many_days
+					check_variable = {
+						next_border_war_allowed_in_this_many_days > 0
+					}
+				}
+				subtract_from_variable = {
+					next_border_war_allowed_in_this_many_days = 1
+				}
+			}
+			if = {
+				limit = {
+					has_variable = next_border_war_allowed_in_this_many_days
+					check_variable = {
+						next_border_war_allowed_in_this_many_days = 0
+					}
+				}
+				clr_country_flag = border_war_started_cflag
+			}
+			if = {
+				limit = {
+					has_variable = next_border_war_defender_allowed_in_this_many_days
+					check_variable = {
+						next_border_war_defender_allowed_in_this_many_days > 0
+					}
+				}
+				subtract_from_variable = {
+					next_border_war_defender_allowed_in_this_many_days = 1
+				}
+			}
+			if = {
+				limit = {
+					has_variable = next_border_war_defender_allowed_in_this_many_days
+					check_variable = {
+						next_border_war_defender_allowed_in_this_many_days = 0
+					}
+				}
+				clr_country_flag = border_war_recent_cflag
+			}			
+		}
+	}
+	
+}

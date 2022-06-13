@@ -1,0 +1,88 @@
+define_text = {
+	name = BorderWarTriggerTT1
+	text = {
+		trigger = {
+			NOT = { is_owned_and_controlled_by = ROOT }
+		}
+		localization_key = BORDER_WAR_BUTTON_TRIGGER1_TT_Y
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = BORDER_WAR_BUTTON_TRIGGER1_TT_N
+	}
+}
+define_text = {
+	name = BorderWarTriggerTT1
+	text = {
+		trigger = {
+			any_country = {
+				is_neighbor_of = ROOT
+				PREV = { is_owned_and_controlled_by = THIS }
+			}
+			any_neighbor_state = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		localization_key = BORDER_WAR_BUTTON_TRIGGER2_TT_Y
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = BORDER_WAR_BUTTON_TRIGGER2_TT_N
+	}
+}
+define_text = {
+	name = BorderWarTriggerTT1
+	text = {
+		trigger = {
+			check_variable = { next_border_war_allowed_in_this_many_days = 0 }
+		}
+		localization_key = BORDER_WAR_BUTTON_TRIGGER3_TT_Y
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = BORDER_WAR_BUTTON_TRIGGER3_TT_N
+	}
+}
+defined_text = {
+	name = GetBorderWarAllowedTooltip
+	text = {
+		trigger = {
+			ROOT = {
+				has_variable = next_border_war_allowed_in_this_many_days
+				check_variable = { next_border_war_allowed_in_this_many_days > 0 }
+			}
+		}
+		localization_key = string_border_war_allowed_in_this_many_days
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+defined_text = {
+	name = GetBorderWarDefenderAllowedTooltip
+	text = {
+		trigger = {
+			owner = {
+				has_variable = next_border_war_defender_allowed_in_this_many_days
+				check_variable = { next_border_war_defender_allowed_in_this_many_days > 0 }
+			}
+		}
+		localization_key = string_border_war_defender_allowed_in_this_many_days
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = ""
+	}
+}
+

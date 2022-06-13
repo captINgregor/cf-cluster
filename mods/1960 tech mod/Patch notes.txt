@@ -1,0 +1,87 @@
+Notes:
+
+This is a role-play focused mod. I aim to extend the tech tree to the 1960's keeping the game as faithful to Paradox’s original vision as possible. Needless to say this isn't finished, but everything included should be fully functional. If it isn't, it's an error or bug that I'll fix ASAP.
+
+The idea is to extend the techtree vertically, extending the time period you can play without messing too much with the game and the system. The momment you start adding too much new stuff, balancing becomes an issue and modding a chore, rather than hobby.
+
+This mod (WIP) currently includes:
+- Extended air tech tree (GER, SOV and USA have full models, FRA, ENG and others partially).
+- Extended armor tech tree (GER, SOV and USA have full models, FRA, ENG and others partially).
+- Extended naval tech tree.
+- Extended infantry tech tree (mechanized and scout cars included).
+- Extended artillery tree (partially).
+- Extended radar tree.
+- Extended computing tree.
+- Extended ballistic missile tree.
+- Extended nuclear tech tree (including nuclear reactors to ships).
+- Added helicopter tree.
+- Added SAM, Air-to-Air, Air-to-Ground and Anti-ship missiles.
+- Added naval missiles techs.
+- Added onboard radar techs.
+- Added night fighters (due to game mechanics not allowing night-specific bonuses, NF are better at intercepting and poorer at dogfighting).
+- Added jet age air doctrines.
+- Added post-war land doctrines.
+- Split the fighter tree in two: Fighter Bomber / Multirole and Interceptor / Air Superiority.
+
+Horizontal extentions of the tree (ie. the separation of fighters and interceptors) is a result of a personal judgement call, which tries to balance feasibility, the effort needed to implement it and the upsides of that feature. Interceptors for example: really easy to implement and greatly improves the experience via both flavour and by expanding your strategies on how to conduct air warfare.
+
+A few FAQs:
+- You'll release a non-MTG version?
+I don't know. I mod as a hobby and do what makes sense to me. So I try to focus my efforts on what will make my experience with HoI4 better. I currently play with MTG so that's what I mod. Might sound selfish, but I'm a one-man team and do this on my free time (which is not much). Please be understading if I cannot dedicate time to implement what you wish.
+But, AFAIK the only thing you'll miss by installing this is that you'll be stuck with the original naval tree.
+
+- Please make it compatible with mod X.
+Sorry, I just dont have the time to do that kind of thing :/
+
+- Please change the model X or Y to Z or W.
+If it makes sense, I will. Again, I try to focus on adding functionalities and new stuff. Revisting things you've done prevents you from doing new stuff, unless its completely broken. So, if I find the time, and I agree with your suggestion, maybe I'll add your favourite model ;)
+
+- What about Focus Trees/Events?
+I have zero experience modding those things. In a perfect world I aim to implement extentions of all aspects of the game to the set enddate, including Focus Tres, decisions, events, etc. Including alt-history (which I quite enjoy, otherwise I would not have extended GER tech tree).
+
+- Can I make a suggestion?
+Of course, I read everything you write. Even if I don't answer directly. I just ask to please focus on new things rather than changing things already in the mod. Especially if its just flavour. I'm only interested in looking back if it is to fix a bug, typo, or any other game braking issue.
+
+- Can I help you?
+Possibly. Just get in touch (comments are not the best way to do it tbh) and let's discuss if and how you could help me improve this mod.
+
+Russia localisation (WIP) by hawk_777
+
+Version 0.008
+- Hotfix La Resistance descryption techs.
+
+Version 0.007
+- La Resistance compatibility and new models for the 3 majors USA, GER and SOV.
+
+Version 0.006
+- Added more models to FRA, ENG, JAP, ITA, FRA and GER.
+- Added night fighters (heavy fighters with a focus in offensive capabilities, no bonuses for night fighting, flavour only)
+
+Version 0.005
+- Hotfixes.
+- Extented the artillery tree. 
+ 
+Version 0.004 
+- Hotfix for the elusive CAS models.
+
+Version 0.003
+- Added Artillery tree (partial)
+- Fixed a silly bug that made the AI not use aircraft.
+- Minor cosmetic changes to US air models.
+
+Version 0.002
+- Added shackles to minors to prevent runaway construction of equipment and deployment of units (significant better performance and game speed overall).
+- Added decision to remove shackles if player wants to play as a minor.
+- Changed enddate to 1.1.1961.
+- Minor cosmetic changes to US air models.
+- Added depth charges tree.
+- Added torpedoes tree.
+
+Version 0.001
+- Aircraft tech three
+- Armor tech tree
+- Naval tech tree (partial)
+- Infantry tech tree (partial)
+- Engineering tech tree (partial)
+
+

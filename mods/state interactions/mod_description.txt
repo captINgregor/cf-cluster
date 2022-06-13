@@ -1,0 +1,11 @@
+[h1][b][u] State Interactions [/u][/b][/h1]
+[i] presented by Heathy [/i]
+
+[u][b] What is this mod? [/b][/u]
+This mod adds a new menu when clicking on states - State Interactions! You'll find buttons for coring, uncoring, moving capital, requesting/removing resource rights and border wars. A perfect addition for RP games!
+
+Interested in joining community RP games? Head on over to the Discardian Discord server: https://discord.gg/k7YHZ3EVEW
+
+Coring/uncoring is based upon the Coring Button: https://steamcommunity.com/sharedfiles/filedetails/?id=1913968458
+
+If you want to use anything that was added by this mod, get in touch through the discord link above. Thanks!
