@@ -1214,23 +1214,23 @@ make_peace_please = {
 					}
 					if = {
 						limit = {
-							RUS = {
+							SOV = {
 								exists = no
 							}
 						}
 						every_owned_state = {
 							limit = {
-								is_core_of = RUS
+								is_core_of = SOV
 							}
 							set_temp_variable = {
 								var = number_of_recictans
 								value = resistance
 							}
 							cancel_resistance = yes
-							remove_core_of = RUS
+							remove_core_of = SOV
 							start_resistance = yes
 							set_resistance = number_of_recictans
-							add_core_of = RUS	
+							add_core_of = SOV	
 						}
 					}
 					if = {

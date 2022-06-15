@@ -1,8 +1,5 @@
 #reload countrycolors
-OFS = {
-    color = rgb { 230 111 0 }
-	color_ui = rgb { 230 111 0 }
-}
+
 TRV = {
     color = rgb { 0 102 63 }
 	color_ui = rgb { 0 102 63 }
