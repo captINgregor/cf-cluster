@@ -1845,9 +1845,9 @@
  USA_infantry_equipment_4:0 "M14"
  USA_infantry_equipment_4_short:0 "M14" 
  USA_infantry_equipment_4_desc:0 "The M-14 rifle is a select-fire battle rifle that fires a 7.62*51mm Nato (.308in) cartridge. It is gas-operated with a rotating bolt and has an effective firing range of 460m or 500yd. With optics the effective firing range is extended out to 800m or 875yd. Development of the M14 came as a result of improvements being made to the M1 Garand rifle. Improvements to the M1 were being done at the end of WWII, and they included fully automatic firing capability and a 20 round magazine. The M-14 rifle entered production in 1959 and when it entered service it replaced seven other weapons." 
- USA_infantry_equipment_5:0 "AR-15"
- USA_infantry_equipment_5_short:0 "AR-15"
- USA_infantry_equipment_5_desc:0 "The Ar-15 is a lightweight, gas-operated, semi-automatic rifle that is based on the ArmalLite Ar-15 design. It fires a .223 Remigton cartridge with a 20 round magazine. It was designed in 1956 and its conversion to a military weapon resulted in the development of the M-16 assault rifle (5.56*45mm Nato)."
+ USA_infantry_equipment_5:0 "M16"
+ USA_infantry_equipment_5_short:0 "M16"
+ USA_infantry_equipment_5_desc:0 "The AR-15 is a lightweight, gas-operated, semi-automatic rifle that is based on the ArmalLite AR-15 design. It fires a .223 Remigton cartridge with a 20 round magazine. It was designed in 1956 and its conversion to a military weapon resulted in the development of the M-16 assault rifle (5.56*45mm Nato)."
  
  USA_mechanized_equipment_4:0 "M44"
  USA_mechanized_equipment_4_short:0 "M44"

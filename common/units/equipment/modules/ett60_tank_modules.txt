@@ -238,6 +238,7 @@ equipment_modules = {
 		forbid_equipment_type = anti_air
 		forbid_equipment_type = artillery
 		forbid_equipment_type = recovery
+		#i have no idea what the fuck is a recovery so here we go
 		forbid_equipment_type = flame
 
 		add_stats = {
