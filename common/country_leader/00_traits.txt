@@ -326,9 +326,6 @@ leader_traits = {
 			fighter_equipment = {
 				air_range = 0.01
 			}
-			interceptor_equipment = {
-				air_range = 0.01
-			}
 		}
 		
 		ai_will_do = {
@@ -375,7 +372,7 @@ leader_traits = {
 	head_of_intelligence = {
 		random = no
 		sprite = 15
-		operative_slot = 1
+		operative_slot = 2
 		agency_upgrade_time = -0.15
 	}
 	
@@ -4104,9 +4101,6 @@ leader_traits = {
 			cv_fighter_equipment = {
 				air_agility = 0.1 maximum_speed = 0.1
 			}
-			interceptor_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1
-			}
 		}
 		
 		ai_will_do = {
@@ -4121,9 +4115,6 @@ leader_traits = {
 				air_agility = 0.2 maximum_speed = 0.1
 			}
 			cv_fighter_equipment = {
-				air_agility = 0.2 maximum_speed = 0.1
-			}
-			interceptor_equipment = {
 				air_agility = 0.2 maximum_speed = 0.1
 			}
 		}
@@ -4172,9 +4163,6 @@ leader_traits = {
 	fuel_efficient_aircraft_manufacturer = { 
 		random = no
 		equipment_bonus = {
-			interceptor_equipment = {
-				air_range = 0.1
-			}
 			fighter_equipment = {
 				air_range = 0.1
 			}
