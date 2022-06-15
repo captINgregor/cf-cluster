@@ -10,5 +10,6 @@ tags={
 	"Alternative History"
 	"Balance"
 }
-name="cf clusterfuck"
+picture="thumbnail"
+name="cf mp mod (real)"
 supported_version="1.11.12"
