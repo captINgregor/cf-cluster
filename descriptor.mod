@@ -10,6 +10,6 @@ tags={
 	"Alternative History"
 	"Balance"
 }
-picture="thumbnail"
+picture="thumbnail.png"
 name="cf mp mod (real)"
 supported_version="1.11.12"

@@ -3896,9 +3896,7 @@ technologies = {
 		
 		max_planning = 0.15
 		
-		xor = { global_path }
-		xor = { berlin_path }
-		xor = { warsaw_path }
+		xor = { global_path berlin_path warsaw_path}
 		
 		dependencies = {
 			infantry_equipment_4 = 1
