@@ -23,6 +23,7 @@ transfer_navy_mod = {
 					tooltip = nothad_transfer_subject_navy
 					NOT = { has_country_flag = nothad_transfer_subject_navy }
 				}
+
 			}
 		}
 		
@@ -86,6 +87,12 @@ transfer_navy_mod = {
 				custom_trigger_tooltip = {
 					tooltip = capitulation_transfer_navy
 					NOT = { has_country_flag = capitulation_transfer_navy }
+				}
+			}
+			ROOT = {
+				has_operation_token = {
+					tag = FROM
+					token = token_navy
 				}
 			}
 		}

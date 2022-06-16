@@ -24,8 +24,8 @@ ENG = {
 	color_ui = rgb { 168 53 38 }
 }
 SOV = {
-    color = rgb { 47 106 60 }
-	color_ui = rgb { 0 127 14 }
+	color = rgb { 204 0 0 }
+	color_ui = rgb { 255 0 0 }
 }
 SWE = {
 	color = rgb { 0 90 193 }
@@ -728,10 +728,6 @@ SHL = {
 USB = {
 	color = rgb { 34 148 78 }
 	color_ui = rgb { 34 148 78 }
-}
-MRV = {
-	color = rgb { 123 173 170 }
-    color_ui = rgb { 123 173 170 }	
 }
 KOS = {
 	color = rgb { 163 41 71 }
