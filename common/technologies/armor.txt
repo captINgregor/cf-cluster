@@ -2425,7 +2425,7 @@ technologies = {
 		
 		folder = {
 			name = armour_folder
-			position = { x = 8 y = 14 }
+			position = { x = 8 y = 20 }
 		}
 				
 		ai_will_do = {
