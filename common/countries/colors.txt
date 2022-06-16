@@ -729,10 +729,6 @@ USB = {
 	color = rgb { 34 148 78 }
 	color_ui = rgb { 34 148 78 }
 }
-QUE = {
-	color = rgb { 36 10 110 }
-    color_ui = rgb { 36 10 110 }	
-}
 MRV = {
 	color = rgb { 123 173 170 }
     color_ui = rgb { 123 173 170 }	
