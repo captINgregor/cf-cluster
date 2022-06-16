@@ -1,10 +1,5 @@
 #reload countrycolors
 
-ZZZ = {
-	color = { 0 0 0 }
-	color_ui = { 0 0 0 }
-}
-
 G4P = {
 	color = { 0 0 0 }
 	color_ui = { 0 0 0 }
