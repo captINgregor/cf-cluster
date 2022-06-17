@@ -4223,9 +4223,7 @@ technologies = {
 			infantry_equipment_4 = 1
 		}
 		
-		xor = { brussels_path }
-		xor = { warsaw_path }
-		xor = { berlin_path }
+		xor = { brussels_path berlin_path warsaw_path}
 		
 		path = {
 			leads_to_tech = military_schools 

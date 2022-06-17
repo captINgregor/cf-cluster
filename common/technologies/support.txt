@@ -1027,10 +1027,6 @@ technologies = {
 			leads_to_tech = tech_maintenance_company4
 			research_cost_coeff = 1
 		}
-		
-		enable_equipment = {
-			recovery_vehicle
-		}
 
 		enable_subunits = {
 			recovery_vehicle_company
