@@ -1,572 +1,3 @@
-#\############# ORIGINAL COSMETIC.TXT ###############
-
-GER_VANILLA = {
-	color = HSV { 0.1 0.15 0.4 }
-	color_ui = rgb { 138 155 116 }
-}
-ENG_VANILLA = {
-	color = rgb { 201 56 93 }
-	color_ui = rgb { 255 73 121 }
-}
-SOV_VANILLA = {
-	color = rgb { 125 13 24 }
-	color_ui = rgb { 163 17 31 }
-}
-JERUSALEM = {
-	color = rgb { 128 159 255 }
-	color_ui = rgb { 153 189 255 }
-}
-ETH_FIXED = {
-	color = rgb { 121 68 37 }
-	color_ui = rgb { 121 68 37 }
-}
-ITA_REPUBLIC = {
-	color = rgb { 0 115 56 }
-	color_ui = rgb { 0 115 56 }
-}
-LEVANT = {
-	color = rgb { 19 70 236 }
-	color_ui = rgb { 19 70 236 }
-}
-SLO_FREE = {
-	color = rgb { 84 112 146 }
-	color_ui = rgb { 84 112 146 }
-}
-BGN_SS = {
-	color = rgb { 73 73 73 }
-	color_ui = rgb { 82 96 62 }
-}
-GALILEE = {
-	color = rgb { 255 191 0 }
-	color_ui = rgb { 255 204 51 }
-}
-SWE_VANILLA = {
-	color = rgb { 36 132 247 }
-	color_ui = rgb { 47 172 255 }
-}
-USA_Syndicate = {
-	color = rgb { 77 115 128 }
-	color_ui = rgb { 77 115 128 }
-}
-LIT_EXP1 = {
-	color = rgb { 203 157 66 }
-	color_ui = rgb { 203 157 66 }
-}
-ETH_ITA = {
-	color = rgb { 42 107 48 }
-	color_ui = rgb { 42 107 48 }
-}
-LIT_EXP2 = {
-	color = rgb { 191 149 64 }
-	color_ui = rgb { 203 157 66 }
-}
-LIT_EXP3 = {
-	color = rgb { 203 172 77 }
-	color_ui = rgb { 203 157 66 }
-}
-FRA_VANILLA = {
-	color = rgb { 57 113 228 }
-	color_ui = rgb { 74 147 255 }
-}
-LUX_VANILLA = {
-	color = rgb { 65 175 179 }
-	color_ui = rgb { 85 228 233 }
-}
-BEL_VANILLA = { color 	 = rgb { 193 171 8  }
-		color_ui = rgb { 251 222 10 }
-	  }
-HOL_VANILLA = {	color = rgb { 203 138 74 }
-		color_ui = rgb { 255 179 96 }
-}
-CZE_VANILLA = {	color = rgb { 54 167 156 }
-		color_ui = rgb { 70 217 203 }
-}
-POL_VANILLA = {
-	color = rgb { 197 92 106 }
-	color_ui = rgb { 255 120 138 }
-}
-LIT_CUST = {
-	color = rgb { 16 112 88 }
-	color_ui = rgb { 255 120 138 }
-}
-LIT_TWR = {
-	color = rgb { 26 149 26 }
-	color_ui = rgb { 255 255 155 }
-}
-LAT_TWR = {
-	color = rgb { 210 169 45 }
-	color_ui = rgb { 124 125 184 }
-}
-POL_EXILE = {
-    color = rgb { 153 23 0 }
-	color_ui = rgb { 14 43 139 }
-}
-FRA_RES = {
-    color = rgb { 14 43 139 }
-	color_ui = rgb { 14 43 139 }
-}
-BAL_RES = {
-    color = rgb { 76 145 231 }
-	color_ui = rgb { 76 145 231 }
-}
-UKR_RES = {
-    color = rgb { 0 102 204 }
-	color_ui = rgb { 230 96 0 }
-}
-HOL_RES = {
-    color = rgb { 230 96 0 }
-	color_ui = rgb { 230 96 0 }
-	}
-POL_RES = {
-	color = rgb { 170 30 0 }
-	color_ui = rgb { 170 30 0 }
-}
-CZE_RES = {
-	color = rgb { 63 90 115 }
-	color_ui = rgb { 63 90 115 }
-}
-AUS_VANILLA = {
-	color = rgb { 194 198 215 }
-	color_ui = rgb { 255 255 255 }
-}
-LIT_VANILLA = {
-	color = rgb { 219 219 119 }
-	color_ui = rgb { 255 255 155 }
-}
-EST_VANILLA = {
-	color = rgb { 50 135 175 }
-	color_ui = rgb { 99 204 254 }
-}
-LAT_VANILLA = {
-	color = rgb { 75 77 186 }
-	color_ui = rgb { 124 125 184 }
-}
-SPR_VANILLA = {
-	color = rgb { 242 205 94 }
-	color_ui = rgb { 255 255 122 }
-}
-ITA_VANILLA = {
-	color = rgb { 67 127 63 }
-	color_ui = rgb { 87 165 82 }
-}
-ROM_VANILLA = {
-	color = rgb { 215 196 72 }
-	color_ui = rgb { 255 255 120 }
-}
-YUG_VANILLA = {
-	color = rgb { 72 73 126 }
-	color_ui = rgb { 94 95 164 }
-}
-SWI_VANILLA = {
-	color = rgb { 224 5 5 }
-	color_ui = rgb { 193 81 81 }
-}
-TUR_VANILLA = {
-	color = rgb { 171 190 152 }
-	color_ui = rgb { 222 247 198 }
-}
-GRE_VANILLA = {
-	color = rgb { 93 181 227 }
-	color_ui = rgb { 121 235 255 }
-}
-ALB_VANILLA = {
-	color = rgb { 149 45 102 }
-	color_ui = rgb { 194 59 133 }
-}
-NOR_VANILLA = {
-	color = rgb { 111 71 71 }
-	color_ui = rgb { 144 92 92 }
-}
-DEN_VANILLA = {
-	color = rgb { 153 116 93 }
-	color_ui = rgb { 199 151 121 }
-}
-BUL_VANILLA = {
-	color = rgb { 51 155 0 }
-	color_ui = rgb { 210 147 217 }
-}
-POR_VANILLA = {
-	color = rgb { 39 116 70 }
-	color_ui = rgb { 51 151 91 }
-}
-FIN_VANILLA = {
-	color = rgb { 205 212 228 }
-	color_ui = rgb { 255 255 255 }
-}
-IRE_VANILLA = {
-	color = rgb { 80 159 90 }
-	color_ui = rgb { 104 207 117 }
-}
-HUN_VANILLA = {
-	color = rgb { 249 126 98 }
-	color_ui = rgb { 255 164 127 }
-}
-AFG_VANILLA = {
-	color = rgb { 64 160 167 }
-	color_ui = rgb { 83 208 217 }
-}
-ARG_VANILLA = {
-	color = rgb { 145 157 236 }
-	color_ui = rgb { 189 204 255 }
-}
-AST_VANILLA = {
-	color = rgb { 57 143 97 }
-	color_ui = rgb { 74 186 126 }
-}
-BHU_VANILLA = {
-	color = rgb { 172 122 88 }
-	color_ui = rgb { 172 122 88 }
-}
-BOL_VANILLA = {
-	color = hsv { 0.1 0.47 0.8 } #255 180 136
-	color_ui = rgb { 255 234 177 }
-}
-BRA_VANILLA = {
-	color = rgb { 76 145 63 }
-	color_ui = rgb { 99 189 82 }
-}
-CAN_VANILLA = {
-	color = rgb {119 48 39 }
-	color_ui = rgb { 155 62 51 }
-}
-CHI_VANILLA = {
-	color = hsv { 0.18 0.6 0.9 } #255 244 190
-	color_ui = hsv { 0.18 0.3 0.9 }
-}
-CHL_VANILLA = {
-	color = rgb { 155 101 107 }
-	color_ui = rgb { 202 131 139 }
-}
-COL_VANILLA = {
-	color = rgb { 222 187 91 }
-	color_ui = rgb { 255 243 118 }
-}
-COS_VANILLA = {
-	color = rgb { 152 128 43 }
-	color_ui = rgb { 152 128 43 }
-}
-ECU_VANILLA = {
-	color = rgb { 249 146 98 }
-	color_ui = rgb { 255 190 127 }
-}
-ELS_VANILLA = {
-	color = rgb { 152 130 191 }
-	color_ui = rgb { 198 169 248 }
-}
-ETH_VANILLA = {
-	color = rgb { 152 130 191 }
-	color_ui = rgb { 198 169 248 }
-}
-GUA_VANILLA = {
-	color = rgb { 72 49 112 }
-	color_ui = rgb { 72 49 112 }
-}
-HON_VANILLA = {
-	color = rgb { 128 145 65 }
-	color_ui = rgb { 128 145 65 }
-}
-IRQ_VANILLA = {
-	color = rgb { 178 114 99 }
-	color_ui = rgb { 231 148 129 }
-}
-JAP_VANILLA = {
-	color = hsv { 0.05 0.3 1 }
-	color_ui = hsv { 0.05 0.25 1.2 }
-}
-LIB_VANILLA = {
-	color = rgb { 152 130 191 }
-	color_ui = rgb { 198 169 248 }
-}
-MEX_VANILLA = {
-	color = rgb { 104 152 83 }
-	color_ui = rgb { 135 198 108 }
-}
-NEP_VANILLA = {
-	color = rgb { 152 130 191 }
-	color_ui = rgb { 198 169 248 }
-}
-NIC_VANILLA = {
-	color = rgb { 146 179 191 }
-	color_ui = rgb { 146 179 191 }
-}
-NZL_VANILLA = {
-	color = rgb { 152 130 191 }
-	color_ui = rgb { 198 169 248 }
-}
-PAN_VANILLA = {
-	color = rgb { 152 130 191 }
-	color_ui = rgb { 198 169 248 }
-}
-PER_VANILLA = {
-	color = rgb { 71 113 97 }
-	color_ui = rgb { 92 147 126 }
-}
-PHI_VANILLA = {
-	color = rgb { 152 130 191 }
-	color_ui = rgb { 198 169 248 }
-}
-PRU_VANILLA = {
-	color = rgb { 196 189 204 }
-	color_ui = rgb { 255 246 255 }
-}
-SAF_VANILLA = {
-	color = rgb { 195 107 160 }
-	color_ui = rgb { 198 169 248 }
-}
-SAU_VANILLA = {
-	color = rgb { 171 190 152 }
-	color_ui = rgb { 222 247 198 }
-}
-SIA_VANILLA = {
-	color = rgb { 171 190 152 }
-	color_ui = rgb { 222 247 198 }
-}
-SIK_VANILLA = {
-	color = rgb { 71 190 152 }
-	color_ui = rgb { 222 247 198 }
-}
-TIB_VANILLA = {
-	color = rgb { 80 115 45}
-	color_ui = rgb { 222 247 198 }
-}
-URG_VANILLA = {
-	color = rgb { 171 190 152 }
-	color_ui = rgb { 222 247 198 }
-}
-VEN_VANILLA = {
-	color = rgb { 171 190 152 }
-	color_ui = rgb { 222 247 198 }
-}
-YUN_VANILLA = {
-	color = rgb { 114 148 80 }
-	color_ui = rgb { 222 247 198 }
-}
-MON_SOVIET = {
-	color = rgb { 137 26 0 }
-	color_ui = rgb { 137 26 0 }
-}
-USA_VANILLA = {
-	color = rgb { 20 133 237 }
-	color_ui = rgb { 87 160 255 }
-}
-MON_VANILLA = {
-	#color = HSV { 0.1 0.15 0.4 }
-	color = rgb { 108 140 42 }
-	color_ui = rgb { 209 247 133 }
-}
-MEN_VANILLA = {
-	color = rgb { 185  255  152 }
-	color_ui = rgb { 165  230  132 }
-}
-TAN_VANILLA = {
-	color = rgb { 152 130 191 }
-	color_ui = rgb { 198 169 248 }
-}
-PAR_VANILLA = {
-	color = rgb { 57 113 228 }
-	color_ui = rgb { 74 147 255 }
-}
-CUB_VANILLA = {
-	color = rgb { 140 65 166 }
-	color_ui = rgb { 140 65 166 }
-}
-DOM_VANILLA = {
-	color = rgb { 152 130 191 }
-	color_ui = rgb { 198 169 248 }
-}
-HAI_VANILLA = {
-	color = rgb { 174 113 113 }
-	color_ui = rgb { 174 113 113 }
-}
-YEM_VANILLA = {
-	color = rgb { 155 101 107 }
-	color_ui = rgb { 202 131 139 }
-}
-OMA_VANILLA = {
-	color = rgb { 155 101 107 }
-	color_ui = rgb { 202 131 139 }
-}
-SLO_VANILLA = {
-	color = rgb { 158  161  188 }
-	color_ui = rgb { 255 255 255 }
-}
-RAJ_VANILLA = {
-	color = rgb { 170  10  10  }
-	color_ui = rgb { 170  10  10  }
-}
-
-CRO_VANILLA = {
-	color = rgb { 230  70  180 }
-	color_ui = rgb { 230 255 122 }
-}
-
-PRC_VANILLA = {
-	color = rgb { 245 12 55 }
-	color_ui = rgb { 178 34 60 }
-}
-
-GXC_VANILLA = {
-	color = rgb { 71 113 97 }
-	color_ui = rgb { 71 113 97 }
-}
-
-SHX_VANILLA = {
-	color = rgb { 82  2  15 }
-	color_ui = rgb { 101  30  41 }
-}
-
-XSM_VANILLA = {
-	color = rgb { 105 90 132 }
-	color_ui = rgb { 105 90 132 }
-}
-
-LBA_VANILLA = {
-	color = rgb { 200 180 90 }
-	color_ui = rgb { 200 180 90 }
-}
-
-EGY_VANILLA = {
-	color = rgb { 230 230 70 }
-	color_ui = rgb { 230 230 70 }
-}
-
-PAL_VANILLA = {
-	color = rgb { 170  125  80 }
-	color_ui = rgb { 170  125  80 }
-}
-
-LEB_VANILLA = {
-	color = rgb { 130  150  60 }
-	color_ui = rgb { 130  150  60 }
-}
-
-JOR_VANILLA = {
-	color = rgb { 111  55  78 }
-	color_ui = rgb { 111  55  78 }
-}
-
-SYR_VANILLA = {
-	color = rgb { 100  100  150 }
-	color_ui = rgb { 100  100  150 }
-}
-
-SER_VANILLA = {
-	color = rgb { 160 110 110 }
-	color_ui = rgb { 160 110 110 }
-}
-
-ICE_VANILLA = {
-	color = rgb { 100  125  175 }
-	color_ui = rgb { 100  125  175 }
-}
-
-UKR_VANILLA = {
-	color = rgb { 0  80  230 }
-	color_ui = rgb { 0  80  230 }	
-}
-
-AZR_VANILLA = {
-	color = rgb { 69  151  49 }
-	color_ui = rgb { 69  151  49 }
-}
-
-GEO_VANILLA = {
-	color = rgb { 255  150  150 }
-	color_ui = rgb { 255  204  204 }
-}
-
-ARM_VANILLA = {
-	color = rgb { 176  102  180 }
-	color_ui = rgb { 176  102  180 }
-}
-
-LAO_VANILLA = {
-	color = rgb { 176  102  136 }
-	color_ui = rgb { 176  102  136 }
-}
-
-INS_VANILLA = {
-	color = rgb { 203 138 74 }
-	color_ui = rgb { 203 138 74 }
-}
-
-VIN_VANILLA = {
-	color = rgb { 230  223  50 }
-	color_ui = rgb { 230  223  50 }
-}
-
-CAM_VANILLA = {
-	color = rgb { 100  71  150 }
-	color_ui = rgb { 100  71  150 }
-}
-
-MAL_VANILLA = {
-	color = rgb { 197  96  100 }
-	color_ui = rgb { 213  169  121 }
-}
-
-MNT_VANILLA = {
-	color = rgb { 77  90  105 }
-	color_ui = rgb { 77  90  105 }
-}
-
-BLR_VANILLA = {
-	color = rgb { 180 220 190 }
-	color_ui = rgb { 180 220 190 }
-}
-MAN_VANILLA = {
-	color = rgb { 255 120 71 }
-	color_ui = rgb { 255 120 71 }
-}
-ANG_VANILLA = {
-	color = rgb { 37 140 61 }
-	color_ui = rgb { 37 140 61 }
-}
-
-COG_VANILLA = {
-	color = rgb { 152 159 209 }
-	color_ui = rgb { 152 159 209 }
-}
-MZB_VANILLA = {
-	color = rgb { 112 62 90 }
-	color_ui = rgb { 112 62 90 }
-}
-KEN_VANILLA = {
-	color = rgb { 145 103 14 }
-	color_ui = rgb { 145 103 14 }
-}
-ZIM_VANILLA = {
-	color = rgb { 7 7 239 }
-	color_ui = rgb { 7 7 239 }
-}
-BOT_VANILLA = {
-	color = rgb { 11 132 112 }
-	color_ui = rgb { 11 132 112 }
-}
-PAK_VANILLA = {
-	color = rgb { 21 38 66 }
-	color_ui = rgb { 21 38 66 }
-}
-WGR_VANILLA = {
-    color = rgb { 195 236 230 } # The colors are set to be more are less what we are used to
-    color_ui = rgb { 225 255 255 }
-}
-DDR_VANILLA = {
-    color = rgb { 120 150 80 }
-    color_ui = rgb { 150 180 120 }
-}
-KOR_VANILLA = {
-	color = rgb { 255  240  195 }
-	color_ui = rgb { 255 248 229 }	
-}
-ISR_VANILLA = {
-	color = rgb { 152  130  191 }
-	color_ui = rgb { 152  130  191 }
-}
-CSA_VANILLA = {
-	color = rgb { 145 163 176  }
-	color_ui = rgb { 186 205 219 }
-}
 
 HAW_JAP_GG = {
 	color = rgb { 217 150 100 }
@@ -7996,4 +7427,138 @@ ORE_USA = {
 WAS_USA = {
 	color = rgb { 9 96 184 }
 	color_ui = rgb { 10 102 194 }
+}
+
+POL_SANATION = {
+	color = rgb { 212  33  61 }
+	color_ui = rgb { 212  33  61 }
+}
+POL_PEASANT = {
+	color = rgb { 62  180  61 }
+	color_ui = rgb { 62  180  61 }
+}
+
+POL_KINGDOM = {
+	color = rgb { 176 81 111 }
+	color_ui = rgb { 176 81 111 }
+}
+POL_KINGDOM_RUS = {
+	color = rgb { 193 208 241 }
+	color_ui = rgb { 193 208 241 }
+}
+PLC_UNIFIED_RUS = {
+	color = rgb { 193 208 241 }
+	color_ui = rgb { 193 208 241 }
+}
+POL_ROM_UNION = {
+	color = rgb { 222 107 53 }
+	color_ui = rgb { 222 107 53 }
+}
+
+GREATER_LIT = {
+	color = rgb { 154  69  116 }
+	color_ui = rgb { 154  69  116 }
+}
+OSTLAND = {
+	color = rgb { 86  78  112 }
+	color_ui = rgb { 86  78  112 }
+}
+LAT_MIL = {
+	color = rgb { 106  70  227 }
+	color_ui = rgb { 106  70  227 }
+}
+LIT_belarus = {
+	color = rgb { 141  2  31 }
+	color_ui = rgb { 141  2  31 }
+}
+LAT_belarus = {
+	color = rgb { 141  2  31 }
+	color_ui = rgb { 141  2  31 }
+}
+EST_belarus = {
+	color = rgb { 141  2  31 }
+	color_ui = rgb { 141  2  31 }
+}
+
+SLAVIC_UNIFIED = {
+    color = rgb { 43 96 40 }
+    color_ui = rgb { 43 96 40 }
+}
+
+turkestan_united = {
+    color = rgb { 155 230 240 }
+    color_ui = rgb { 155 230 240 }
+}
+
+EST_FIN = {
+    color = rgb { 45 190 235 }
+    color_ui = rgb { 45 190 235 }
+}
+
+EST_UGRA = {
+    color = rgb { 20 175 145 }
+    color_ui = rgb { 20 175 145 }
+}
+
+SOV_ROME = {
+	color = rgb { 230 225 165 }
+	color_ui = rgb { 230 225 165 }
+}
+
+SOV_PANSLAVIC = {
+	color = rgb { 40 80 40 }
+	color_ui = rgb { 40 80 40 }
+}
+
+LIVONIA = {
+	color = rgb { 110 80 168 }
+	color_ui = rgb { 110 80 168 }
+}
+
+mountainous_republics_unified = {
+    color = rgb { 128 212 255 }
+    color_ui = rgb { 0 102 153 }
+}
+
+transcaucasia_unified = {
+    color = rgb { 204 102 0 }
+    color_ui = rgb { 153 77 0 }
+}
+
+siberia_unified = {
+	color = rgb { 51 204 51 }
+    color_ui = rgb { 36 143 36 }
+}
+
+idel_ural = {
+	color = rgb { 0 153 255 }
+    color_ui = rgb { 0 92 153 }
+}
+
+SOV_PROVISIONAL = {
+	color = rgb { 255 255 255 }
+    color_ui = rgb { 242 242 242 }
+}
+
+stalinist_soviet_union = {
+	color = rgb { 125 13 24 }
+	color_ui = rgb { 163 17 31 }
+}
+
+SOV_left_opposition = {
+    color = rgb { 224 5 5 }
+    color_ui = rgb { 193 81 81 }
+}
+
+SOV_right_opposition = {
+	color = rgb { 230 0 0 }
+	color_ui = rgb { 255 51 51 }
+}
+russian_empire = {
+	color = rgb { 64 128 0 }
+	color_ui = rgb { 51 204 51 }
+}
+SOV_ROME = {
+	color = rgb { 128 0 128 }
+	color_ui = rgb { 128 0 128 }
 }
