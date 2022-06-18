@@ -739,10 +739,6 @@ KOS = {
     color_ui = rgb { 57  39  127 }	
 }
 
-VEC = {
-	color = rgb { 22 150 156 }
-	color_ui = rgb { 90 10 10 }
-}
 BUK = {
 	color = rgb { 187 109 255 }
 	color_ui = rgb { 187 109 255 }
