@@ -185,16 +185,16 @@ add_state_to_list = {
 		ROOT = { add_to_array = { pd_liberate_array = PREV } }
 	}
 
-	if = {
-		limit = { 
-			pd_calculate_province_cost = yes
-			ROOT = { has_country_flag = pd_root_gives } 
-		}
-		subtract_from_variable = { ROOT.pd_total_cost = pts } 
-	}
-	else = {
-		add_to_variable = { ROOT.pd_total_cost = pts } 
-	}
+	#if = {
+	#	limit = { 
+	#		pd_calculate_province_cost = yes
+	#		ROOT = { has_country_flag = pd_root_gives } 
+	#	}
+	#	subtract_from_variable = { ROOT.pd_total_cost = pts } 
+	#}
+	#else = {
+	#	add_to_variable = { ROOT.pd_total_cost = pts } 
+	#}
 }
 
 remove_state_from_list = {
@@ -247,16 +247,16 @@ remove_state_from_list = {
 		ROOT = { remove_from_array  = { pd_liberate_array = PREV } }
 	}
 	
-	if = {
-		limit = { 
-			pd_calculate_province_cost = yes
-			ROOT = { has_country_flag = pd_root_gives } 
-		}
-		add_to_variable = { ROOT.pd_total_cost = pts } 
-	}
-	else = {
-		subtract_from_variable = { ROOT.pd_total_cost = pts } 
-	} 
+	#if = {
+	#	limit = { 
+	#		pd_calculate_province_cost = yes
+	#		ROOT = { has_country_flag = pd_root_gives } 
+	#	}
+	#	add_to_variable = { ROOT.pd_total_cost = pts } 
+	#}
+	#else = {
+	#	subtract_from_variable = { ROOT.pd_total_cost = pts } 
+	#} 
 }
 
 clear_vp = {

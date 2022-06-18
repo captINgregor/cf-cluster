@@ -54,48 +54,48 @@ scripted_gui = {
 			
 			war_reparations_click = {
 				ROOT = { set_country_flag = pd_war_reparations }
-				if = {
-					limit = { ROOT = { has_country_flag = pd_root_gives } }
-					subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
-				}
-				else = {
-					add_to_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
-				} 
+				#if = {
+				#	limit = { ROOT = { has_country_flag = pd_root_gives } }
+				#	subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
+				#}
+				#else = {
+				#	add_to_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
+				#} 
 			}
 			
 			war_reparations_set_click = {
 				ROOT = { clr_country_flag = pd_war_reparations }
-				if = {
-					limit = { ROOT = { has_country_flag = pd_root_gives } }
-					add_to_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
-				}
-				else = {
-					subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
-				} 
+				#if = {
+				#	limit = { ROOT = { has_country_flag = pd_root_gives } }
+				#	add_to_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
+				#}
+				#else = {
+				#	subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
+				#} 
 			}
 			
 			# Disarm
 			
 			disarm_click = {
 				ROOT = { set_country_flag = pd_disarm }
-				if = {
-					limit = { ROOT = { has_country_flag = pd_root_gives } }
-					subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
-				}
-				else = {
-					add_to_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
-				} 
+				#if = {
+				#	limit = { ROOT = { has_country_flag = pd_root_gives } }
+				#	subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
+				#}
+				#else = {
+				#	add_to_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
+				#} 
 			}
 			
 			disarm_set_click = {
 				ROOT = { clr_country_flag = pd_disarm }
-				if = {
-					limit = { ROOT = { has_country_flag = pd_root_gives } }
-					add_to_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
-				}
-				else = {
-					subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
-				} 
+				#if = {
+				#	limit = { ROOT = { has_country_flag = pd_root_gives } }
+				#	add_to_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
+				#}
+				#else = {
+				#	subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
+				#} 
 			}
 			
 			# Marking states

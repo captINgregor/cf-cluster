@@ -1204,7 +1204,7 @@ country_event = { #Communists Unify China
 	hidden = yes
 	
 	trigger = {
-		AND {
+		AND = {
 			#Game Start Controller
 			#Manchurian States
 			event_target:WTT_communist_china = { has_full_control_of_state = 717 }
@@ -1305,7 +1305,7 @@ country_event = { #Nationalists Unify China
 	hidden = yes
 	
 	trigger = {
-		AND {
+		AND = {
 			NOT = {
 			event_target:WTT_current_china_leader = { has_government = communism }
 			}
@@ -1595,7 +1595,7 @@ country_event = { #Japanese Civil War
 	hidden = yes
 	
 	trigger = {
-		OR {
+		OR = {
 			JAP = { has_completed_focus = JAP_pre_emptive_coup }
 			JAP = { has_completed_focus = JAP_cast_the_die }
 		}
@@ -1623,16 +1623,16 @@ country_event = { #Chinese Victory Against Japan
 	hidden = yes
 	
 	trigger = {
-		AND {
+		AND = {
 			has_country_flag = achievement_JAP_sue_for_peace_CHI_completed
 		
-			OR {
-				OR {
+			OR = {
+				OR = {
 					event_target:WTT_current_china_leader = { owns_state = 745 }
 					event_target:WTT_communist_china = { owns_state = 745 }
 				}
 				
-				OR {
+				OR = {
 					event_target:WTT_current_china_leader = { owns_state = 328 }
 					event_target:WTT_communist_china = { owns_state = 328 }
 				}
