@@ -1722,7 +1722,7 @@ technologies = {
 		
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 9 y = 14 } # y = 14
+			position = { x = 12 y = 14 } # y = 14
 		}
 				
 		ai_will_do = {
@@ -1765,7 +1765,7 @@ technologies = {
 		
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 6 y = 17 } #y = 17
+			position = { x = 9 y = 17 } #y = 17
 		}
 		
 		ai_will_do = {
@@ -1793,7 +1793,7 @@ technologies = {
 		
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 6 y = 19 } #y = 19
+			position = { x = 9 y = 19 } #y = 19
 		}
 		
 		ai_will_do = {
@@ -1831,7 +1831,7 @@ technologies = {
 		
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 9 y = 17 }
+			position = { x = 12 y = 17 }
 		}
 		
 		ai_will_do = {
@@ -1860,7 +1860,7 @@ technologies = {
 		
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 9 y = 19 }
+			position = { x = 12 y = 19 }
 		}
 		
 		ai_will_do = {
@@ -1893,7 +1893,7 @@ technologies = {
 		
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 12 y = 19 }
+			position = { x = 15 y = 19 }
 		}
 		
 		ai_will_do = {

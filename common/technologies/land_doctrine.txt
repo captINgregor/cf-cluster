@@ -3572,7 +3572,7 @@ technologies = {
 		}
 		
 		dependencies = { 
-			main_battle_tank2 = 1
+			main_battle_tank_chassis_2 = 1
 		} 
 		
 		doctrine = yes	

@@ -208,7 +208,7 @@ sub_units = {
 		sprite = light_plane
 		priority = 1
 		active = yes
-		type = { cas tactical_bomber }
+		type = { cas  }
 		need = { cv_jet_cas_equipment = 1 }
 		categories = { category_cas }
 	}

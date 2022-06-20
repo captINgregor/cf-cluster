@@ -15,7 +15,7 @@ equipments = {
 		interface_category = interface_category_land
 		
 		#Misc Abilities
-		maximum_speed = 25
+		maximum_speed = 12.5
 		reliability = 0.8
 		
 		#Defensive Abilities
@@ -56,7 +56,7 @@ equipments = {
 		priority = 40
 		visual_level = 1
 
-		maximum_speed = 27
+		maximum_speed = 13.5
 
 		#Defensive Abilities
 		defense = 12
@@ -91,7 +91,7 @@ equipments = {
 		interface_category = interface_category_land
 		
 		#Misc Abilities
-		maximum_speed = 25
+		maximum_speed = 13.5
 		reliability = 0.8
 		
 		#Defensive Abilities
