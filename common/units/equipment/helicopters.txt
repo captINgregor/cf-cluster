@@ -15,7 +15,7 @@ equipments = {
 		interface_category = interface_category_land
 		
 		#Misc Abilities
-		maximum_speed = 14
+		maximum_speed = 25
 		reliability = 0.8
 		
 		#Defensive Abilities
@@ -36,7 +36,7 @@ equipments = {
 		resources = {
 			steel = 2
 			#oil = 1
-			rubber = 1
+			aluminium = 1
 		}
 	}
 	
@@ -56,7 +56,7 @@ equipments = {
 		priority = 40
 		visual_level = 1
 
-		maximum_speed = 15
+		maximum_speed = 27
 
 		#Defensive Abilities
 		defense = 7
@@ -71,7 +71,7 @@ equipments = {
 		build_cost_ic = 24
 		resources = {
 			steel = 3
-			rubber = 1
+			aluminium = 2
 			#oil = 1
 		}
 	}
@@ -91,7 +91,7 @@ equipments = {
 		interface_category = interface_category_land
 		
 		#Misc Abilities
-		maximum_speed = 15
+		maximum_speed = 27
 		reliability = 0.8
 		
 		#Defensive Abilities
@@ -110,7 +110,7 @@ equipments = {
 		resources = {
 			steel = 2
 			#oil = 1
-			rubber = 1
+			aluminium = 1
 		}
 	}
 	
