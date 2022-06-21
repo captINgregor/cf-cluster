@@ -91,7 +91,7 @@ transfer_navy_mod = {
 			}
 			ROOT = {
 				has_operation_token = {
-					tag = ROOT
+					tag = FROM
 					token = token_navy
 				}
 			}
