@@ -15,7 +15,7 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 			scale = 0.8
 		}
-		
+			
 		instantTextBoxType = {
 			name ="nuke_count"
 			position = { x=2000 y=9 }
