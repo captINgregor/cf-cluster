@@ -745,10 +745,6 @@ KSH = {
 	color = rgb { 226 191 93 }
 	color_ui = rgb { 226 191 93 }
 }
-BNT = {
-	color = rgb { 255 140 79 }
-	color_ui = rgb { 255 140 79 }
-}
 ALT = {
 	color = rgb { 204 255 255 }
 	color_ui = rgb { 0 230 230 }
