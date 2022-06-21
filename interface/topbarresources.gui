@@ -166,7 +166,7 @@ guiTypes = {
 			format = center
 			alwaystransparent=yes
 			#pdx_tooltip = "PRODUCTION_MATERIALS_tungsten"
-					}
+		}
 		iconType ={
 			name ="chromium_value_bg"
 			spriteType = "GFX_generic_box_smallest"
@@ -197,7 +197,7 @@ guiTypes = {
 			format = center
 			alwaystransparent=yes
 			#pdx_tooltip = "PRODUCTION_MATERIALS_tungsten"
-					}
+		}
 		
 						
 		}}
