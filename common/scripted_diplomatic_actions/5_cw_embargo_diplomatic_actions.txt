@@ -19,7 +19,11 @@ scripted_diplomatic_actions = {
 			NOT = { is_puppet_of = ROOT }
 			NOT = { is_in_faction_with = ROOT }
 			NOT = { has_idea = closed_economy }
-			NOT = { has_war_with = ROOT }
+			NOT = { 
+				FROM = {
+					has_war_with = ROOT 
+				}
+			}
 			hidden_trigger = {
 				ROOT = { NOT = { has_country_flag = did_diplomatic_action } }		#Used to suspend request spam by AI
 			}
