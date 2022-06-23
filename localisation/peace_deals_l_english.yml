@@ -27,10 +27,11 @@
   # Recieve peace offer gui
   PD_OFFER_PEACE_DEAL_RECEIVE:0 "§Y[Root.GetName]§! has offered §Y[This.GetName]§! the following peace deal proposal:"
   PD_STATE_LIST_ENTRY:0 "§Y[This.GetName]§!"
-  
+  don't release b
   # Scripted loc
  
-  pd_description_root_takes:0 "Offer a peace deal to the country. Only proposals within our war score can be sent (current war score: [?Root.vp@PREV|Y0] £victory_points )"
+  pd_description_root_takes:0 "Offer a peace deal to the country."
+  #original text "Offer a peace deal to the country. Only proposals within our war score can be sent (current war score: [?Root.vp@PREV|Y0] £victory_points )"
   pd_description_root_gives:0 "Offer conditional surrender to the country. [Root.GetName] cannot cease to exist as a result of the deal!"
   
   pd_take_state:0 "Take state"
