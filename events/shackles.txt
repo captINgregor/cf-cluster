@@ -218,12 +218,6 @@ country_event = {
 			}	
 		}
 		
-		CRO = { 
-			add_ideas = {
-				uninterested
-				unindustrialized
-			}	
-		}
 		
 		CUB = { 
 			add_ideas = {
