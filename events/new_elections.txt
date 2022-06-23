@@ -9,10 +9,12 @@ id = usa.70 #Elections of 1948
 	is_triggered_only = yes
 
 	trigger = {
-		tag = USA
-		democratic > 0.5
-		date > 1948.1.1
-		date < 1949.1.1
+		AND = {
+			tag = USA
+			democratic > 0.5
+			date > 1948.11.1
+			date < 1948.11.3
+		}
 	}
 
 	immediate = {
@@ -83,10 +85,12 @@ id = usa.71 #Elections of 1952
 	is_triggered_only = yes
 
 	trigger = {
-		tag = USA
-		democratic > 0.5
-		date > 1952.1.1
-		date < 1953.1.1
+		AND = {
+			tag = USA
+			democratic > 0.5
+			date > 1952.11.3
+			date < 1952.11.5
+		}
 	}
 
 	immediate = {
@@ -157,10 +161,12 @@ id = usa.72 #Elections of 1956
 	is_triggered_only = yes
 
 	trigger = {
-		tag = USA
-		democratic > 0.5
-		date > 1956.1.1
-		date < 1957.1.1
+		AND = {
+			tag = USA
+			democratic > 0.5
+			date > 1956.11.5
+			date < 1956.11.7
+		}
 	}
 
 	immediate = {
@@ -231,10 +237,12 @@ id = usa.73 #Elections of 1960
 	is_triggered_only = yes
 
 	trigger = {
-		tag = USA
-		democratic > 0.5
-		date > 1960.1.1
-		date < 1961.1.1
+		AND = {
+			tag = USA
+			democratic > 0.5
+			date > 1960.11.7
+			date < 1960.11.9
+		}
 	}
 
 	immediate = {
@@ -257,7 +265,7 @@ id = usa.73 #Elections of 1960
 	option = { 	
 		name = usa.73.a
 		ai_chance = {
-			factor = 75			
+			factor = 100			
 		}	
 		
 		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
@@ -277,7 +285,7 @@ id = usa.73 #Elections of 1960
 	option = { 
 		name = usa.73.b
 		ai_chance = {
-			factor = 25
+			factor = 0
 		}		
 		
 		set_party_name = { ideology = democratic long_name = USA_democratic_party name = USA_democratic_party } 
