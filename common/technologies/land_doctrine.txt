@@ -1257,7 +1257,7 @@ technologies = {
 		category_line_artillery = {
 			soft_attack = 0.10
 		}
-		
+		coordination_bonus = 0.05
 		enable_tactic = tactic_overwhelming_fire
 		
 		path = {
@@ -1891,6 +1891,7 @@ technologies = {
 		
 		#planning max bonus increase
 		max_planning = 0.1
+		command_power_gain = 0.25
 
 		doctrine = yes	
 		research_cost = 4.5
@@ -3700,10 +3701,10 @@ technologies = {
 		}
 
 		category_tanks = {
-			max_organisation = 10
+			max_organisation = 5
 		}
 		category_all_infantry = {
-			max_organisation = 5
+			max_organisation = 2.5
 		}
 		
 		doctrine = yes	
@@ -4000,7 +4001,7 @@ technologies = {
 		xp_unlock_cost = 100
 		
 		planning_speed = 0.5
-		land_reinforce_rate = 0.02
+		land_reinforce_rate = 0.1
 		
 		path = {
 			leads_to_tech = interoperability 
@@ -4044,7 +4045,8 @@ technologies = {
 		category_all_infantry = {			
 			max_organisation = 2
 		}
-		
+		coordination_bonus = 0.1
+
 		max_dig_in = 10
 		
 		category_tanks = {
@@ -4099,6 +4101,8 @@ technologies = {
 		
 		max_command_power = 50
 		command_power_gain_mult = 0.2
+
+		coordination_bonus = 0.05
 				
 		doctrine = yes	
 		research_cost = 4.5
@@ -4461,7 +4465,7 @@ technologies = {
 		xor = { urban_warfare desert_warfare }
 			
 		path = {
-			leads_to_tech = assymetric_warfare 
+			leads_to_tech = asymmetric_warfare 
 			research_cost_coeff = 1
 		}
 		path = {
@@ -4529,7 +4533,7 @@ technologies = {
 		xor = { urban_warfare jungle_warfare_school }
 		
 		path = {
-			leads_to_tech = assymetric_warfare 
+			leads_to_tech = asymmetric_warfare 
 			research_cost_coeff = 1
 		}
 		path = {
@@ -4591,7 +4595,7 @@ technologies = {
 		xor = { desert_warfare jungle_warfare_school } 
 		
 		path = {
-			leads_to_tech = assymetric_warfare 
+			leads_to_tech = asymmetric_warfare 
 			research_cost_coeff = 1
 		}
 		path = {
@@ -4629,19 +4633,19 @@ technologies = {
 		}
 	}
 		
-	assymetric_warfare = {
+	asymmetric_warfare = {
 
 		xp_research_type = army
 		xp_unlock_cost = 100
 		enable_tactic = tactic_guerrilla_tactics
 		
-		no_supply_grace = 48 
+		no_supply_grace = 24
 		dig_in_speed_factor = 0.1
 		max_dig_in = 10
-		out_of_supply_factor = -0.10
+		out_of_supply_factor = -0.05
 		land_reinforce_rate = 0.05
-		resistance_damage_to_garrison_on_our_occupied_states = 0.2
-		resistance_growth_on_our_occupied_states = 0.1
+		resistance_damage_to_garrison_on_our_occupied_states = 0.1
+		resistance_growth_on_our_occupied_states = 0.05
 		
 		
 		xor = { rapid_response } 
@@ -4678,7 +4682,7 @@ technologies = {
 		xp_research_type = army
 		xp_unlock_cost = 100
 		
-		attrition = -0.2
+		cas_damage_reduction = 0.2
 		resistance_damage_to_garrison_on_our_occupied_states = 0.1
 		land_reinforce_rate = 0.05
 		
@@ -4732,7 +4736,7 @@ technologies = {
 		}
 		land_reinforce_rate = 0.05
 		
-		xor = { assymetric_warfare } 
+		xor = { asymmetric_warfare } 
 
 		path = {
 			leads_to_tech = defensive_professional_army 
@@ -4884,9 +4888,9 @@ technologies = {
 		}
 		
 		category_all_armor = {
-			breakthrough = 0.1
-			soft_attack = 0.1
-			hard_attack = 0.1
+			breakthrough = 0.05
+			soft_attack = 0.05
+			hard_attack = 0.05
 		}
 			
 			
@@ -4929,7 +4933,7 @@ technologies = {
 		mechanized = {
 			breakthrough = 0.1
 			soft_attack = 0.1
-			hard_attack = 0.1
+			hard_attack = 0.05
 		}
 		
 		amphibious_mechanized = {
@@ -4974,10 +4978,10 @@ technologies = {
 		xp_unlock_cost = 100
 		
 		category_tanks = {
-			max_organisation = 5
+			max_organisation = 2.5
 		}
 		category_all_infantry = {
-			max_organisation = 10
+			max_organisation = 5
 		}
 		
 		path = {
@@ -5059,7 +5063,7 @@ technologies = {
 		}
 			
 		mechanized = {
-			maximum_speed = 0.1
+			maximum_speed = 0.05
 			fuel_consumption = -0.1
 		}
 		
@@ -5108,8 +5112,8 @@ technologies = {
 		
 		category_tanks = { 
 			fuel_consumption = -0.1
-			maximum_speed = 0.1
-			soft_attack = 0.1
+			maximum_speed = 0.025
+			soft_attack = 0.05
 		}
 		
 		categories = {
