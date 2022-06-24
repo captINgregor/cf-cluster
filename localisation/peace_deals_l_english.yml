@@ -27,7 +27,7 @@
   # Recieve peace offer gui
   PD_OFFER_PEACE_DEAL_RECEIVE:0 "§Y[Root.GetName]§! has offered §Y[This.GetName]§! the following peace deal proposal:"
   PD_STATE_LIST_ENTRY:0 "§Y[This.GetName]§!"
-  don't release b
+  
   # Scripted loc
  
   pd_description_root_takes:0 "Offer a peace deal to the country."
