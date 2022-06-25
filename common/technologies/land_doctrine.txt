@@ -3701,7 +3701,7 @@ technologies = {
 		}
 
 		category_tanks = {
-			max_organisation = 5
+			max_organisation = 3
 		}
 		category_all_infantry = {
 			max_organisation = 2.5
@@ -3806,23 +3806,23 @@ technologies = {
 		}
 
 		category_all_armor = {
-			default_morale = 0.1
+			default_morale = 0.05
 		}
 		armored_car = {
 			default_morale = 0.1
 		}
 
 		motorized = {
-			max_organisation = 5
+			max_organisation = 2
 		}
 		armored_car = {
-			max_organisation = 7
+			max_organisation = 5
 		}
 		mechanized = {
-			max_organisation = 5
+			max_organisation = 2
 		}
 		amphibious_mechanized = {
-			max_organisation = 5
+			max_organisation = 4
 		}		
 		
 		doctrine = yes	
@@ -3945,19 +3945,32 @@ technologies = {
 		
 		category_all_infantry = {
 			max_organisation = 5
+			soft_attack = 0.05
 		}
 		mechanized = {
 			max_organisation = 3
+			soft_attack = 0.05
 		}
 		motorized = {
 			max_organisation = 3
+			soft_attack = 0.05
+
 		}	
 		armored_car = {
 			max_organisation = 1
+			soft_attack = 0.05
+
 		}
 		category_line_artillery = {
 			max_organisation = 2
+			soft_attack = 0.1
 		}
+
+		category_all_armor = {
+			max_organisation = 2
+			soft_attack = 0.05
+		}
+
 		land_reinforce_rate = 0.02	
 		
 		
@@ -4002,7 +4015,9 @@ technologies = {
 		
 		planning_speed = 0.5
 		land_reinforce_rate = 0.1
-		
+
+
+
 		path = {
 			leads_to_tech = interoperability 
 			research_cost_coeff = 1
