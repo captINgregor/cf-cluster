@@ -249,7 +249,7 @@ country_event = {
 		}
 		hidden_effect = { 
 			news_event = { id = wtt_news.3 hours = 6 } 
-			set_cosmetic_tag = GER_neutrality
+			set_cosmetic_tag = GER_kaiserreich
 		}
 	}
 }
