@@ -463,7 +463,11 @@
  FRA_FREE_democratic_DEF:0 "Free France"
  FRA_FREE_democratic_ADJ:0" Free French"
  
-  
+ FRA_provisional_government:0 "Provisional Government of the French Republic"
+ FRA_provisional_government_DEF:0 "the Provisional Government of the French Republic"
+ FRA_provisional_government_ADJ:0 "French"
+
+ 
  FRA_FREE_communism:0 "Free French Commune"
  FRA_FREE_communism_DEF:0 "the Free French Commune"
  FRA_FREE_communism_ADJ:0" Free French"
