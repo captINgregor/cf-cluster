@@ -735,14 +735,13 @@ focus_tree = {
 		available = {
 			country_exists = INS
 			NOT = { has_completed_focus = HOL_oranje_boven }
-			INS = { is_subject_of = HOL }
+			INS = { is_subject_of = HOL }5
 		}
 		bypass = {
 			INS = { exists = no }
 			owns_state = 335
 		}
 		prerequisite = { focus = HOL_the_crown_jewel_colony }
-		mutually_exclusive = { focus = HOL_the_zuiderzee_works }
 		icon = GFX_focus_generic_treaty
 		x = 2
 		y = 3
@@ -1417,7 +1416,6 @@ focus_tree = {
 			has_full_control_of_state = 36
 		}
 		prerequisite = { focus = HOL_expand_the_artillerieinrichtingen }
-		mutually_exclusive = { focus = HOL_curtail_colonial_autonomy }
 		icon = GFX_focus_hol_the_zuiderzee_works
 		x = -1
 		y = 1
