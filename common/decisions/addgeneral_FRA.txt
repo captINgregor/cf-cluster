@@ -1,0 +1,237 @@
+political_actions = {
+     add_FRA_General= {
+	      icon = generic_oppression
+          cost = 0
+          fire_only_once = yes
+		allowed = {
+			original_tag = FRA
+		}
+		
+		visible = {
+				original_tag = FRA
+		}
+
+		available = {
+            original_tag = FRA
+			is_ai = no
+		}
+		complete_effect = {
+
+
+create_corps_commander = {
+	name = "Paul Le Gentilhomme"
+	portrait_path = "gfx/leaders/FRA/Portrait_France_Paul_Legentilhomme.tga"
+	traits = {
+		trait_reckless
+		infantry_officer
+		commando
+		skirmisher
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 4
+}
+
+create_corps_commander = {
+	name = "Jean Flavigny"
+	portrait_path = "gfx/leaders/FRA/Portrait_France_Jean_Flavigny.tga"
+	traits = {
+		career_officer
+		armor_officer
+		panzer_leader
+	}
+	skill = 3
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Marcel Garchery"
+	portrait_path = "gfx/leaders/FRA/Portrait_France_Marcel_Garchery.tga"
+	traits = {
+		old_guard
+		trait_cautious
+		infantry_leader
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+### Navy Leader
+
+
+
+
+create_navy_leader = {
+	name = "Emile Muselier"
+	portrait_path = "gfx/leaders/FRA/Portrait_France_Emile_Muselier.tga"
+	traits = {}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 1
+	coordination_skill = 2
+}
+
+#NFA
+
+create_field_marshal = {
+	name = "Philippe Pétain"
+	picture = "Portrait_NFA_Philippe_Petain.tga"
+	traits = {
+		old_guard
+		inflexible_strategist
+		war_hero
+		media_personality
+		unyielding_defender
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+
+
+create_corps_commander = {
+	name = "Maurice Janin"
+	picture = "Portrait_NFA_Maurice_Janin.tga"
+	traits = {
+		politically_connected
+		harsh_leader
+		winter_specialist
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+
+
+
+create_corps_commander = {
+	name = "Henri Lebocq"
+	picture = "Portrait_NFA_Henri_Lebocq.tga"
+	traits = {
+		old_guard
+		career_officer
+		infantry_leader
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Louis Franchet D'Espèrey"
+	picture = "Portrait_NFA_Louis_Franchet_Esperey.tga"
+	traits = {
+		old_guard
+		brilliant_strategist
+		infantry_leader
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Jean Touzet du Vigier"
+	picture = "Portrait_NFA_Jean_Touzet_du_Vigier.tga"
+	traits = {
+		career_officer
+		panzer_leader
+		panzer_expert
+	}
+	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Félix Éboué"
+	picture = "eboue.dds"
+	traits = {
+		politically_connected
+		ranger
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+####
+#  Naval leaders
+####
+
+
+create_navy_leader = {
+	name = "Lucien Lacaze"
+	picture = "Portrait_France_Lucien_Lacaze.tga"
+	traits = {}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 2
+	coordination_skill = 3
+}
+
+
+create_navy_leader = {
+	name = "Gabriel Auphan"
+	picture = "Portrait_France_Gabriel_Auphan.tga"
+	traits = { spotter }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	maneuvering_skill = 2
+	coordination_skill = 3
+}
+
+
+
+create_navy_leader = {
+	name = "Thierry d'Argenlieu"
+	picture = "Portrait_France_Georges_Thierry_Dargenlieu.tga"
+	traits = {}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 3
+	coordination_skill = 3
+}
+
+create_navy_leader = {
+	name = "Jean Decoux"
+	picture = "Portrait_France_Jean_Decoux.tga"
+	traits = { seawolf }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+
+
+        
+		}
+     }
+}

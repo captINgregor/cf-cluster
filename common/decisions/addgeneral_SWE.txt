@@ -1,0 +1,370 @@
+political_actions = {
+     add_SWE_General= {
+	      icon = generic_oppression
+          cost = 0
+          fire_only_once = yes
+		allowed = {
+			original_tag = SWE
+		}
+		
+		visible = {
+				original_tag = SWE
+		}
+
+		available = {
+            original_tag = SWE
+			is_ai = no
+		}
+		complete_effect = {
+
+create_field_marshal = {
+	name = "Olof Thörnell"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Olof_Thornell.tga"
+	traits = {
+		harsh_leader
+		career_officer
+		defensive_doctrine
+		winter_specialist
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 4
+}
+
+create_field_marshal = {
+	name = "Oscar Nygren"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Oscar_Nygren.tga"
+	traits = {
+		old_guard
+		organisational_leader
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+### Corps Commander
+
+create_corps_commander = {
+	name = "Archibald Douglas"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Archibald_Douglas.tga"
+	traits = {
+		cavalry_officer
+		cavalry_leader
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Ernst Linder"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Ernst_Linder.tga"
+	traits = {
+		trickster
+		winter_specialist
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Folke Bernadotte"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Folke_Bernadotte_Army.tga"
+	traits = {
+		politically_connected
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Harald Malmberg"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Harald_Malmberg.tga"
+	traits = {
+		trait_reckless
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Helge Jung"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Helge_Jung.tga"
+	traits = {
+		career_officer
+		infantry_leader
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
+}
+
+#create_corps_commander = {
+#	name = "Martin Ekström"
+#	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Martin_Ekstrom.tga"
+#	traits = {
+#		harsh_leader
+#		commando
+#		ranger
+#	}
+#	skill = 3
+#	attack_skill = 3
+#	defense_skill = 2
+#	planning_skill = 3
+#	logistics_skill = 2
+#	id = 1009
+#}
+
+create_corps_commander = {
+	name = "Gustaf Adolf of Sweden"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Gustaf_Adolf.tga"
+	traits = {
+		politically_connected
+		cavalry_officer
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Gilbert Hamilton"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Gilbert_Hamilton.tga"
+	traits = {
+		cavalry_officer
+		trickster
+		winter_specialist
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Ivar Holmquist"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Ivar_Holmquist.tga"
+	traits = {
+		commando
+		politically_connected
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Carl Gustaf Hammarskjöld"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Carl_Hammarskjold.tga"
+	traits = {
+		old_guard
+		organizer
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Ernst af Klercker"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Ernst_Klercker.tga"
+	traits = {
+		old_guard
+		career_officer
+		infantry_leader
+	}
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Ivar Backlund"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Ivar_Backlund.tga"
+	traits = {
+		trait_cautious
+		trait_engineer
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Nils Björk"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Nils_Bjork.tga"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_corps_commander = {
+	name = "Henry Peyron"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Henry_Peyron.tga"
+	traits = {
+		career_officer
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+### Navy Leader
+create_navy_leader = {
+	name = "Erik Anderberg"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Erik_Anderberg.tga"
+	traits = {
+		spotter
+		fly_swatter
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 1
+	coordination_skill = 1
+}
+
+create_navy_leader = {
+	name = "Fabian Tamm"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Fabian_Tamm.tga"
+	traits = {
+		superior_tactician
+		blockade_runner
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 2
+	coordination_skill = 3
+}
+
+create_navy_leader = {
+	name = "Otto Lybeck"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Otto_Lybeck.tga"
+	traits = {
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+create_navy_leader = {
+	name = "Bertil of Sweden"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Prince_Bertil.tga"
+	traits = {
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	maneuvering_skill = 2
+	coordination_skill = 1
+}
+
+create_navy_leader = {
+	name = "Charles de Champs"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Charles_Champs.tga"
+	traits = {
+		ironside
+		old_guard_navy
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	maneuvering_skill = 3
+	coordination_skill = 1
+}
+
+
+create_navy_leader = {
+	name = "Gunnar Bjurner"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Gunnar_Bjurner.tga"
+	traits = {
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 1
+	coordination_skill = 1
+}
+
+create_navy_leader = {
+	name = "Gösta Ehrensvärd"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Gosta_Ehrensvard.tga"
+	traits = {
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+create_navy_leader = {
+	name = "Harald Åkermark"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Harald_Akermark.tga"
+	traits = {
+	}
+	skill = 2
+	attack_skill = 3
+	defense_skill = 1
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+create_navy_leader = {
+	name = "Jens Stefenson"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Jens_Stefenson.tga"
+	traits = {
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 1
+	coordination_skill = 1
+}
+	
+
+
+
+        
+		}
+     }
+	 
+
+}
