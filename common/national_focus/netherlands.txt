@@ -734,8 +734,7 @@ focus_tree = {
 		id = HOL_curtail_colonial_autonomy
 		available = {
 			country_exists = INS
-			NOT = { has_completed_focus = HOL_oranje_boven }
-			INS = { is_subject_of = HOL }5
+			INS = { is_subject_of = HOL }
 		}
 		bypass = {
 			INS = { exists = no }
