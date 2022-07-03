@@ -530,8 +530,8 @@
  
  
  
- HUN_GREATER_neutrality:0 "Greater Kingdom of Hungary"
- HUN_GREATER_neutrality_DEF:0 "the Greater Kingdom of Hungary"
+ HUN_GREATER_neutrality:0 "Kingdom of Greater Hungary"
+ HUN_GREATER_neutrality_DEF:0 "the Kingdom of Greater Hungary"
  HUN_GREATER_fascism:0 "Greater Hungary"
  HUN_GREATER_fascism_DEF:0 "Greater Hungary"
  HUN_GREATER_democratic:0 "Hungarian Republic"
