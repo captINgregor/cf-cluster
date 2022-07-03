@@ -11,6 +11,6 @@ tags={
 	"Balance"
 }
 picture="thumbnail.png"
-name="cf mp mod (real)"
+name="cf mp mod (unreal)"
 supported_version="1.11.12"
 remote_file_id="2821650679"
