@@ -16,4 +16,55 @@ opinion_modifiers = {
 		value = 25
 		min_trust = 5
 	}
+
+    demilitarized_country_modifier = {
+        value = -20
+        days = 45
+    }
+    remilitarized_country_modifier = {
+        value = 10
+        days = 45
+    }
+
+    complemented_country_modifier = {
+        value = 8
+        days = 30
+    }
+    insulted_country_modifier = {
+        value = -11
+        days = 30
+    }
+
+    given_building_country_modifier = {
+        value = 10
+        days = 15
+    }
+    given_manpower_country_modifier = {
+        value = 18
+        days = 45
+    }
+
+    major_supported_country_modifier = {
+        value = 10
+        days = 45
+    }
+    minor_supported_country_modifier = {
+        value = 4
+        days = 45
+    }
+    denounced_country_modifier = {
+        value = -6
+        days = 45
+    }
+	sov_sik_no_faction = {
+		value = -100
+	}
+	sov_prc_no_faction = {
+		value = -100
+	}
+	TS_betrayed_volunteers = {
+		value = -25
+		min_trust = -30	
+		decay = 1
+	}
 }

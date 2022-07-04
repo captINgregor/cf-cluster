@@ -1647,8 +1647,1748 @@ add_ruling_to_neu = {
 }
 
 
-on_daily = {
+cw_impose_embargo_diplomacy = {
+	add_to_array = { array = ROOT.embargoed_countries value = FROM.id }
+	ROOT = { add_opinion_modifier = { target = PREV modifier = cw_embargo_trade } }
+	ROOT = { add_opinion_modifier = { target = PREV modifier = cw_embargo_relations_initiator } }
+	add_opinion_modifier = { target = ROOT modifier = cw_embargo_relations_target }	
+}
+cw_remove_embargo_diplomacy = {
+	ROOT = { remove_opinion_modifier = { target = PREV modifier = cw_embargo_trade } }
+	ROOT = { remove_opinion_modifier = { target = PREV modifier = cw_embargo_relations_initiator } }
+	remove_opinion_modifier = { target = ROOT modifier = cw_embargo_relations_target }			
+	remove_from_array = { array = ROOT.embargoed_countries value = FROM.id }
+}
+cw_impose_embargo = {
+	add_to_array = { array = PREV.embargoed_countries value = THIS.id }
+	PREV = { add_opinion_modifier = { target = PREV modifier = cw_embargo_trade } }
+	PREV = { add_opinion_modifier = { target = PREV modifier = cw_embargo_relations_initiator } }
+	add_opinion_modifier = { target = PREV modifier = cw_embargo_relations_target }
+}
+cw_remove_embargo = {
+	remove_from_array = { array = PREV.embargoed_countries value = THIS.id }
+	PREV = { remove_opinion_modifier = { target = PREV modifier = cw_embargo_trade } }
+	PREV = { remove_opinion_modifier = { target = PREV modifier = cw_embargo_relations_initiator } }
+	remove_opinion_modifier = { target = PREV modifier = cw_embargo_relations_target }
+}
 
+pd_ai_will_take = {
+	set_variable = { ROOT.pd_selected = 1 }
+	add_state_to_list = yes
+}
+
+pd_ai_will_puppet = {
+	set_variable = { ROOT.pd_selected = 2 }
+	add_state_to_list = yes
+}
+
+pd_ai_will_demilitarize = {
+	set_variable = { ROOT.pd_selected = 3 }
+	add_state_to_list = yes
+}
+
+pd_ai_will_liberate = {
+	set_variable = { ROOT.pd_selected = 4 }
+	add_state_to_list = yes
+}
+
+####
+
+pd_ai_prepare_peace_deal = {
+	# root is the sender and this is receiver
+	
+	for_each_scope_loop = {
+		array = ROOT.pd_state_list
+		
+		# TODO
+	}
+	
+	# TODO
+}
+
+calculate_war_reparations_cost = {
+	set_temp_variable = { action_cost = 0 }
+	
+	for_each_scope_loop  = {
+		array = THIS.owned_states
+		
+		set_temp_variable = { pts = THIS.state_strategic_value }
+		round_temp_variable = pts
+		clamp_temp_variable = {
+			var = pts
+			min = 1
+		}
+		add_to_temp_variable = { action_cost = pts } 
+	}
+	
+	divide_temp_variable = { action_cost = 10 }
+	round_temp_variable = action_cost
+	clamp_temp_variable = {
+		var = action_cost
+		min = 1
+	}
+	set_variable = { ROOT.pd_wr_cost = action_cost }
+}
+
+calculate_disarm_cost = {
+	set_temp_variable = { action_cost = 0 }
+	
+	for_each_scope_loop  = {
+		array = THIS.owned_states
+		
+		set_temp_variable = { pts = THIS.state_strategic_value }
+		round_temp_variable = pts
+		clamp_temp_variable = {
+			var = pts
+			min = 1
+		}
+		add_to_temp_variable = { action_cost = pts } 
+	}
+	
+	divide_temp_variable = { action_cost = 5 }
+	round_temp_variable = action_cost
+	clamp_temp_variable = {
+		var = action_cost
+		min = 1
+	}
+	set_variable = { ROOT.pd_disarm_cost = action_cost }
+}
+
+reset_peace_deal_proposal = {
+	if = {
+		limit = {		
+			ROOT = { NOT = { has_country_flag = pd_waiting_response } }
+		}
+		ROOT = { 
+			set_variable = { pd_selected = 1 }
+			set_variable = { pd_total_cost = 0 }
+			clr_country_flag = pd_disarm
+			clr_country_flag = pd_war_reparations
+			clear_array = pd_take_array
+			clear_array = pd_puppet_array
+			clear_array = pd_demilitarize_array
+			clear_array = pd_liberate_array
+			clear_array = pd_state_list
+		}
+		if = {
+			limit = {
+				ROOT = { has_country_flag = pd_root_gives }
+			} 
+			ROOT = {
+				calculate_war_reparations_cost = yes
+				calculate_disarm_cost = yes
+			}
+			every_country = {
+				limit = {
+					has_war_with = PREV
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						AND = {
+							ROOT = { is_faction_leader = yes }
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				for_each_loop = {
+					array = owned_states
+					if = {
+						limit = {
+							OR = {
+								controls_state = v
+								ROOT = { controls_state = v }
+								any_country = {
+									is_in_faction_with = THIS
+									has_war_with = ROOT
+									controls_state = v
+								}
+							}
+						}
+						ROOT = { add_to_array = { pd_state_list = v } }
+					}
+				}
+			}
+		}
+		else = {
+			calculate_war_reparations_cost = yes
+			calculate_disarm_cost = yes
+			every_country = {
+				limit = {
+					has_war_with = ROOT
+					OR = {
+						tag = PREV
+						is_subject_of = PREV
+						AND = {
+							PREV = { is_faction_leader = yes }
+							is_in_faction_with = PREV
+						}
+					}
+				}
+				for_each_loop = {
+					array = owned_states
+					if = {
+						limit = {
+							OR = {
+								controls_state = v
+								ROOT = { controls_state = v }
+								any_country = {
+									is_in_faction_with = ROOT
+									has_war_with = PREV
+									controls_state = v
+								}
+							}
+						}
+						ROOT = { add_to_array = { pd_state_list = v } }
+					}
+				}
+			}
+		}
+	}
+}
+
+add_state_to_list = {
+	if = {
+		limit = {
+			check_variable = { ROOT.pd_selected = 1 }
+		}
+		ROOT = { 
+			add_to_array = { pd_take_array = PREV } 
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = { ROOT.pd_selected = 2 }
+		}
+		ROOT = { add_to_array = { pd_puppet_array = PREV } }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ROOT.pd_selected = 3 }
+		}
+		ROOT = { add_to_array = { pd_demilitarize_array = PREV } }
+		
+	}
+	else_if = {
+		limit = {
+			check_variable = { ROOT.pd_selected = 4 }
+		}
+		ROOT = { add_to_array = { pd_liberate_array = PREV } }
+	}
+
+	#if = {
+	#	limit = { 
+	#		pd_calculate_province_cost = yes
+	#		ROOT = { has_country_flag = pd_root_gives } 
+	#	}
+	#	subtract_from_variable = { ROOT.pd_total_cost = pts } 
+	#}
+	#else = {
+	#	add_to_variable = { ROOT.pd_total_cost = pts } 
+	#}
+}
+
+remove_state_from_list = {
+	if = {
+		limit = {
+			check_variable = { ROOT.pd_selected = 1 }
+			ROOT = { 
+				is_in_array = {
+					array = pd_take_array
+					value = PREV
+				}
+			}
+		}
+		ROOT = { remove_from_array  = { pd_take_array = PREV } }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ROOT.pd_selected = 2 }
+			ROOT = { 
+				is_in_array = {
+					array = pd_puppet_array
+					value = PREV
+				}
+			}
+		}
+		ROOT = { remove_from_array  = { pd_puppet_array = PREV } }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ROOT.pd_selected = 3 }
+			ROOT = { 
+				is_in_array = {
+					array = pd_demilitarize_array
+					value = PREV
+				}
+			}
+		}
+		ROOT = { remove_from_array  = { pd_demilitarize_array = PREV } }
+	}
+	else_if = {
+		limit = {
+			check_variable = { ROOT.pd_selected = 4 }
+			ROOT = { 
+				is_in_array = {
+					array = pd_liberate_array
+					value = PREV
+				}
+			}
+		}
+		ROOT = { remove_from_array  = { pd_liberate_array = PREV } }
+	}
+	
+	#if = {
+	#	limit = { 
+	#		pd_calculate_province_cost = yes
+	#		ROOT = { has_country_flag = pd_root_gives } 
+	#	}
+	#	add_to_variable = { ROOT.pd_total_cost = pts } 
+	#}
+	#else = {
+	#	subtract_from_variable = { ROOT.pd_total_cost = pts } 
+	#} 
+}
+
+clear_vp = {
+	set_temp_variable = { root_this_pts = ROOT.vp@THIS }
+	set_temp_variable = { this_root_pts = THIS.vp@ROOT }
+	# Substract from faction leader in case of seperate peace deal
+	if = {
+		limit = {
+			ROOT = { 
+				has_country_flag = pd_root_gives 
+				is_in_faction = yes
+				NOT = { is_faction_leader = yes }
+			}
+		}
+		random_country = {
+			limit = {
+				is_in_faction_with = ROOT
+				is_faction_leader = yes
+			}
+			divide_temp_variable = { this_root_pts = 2 }
+			round_temp_variable = this_root_pts
+			subtract_from_variable = { PREV.vp@THIS = this_root_pts }
+		}
+	}
+	else_if = {
+		limit = {
+			is_in_faction = yes
+			NOT = { is_faction_leader = yes }
+		}
+		random_country = {
+			limit = {
+				is_in_faction_with = PREV
+				is_faction_leader = yes
+			}
+			divide_temp_variable = { root_this_pts = 2 }
+			round_temp_variable = root_this_pts
+			subtract_from_variable = { ROOT.vp@THIS = root_this_pts }
+		}
+	}
+	# Clear vps
+	clear_variable = ROOT.vp@THIS
+	clear_variable = THIS.vp@ROOT
+}
+
+execute_peace_deal = {
+	# Set up scopes
+	if = {
+		limit = {
+			ROOT = { has_country_flag = pd_root_gives }
+		}
+		set_temp_variable = { taker = THIS }
+		set_temp_variable = { giver = ROOT }
+	}
+	else = {
+		set_temp_variable = { taker = ROOT }
+		set_temp_variable = { giver = THIS }
+	}
+	# White peace
+	var:giver = {
+		if = {
+			limit = {
+				var:taker = { is_faction_leader = no }
+			}
+			white_peace = var:taker
+			
+			# Can't use vars in set_truce target
+			var:taker = { 
+				var:giver = {
+					set_truce = {
+						target = PREV
+						days = 720
+					}
+				}
+			}
+		}
+		else = {
+			every_enemy_country = {
+				limit = {
+					is_in_faction_with = var:taker
+				}
+				white_peace = PREV
+				set_truce = {
+					target = PREV
+					days = 720
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_faction_leader = no
+			}
+			leave_faction = yes
+			add_timed_idea = {
+				idea = conditional_surrender
+				days = 720
+			}
+		}
+		else = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = var:giver
+				}
+				white_peace = var:taker
+			}
+		}
+	}
+	# Deal take an effect
+	ROOT = { 
+		# Take
+		for_each_scope_loop = {
+			array = pd_take_array
+			
+			var:taker = { transfer_state = PREV }
+		}
+		# Demilitarize
+		for_each_scope_loop = {
+			array = pd_demilitarize_array
+			
+			set_demilitarized_zone = yes
+		}
+		# Liberate
+		for_each_scope_loop = {
+			array = pd_liberate_array
+			
+			set_temp_variable = { victim = THIS.owner }
+			set_temp_variable = { s = THIS }
+			
+			if = {
+				limit = {
+					any_country = {
+						NOT = {	original_tag = var:victim }
+						NOT = { tag = var:taker }
+						var:s = {
+							is_core_of = PREV
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						NOT = {	original_tag = var:victim }
+						var:s = {
+							is_core_of = PREV
+						}
+					}
+					transfer_state = var:s
+				}
+			}
+			else = {
+				random_scope_in_array = {
+					array = var:global.countries
+					limit = {
+						exists = no
+						var:s = {
+							is_core_of = PREV
+						}
+					}
+					transfer_state = var:s
+					if = {
+						limit = {
+							var:taker = {
+								has_rule = can_puppet
+							}
+						}
+						var:taker = {
+							puppet = PREV
+						}
+					}
+					if = {
+						limit = {
+							var:taker = {
+								has_elections = yes
+							}
+						}
+						set_politics = {
+							ruling_party = var:var:taker.current_party_ideology_group
+							elections_allowed = yes
+						}
+					}
+					else = {
+						set_politics = {
+							ruling_party = var:var:taker.current_party_ideology_group
+							elections_allowed = no
+						}
+					}
+				}
+			}
+		}
+		# Full puppet
+		every_country = {
+			limit = {
+				all_of = {
+					array = owned_states
+					is_in_array = {
+						array = ROOT.pd_puppet_array
+						value = v
+					}
+				}
+			}
+			for_each_loop = {
+				array = owned_states
+				remove_from_array = { ROOT.pd_puppet_array = v }
+			}
+			var:taker = {
+				puppet = PREV
+			}
+		}
+		# Puppet
+		for_each_scope_loop = {
+			array = pd_puppet_array
+			
+			set_temp_variable = { victim = THIS.owner }
+			set_temp_variable = { s = THIS }
+			
+			if = {
+                limit = {
+                    any_country = {
+                        original_tag = var:victim
+                        is_puppet_of = var:taker
+                    }
+                }
+                random_country = {
+                    limit = {
+                        original_tag = var:victim
+                        is_puppet_of = var:taker
+                    }
+                    transfer_state = var:s
+                }
+            }
+            else = {
+                create_dynamic_country = {
+                    original_tag = THIS.owner
+                    if = {
+                        limit = {
+                            var:taker = {
+                                has_elections = yes
+                            }
+                        }
+                        set_politics = {
+                            ruling_party = var:var:taker.current_party_ideology_group
+                            elections_allowed = yes
+                        }
+                    }
+                    else = {
+                        set_politics = {
+                            ruling_party = var:var:taker.current_party_ideology_group
+                            elections_allowed = no
+                        }
+                    }
+                    set_political_party = {
+                        ideology = var:var:taker.current_party_ideology_group
+                        popularity = 60
+                    }
+                    set_cosmetic_tag = THIS.owner
+                    reserve_dynamic_country = yes
+                    var:taker = { puppet = PREV }
+					transfer_state = PREV
+                }
+            }
+		}
+	}
+	# War reparations
+	if = {
+		limit = { 
+			ROOT = { has_country_flag = pd_war_reparations }
+		}
+		
+		var:giver = {
+			add_to_variable = { wr_payments = 1 }
+			activate_targeted_decision = {
+				target = var:taker
+				decision = pd_pay_war_reparations
+			}
+		}
+	}
+	# Disarm nation
+	if = {
+		limit = { 
+			ROOT = { has_country_flag = pd_disarm }
+		}
+		var:giver = {
+			add_timed_idea = {
+				idea = peace_disarmed_nation
+				days = 720
+			}
+			add_timed_idea = {
+				idea = peace_civilian_economy
+				days = 720
+			}
+		}
+	}
+}
+
+rename_faction_effect = {
+	if = {
+        limit = {
+            NOT = {
+                check_variable = { current_char = 0 }
+                check_variable = { chars^0 = 0 }
+            }
+        }
+		meta_effect = {
+			text = {
+				set_faction_name = "[CHAR_1][CHAR_2][CHAR_3][CHAR_4][CHAR_5][CHAR_6][CHAR_7][CHAR_8][CHAR_9][CHAR_10][CHAR_11][CHAR_12][CHAR_13][CHAR_14][CHAR_15][CHAR_16][CHAR_17][CHAR_18][CHAR_19][CHAR_20][CHAR_21][CHAR_22][CHAR_23][CHAR_24][CHAR_25][CHAR_26][CHAR_27][CHAR_28][CHAR_29][CHAR_30][CHAR_31][CHAR_32]"
+			}
+			CHAR_1 = "[This.GET_CHAR_1]"
+			CHAR_2 = "[This.GET_CHAR_2]"
+			CHAR_3 = "[This.GET_CHAR_3]"
+			CHAR_4 = "[This.GET_CHAR_4]"
+			CHAR_5 = "[This.GET_CHAR_5]"
+			CHAR_6 = "[This.GET_CHAR_6]"
+			CHAR_7 = "[This.GET_CHAR_7]"
+			CHAR_8 = "[This.GET_CHAR_8]"
+			CHAR_9 = "[This.GET_CHAR_9]"
+			CHAR_10 = "[This.GET_CHAR_10]"
+			CHAR_11 = "[This.GET_CHAR_11]"
+			CHAR_12 = "[This.GET_CHAR_12]"
+			CHAR_13 = "[This.GET_CHAR_13]"
+			CHAR_14 = "[This.GET_CHAR_14]"
+			CHAR_15 = "[This.GET_CHAR_15]"
+			CHAR_16 = "[This.GET_CHAR_16]"
+			CHAR_17 = "[This.GET_CHAR_17]"
+			CHAR_18 = "[This.GET_CHAR_18]"
+			CHAR_19 = "[This.GET_CHAR_19]"
+			CHAR_20 = "[This.GET_CHAR_20]"
+			CHAR_21 = "[This.GET_CHAR_21]"
+			CHAR_22 = "[This.GET_CHAR_22]"
+			CHAR_23 = "[This.GET_CHAR_23]"
+			CHAR_24 = "[This.GET_CHAR_24]"
+			CHAR_25 = "[This.GET_CHAR_25]"
+			CHAR_26 = "[This.GET_CHAR_26]"
+			CHAR_27 = "[This.GET_CHAR_27]"
+			CHAR_28 = "[This.GET_CHAR_28]"
+			CHAR_29 = "[This.GET_CHAR_29]"
+			CHAR_30 = "[This.GET_CHAR_30]"
+			CHAR_31 = "[This.GET_CHAR_31]"
+			CHAR_32 = "[This.GET_CHAR_32]"
+		}
+	}
+}
+
+keypress_init = {
+    if = {
+        limit = { NOT = { has_variable = current_char } }
+        set_variable = { current_char = -1 }
+        resize_array = {
+            array = chars
+            size = 32
+        }
+    }
+    add_to_variable = { current_char = 1 }
+}
+
+get_keypress_backspace = {
+    set_variable = { chars^current_char = 0 }
+    subtract_from_variable = { current_char = 1 }
+    clamp_variable = {
+        var = current_char
+        min = 0
+        max = 32
+    }
+}
+
+get_keypress_space = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 32 }
+}
+get_keypress_exclamation_mark = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 33 }
+}
+get_keypress_lbracket = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 40 }
+}
+get_keypress_rbracket = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 41 }
+}
+get_keypress_asterix = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 42 }
+}
+get_keypress_plus = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 43 }
+}
+get_keypress_comma = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 44 }
+}
+get_keypress_hyphen = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 45 }
+}
+get_keypress_dot = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 46 }
+}
+get_keypress_slash = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 47 }
+}
+get_keypress_colon = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 58 }
+}
+get_keypress_semicolon = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 59 }
+}
+get_keypress_lesser_than = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 60 }
+}
+get_keypress_equal_to = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 61 }
+}
+get_keypress_greater_than = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 62 }
+}
+get_keypress_question_mark = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 63 }
+}
+get_keypress_at = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 64 }
+}
+get_keypress_0 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 48 }
+}
+get_keypress_1 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 49 }
+}
+get_keypress_2 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 50 }
+}
+get_keypress_3 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 51 }
+}
+get_keypress_4 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 52 }
+}
+get_keypress_5 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 53 }
+}
+get_keypress_6 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 54 }
+}
+get_keypress_7 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 55 }
+}
+get_keypress_8 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 56 }
+}
+get_keypress_9 = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 57 }
+}
+get_keypress_shift_A = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_A = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 65 }
+	}
+}
+get_keypress_shift_B = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_B = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 66 }
+	}
+}
+get_keypress_shift_C = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_C = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 67 }
+	}
+}
+get_keypress_shift_D = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_D = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 68 }
+	}
+}
+get_keypress_shift_E = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_E = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 69 }
+	}
+}
+get_keypress_shift_F = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_F = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 70 }
+	}
+}
+get_keypress_shift_G = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_G = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 71 }
+	}
+}
+get_keypress_shift_H = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_H = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 72 }
+	}
+}
+get_keypress_shift_I = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_I = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 73 }
+	}
+}
+get_keypress_shift_J = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_J = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 74 }
+	}
+}
+get_keypress_shift_K = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_K = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 75 }
+	}
+}
+get_keypress_shift_L = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_L = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 76 }
+	}
+}
+get_keypress_shift_M = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_M = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 77 }
+	}
+}
+get_keypress_shift_N = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_N = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 78 }
+	}
+}
+get_keypress_shift_O = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_O = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 79 }
+	}
+}
+get_keypress_shift_P = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_P = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 80 }
+	}
+}
+get_keypress_shift_Q = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_Q = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 81 }
+	}
+}
+get_keypress_shift_R = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_R = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 82 }
+	}
+}
+get_keypress_shift_S = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_S = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 83 }
+	}
+}
+get_keypress_shift_T = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_T = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 84 }
+	}
+}
+get_keypress_shift_U = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_U = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 85 }
+	}
+}
+get_keypress_shift_V = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_V = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 86 }
+	}
+}
+get_keypress_shift_W = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_W = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 87 }
+	}
+}
+get_keypress_shift_X = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_X = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 88 }
+	}
+}
+get_keypress_shift_Y = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_Y = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 89 }
+	}
+}
+get_keypress_shift_Z = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_shift_Z = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 90 }
+	}
+}
+get_keypress_a = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_a = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 97 }
+	}
+}
+get_keypress_b = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_b = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 98 }
+	}
+}
+get_keypress_c = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_c = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 99 }
+	}
+}
+get_keypress_d = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_d = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 100 }
+	}
+}
+get_keypress_e = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_e = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 101 }
+	}
+}
+get_keypress_f = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_f = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 102 }
+	}
+}
+get_keypress_g = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_g = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 103 }
+	}
+}
+get_keypress_h = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_h = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 104 }
+	}
+}
+get_keypress_i = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_i = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 105 }
+	}
+}
+get_keypress_j = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_j = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 106 }
+	}
+}
+get_keypress_k = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_k = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 107 }
+	}
+}
+get_keypress_l = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_l = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 108 }
+	}
+}
+get_keypress_m = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_m = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 109 }
+	}
+}
+get_keypress_n = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_n = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 110 }
+	}
+}
+get_keypress_o = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_o = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 111 }
+	}
+}
+get_keypress_p = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_p = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 112 }
+	}
+}
+get_keypress_q = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_q = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 113 }
+	}
+}
+get_keypress_r = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_r = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 114 }
+	}
+}
+get_keypress_s = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_s = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 115 }
+	}
+}
+get_keypress_t = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_t = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 116 }
+	}
+}
+get_keypress_u = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_u = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 117 }
+	}
+}
+get_keypress_v = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_v = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 118 }
+	}
+}
+get_keypress_w = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_w = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 119 }
+	}
+}
+get_keypress_x = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_x = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 120 }
+	}
+}
+get_keypress_y = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_y = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 121 }
+	}
+}
+get_keypress_z = {
+	keypress_init = yes
+	if = {
+		limit = { check_variable = { ROOT.rename_language = 2 } }
+		get_ru_keypress_z = yes
+	}
+	else = {
+		set_variable = { chars^current_char = 122 }
+	}
+}
+
+#RU
+get_ru_keypress_shift_A = {
+	
+	set_variable = { chars^current_char = 123 }
+}
+get_ru_keypress_shift_B = {
+	
+	set_variable = { chars^current_char = 124 }
+}
+get_ru_keypress_shift_C = {
+	
+	set_variable = { chars^current_char = 125 }
+}
+get_ru_keypress_shift_D = {
+	
+	set_variable = { chars^current_char = 126 }
+}
+get_ru_keypress_shift_E = {
+	
+	set_variable = { chars^current_char = 127 }
+}
+get_ru_keypress_shift_F = {
+	
+	set_variable = { chars^current_char = 128 }
+}
+get_ru_keypress_shift_G = {
+	
+	set_variable = { chars^current_char = 129 }
+}
+get_ru_keypress_shift_H = {
+	
+	set_variable = { chars^current_char = 130 }
+}
+get_ru_keypress_shift_I = {
+	
+	set_variable = { chars^current_char = 131 }
+}
+get_ru_keypress_shift_J = {
+	
+	set_variable = { chars^current_char = 132 }
+}
+get_ru_keypress_shift_K = {
+	
+	set_variable = { chars^current_char = 133 }
+}
+get_ru_keypress_shift_L = {
+	
+	set_variable = { chars^current_char = 134 }
+}
+get_ru_keypress_shift_M = {
+	
+	set_variable = { chars^current_char = 135 }
+}
+get_ru_keypress_shift_N = {
+	
+	set_variable = { chars^current_char = 136 }
+}
+get_ru_keypress_shift_O = {
+	
+	set_variable = { chars^current_char = 137 }
+}
+get_ru_keypress_shift_P = {
+	
+	set_variable = { chars^current_char = 138 }
+}
+get_ru_keypress_shift_Q = {
+	
+	set_variable = { chars^current_char = 139 }
+}
+get_ru_keypress_shift_R = {
+	
+	set_variable = { chars^current_char = 140 }
+}
+get_ru_keypress_shift_S = {
+	
+	set_variable = { chars^current_char = 141 }
+}
+get_ru_keypress_shift_T = {
+	
+	set_variable = { chars^current_char = 142 }
+}
+get_ru_keypress_shift_U = {
+	
+	set_variable = { chars^current_char = 143 }
+}
+get_ru_keypress_shift_V = {
+	
+	set_variable = { chars^current_char = 144 }
+}
+get_ru_keypress_shift_W = {
+	
+	set_variable = { chars^current_char = 145 }
+}
+get_ru_keypress_shift_X = {
+	
+	set_variable = { chars^current_char = 146 }
+}
+get_ru_keypress_shift_Y = {
+	
+	set_variable = { chars^current_char = 147 }
+}
+get_ru_keypress_shift_Z = {
+	
+	set_variable = { chars^current_char = 148 }
+}
+get_ru_keypress_a = {
+	
+	set_variable = { chars^current_char = 149 }
+}
+get_ru_keypress_b = {
+	
+	set_variable = { chars^current_char = 150 }
+}
+get_ru_keypress_c = {
+	
+	set_variable = { chars^current_char = 151 }
+}
+get_ru_keypress_d = {
+	
+	set_variable = { chars^current_char = 152 }
+}
+get_ru_keypress_e = {
+	
+	set_variable = { chars^current_char = 153 }
+}
+get_ru_keypress_f = {
+	
+	set_variable = { chars^current_char = 154 }
+}
+get_ru_keypress_g = {
+	
+	set_variable = { chars^current_char = 155 }
+}
+get_ru_keypress_h = {
+	
+	set_variable = { chars^current_char = 156 }
+}
+get_ru_keypress_i = {
+	
+	set_variable = { chars^current_char = 157 }
+}
+get_ru_keypress_j = {
+	
+	set_variable = { chars^current_char = 158 }
+}
+get_ru_keypress_k = {
+	
+	set_variable = { chars^current_char = 159 }
+}
+get_ru_keypress_l = {
+	
+	set_variable = { chars^current_char = 160 }
+}
+get_ru_keypress_m = {
+	
+	set_variable = { chars^current_char = 161 }
+}
+get_ru_keypress_n = {
+	
+	set_variable = { chars^current_char = 162 }
+}
+get_ru_keypress_o = {
+	
+	set_variable = { chars^current_char = 163 }
+}
+get_ru_keypress_p = {
+	
+	set_variable = { chars^current_char = 164 }
+}
+get_ru_keypress_q = {
+	
+	set_variable = { chars^current_char = 165 }
+}
+get_ru_keypress_r = {
+	
+	set_variable = { chars^current_char = 166 }
+}
+get_ru_keypress_s = {
+	
+	set_variable = { chars^current_char = 167 }
+}
+get_ru_keypress_t = {
+	
+	set_variable = { chars^current_char = 168 }
+}
+get_ru_keypress_u = {
+	
+	set_variable = { chars^current_char = 169 }
+}
+get_ru_keypress_v = {
+	
+	set_variable = { chars^current_char = 170 }
+}
+get_ru_keypress_w = {
+	
+	set_variable = { chars^current_char = 171 }
+}
+get_ru_keypress_x = {
+	
+	set_variable = { chars^current_char = 172 }
+}
+get_ru_keypress_y = {
+	
+	set_variable = { chars^current_char = 173 }
+}
+get_ru_keypress_z = {
+	
+	set_variable = { chars^current_char = 174 }
+}
+
+
+#extra_russian_word
+get_ru_keypress_shift_ru_X = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 175 }
+}
+get_ru_keypress_shift_TV_ZNAK = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 176 }
+}
+get_ru_keypress_shift_JJ = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 177 }
+}
+get_ru_keypress_shift_IE = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 178 }
+}
+get_ru_keypress_shift_ru_B = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 179 }
+}
+get_ru_keypress_shift_YU = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 180 }
+}
+
+#little
+get_ru_keypress_ru_x = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 181 }
+}
+get_ru_keypress_tv_znak = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 182 }
+}
+get_ru_keypress_jj = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 183 }
+}
+get_ru_keypress_ie = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 184 }
+}
+get_ru_keypress_ru_b = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 185 }
+}
+get_ru_keypress_yu = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 186 }
+}
+
+get_pl_keypress_shift_an = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 187 }
+}
+get_pl_keypress_shift_ci = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 188 }
+}
+get_pl_keypress_shift_ly = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 189 }
+}
+get_pl_keypress_shift_ni = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 190 }
+}
+get_pl_keypress_shift_ou = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 191 }
+}
+get_pl_keypress_shift_si = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 192 }
+}
+get_pl_keypress_shift_zi = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 193 }
+}
+get_pl_keypress_shift_zz = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 194 }
+}
+get_pl_keypress_an = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 195 }
+}
+get_pl_keypress_ci = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 196 }
+}
+get_pl_keypress_ly = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 197 }
+}
+get_pl_keypress_ni = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 198 }
+}
+get_pl_keypress_ou = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 199 }
+}
+get_pl_keypress_si = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 200 }
+}
+get_pl_keypress_zi = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 201 }
+}
+get_pl_keypress_zz = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 202 }
+}
+get_pl_keypress_shift_en = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 203 }
+}
+get_pl_keypress_en = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 204 }
+}
+
+get_de_keypress_shift_ae = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 205 }
+}
+get_de_keypress_shift_oe = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 206 }
+}
+get_de_keypress_shift_ue = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 207 }
+}
+get_de_keypress_shift_ss = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 208 }
+}
+get_de_keypress_ae = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 209 }
+}
+get_de_keypress_oe = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 210 }
+}
+get_de_keypress_ue = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 211 }
+}
+get_de_keypress_ss = {
+	keypress_init = yes
+	set_variable = { chars^current_char = 212 }
+}
+
+
+update_radiation_effects = {
+
+	set_temp_variable = {
+		var = population_grown_radiation_effect_temp
+		value = radiation_var
+	}
+	multiply_temp_variable = {
+		var = population_grown_radiation_effect_temp
+		value = -4.9
+	}
+	set_variable = {
+		var = population_grown_radiation_effect
+		value = population_grown_radiation_effect_temp
+	}
+	set_temp_variable = {
+		var = army_speed_radiation_effect_temp
+		value = radiation_var
+	}
+	multiply_temp_variable = {
+		var = army_speed_radiation_effect_temp
+		value = -0.075
+	}
+	set_variable = {
+		var = army_speed_radiation_effect
+		value = army_speed_radiation_effect_temp
+	}
+	set_temp_variable = {
+		var = constraction_speed_radiation_effect_temp
+		value = radiation_var
+	}
+	multiply_temp_variable = {
+		var = constraction_speed_radiation_effect_temp
+		value = -0.3
+	}
+	set_variable = {
+		var = constraction_speed_radiation_effect
+		value = constraction_speed_radiation_effect_temp
+	}
+	set_temp_variable = {
+		var = repair_speed_radiation_effect_temp
+		value = radiation_var
+	}
+	multiply_temp_variable = {
+		var = repair_speed_radiation_effect_temp
+		value = -0.4
+	}
+	set_variable = {
+		var = repair_speed_radiation_effect
+		value = repair_speed_radiation_effect_temp
+	}
+}
+
+
+add_operation_token_for_FROM = {
+	if = {
+		limit = {
+			NOT = { FROM = { is_in_array = { array = Root.operation_token_array } } }
+		}
+		add_to_array = { operation_token_array = From.id }
+	}
+	meta_effect = {
+		text = {
+			add_operation_token = {
+				tag = FROM
+				token = [TOKEN]
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = operation/[TOKEN]@FROM }
+				}
+				set_country_flag = operation_token/[TOKEN]@FROM
+			}
+			else = {
+				modify_country_flag = {
+					flag = operation/[TOKEN]@FROM
+					value = 1 
+				}
+			}
+		}
+		TOKEN = "[?temp.GetTokenKey]"
+	}
 }
 
 #on_daily_USA = {

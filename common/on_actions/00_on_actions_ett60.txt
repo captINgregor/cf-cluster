@@ -8,6 +8,1104 @@ on_actions = {
 				country_event = { id = inc_res.1 }
 				country_event = { id = shackles.1 }
 			}
+			set_global_flag = killed_population_set
+			set_global_flag = radiation_var_set
+			set_global_flag = radiation_anarchy_when_set
+			set_variable = { global.death_by_nukes_radiation = 0.0 }
+			set_variable = { global.death_by_nukes_radiation_m = 0.0 }
+			set_variable = { global.death_by_nukes_radiation_b = 0.0 }
+			set_variable = { global.death_by_nukes = 0.0 }	
+			every_state = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_0KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = 0.00
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_1KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -2.50
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_2KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -5.00
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_3KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -7.50
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_35KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -8.75
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_4KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -10.00
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_5KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -12.50
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_6KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -15.00
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_8KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -20.00
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_10KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -25.00
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_15KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -37.50
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nukes_kiled_population
+							option = RULE_RN_20KILL
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = killed_population_multiplied
+							value = -50.00
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_0_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 0.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_03_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 0.300
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_05_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 0.500
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_08_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 0.800
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_1_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 1.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_15_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 1.500
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_2_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 2.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_3_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 3.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_5_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 5.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_nuke_radiation_level
+							option = RULE_RN_10_NUKE_RADIATION
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = radiation_var_on_nuke
+							value = 10.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_1_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 1.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_2_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 2.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_3_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 3.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_4_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 4.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_5_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 5.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_6_NUKE_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 6.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_7_NUKE_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 7.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_8_NUKE_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 8.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_9_NUKE_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 9.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_10_NUKE_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 10.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_15_NUKE_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 15.000
+						}
+					}	
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_radiation_anarchy_when
+							option = RULE_RN_20_NUKE_RADIATION_ANARCHY
+						}
+					}
+					every_state = {
+						set_variable = {
+							var = anarchy_when_radiation_x
+							value = 20.000
+						}
+					}	
+				}
+			}
+			G4P = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_anarchy_new_countries
+							option = RULE_RN_NO_NEW_COUNTRIES
+						}
+					}	
+					swap_ideas = {
+						remove_idea = anarafgbrebw
+						add_idea = anarafgbrebw2
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = rn_anarchy_new_countries
+							option = RULE_RN_MOD_NEW_COUNTRIES
+						}
+					}	
+					set_global_flag = new_contries_mod_flag
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = rn_fun_mode
+						option = RULE_RN_ON_FAN_MODE
+					}
+				}
+				every_country = {
+					add_ideas = world_reznya
+					add_nuclear_bombs = 999
+					if = {
+						limit = {
+							is_ai = no
+						}
+						country_event = {
+							id = pzdc.2
+							days = 0
+							random = 0
+							random_days = 0
+						}
+					}	
+				}	
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = rn_fun_mode
+						option = RULE_RN_ON_FAN_MODE_MULTIPL
+					}
+				}
+				every_country = {
+					add_ideas = world_reznya
+					add_nuclear_bombs = 999
+					set_technology = {
+						early_fighter = 1
+					}
+					set_technology = {
+						strategic_bomber1 = 1
+					}
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_0
+						amount = 10
+						producer = PREV
+					}
+					add_equipment_to_stockpile = {
+						type = strat_bomber_equipment_1
+						amount = 3
+						producer = PREV
+					}
+					if = {
+						limit = {
+							is_ai = no
+						}
+						country_event = {
+							id = pzdc.2
+							days = 0
+							random = 0
+							random_days = 0
+						}
+					}	
+				}	
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_5
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 5 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_10
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 10 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_15
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 15 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_20
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 20 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_25
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 25 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_30
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 30 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_50
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 50 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_75
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 75 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_100
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 100 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_150
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 150 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_maximum_operative_status
+						option = NUM_OF_MAXIMUM_OPERATIVE_200
+					}
+				}
+				set_variable = { global.global_setup_maximum_operative = 200 }
+			}
+			
+			#NUM_OF_OPERATIVE_SLOT_STATUS
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_operative_slot_status
+						option = PER_5
+					}
+				}
+				set_variable = { global.global_setup_operative = 5 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_operative_slot_status
+						option = PER_10
+					}
+				}
+				set_variable = { global.global_setup_operative = 10 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_operative_slot_status
+						option = PER_15
+					}
+				}
+				set_variable = { global.global_setup_operative = 15 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_operative_slot_status
+						option = PER_20
+					}
+				}
+				set_variable = { global.global_setup_operative = 20 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_operative_slot_status
+						option = PER_30
+					}
+				}
+				set_variable = { global.global_setup_operative = 30 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = num_of_operative_slot_status
+						option = PER_50
+					}
+				}
+				set_variable = { global.global_setup_operative = 50 }
+			}
+			every_country = {
+				limit = { has_intelligence_agency = yes }
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = operative_slot_idea_dyn } } }
+					add_dynamic_modifier = { modifier = operative_slot_idea_dyn }
+				}
+				set_temp_variable = { operative_slot_temp = num_of_factories }
+				divide_temp_variable = { operative_slot_temp = global.global_setup_operative }
+				set_variable = { operative_slot_var = operative_slot_temp }
+				round_variable = operative_slot_var
+				if = {
+					limit = {
+						NOT = { has_game_rule = { rule = num_of_maximum_operative_status option = DEFAULT } }
+						check_variable = { operative_slot_var > global.global_setup_maximum_operative }
+					}
+					set_variable = { operative_slot_var = global.global_setup_maximum_operative }
+				}
+			}
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				set_variable = { ROOT.marked_states = 0 }
+			}
+		}
+	}
+	on_nuke_drop = {
+	    effect = {
+            FROM = {
+			    set_temp_variable = {
+					var = killed_population
+					value = state_population_k
+				}
+				multiply_temp_variable = {
+					var = killed_population
+					value = killed_population_multiplied
+				}
+				add_manpower = killed_population
+				add_manpower = killed_population
+				add_manpower = killed_population
+				add_manpower = killed_population
+				if = {
+					limit = {
+						NOT = {
+							has_state_flag = has_radiation
+							has_game_rule = {
+								rule = rn_nuke_radiation_level
+								option = RULE_RN_0_NUKE_RADIATION
+							}
+						}
+					}
+					add_dynamic_modifier = { modifier = radiation_state_modifier }
+					set_state_flag = has_radiation
+					set_variable = {
+						var = radiation_var
+						value = 0.100
+					}
+				}
+				add_to_variable = {
+					var = radiation_var
+					value = radiation_var_on_nuke
+				}
+				update_radiation_effects = yes
+				multiply_temp_variable = {
+					var = killed_population
+					value = -0.001
+				}
+				add_to_variable = { global.death_by_nukes_radiation = killed_population }
+				add_to_variable = { global.death_by_nukes_radiation = killed_population }
+				add_to_variable = { global.death_by_nukes_radiation = killed_population }
+				add_to_variable = { global.death_by_nukes_radiation = killed_population }
+				multiply_temp_variable = {
+					var = killed_population
+					value = -0.001
+				}
+				add_to_variable = { global.death_by_nukes_radiation_m = killed_population }
+				add_to_variable = { global.death_by_nukes_radiation_m = killed_population }
+				add_to_variable = { global.death_by_nukes_radiation_m = killed_population }
+				add_to_variable = { global.death_by_nukes_radiation_m = killed_population }
+				multiply_temp_variable = {
+					var = killed_population
+					value = -0.001
+				}
+				add_to_variable = { global.death_by_nukes_radiation_b = killed_population }
+				add_to_variable = { global.death_by_nukes_radiation_b = killed_population }
+				add_to_variable = { global.death_by_nukes_radiation_b = killed_population }
+				add_to_variable = { global.death_by_nukes_radiation_b = killed_population }
+			}
+			add_to_variable = { vp@FROM.owner = 500 }
+		} 
+	}
+	on_weekly = {
+		effect = {
+			every_controlled_state = {
+				limit = {
+					has_state_flag = has_radiation
+				}
+				set_temp_variable = {
+					var = 2_percentual
+					value = radiation_var
+				}
+				multiply_temp_variable = {
+					var = 2_percentual
+					value = 0.975
+				}
+				set_variable = {
+					var = radiation_var
+					value = 2_percentual
+				}
+				add_to_variable = {
+					var = radiation_var
+					value = -0.01
+				}
+				update_radiation_effects = yes
+				if = {
+					limit = {
+						check_variable = {
+							var = radiation_var
+							value = 0.001
+							compare = less_than
+						}
+					}
+					clr_state_flag = has_radiation
+					clear_variable = radiation_var
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_game_rule = {
+								rule = rn_radiation_anarchy_when
+								option = RULE_RN_NO_NUKE_RADIATION_ANARCHY
+							}
+							is_owned_by = G4P 
+						}
+						check_variable = {
+							var = radiation_var
+							value = anarchy_when_radiation_x
+							compare = greater_than_or_equals
+						}
+					}
+					transfer_state_to = G4P
+					set_demilitarized_zone = yes
+				}
+				set_temp_variable = {
+					var = killed_population
+					value = state_population_k
+				}
+				multiply_temp_variable = {
+					var = killed_population
+					value = -0.196
+				}
+				multiply_temp_variable = {
+					var = killed_population
+					value = radiation_var
+				}
+				add_manpower = killed_population
+				multiply_temp_variable = {
+					var = killed_population
+					value = -0.001
+				}
+				add_to_variable = { global.death_by_nukes = killed_population }	
+			}
+			if = {
+				limit = { has_intelligence_agency = yes }
+				if = {
+					limit = { NOT = { has_dynamic_modifier = { modifier = operative_slot_idea_dyn } } }
+					add_dynamic_modifier = { modifier = operative_slot_idea_dyn }
+				}
+				set_temp_variable = { operative_slot_temp = num_of_factories }
+				divide_temp_variable = { operative_slot_temp = global.global_setup_operative }
+				set_variable = { operative_slot_var = operative_slot_temp }
+				round_variable = operative_slot_var
+				if = {
+					limit = {
+						NOT = { has_game_rule = { rule = num_of_maximum_operative_status option = DEFAULT } }
+						check_variable = { operative_slot_var > global.global_setup_maximum_operative }
+					}
+					set_variable = { operative_slot_var = global.global_setup_maximum_operative }
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = pd_ai_want_peace
+					OR = {
+						var:pd_ai_want_peace_with = {
+							NOT = { pd_ai_will_offer_peace = yes }
+						}
+						NOT = { has_war_with = var:pd_ai_want_peace_with }
+					}
+				}
+				clr_country_flag = pd_ai_want_peace
+				clear_variable = pd_ai_want_peace_with 
+				reset_peace_deal_proposal = yes
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					has_war = yes
+					NOT = { has_country_flag = pd_ai_want_peace }
+				}
+				random_enemy_country = {
+					limit = {
+						pd_ai_will_offer_peace = yes
+					}
+					reset_peace_deal_proposal = yes
+					pd_ai_prepare_peace_deal = yes
+					ROOT = {
+						set_country_flag = pd_ai_want_peace
+						set_variable = { pd_ai_want_peace_with = PREV }
+					}
+				}
+			}
+		} 
+	}
+	on_capitulation = {
+		#ROOT是停止抵抗的国家，FROM是战胜国
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						has_country_flag = capitulation_transfer_navy
+					}
+				}
+				ROOT = {
+					# navy_experience = 500
+					#给海军经验是因为改装花费的是建造者的海军经验#
+					# 给经验已经没有意义了，因为会被立刻消费掉
+					transfer_navy = {
+						target = FROM
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_in_faction = yes
+				}
+				random_country = {
+					limit = {
+						is_in_faction_with = ROOT
+						is_faction_leader = yes
+						has_war_with = FROM
+					}
+					set_temp_variable = { pts = FROM.vp@ROOT }
+					divide_temp_variable = { pts = 2 }
+					round_temp_variable = pts
+					add_to_variable = { FROM.vp@THIS = pts }
+				}
+			}
+			set_temp_variable = { tot_pts = 0 }
+			every_owned_state = {
+				limit = {
+					is_controlled_by = FROM
+				}
+				add_to_temp_variable = { tot_pts = THIS.state_strategic_value }
+			}
+			divide_temp_variable = { tot_pts = 2 }
+			round_temp_variable = tot_pts
+			add_to_variable = { FROM.vp@ROOT = tot_pts }
+		}
+	}
+	on_annex = {
+		effect = {
+			every_country = {
+				limit = {
+					FROM = {
+						is_in_array = {
+							array = PREV.embargoed_countries
+							value = THIS.id
+						}
+					}
+				}
+				FROM = { cw_remove_embargo = yes }
+			}
+		}
+	}
+	on_subject_free = {
+		effect = {
+			if = {
+				limit = {
+				has_idea = eda_puppet_demilitarized
+				}
+			remove_ideas = eda_puppet_demilitarized
+			}
+		}
+	}
+	
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					AND = {
+					NOT = { has_idea = eda_puppet_demilitarized }
+					}
+				}
+			country_lock_all_division_template = no
+			}
+		}
+	}
+	on_war_relation_added = {
+		effect = {
+			set_variable = { vp@FROM = 0 }
+			set_variable = { FROM.vp@ROOT = 0 }
+		}
+	}
+
+	on_state_control_changed = {
+		effect = {
+			set_temp_variable = { state_vp = FROM.FROM.state_strategic_value }
+			set_temp_variable = { tot_pts = 0 }
+			every_country = {
+				limit = {
+					has_war_with = FROM
+				}
+				add_to_temp_variable = { tot_pts = num_armies_in_state@FROM.FROM }
+			}
+			every_country = {
+				limit = {
+					has_war_with = FROM
+				}
+				set_temp_variable = { pts = num_armies_in_state@FROM.FROM }
+				divide_temp_variable = { pts = tot_pts }
+				multiply_temp_variable = { pts = state_vp }
+				add_to_variable = { vp@FROM = pts }
+				subtract_from_variable = { FROM.vp@THIS = pts }
+				clamp_variable = {
+					var = FROM.vp@THIS
+					min = 0
+				}
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = next_border_war_allowed_in_this_many_days
+					check_variable = {
+						next_border_war_allowed_in_this_many_days > 0
+					}
+				}
+				subtract_from_variable = {
+					next_border_war_allowed_in_this_many_days = 1
+				}
+			}
+			if = {
+				limit = {
+					has_variable = next_border_war_allowed_in_this_many_days
+					check_variable = {
+						next_border_war_allowed_in_this_many_days = 0
+					}
+				}
+				clr_country_flag = border_war_started_cflag
+			}
+			if = {
+				limit = {
+					has_variable = next_border_war_defender_allowed_in_this_many_days
+					check_variable = {
+						next_border_war_defender_allowed_in_this_many_days > 0
+					}
+				}
+				subtract_from_variable = {
+					next_border_war_defender_allowed_in_this_many_days = 1
+				}
+			}
+			if = {
+				limit = {
+					has_variable = next_border_war_defender_allowed_in_this_many_days
+					check_variable = {
+						next_border_war_defender_allowed_in_this_many_days = 0
+					}
+				}
+				clr_country_flag = border_war_recent_cflag
+			}			
 		}
 	}
 }
