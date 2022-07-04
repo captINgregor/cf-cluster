@@ -93,4 +93,1831 @@ scripted_gui = {
 		triggers = {
 		}
 	}
+
+	cw_embargo_diplomacy_buttons_ui = {
+		window_name = "cw_embargo_diplomacy_buttons"
+		context_type = selected_country_context
+		parent_window_token = selected_country_view
+
+		triggers = {
+			close_button_visible = {
+				ROOT = {
+					OR = {
+						has_country_flag = show_who_embargoes_them
+						has_country_flag = show_who_they_embargo
+					}
+				}
+			}
+		}
+		effects = {
+			close_button_click = {
+				ROOT = {
+					clr_country_flag = show_who_they_embargo
+					clr_country_flag = show_who_embargoes_them
+				}
+			}
+			who_embargos_them_button_click = {
+				ROOT = {
+					set_country_flag = show_who_embargoes_them
+					clr_country_flag = show_who_they_embargo
+					clear_array = ROOT.view_embargoes_list
+				}
+				every_country = {
+					limit = {
+						exists = yes
+						PREV = {
+							is_in_array = {
+								array = PREV.embargoed_countries
+								value = THIS.id
+							}
+						}
+					}
+					add_to_array = {
+				    array = ROOT.view_embargoes_list
+				    value = THIS.id
+					}
+				}
+			}
+			show_who_they_embargo_button_click = {
+				ROOT = {
+					clr_country_flag = show_who_embargoes_them
+					set_country_flag = show_who_they_embargo
+				}
+
+			}
+		}
+		visible = {
+			always = yes
+		}
+	}
+	cw_their_embargo_diplomacy_ui = {
+		window_name = "cw_embargo_info_diplomacy"
+		context_type = selected_country_context
+		parent_window_token = selected_country_view
+
+		visible = {
+			ROOT = { has_country_flag = show_who_they_embargo }
+		}
+		triggers = {
+		}
+		effects = {
+		}
+		dynamic_lists = {
+			coutnries_we_embargo_list_gridbox = {
+				array = THIS.embargoed_countries
+				entry_container = countries_we_embargo_list_entry
+				change_scope = yes
+			}
+		}
+		properties = {
+			country_flag = {
+				image = "[THIS.GetFlag]"
+			}
+		}
+		ai_enabled = {
+      always = no
+    }
+	}
+	cw_countries_that_embargo_them_diplomacy_ui = {
+		window_name = "cw_embargo_info_diplomacy"
+		context_type = selected_country_context
+		parent_window_token = selected_country_view
+
+		visible = {
+			ROOT = { has_country_flag = show_who_embargoes_them }
+		}
+		triggers = {
+		}
+		effects = {
+		}
+		dynamic_lists = {
+			coutnries_we_embargo_list_gridbox = {
+				array = ROOT.view_embargoes_list
+				entry_container = countries_we_embargo_list_entry
+				change_scope = yes
+			}
+		}
+		properties = {
+			country_flag = {
+				image = "[THIS.GetFlag]"
+			}
+		}
+		ai_enabled = {
+      always = no
+    }
+	}
+
+	pd_hiden_mark = {
+		context_type = selected_state_context
+
+		window_name = "pd_hiden_mark"
+
+		visible = {
+			set_temp_variable = { this_state = FROM.FROM }
+			ROOT = {
+				is_ai = no
+				is_in_array = {
+					array = pd_state_list
+					value = this_state
+				}
+			}
+		}
+
+		effects = {
+			pd_hiden_mark_btn_click = {
+				set_temp_variable = { this_state = FROM.FROM }
+				if = {
+					limit = {
+						ROOT = {
+							OR = {
+								is_in_array = {
+									array = pd_take_array
+									value = this_state
+								}
+								is_in_array = {
+									array = pd_puppet_array
+									value = this_state
+								}
+								is_in_array = {
+									array = pd_demilitarize_array
+									value = this_state
+								}
+								is_in_array = {
+									array = pd_liberate_array
+									value = this_state
+								}
+							}
+						}
+					}
+					remove_state_from_list = yes
+				}
+				else = {
+					add_state_to_list = yes
+				}
+			}
+		}
+		
+		triggers = {
+			pd_hiden_mark_btn_click_enabled = {
+				ROOT = {
+					NOT = { has_country_flag = pd_waiting_response }
+					is_ai = no
+				}
+			}
+		}
+	}
+
+	pd_offer_peace_deal_receive = {
+	
+		context_type = diplomatic_action #despite what the error log says, this is how it is meant to be
+		
+		window_name = "pd_offer_peace_deal_receive"
+		
+		visible = {
+			always = yes
+		}
+		
+		dynamic_lists = {
+			pd_take_states_grid = {
+				array = ROOT.pd_take_array
+				change_scope = yes
+				entry_container = "pd_state_list_entry" 
+			}
+			
+			pd_puppet_states_grid = {
+				array = ROOT.pd_puppet_array
+				change_scope = yes
+				entry_container = "pd_state_list_entry" 
+			}
+			
+			pd_demilitarize_states_grid = {
+				array = ROOT.pd_demilitarize_array
+				change_scope = yes
+				entry_container = "pd_state_list_entry" 
+			}
+			
+			pd_liberate_states_grid = {
+				array = ROOT.pd_liberate_array
+				change_scope = yes
+				entry_container = "pd_state_list_entry" 
+			}
+		}
+		
+		triggers = {
+			pd_reperations_text_visible = {
+				ROOT = { has_country_flag = pd_war_reparations }
+			}
+			
+			pd_disarm_text_visible = {
+				ROOT = { has_country_flag = pd_disarm }
+			}
+		}
+		
+		ai_enabled = {
+			always = no
+        }
+		
+		properties = {
+			root_flag = {
+                image = "[Root.GetFlag]"
+            }
+			
+			this_flag = {
+                image = "[This.GetFlag]"
+            }
+		}
+        
+	}
+
+	pd_offer_peace_deal = {
+	
+		context_type = diplomatic_action #despite what the error log says, this is how it is meant to be
+		
+		window_name = "pd_offer_peace_deal"
+		
+		visible = {
+			always = yes
+		}
+		
+		dynamic_lists = {
+			pd_state_grid = {
+				array = ROOT.pd_state_list
+				change_scope = yes
+				entry_container = "[pd_offer_peace_deal_loc]" 
+			}
+		}
+		
+		effects = {
+		
+			# Tab selection
+			
+			pd_tab_take_click = {
+				ROOT = { clr_country_flag = pd_root_gives }
+				reset_peace_deal_proposal = yes
+			}
+			
+			pd_tab_give_click = {
+				ROOT = { set_country_flag = pd_root_gives }
+				reset_peace_deal_proposal = yes
+			}
+		
+			# State marking mode
+		
+			take_click = {
+				set_variable = { ROOT.pd_selected = 1 }
+			}
+		
+			puppet_click = {
+				set_variable = { ROOT.pd_selected = 2 }
+			}
+			
+			demilitarize_click = {
+				set_variable = { ROOT.pd_selected = 3 }
+			}
+			
+			liberate_click = {
+				set_variable = { ROOT.pd_selected = 4 }
+			}
+			
+			# War reparations
+			
+			war_reparations_click = {
+				ROOT = { set_country_flag = pd_war_reparations }
+				#if = {
+				#	limit = { ROOT = { has_country_flag = pd_root_gives } }
+				#	subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
+				#}
+				#else = {
+				#	add_to_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
+				#} 
+			}
+			
+			war_reparations_set_click = {
+				ROOT = { clr_country_flag = pd_war_reparations }
+				#if = {
+				#	limit = { ROOT = { has_country_flag = pd_root_gives } }
+				#	add_to_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
+				#}
+				#else = {
+				#	subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_wr_cost }
+				#} 
+			}
+			
+			# Disarm
+			
+			disarm_click = {
+				ROOT = { set_country_flag = pd_disarm }
+				#if = {
+				#	limit = { ROOT = { has_country_flag = pd_root_gives } }
+				#	subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
+				#}
+				#else = {
+				#	add_to_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
+				#} 
+			}
+			
+			disarm_set_click = {
+				ROOT = { clr_country_flag = pd_disarm }
+				#if = {
+				#	limit = { ROOT = { has_country_flag = pd_root_gives } }
+				#	add_to_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
+				#}
+				#else = {
+				#	subtract_from_variable = { ROOT.pd_total_cost = ROOT.pd_disarm_cost }
+				#} 
+			}
+			
+			# Marking states
+			
+			pd_mark_click = {
+				add_state_to_list = yes
+			}
+			
+			pd_unmark_click = {
+				remove_state_from_list = yes
+			}
+			
+			pd_mark_give_click = {
+				add_state_to_list = yes
+			}
+			
+			pd_unmark_give_click = {
+				remove_state_from_list = yes
+			}
+		}
+		
+		triggers = {
+		
+			# Tab selection
+		
+			pd_take_state_grid_visible = {
+				NOT = { ROOT = { has_country_flag = pd_root_gives } }
+			}
+			
+			pd_tab_take_active_visible = {
+				NOT = { ROOT = { has_country_flag = pd_root_gives } }
+			}
+			
+			pd_give_state_grid_visible = {
+				ROOT = { has_country_flag = pd_root_gives }
+			}
+			
+			pd_tab_give_active_visible = {
+				ROOT = { has_country_flag = pd_root_gives }
+			}
+			
+			pd_mark_give_visible = {
+				ROOT = { has_country_flag = pd_root_gives }
+			}
+			
+			pd_unmark_give_visible = {
+				ROOT = { has_country_flag = pd_root_gives }
+			}
+			
+			# Waitng response disable
+			
+			pd_tab_give_click_enabled = {
+				ROOT = {
+					NOT = { has_country_flag = pd_waiting_response }
+				}
+			}
+		
+			pd_mark_click_enabled = {
+				ROOT = {
+					NOT = { has_country_flag = pd_waiting_response }
+				}
+			}
+			
+			pd_unmark_click_enabled = {
+				ROOT = {
+					NOT = { has_country_flag = pd_waiting_response }
+				}
+			}
+			
+			# State marking mode
+		
+			take_selected_visible = {
+				check_variable = { ROOT.pd_selected = 1 }
+			}
+			
+			puppet_selected_visible = {
+				check_variable = { ROOT.pd_selected = 2 }
+			}
+			
+			demilitarize_selected_visible = {
+				check_variable = { ROOT.pd_selected = 3 }
+			}
+			
+			liberate_selected_visible = {
+				check_variable = { ROOT.pd_selected = 4 }
+			}
+			
+			war_reparations_set_visible = {
+				ROOT = { has_country_flag = pd_war_reparations }
+			}
+			
+			# War reparations
+			
+			war_reparations_click_enabled = {
+				check_variable = { wr_payments < 2 }
+				ROOT = {
+					NOT = { has_country_flag = pd_waiting_response }
+				}
+			}
+			
+			war_reparations_set_click_enabled = {
+				ROOT = {
+					NOT = { has_country_flag = pd_waiting_response }
+				}
+			}
+			
+			# Disarm
+			
+			disarm_set_visible = {
+				ROOT = { has_country_flag = pd_disarm }
+			}
+			
+			disarm_click_enabled = {
+				ROOT = {
+					NOT = { has_country_flag = pd_waiting_response }
+				}
+			}
+			
+			disarm_set_click_enabled = {
+				ROOT = {
+					NOT = { has_country_flag = pd_waiting_response }
+				}
+			}
+			
+			# Acceptance icon
+			
+			accept_icon_yes_visible = {
+				pd_ai_will_accept = yes
+			}
+			
+			accept_icon_no_visible = {
+				NOT = { pd_ai_will_accept = yes }
+			}
+		}
+		
+		ai_enabled = {
+			always = no # Handled in a different way
+        }
+        
+	}
+
+	rename_faction_sg_opener = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "rename_faction_opener_container"
+		visible = {
+			is_ai = no
+			is_faction_leader = yes
+		}
+		effects = {
+			rename_faction_open_click = {
+				if = {
+					limit = { NOT = { has_variable = rename_faction_open } }
+					clear_array = chars
+					clear_variable = current_char
+					set_variable = { rename_faction_open = 1 }
+					if = {
+						limit = { NOT = { has_variable = ROOT.rename_language} }
+						set_variable = { ROOT.rename_language = 1 }
+					}
+				}
+			}
+		}
+	}
+	rename_faction_sg = {
+	
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "rename_faction_container"
+		
+		visible = {
+			is_ai = no
+			is_faction_leader = yes
+			check_variable = { rename_faction_open = 1 }
+		}
+		
+		properties = {
+			lang = {
+				frame = ROOT.rename_language
+			}
+		}
+
+		effects = {
+			close_click = {
+				clear_array = chars
+				clear_variable = current_char
+				clear_variable = rename_faction_open
+			}
+			
+			lang_click = {
+				add_to_variable = { ROOT.rename_language = 1 }
+				if = {
+					limit = { check_variable = { ROOT.rename_language > 4 } }
+					set_variable = { ROOT.rename_language = 1 }
+				}
+			}
+
+			rename_faction_button_click = {
+				rename_faction_effect = yes
+				clear_array = chars
+				clear_variable = current_char
+				clear_variable = rename_faction_open
+			}
+
+			# COMMON
+			keypress_backspace_click = {
+				get_keypress_backspace = yes
+			}
+
+			keypress_space_click = { get_keypress_space = yes }
+			keypress_exclamation_mark_click = { get_keypress_exclamation_mark = yes }
+			keypress_lbracket_click = { get_keypress_lbracket = yes }
+			keypress_rbracket_click = { get_keypress_rbracket = yes }
+			keypress_asterix_click = { get_keypress_asterix = yes }
+			keypress_plus_click = { get_keypress_plus = yes }
+			keypress_comma_click = { get_keypress_comma = yes }
+			keypress_hyphen_click = { get_keypress_hyphen = yes }
+			keypress_dot_click = { get_keypress_dot = yes }
+			keypress_slash_click = { get_keypress_slash = yes }
+			keypress_colon_click = { get_keypress_colon = yes }
+			keypress_semicolon_click = { get_keypress_semicolon = yes }
+			keypress_lesser_than_click = { get_keypress_lesser_than = yes }
+			keypress_equal_to_click = { get_keypress_equal_to = yes }
+			keypress_greater_than_click = { get_keypress_greater_than = yes }
+			keypress_question_mark_click = { get_keypress_question_mark = yes }
+			keypress_at_click = { get_keypress_at = yes }
+			keypress_0_click = { get_keypress_0 = yes }
+			keypress_1_click = { get_keypress_1 = yes }
+			keypress_2_click = { get_keypress_2 = yes }
+			keypress_3_click = { get_keypress_3 = yes }
+			keypress_4_click = { get_keypress_4 = yes }
+			keypress_5_click = { get_keypress_5 = yes }
+			keypress_6_click = { get_keypress_6 = yes }
+			keypress_7_click = { get_keypress_7 = yes }
+			keypress_8_click = { get_keypress_8 = yes }
+			keypress_9_click = { get_keypress_9 = yes }
+
+			# ENG
+			keypress_shift_A_click = { get_keypress_shift_A = yes }
+			keypress_shift_B_click = { get_keypress_shift_B = yes }
+			keypress_shift_C_click = { get_keypress_shift_C = yes }
+			keypress_shift_D_click = { get_keypress_shift_D = yes }
+			keypress_shift_E_click = { get_keypress_shift_E = yes }
+			keypress_shift_F_click = { get_keypress_shift_F = yes }
+			keypress_shift_G_click = { get_keypress_shift_G = yes }
+			keypress_shift_H_click = { get_keypress_shift_H = yes }
+			keypress_shift_I_click = { get_keypress_shift_I = yes }
+			keypress_shift_J_click = { get_keypress_shift_J = yes }
+			keypress_shift_K_click = { get_keypress_shift_K = yes }
+			keypress_shift_L_click = { get_keypress_shift_L = yes }
+			keypress_shift_M_click = { get_keypress_shift_M = yes }
+			keypress_shift_N_click = { get_keypress_shift_N = yes }
+			keypress_shift_O_click = { get_keypress_shift_O = yes }
+			keypress_shift_P_click = { get_keypress_shift_P = yes }
+			keypress_shift_Q_click = { get_keypress_shift_Q = yes }
+			keypress_shift_R_click = { get_keypress_shift_R = yes }
+			keypress_shift_S_click = { get_keypress_shift_S = yes }
+			keypress_shift_T_click = { get_keypress_shift_T = yes }
+			keypress_shift_U_click = { get_keypress_shift_U = yes }
+			keypress_shift_V_click = { get_keypress_shift_V = yes }
+			keypress_shift_W_click = { get_keypress_shift_W = yes }
+			keypress_shift_X_click = { get_keypress_shift_X = yes }
+			keypress_shift_Y_click = { get_keypress_shift_Y = yes }
+			keypress_shift_Z_click = { get_keypress_shift_Z = yes }
+			keypress_a_click = { get_keypress_a = yes }
+			keypress_b_click = { get_keypress_b = yes }
+			keypress_c_click = { get_keypress_c = yes }
+			keypress_d_click = { get_keypress_d = yes }
+			keypress_e_click = { get_keypress_e = yes }
+			keypress_f_click = { get_keypress_f = yes }
+			keypress_g_click = { get_keypress_g = yes }
+			keypress_h_click = { get_keypress_h = yes }
+			keypress_i_click = { get_keypress_i = yes }
+			keypress_j_click = { get_keypress_j = yes }
+			keypress_k_click = { get_keypress_k = yes }
+			keypress_l_click = { get_keypress_l = yes }
+			keypress_m_click = { get_keypress_m = yes }
+			keypress_n_click = { get_keypress_n = yes }
+			keypress_o_click = { get_keypress_o = yes }
+			keypress_p_click = { get_keypress_p = yes }
+			keypress_q_click = { get_keypress_q = yes }
+			keypress_r_click = { get_keypress_r = yes }
+			keypress_s_click = { get_keypress_s = yes }
+			keypress_t_click = { get_keypress_t = yes }
+			keypress_u_click = { get_keypress_u = yes }
+			keypress_v_click = { get_keypress_v = yes }
+			keypress_w_click = { get_keypress_w = yes }
+			keypress_x_click = { get_keypress_x = yes }
+			keypress_y_click = { get_keypress_y = yes }
+			keypress_z_click = { get_keypress_z = yes }
+
+			# PL special chars
+			pl_keypress_shift_an_click = { get_pl_keypress_shift_an = yes }
+			pl_keypress_shift_ci_click = { get_pl_keypress_shift_ci = yes }
+			pl_keypress_shift_ly_click = { get_pl_keypress_shift_ly = yes }
+			pl_keypress_shift_ni_click = { get_pl_keypress_shift_ni = yes }
+			pl_keypress_shift_ou_click = { get_pl_keypress_shift_ou = yes }
+			pl_keypress_shift_si_click = { get_pl_keypress_shift_si = yes }
+			pl_keypress_shift_zi_click = { get_pl_keypress_shift_zi = yes }
+			pl_keypress_shift_zz_click = { get_pl_keypress_shift_zz = yes }
+			pl_keypress_shift_en_click = { get_pl_keypress_shift_en = yes }
+			pl_keypress_an_click = { get_pl_keypress_an = yes }
+			pl_keypress_ci_click = { get_pl_keypress_ci = yes }
+			pl_keypress_ly_click = { get_pl_keypress_ly = yes }
+			pl_keypress_ni_click = { get_pl_keypress_ni = yes }
+			pl_keypress_ou_click = { get_pl_keypress_ou = yes }
+			pl_keypress_si_click = { get_pl_keypress_si = yes }
+			pl_keypress_zi_click = { get_pl_keypress_zi = yes }
+			pl_keypress_zz_click = { get_pl_keypress_zz = yes }
+			pl_keypress_en_click = { get_pl_keypress_en = yes }
+
+			# RU special chars by DRAFT
+			ru_keypress_shift_ru_X_click = { get_ru_keypress_shift_ru_X = yes }
+			ru_keypress_shift_TV_ZNAK_click = { get_ru_keypress_shift_TV_ZNAK = yes }
+			ru_keypress_shift_JJ_click = { get_ru_keypress_shift_JJ = yes }
+			ru_keypress_shift_IE_click = { get_ru_keypress_shift_IE = yes }
+			ru_keypress_shift_ru_B_click = { get_ru_keypress_shift_ru_B = yes }
+			ru_keypress_shift_YU_click = { get_ru_keypress_shift_YU = yes }
+			ru_keypress_ru_x_click = { get_ru_keypress_ru_x = yes }
+			ru_keypress_tv_znak_click = { get_ru_keypress_tv_znak = yes }
+			ru_keypress_jj_click = { get_ru_keypress_jj = yes }
+			ru_keypress_ie_click = { get_ru_keypress_ie = yes }
+			ru_keypress_ru_b_click = { get_ru_keypress_ru_b = yes }
+			ru_keypress_yu_click = { get_ru_keypress_yu = yes }
+		
+			#GER special chars
+			de_keypress_shift_ae_click = { get_de_keypress_shift_ae = yes }
+			de_keypress_shift_oe_click = { get_de_keypress_shift_oe = yes }
+			de_keypress_shift_ue_click = { get_de_keypress_shift_ue = yes }
+			de_keypress_shift_ss_click = { get_de_keypress_shift_ss = yes }
+			de_keypress_ae_click = { get_de_keypress_ae = yes }
+			de_keypress_oe_click = { get_de_keypress_oe = yes }
+			de_keypress_ue_click = { get_de_keypress_ue = yes }
+			de_keypress_ss_click = { get_de_keypress_ss = yes }
+		}
+
+		triggers = {
+			#PL special chars
+			pl_keypress_shift_an_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_shift_ci_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_shift_ly_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_shift_ni_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_shift_ou_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_shift_si_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_shift_zi_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_shift_zz_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_shift_en_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_an_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_ci_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_ly_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_ni_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_ou_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_si_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_zi_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_zz_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+			pl_keypress_en_click_enabled = { check_variable = { ROOT.rename_language = 3 } }
+
+			#RU special chars by DRAFT
+			ru_keypress_shift_ru_X_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_shift_TV_ZNAK_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_shift_JJ_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_shift_IE_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_shift_ru_B_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_shift_YU_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_ru_x_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_tv_znak_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_jj_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_ie_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_ru_b_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+			ru_keypress_yu_click_enabled = { check_variable = { ROOT.rename_language = 2 } }
+		
+			#GER special chars
+			de_keypress_shift_ae_click_enabled = { check_variable = { ROOT.rename_language = 4 } }
+			de_keypress_shift_oe_click_enabled = { check_variable = { ROOT.rename_language = 4 } }
+			de_keypress_shift_ue_click_enabled = { check_variable = { ROOT.rename_language = 4 } }
+			de_keypress_shift_ss_click_enabled = { check_variable = { ROOT.rename_language = 4 } }
+			de_keypress_ae_click_enabled = { check_variable = { ROOT.rename_language = 4 } }
+			de_keypress_oe_click_enabled = { check_variable = { ROOT.rename_language = 4 } }
+			de_keypress_ue_click_enabled = { check_variable = { ROOT.rename_language = 4 } }
+			de_keypress_ss_click_enabled = { check_variable = { ROOT.rename_language = 4 } }
+		}
+	}
+
+	st_country_powers = {
+	
+		context_type = selected_country_context
+		
+		window_name = "st_subject_powers_container"
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+				has_country_flag = transfer_enabled
+			}
+		}
+		
+		effects = {
+		
+			mark_all_states_click = {
+				set_temp_variable = { ROOT.marks = this}
+				var:marks = {
+					every_owned_state = {
+						limit = {
+							NOT = { has_state_flag = marked_for_transfer }
+						}
+						set_state_flag = marked_for_transfer
+						add_to_variable = { ROOT.marked_states = 1 }
+						#set_border_war = yes
+					}
+				}
+			}
+		
+			mark_colonial_states_click  = {
+				set_temp_variable = { ROOT.marks = this}
+				var:marks = {
+					every_owned_state = {
+						limit = {
+							NOT = { is_in_home_area = yes }
+							NOT = { is_core_of = PREV }
+							NOT = { has_state_flag = marked_for_transfer }
+						}
+						set_state_flag = marked_for_transfer
+						add_to_variable = { ROOT.marked_states = 1 }
+						#set_border_war = yes
+					}
+				}
+			}
+		
+			clear_all_markings_click = {
+				ROOT = { 
+					set_variable = { marked_states = 0 }
+				}
+				every_state = {
+					limit = {
+						has_state_flag = marked_for_transfer
+						OR = {
+							is_owned_and_controlled_by = ROOT
+							any_country = {
+								is_ai = yes
+								is_subject_of = ROOT
+								owns_state = PREV
+							}
+						}
+					}
+					clr_state_flag = marked_for_transfer
+					#set_border_war = no
+				}
+			}
+			
+			award_states_click = {
+				ROOT = { 
+					set_variable = { marked_states = 0 }
+				}
+				set_temp_variable = { ROOT.taker = this}
+				
+				every_state = {
+					limit = {
+						has_state_flag = marked_for_transfer
+						OR = {
+							is_owned_and_controlled_by = ROOT
+							any_country = {
+								is_ai = yes
+								is_subject_of = ROOT
+								owns_state = PREV
+							}
+						}
+					}
+					var:taker = { transfer_state = PREV }
+					clr_state_flag = marked_for_transfer
+					#set_border_war = no
+				}
+			}
+		}
+		
+		triggers = {
+		
+			mark_all_states_click_enabled = {
+				any_owned_state = {
+					NOT = { has_state_flag = marked_for_transfer }
+				}
+			}
+			
+			mark_all_states_visible = {
+				set_temp_variable = { ROOT.taker = this}
+				OR = {
+					ROOT = {
+						tag = var:taker
+					}
+					AND = {
+						has_game_rule = {
+							rule = allow_subject_transfers
+							option = FREE
+						}
+						any_country = {
+							is_ai = yes
+							is_subject_of = ROOT
+						}
+					}
+					AND = {
+						has_game_rule = {
+							rule = allow_subject_transfers
+							option = LOW_AUTONOMY_ONLY
+						}
+						any_country = {
+							is_ai = yes
+							is_subject_of = ROOT
+							compare_autonomy_state < autonomy_colony
+						}
+					}
+				}
+			}
+		
+			mark_colonial_states_click_enabled = {
+				any_owned_state = {
+					NOT = { is_in_home_area = yes }
+					NOT = { has_state_flag = marked_for_transfer }
+					NOT = { is_core_of = this }
+				}
+			}
+			
+			mark_colonial_states_visible = {
+				set_temp_variable = { ROOT.taker = this}
+				OR = {
+					ROOT = {
+						tag = var:taker
+					}
+					AND = {
+						has_game_rule = {
+							rule = allow_subject_transfers
+							option = FREE
+						}
+						any_country = {
+							is_ai = yes
+							is_subject_of = ROOT
+						}
+					}
+					AND = {
+						has_game_rule = {
+							rule = allow_subject_transfers
+							option = LOW_AUTONOMY_ONLY
+						}
+						any_country = {
+							is_ai = yes
+							is_subject_of = ROOT
+							compare_autonomy_state < autonomy_colony
+						}
+					}
+				}
+			}
+			
+			clear_all_markings_click_enabled = {
+				check_variable = { ROOT.marked_states > 0 }
+			}
+		
+			award_states_click_enabled = {
+				check_variable = { ROOT.marked_states > 0 }
+				NOT = { 
+					ROOT = { 
+						all_owned_state = {
+							has_state_flag = marked_for_transfer
+						} 
+					}
+				}
+			}
+		
+		}
+        
+	}
+	st_give_state = {
+	
+		context_type = diplomatic_action #despite what the error log says, this is how it is meant to be
+		
+		window_name = "st_give_state"
+		
+		visible = {
+			ROOT = {
+				is_ai = no  
+			}
+		}
+		
+		dynamic_lists = {
+			# name of the grid box gui element
+			st_state_grid = {
+				array = ROOT.owned_controlled_states
+				change_scope = yes
+				entry_container = "[st_give_state_entry_loc]" 
+			}
+		}
+		
+		effects = {
+			st_mark_click = {
+				THIS = { 
+					set_state_flag = marked_for_transfer 
+				}
+				add_to_variable = { ROOT.marked_states = 1 }
+			}
+			
+			st_unmark_click = {
+				THIS = { 
+					clr_state_flag = marked_for_transfer 
+				}
+				subtract_from_variable = { ROOT.marked_states = 1 }
+			}
+			
+			mark_all_states_click = {
+				ROOT = {
+					every_owned_state = {
+						limit = {
+							NOT = { has_state_flag = marked_for_transfer }
+						}
+						set_state_flag = marked_for_transfer
+						add_to_variable = { ROOT.marked_states = 1 }
+					}
+				}
+			}
+		
+			mark_colonial_states_click  = {
+				ROOT = {
+					every_owned_state = {
+						limit = {
+							NOT = { is_in_home_area = yes }
+							NOT = { is_core_of = PREV }
+							NOT = { has_state_flag = marked_for_transfer }
+						}
+						set_state_flag = marked_for_transfer
+						add_to_variable = { ROOT.marked_states = 1 }
+					}
+				}
+			}
+		
+			clear_all_markings_click = {
+				ROOT = { 
+					set_variable = { marked_states = 0 }
+				}
+				every_state = {
+					limit = {
+						has_state_flag = marked_for_transfer
+						is_owned_and_controlled_by = ROOT
+					}
+					clr_state_flag = marked_for_transfer
+				}
+			}
+			
+		}
+		
+		triggers = {
+			
+			mark_all_states_click_enabled = {
+				ROOT = { 
+					any_owned_state = {
+						NOT = { has_state_flag = marked_for_transfer }
+					}
+				}
+			}
+		
+			mark_colonial_states_click_enabled = {
+				ROOT = { 
+					any_owned_state = {
+						NOT = { is_in_home_area = yes }
+						NOT = { has_state_flag = marked_for_transfer }
+						NOT = { is_core_of = ROOT }
+						is_fully_controlled_by = ROOT
+					}
+				}
+			}
+			
+			clear_all_markings_click_enabled = {
+				check_variable = { ROOT.marked_states > 0 }
+			}
+		
+		}
+        
+	}
+
+	st_open = {
+		context_type = player_context
+
+		window_name = "st_open_container"
+
+		parent_window_token = top_bar
+
+		visible = {
+			NOT = { has_country_flag = hidden_switch }
+			has_game_rule = {
+				rule = use_new_tool 
+				option = NO
+			}
+		}
+
+		effects = {
+			open_ST_click = {
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = transfer_enabled } } }
+					ROOT = { set_country_flag = transfer_enabled }
+				}
+				else = {
+					ROOT = { clr_country_flag = transfer_enabled }
+				}
+			}
+		}
+		triggers = {
+			open_ST_click_enabled = {
+				always = yes
+			}
+		}
+	}
+	
+	st_hide = {
+		context_type = player_context
+
+		window_name = "st_hide_container"
+
+		visible = {
+			has_game_rule = {
+				rule = use_new_tool 
+				option = NO 
+			}
+		}
+
+		effects = {
+			hide_ST_click = {
+				if = {
+					limit = { NOT = { has_country_flag = hidden_switch } }
+					set_country_flag = hidden_switch
+				}
+				else = {
+					clr_country_flag = hidden_switch
+				}
+			}
+		}
+		triggers = {
+			hide_ST_click_enabled = {
+				always = yes
+			}
+		}
+	}
+
+	st_state_manager_powers = {
+	
+		context_type = selected_state_context
+		
+		window_name = "st_state_manager_powers_container"
+		
+		visible = {
+			ROOT = {
+				is_ai = no
+				has_country_flag = transfer_enabled
+			}
+			OR = {
+				is_owned_and_controlled_by = ROOT
+				AND = {
+					has_game_rule = {
+						rule = allow_subject_transfers
+						option = FREE
+					}
+					any_country = {
+						is_ai = yes
+						is_subject_of = ROOT
+						owns_state = FROM
+					}
+				}
+				AND = {
+					has_game_rule = {
+						rule = allow_subject_transfers
+						option = LOW_AUTONOMY_ONLY
+					}
+					any_country = {
+						is_ai = yes
+						is_subject_of = ROOT
+						compare_autonomy_state < autonomy_colony
+						owns_state = FROM
+					}
+				}
+			}
+		}
+		
+		effects = {
+			
+			st_state_manager_power_mark_for_transfer_click = {
+				FROM.FROM = { 
+					set_state_flag = marked_for_transfer
+					#set_border_war = yes
+				}
+				add_to_variable = { ROOT.marked_states = 1 }
+			}
+			
+			st_state_manager_power_unmark_for_transfer_click = {
+				FROM.FROM = { 
+					clr_state_flag = marked_for_transfer 
+					#set_border_war = no
+				}
+				subtract_from_variable = { ROOT.marked_states = 1 }
+			}
+		}
+		
+		triggers = {
+		
+			st_state_manager_power_mark_for_transfer_click_enabled = {
+				FROM.FROM = {
+					NOT = { has_state_flag = marked_for_transfer }
+				}
+			}
+			st_state_manager_power_mark_for_transfer_visible = {
+				FROM.FROM = {
+					NOT = { has_state_flag = marked_for_transfer }
+				}
+			}
+			st_state_manager_power_unmark_for_transfer_visible = {
+				FROM.FROM = {
+					has_state_flag = marked_for_transfer
+				}
+			}
+		}
+		
+	}
+	
+	st_take_state = {
+	
+		context_type = diplomatic_action #despite what the error log says, this is how it is meant to be
+		
+		window_name = "st_take_state"
+		
+		visible = {
+			ROOT = {
+				is_ai = no  
+			}
+		}
+		
+		dynamic_lists = {
+			# name of the grid box gui element
+			st_state_grid = {
+				array = owned_controlled_states
+				change_scope = yes
+				entry_container = "[st_give_state_entry_loc]" 
+			}
+		}
+		
+		effects = {
+			st_mark_click = {
+				THIS = { 
+					set_state_flag = marked_for_transfer 
+				}
+				add_to_variable = { ROOT.marked_states = 1 }
+			}
+			
+			st_unmark_click = {
+				THIS = { 
+					clr_state_flag = marked_for_transfer 
+				}
+				subtract_from_variable = { ROOT.marked_states = 1 }
+			}
+		
+			clear_all_markings_click = {
+				ROOT = { 
+					set_variable = { marked_states = 0 }
+				}
+				every_state = {
+					limit = {
+						has_state_flag = marked_for_transfer
+						is_owned_and_controlled_by = THIS
+					}
+					clr_state_flag = marked_for_transfer
+				}
+			}
+			
+		}
+		
+		triggers = {
+			
+			mark_all_states_visible = {
+				always = no
+			}
+		
+			mark_colonial_states_visible = {
+				always = no
+			}
+			
+			clear_all_markings_click_enabled = {
+				check_variable = { ROOT.marked_states > 0 }
+			}
+		
+		}
+        
+	}
+
+	state_interactions_gui = {
+		context_type = selected_state_context
+		window_name = "state_interactions_container"
+		
+		visible = {
+			always = yes
+		}
+
+		effects = {
+
+			###CLICK
+
+			#coring
+			coring1_button_click = {
+				ROOT = { 
+					add_political_power = -25
+				}
+				add_core_of = FROM
+			}
+			coring2_button_click = {
+				ROOT = { 
+					add_political_power = -30
+				}
+				add_core_of = FROM
+			}
+			coring3_button_click = {
+				ROOT = { 
+					add_political_power = -40
+				}
+				add_core_of = FROM
+			}
+			coring4_button_click = {
+				ROOT = { 
+					add_political_power = -75
+				}
+				add_core_of = FROM
+			}
+			coring5_button_click = {
+				ROOT = { 
+					add_political_power = -100
+				}
+				add_core_of = FROM
+			}
+			coring6_button_click = {
+				ROOT = { 
+					add_political_power = -125
+				}
+				add_core_of = FROM
+			}
+			coring7_button_click = {
+				ROOT = { 
+					add_political_power = -150
+				}
+				add_core_of = FROM
+			}
+			coring8_button_click = {
+				ROOT = { 
+					add_political_power = -250
+				}
+				add_core_of = FROM
+			}
+
+			#uncoring
+			uncoring1_button_click = {
+				ROOT = { 
+					add_political_power = -5
+				}
+				remove_core_of = FROM
+				start_resistance = yes
+				force_enable_resistance = ROOT
+				set_compliance = 30
+			}
+			uncoring2_button_click = {
+				ROOT = { 
+					add_political_power = -10
+				}
+				remove_core_of = FROM
+				start_resistance = yes
+				force_enable_resistance = ROOT
+				set_compliance = 30
+			}
+			uncoring3_button_click = {
+				ROOT = { 
+					add_political_power = -15
+				}
+				remove_core_of = FROM
+				start_resistance = yes
+				force_enable_resistance = ROOT
+				set_compliance = 30
+			}
+			uncoring4_button_click = {
+				ROOT = { 
+					add_political_power = -20
+				}
+				remove_core_of = FROM
+				start_resistance = yes
+				force_enable_resistance = ROOT
+				set_compliance = 30
+			}
+			uncoring5_button_click = {
+				ROOT = { 
+					add_political_power = -25
+				}
+				remove_core_of = FROM
+				start_resistance = yes
+				force_enable_resistance = ROOT
+				set_compliance = 30
+			}
+			uncoring6_button_click = {
+				ROOT = { 
+					add_political_power = -30
+				}
+				remove_core_of = FROM
+				start_resistance = yes
+				force_enable_resistance = ROOT
+				set_compliance = 30
+			}
+			uncoring7_button_click = {
+				ROOT = { 
+					add_political_power = -35
+				}
+				remove_core_of = FROM
+				start_resistance = yes
+				force_enable_resistance = ROOT
+				set_compliance = 30
+			}
+			uncoring8_button_click = {
+				ROOT = { 
+					add_political_power = -40
+				}
+				remove_core_of = FROM
+				start_resistance = yes
+				force_enable_resistance = ROOT
+				set_compliance = 30
+			}
+
+			#move capital
+			move_capital_button_click = {
+				ROOT = { 
+					add_political_power = -200
+					set_capital = {state = PREV}
+				}
+			}
+
+			#request resource rights
+			request_resource_rights_button_click = {
+				random_country = {
+					limit = {
+						owns_state = FROM
+						NOT = { tag = ROOT }
+					}
+					give_resource_rights = {
+						receiver = ROOT
+						state = FROM
+					}
+					ROOT = {
+						remove_relation_modifier = {
+							target = PREV
+							modifier = resource_rights_given_opmod
+						}
+						add_political_power = -25
+					}
+				}
+				set_state_flag = rt56rp_resource_rights_sflag
+			}
+
+			#remove_resource rights
+			remove_resource_rights_button_click = {
+				every_country = {
+					remove_resource_rights = PREV
+				}
+				ROOT = {
+					add_political_power = -25
+				}
+				clr_state_flag = rt56rp_resource_rights_sflag
+			}		
+
+			#border war
+			border_war_button_click = {
+				ROOT = {
+					set_variable = { next_border_war_allowed_in_this_many_days = 365 }
+					set_country_flag = {
+						flag = border_war_started_cflag
+						days = 365
+						value = 1
+					}
+					add_political_power = -50
+					add_command_power = -25
+				}
+				random_neighbor_state = {
+					limit = {
+						is_owned_and_controlled_by = ROOT
+					}
+					start_border_war = {
+						change_state_after_war = yes
+						attacker = {
+							state = THIS
+							num_provinces = 1
+							#on_win = japan_border_conflict.2
+							#on_lose = japan_border_conflict.3
+							#on_cancel = japan_border_conflict.4
+						}
+									
+						defender = {
+							state = PREV
+							num_provinces = 1
+							#on_win = japan_border_conflict.3
+							#on_lose = japan_border_conflict.2
+							#on_cancel = japan_border_conflict.4
+						}
+					}
+				}
+				owner = {
+					set_variable = { next_border_war_defender_allowed_in_this_many_days = 180 }
+					set_country_flag = {
+						flag = border_war_recent_cflag
+						days = 180
+						value = 1
+					}
+				}
+			}
+		}
+
+		triggers = {
+
+			###VISIBILITY
+
+			#coring
+			coring1_button_visible = {
+				NOT = { state_population > 50000 }
+			}
+			coring2_button_visible = {
+				state_population > 50000
+				NOT = { state_population > 100000 }
+			}
+			coring3_button_visible = {
+				state_population > 100000
+				NOT = { state_population > 250000 }
+			}
+			coring4_button_visible = {
+				state_population > 250000
+				NOT = { state_population > 500000 }
+			}
+			coring5_button_visible = {
+				state_population > 500000
+				NOT = { state_population > 1000000 }
+			}
+			coring6_button_visible = {
+				state_population > 1000000
+				NOT = { state_population > 5000000 }
+			}
+			coring7_button_visible = {
+				state_population > 5000000
+				NOT = { state_population > 10000000 }
+			}
+			coring8_button_visible = {
+				state_population > 10000000
+			}
+			
+			#uncoring
+			uncoring1_button_visible = {
+				NOT = { state_population > 50000 }
+			}
+			uncoring2_button_visible = {
+				state_population > 50000
+				NOT = { state_population > 100000 }
+			}
+			uncoring3_button_visible = {
+				state_population > 100000
+				NOT = { state_population > 250000 }
+			}
+			uncoring4_button_visible = {
+				state_population > 250000
+				NOT = { state_population > 500000 }
+			}
+			uncoring5_button_visible = {
+				state_population > 500000
+				NOT = { state_population > 1000000 }
+			}
+			uncoring6_button_visible = {
+				state_population > 1000000
+				NOT = { state_population > 5000000 }
+			}
+			uncoring7_button_visible = {
+				state_population > 5000000
+				NOT = { state_population > 10000000 }
+			}
+			uncoring8_button_visible = {
+				state_population > 10000000
+			}
+
+			#move capital
+			move_capital_button_visible = {
+				always = yes					#this is the only button so always visible
+			}
+			
+			#request resource rights
+			request_resource_rights_button_visible = {
+				always = yes					#this is the only button so always visible
+			}
+			
+			#remove resource rights
+			remove_resource_rights_button_visible = {
+				always = yes					#this is the only button so always visible
+			}
+			
+			#border war
+			border_war_button_visible = {
+				always = yes					#this is the only button so always visible
+			}
+
+			###ENABLED
+
+			#coring
+			coring1_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 9.99 }
+			}
+			coring2_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 14.99 }
+			}
+			coring3_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 24.99 }
+			}
+			coring4_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 49.99 }
+			}
+			coring5_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 74.99 }
+			}
+			coring6_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 99.99 }
+			}
+			coring7_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 149.99 }
+			}
+			coring8_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
+				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 249.99 }
+			}
+
+			#uncoring
+			uncoring1_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 4.99 }
+			}
+			uncoring2_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 9.99 }
+			}
+			uncoring3_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 14.99 }
+			}
+			uncoring4_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 19.99 }
+			}
+			uncoring5_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 24.99 }
+			}
+			uncoring6_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 29.99 }
+			}
+			uncoring7_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 34.99 }
+			}
+			uncoring8_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
+				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
+				check_variable = { ROOT.political_power > 39.99 }
+			}
+			
+			#move capital
+			move_capital_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = MOVE_CAPITAL_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = MOVE_CAPITAL_BUTTON_TRIGGER2_TT is_core_of = FROM }
+				custom_trigger_tooltip = { tooltip = MOVE_CAPITAL_BUTTON_TRIGGER3_TT is_capital = no }
+				check_variable = { ROOT.political_power > 199.99 }
+			}
+			
+			#request resource rights
+			request_resource_rights_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = REQUEST_RESOURCE_RIGHTS_BUTTON_TRIGGER1_TT NOT = { is_owned_and_controlled_by = ROOT } }
+				custom_trigger_tooltip = { tooltip = REQUEST_RESOURCE_RIGHTS_BUTTON_TRIGGER2_TT NOT = { has_state_flag = rt56rp_resource_rights_sflag } }
+				custom_trigger_tooltip = {
+					tooltip = REQUEST_RESOURCE_RIGHTS_BUTTON_TRIGGER3_TT
+					ROOT = {
+						has_relation_modifier = {
+							target = PREV
+							modifier = resource_rights_given_opmod
+						}
+					}
+				}
+				check_variable = { ROOT.political_power > 24.99 }
+			}
+			
+			#remove resource rights
+			remove_resource_rights_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = REMOVE_RESOURCE_RIGHTS_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
+				custom_trigger_tooltip = { tooltip = REMOVE_RESOURCE_RIGHTS_BUTTON_TRIGGER2_TT has_state_flag = rt56rp_resource_rights_sflag }
+				check_variable = { ROOT.political_power > 24.99 }
+			}
+			
+			#border war
+			border_war_button_click_enabled = {
+				custom_trigger_tooltip = { tooltip = BORDER_WAR_BUTTON_TRIGGER1_TT ROOT = { is_subject = no } }
+				custom_trigger_tooltip = {
+					tooltip = BORDER_WAR_BUTTON_TRIGGER2_TT
+					NOT = { is_owned_and_controlled_by = ROOT }
+					owner = { NOT = { has_war_with = ROOT } }
+					owner = { NOT = { is_in_faction_with = ROOT } }
+					owner = { NOT = { is_puppet_of = ROOT } }
+					owner = { NOT = { is_subject_of = ROOT } }
+				}
+				custom_trigger_tooltip = {
+					tooltip = BORDER_WAR_BUTTON_TRIGGER3_TT
+					any_country = {
+						is_neighbor_of = ROOT
+						PREV = { is_owned_and_controlled_by = THIS }
+					}
+					any_neighbor_state = {
+						is_owned_and_controlled_by = ROOT
+					}
+				}
+				custom_trigger_tooltip = { tooltip = BORDER_WAR_BUTTON_TRIGGER4_TT ROOT = { NOT = { has_country_flag = border_war_started_cflag } } }
+				custom_trigger_tooltip = { tooltip = BORDER_WAR_BUTTON_TRIGGER5_TT owner = { NOT = { has_country_flag = border_war_recent_cflag } } }
+
+				check_variable = { ROOT.political_power > 49.99 }
+				check_variable = { ROOT.command_power > 24.99 }
+			}
+		}	
+
+		ai_check = {
+			check_variable = { ai_random > 0.65 }
+		}
+		
+		ai_weights = {
+
+			###CLICK
+
+			#coring
+			coring1_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			coring2_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			coring3_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			coring4_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			coring5_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			coring6_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			coring7_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			coring8_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+
+			#uncoring
+			uncoring1_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			uncoring2_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			uncoring3_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			uncoring4_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			uncoring5_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			uncoring6_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			uncoring7_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			uncoring8_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			
+			#move capital
+			move_capital_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			
+			#request resource rights
+			request_resource_rights_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			
+			#remove resource rights
+			remove_resource_rights_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+			
+			#border war
+			border_war_button_click = {
+				ai_will_do = {
+					factor = 0
+				}
+			}
+		}
+	}
 }
