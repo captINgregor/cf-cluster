@@ -317,56 +317,48 @@ scripted_gui = {
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
-				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 9.99 }
 			}
 			coring2_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
-				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 14.99 }
 			}
 			coring3_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
-				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 24.99 }
 			}
 			coring4_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
-				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 49.99 }
 			}
 			coring5_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
-				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 74.99 }
 			}
 			coring6_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
-				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 99.99 }
 			}
 			coring7_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
-				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 149.99 }
 			}
 			coring8_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER2_TT NOT = { is_core_of = FROM } }
 				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER3_TT compliance > 85 }
-				custom_trigger_tooltip = { tooltip = CORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 249.99 }
 			}
 
@@ -375,56 +367,48 @@ scripted_gui = {
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
-				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 4.99 }
 			}
 			uncoring2_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
-				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 9.99 }
 			}
 			uncoring3_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
-				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 14.99 }
 			}
 			uncoring4_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
-				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 19.99 }
 			}
 			uncoring5_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
-				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 24.99 }
 			}
 			uncoring6_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
-				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 29.99 }
 			}
 			uncoring7_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
-				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 34.99 }
 			}
 			uncoring8_button_click_enabled = {
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER1_TT is_owned_and_controlled_by = ROOT }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER2_TT is_core_of = FROM }
 				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER3_TT is_capital = no }
-				custom_trigger_tooltip = { tooltip = UNCORING_BUTTON_TRIGGER4_TT has_global_flag = coring_button_allowed_gflag }
 				check_variable = { ROOT.political_power > 39.99 }
 			}
 			
