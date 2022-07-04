@@ -57,3 +57,453 @@ use_new_tool = {
 		text = "Yes"
 	}
 }
+
+eda_empty_space = {
+	name = "EDA_EMPTY_SPACE"
+	group = "EDA_GENERAL_RULES"
+	icon = ""
+	default = {
+		name = "EMPTY_SPACE_ACTION_ALLOWED"
+		text = "EMPTY_SPACE_ACTION_ALLOWED_TEXT"
+		desc = "EMPTY_SPACE_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "EMPTY_SPACE_ACTION_NOT_ALLOWED"
+		text = "EMPTY_SPACE_ACTION_NOT_ALLOWED_TEXT"
+        desc = "EMPTY_SPACE_ACTION_NOT_ALLOWED_DESC"
+	}	
+}
+
+eda_puppet_actions = {
+	name = "EDA_PUPPET_ACTIONS"
+	group = "EDA_GENERAL_RULES"
+	icon = ""
+	default = {
+		name = "PUPPET_ANY_ACTION_ALLOWED"
+		text = "PUPPET_ANY_ACTION_ALLOWED_TEXT"
+		desc = "PUPPET_ANY_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "PUPPET_ANY_ACTION_NOT_ALLOWED"
+		text = "PUPPET_ANY_ACTION_NOT_ALLOWED_TEXT"
+        desc = "PUPPET_ANY_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+
+eda_relation_actions = {
+	name = "EDA_RELATION_ACTIONS"
+	group = "EDA_GENERAL_RULES"
+	icon = ""
+	default = {
+		name = "RELATION_ANY_ACTION_ALLOWED"
+		text = "RELATION_ANY_ACTION_ALLOWED_TEXT"
+		desc = "RELATION_ANY_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "RELATION_ANY_ACTION_NOT_ALLOWED"
+		text = "RELATION_ANY_ACTION_NOT_ALLOWED_TEXT"
+        desc = "RELATION_ANY_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+
+eda_war_actions = {
+	name = "EDA_WAR_ACTIONS"
+	group = "EDA_GENERAL_RULES"
+	icon = ""
+	default = {
+		name = "WAR_ANY_ACTION_ALLOWED"
+		text = "WAR_ANY_ACTION_ALLOWED_TEXT"
+		desc = "WAR_ANY_ACTION_ALLOWED_DESC"
+	}
+	option = {
+		name = "WAR_ANY_ACTION_NOT_ALLOWED"
+		text = "WAR_ANY_ACTION_NOT_ALLOWED_TEXT"
+        desc = "WAR_ANY_ACTION_NOT_ALLOWED_DESC"
+	}
+}
+
+num_of_operative_slot_status = {
+	name = "NUM_OF_OPERATIVE_SLOT_STATUS"
+	required_dlc = "La Resistance"
+	group = RULE_GROUP_NEW_SETUP
+	option = {
+		name = PER_5
+		text = "1 per 5"
+		desc = "RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_5_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = PER_10
+		text = "1 per 10"
+		desc = "RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_10_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = PER_15
+		text = "1 per 15"
+		desc = "RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_15_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = PER_20
+		text = "1 per 20"
+		desc = "RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_20_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = PER_30
+		text = "1 per 30"
+		desc = "RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_30_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = PER_50
+		text = "1 per 50"
+		desc = "RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_50_DESC"
+		allow_achievements = yes
+	}
+}
+
+num_of_maximum_operative_status = {
+	name = "NUM_OF_MAXIMUM_OPERATIVE_STATUS"
+	required_dlc = "La Resistance"
+	group = RULE_GROUP_NEW_SETUP
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_NUM_OF_MAXIMUM_OPERATIVE_STATUS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_5
+		text = "Maximum 5"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_5_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_10
+		text = "Maximum 10"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_10_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_15
+		text = "Maximum 15"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_15_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_20
+		text = "Maximum 20"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_20_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_25
+		text = "Maximum 25"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_25_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_30
+		text = "Maximum 30"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_30_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_50
+		text = "Maximum 50"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_50_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_75
+		text = "Maximum 75"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_75_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_100
+		text = "Maximum 100"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_100_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_150
+		text = "Maximum 150"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_150_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = NUM_OF_MAXIMUM_OPERATIVE_200
+		text = "Maximum 200"
+		desc = "RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_200_DESC"
+		allow_achievements = yes
+	}
+}
+ 
+
+
+rn_nukes_kiled_population = {
+	name = "RULE_RN_NUKES_KILED_POPULATION"
+	group = "RULE_REALISTIC_NUKES"
+	icon = "GFX_game_rule_population_game_rule"
+	option = {
+		name = "RULE_RN_0KILL"
+		text = RULE_OPTION_RN_0KILLS
+		desc = "RULE_RN_0KILLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_1KILL"
+		text = "RULE_OPTION_RN_1KILLS"
+		desc = "RULE_RN_1KILLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_2KILL"
+		text = "RULE_OPTION_RN_2KILLS"
+		desc = "RULE_RN_2KILLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_3KILL"
+		text = "RULE_OPTION_RN_3KILLS"
+		desc = "RULE_RN_3KILLS_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = "RULE_RN_35KILL"
+		text = "RULE_OPTION_RN_35KILLS"
+		desc = "RULE_RN_35KILLS_DESC"
+	}
+	option = {
+		name = "RULE_RN_4KILL"
+		text = "RULE_OPTION_RN_4KILLS"
+		desc = "RULE_RN_4KILLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_5KILL"
+		text = "RULE_OPTION_RN_5KILLS"
+		desc = "RULE_RN_5KILLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_6KILL"
+		text = "RULE_OPTION_RN_6KILLS"
+		desc = "RULE_RN_6KILLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_8KILL"
+		text = "RULE_OPTION_RN_8KILLS"
+		desc = "RULE_RN_8KILLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_10KILL"
+		text = "RULE_OPTION_RN_10KILLS"
+		desc = "RULE_RN_10KILLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_15KILL"
+		text = "RULE_OPTION_RN_15KILLS"
+		desc = "RULE_RN_15KILLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_20KILL"
+		text = "RULE_OPTION_RN_20KILLS"
+		desc = "RULE_RN_20KILLS_DESC"
+		allow_achievements = yes
+	}
+}
+rn_nuke_radiation_level = {
+	name = "RULE_RN_NUKE_RADIATION_LEVEL"
+	group = "RULE_REALISTIC_NUKES"
+	icon = "GFX_game_rule_nuke_game_rule"
+	option = {
+		name = "RULE_RN_0_NUKE_RADIATION"
+		text = RULE_OPTION_RN_0_NUKE_RADIATION
+		desc = "RULE_OPTION_RN_0_NUKE_RADIATION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_03_NUKE_RADIATION"
+		text = RULE_OPTION_RN_03_NUKE_RADIATION
+		desc = "RULE_OPTION_RN_03_NUKE_RADIATION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_05_NUKE_RADIATION"
+		text = RULE_OPTION_RN_05_NUKE_RADIATION
+		desc = "RULE_OPTION_RN_05_NUKE_RADIATION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_08_NUKE_RADIATION"
+		text = RULE_OPTION_RN_08_NUKE_RADIATION
+		desc = "RULE_OPTION_RN_08_NUKE_RADIATION_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = "RULE_RN_1_NUKE_RADIATION"
+		text = "RULE_OPTION_RN_1_NUKE_RADIATION"
+		desc = "RULE_OPTION_RN_1_NUKE_RADIATION_DESC"
+	}
+	option = {
+		name = "RULE_RN_15_NUKE_RADIATION"
+		text = RULE_OPTION_RN_15_NUKE_RADIATION
+		desc = "RULE_OPTION_RN_15_NUKE_RADIATION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_2_NUKE_RADIATION"
+		text = RULE_OPTION_RN_2_NUKE_RADIATION
+		desc = "RULE_OPTION_RN_2_NUKE_RADIATION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_3_NUKE_RADIATION"
+		text = RULE_OPTION_RN_3_NUKE_RADIATION
+		desc = "RULE_OPTION_RN_3_NUKE_RADIATION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_5_NUKE_RADIATION"
+		text = RULE_OPTION_RN_5_NUKE_RADIATION
+		desc = "RULE_OPTION_RN_5_NUKE_RADIATION_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_10_NUKE_RADIATION"
+		text = RULE_OPTION_RN_10_NUKE_RADIATION
+		desc = "RULE_OPTION_RN_10_NUKE_RADIATION_DESC"
+		allow_achievements = yes
+	}
+}
+rn_radiation_anarchy_when = {
+	name = "RULE_RN_RADIATION_ANARCHY_WHEN"
+	group = "RULE_REALISTIC_NUKES"
+	icon = "GFX_game_rule_anarchy_when_game_rule"
+	option = {
+		name = "RULE_RN_1_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_1_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_1_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_2_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_2_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_2_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_3_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_3_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_3_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_4_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_4_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_4_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_5_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_5_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_5_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = "RULE_RN_6_NUKE_RADIATION_ANARCHY"
+		text = "RULE_OPTION_RN_6_NUKE_RADIATION_ANARCHY"
+		desc = "RULE_OPTION_RN_6_NUKE_RADIATION_ANARCHY_DESC"
+	}
+	option = {
+		name = "RULE_RN_7_NUKE_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_7_NUKE_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_7_NUKE_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_8_NUKE_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_8_NUKE_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_8_NUKE_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_9_NUKE_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_9_NUKE_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_9_NUKE_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_10_NUKE_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_10_NUKE_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_10_NUKE_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_15_NUKE_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_15_NUKE_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_15_NUKE_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_20_NUKE_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_20_NUKE_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_20_NUKE_RADIATION_ANARCHY_DESC"
+	}
+	option = {
+		name = "RULE_RN_NO_NUKE_RADIATION_ANARCHY"
+		text = RULE_OPTION_RN_NO_NUKE_RADIATION_ANARCHY
+		desc = "RULE_OPTION_RN_NO_NUKE_RADIATION_ANARCHY_DESC"
+		allow_achievements = yes
+	}
+}
+rn_anarchy_new_countries = {
+	name = "RULE_RN_ANARCHY_NEW_COUNTRIES"
+	group = "RULE_REALISTIC_NUKES"
+	icon = "GFX_game_rule_countries_restoration_from_anarchy_game_rule"
+	option = {
+		name = "RULE_RN_NO_NEW_COUNTRIES"
+		text = RULE_OPTION_RN_NO_NEW_COUNTRIES
+		desc = "RULE_OPTION_RN_NO_NEW_COUNTRIES_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = "RULE_RN_VANILA_REBELLION_NEW_COUNTRIES"
+		text = RULE_OPTION_RN_VANILA_REBELLION_NEW_COUNTRIES
+		desc = "RULE_OPTION_RN_VANILA_REBELLION_NEW_COUNTRIES_DESC"
+		allow_achievements = yes
+	}
+	default = {
+		name = "RULE_RN_MOD_NEW_COUNTRIES"
+		text = "RULE_OPTION_RN_MOD_NEW_COUNTRIES"
+		desc = "RULE_OPTION_RN_MOD_NEW_COUNTRIES_DESC"
+	}
+}
+rn_fun_mode = {
+	name = "RULE_RN_FAN_MODE"
+	group = "RULE_REALISTIC_NUKES"
+	icon = "GFX_game_rule_fun_mode_rule"
+	default = {
+		name = "RULE_RN_OFF_FAN_MODE"
+		text = "RULE_OPTION_RN_OFF_FAN_MODE"
+		desc = "RULE_OPTION_RN_OFF_FAN_MODE_DESC"
+	}
+	option = {
+		name = "RULE_RN_ON_FAN_MODE"
+		text = RULE_OPTION_RN_ON_FAN_MODE
+		desc = "RULE_OPTION_RN_ON_FAN_MODE_DESC"
+	}
+	option = {
+		name = "RULE_RN_ON_FAN_MODE_MULTIPL"
+		text = RULE_OPTION_RN_ON_FAN_MODE_MULTIPL
+		desc = "RULE_OPTION_RN_ON_FAN_MODE_MULTIPL_DESC"
+	}
+}

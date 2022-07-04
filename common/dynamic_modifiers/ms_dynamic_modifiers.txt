@@ -33,3 +33,24 @@
 		# list of modifiers
 		operative_slot = operative_slot_var
 	}
+
+	radiation_state_modifier = {
+		remove_trigger = {
+			NOT = {
+				has_state_flag = has_radiation
+			}	
+		}
+	
+		icon = GFX_modifiers_radiation_state_modifier
+		
+		radiation_level_modificator = radiation_var
+		monthly_population = population_grown_radiation_effect
+		army_speed_factor_for_controller = army_speed_radiation_effect
+		state_production_speed_buildings_factor = constraction_speed_radiation_effect
+		state_repair_speed_all_factor = repair_speed_radiation_effect
+	}
+
+	rt56rp_resource_rights = {
+		enable = { always = yes }
+		#icon = 
+	}
