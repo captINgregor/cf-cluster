@@ -1,2 +1,0 @@
-NDefines.NMilitary.NUKE_MIN_DAMAGE_PERCENT = 0.80
-NDefines.NMilitary.NUKE_MAX_DAMAGE_PERCENT = 0.95
