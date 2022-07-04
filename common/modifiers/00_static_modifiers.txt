@@ -661,4 +661,4 @@ SOV_for_the_common_good_relation = { #For Right Oppo allies
 resource_rights_given_opmod = {
 	valid_relation_trigger = {
 	}
-}
+} 
