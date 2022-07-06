@@ -1,9 +1,9 @@
-version="0.0.0.5"
+version="0.0.0.8"
 tags={
 	"Utilities"
 	"Technologies"
 	"Events"
-	"Fixes"
+	"Fixes" 
 	"Graphics"
 	"Historical"
 	"Gameplay"
@@ -11,6 +11,6 @@ tags={
 	"Balance"
 }
 picture="thumbnail.png"
-name="cf mp mod (unreal)"
+name="cf mp mod (real)"
 supported_version="1.11.12"
 remote_file_id="2821650679"
