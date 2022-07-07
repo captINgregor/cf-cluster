@@ -1,4 +1,4 @@
-version="0.0.0.5"
+version="0.0.0.8"
 tags={
 	"Utilities"
 	"Technologies"
@@ -12,5 +12,5 @@ tags={
 }
 picture="thumbnail.png"
 name="cf mp mod (unreal)"
-supported_version="1.11.12"
+supported_version="1.11.*"
 remote_file_id="2821650679"
