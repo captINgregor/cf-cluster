@@ -291,13 +291,13 @@ GER_provisional_gvt = {
 }
 
 GER_german_empire = {
-	color = rgb { 128 128 128 }
-	color_ui = rgb { 115 115 115 }
+	color = rgb { 81 92 83 }
+	color_ui = rgb { 81 92 83 }
 }
 
 GER_kaiserreich = {
-	color = rgb { 128 128 128 }
-	color_ui = rgb { 115 115 115 }
+	color = rgb { 81 92 83 }
+	color_ui = rgb { 81 92 83 }
 }
 
 MDA = {
@@ -306,8 +306,8 @@ MDA = {
 }
 
 GER_german_monarchy = {
-	color = rgb { 128 128 128 }
-	color_ui = rgb { 115 115 115 }
+	color = rgb { 81 92 83 }
+	color_ui = rgb { 81 92 83 }
 }
 
 CHI_warlord_leader = {
