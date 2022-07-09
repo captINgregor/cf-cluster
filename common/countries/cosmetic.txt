@@ -426,8 +426,8 @@ SPR_nationalist_spain = {
 	color_ui = rgb { 245 123 38 }
 }
 SPR_carlist_spain = {
-	color = rgb { 255 128 0 }
-	color_ui = rgb { 255 255 122 }
+	color = rgb { 242 205 94 }
+	color_ui = rgb { 242 205 94 }
 }
 SPR_anarchist_spain = {
 	color = rgb { 204 0 0 }
@@ -444,8 +444,8 @@ SPA_directory = {
 }
 
 SPA_spanish_empire = {
-	color = rgb { 255 128 0 }
-	color_ui = rgb { 245 123 38 }
+	color = rgb { 242 205 94 }
+	color_ui = rgb { 242 205 94 }
 }
 
 SPB_kingdom = {
