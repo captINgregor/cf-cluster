@@ -116,8 +116,8 @@ DEN = {
 	color_ui = rgb { 199 151 121 }
 }
 BUL = {
-	color = rgb { 64 125 64 }
-	color_ui = rgb { 64 125 64 }
+	color = rgb { 51 155 0 }
+	color_ui = rgb { 51 155 0 }
 }
 POR = {
 	color = rgb { 36 143 79 }
@@ -133,7 +133,7 @@ IRE = {
 }
 HUN = {
 	color = rgb { 132 85 72 }
-	color_ui = rgb { 152 85 92 }
+	color_ui = rgb { 132 85 72 }
 }
 AFG = {
 	color = rgb { 41 102 163 }
