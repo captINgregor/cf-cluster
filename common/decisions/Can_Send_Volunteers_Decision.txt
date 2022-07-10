@@ -24,4 +24,31 @@ political_actions = {
 		
 		}
 	}
+	allow_faction_yes = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			always = yes
+		}
+		available = {
+			ROOT = {
+				is_major = yes
+			}
+		}
+		visible = {
+			is_in_faction = no
+		}
+
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+
+		set_rule = { can_create_factions = yes }
+		
+		}
+	}
 }	
