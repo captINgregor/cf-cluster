@@ -1,5 +1,5 @@
 political_actions = {
-	Allow_Send_Volunteers_Yes = {
+	allow_faction_yes = {
 
 		icon = generic_form_nation
 
@@ -7,7 +7,9 @@ political_actions = {
 			always = yes
 		}
 		available = {
-			always = yes
+			ROOT = {
+				is_major = yes
+			}
 		}
 		visible = {
 			is_in_faction = no
@@ -20,8 +22,8 @@ political_actions = {
 		}
 		complete_effect = {
 
-		set_rule = { can_send_volunteers = yes }
+		set_rule = { can_create_factions = yes }
 		
 		}
 	}
-}	
+}
