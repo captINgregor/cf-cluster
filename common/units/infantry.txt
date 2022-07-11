@@ -34,13 +34,13 @@ sub_units = {
 		manpower = 1000
 
 		#Misc Abilities
-		training_time = 120
+		training_time = 90
 		suppression = 1
 		weight = 0.5
 		
 		maximum_speed = -0.25
 		
-		supply_consumption = 0.15
+		supply_consumption = 0.06
 		supply_consumption_factor = 0.035
 		
 		transport =	infantry_equipment

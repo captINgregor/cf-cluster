@@ -55,8 +55,7 @@ sub_units = {
 		need = {
 			amphibious_mechanized_equipment = 70
 			infantry_equipment = 160
-			squad_equipment = 40
-			sf_equipment = 40
+
 		}
 
 		forest = {
