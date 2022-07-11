@@ -31,8 +31,7 @@ sub_units = {
 		default_morale = 0.3
 		training_time = 200
 		weight = 1.25
-		supply_consumption = 0.45
-		supply_consumption_factor = 0.065
+		supply_consumption = 0.25
 
 
 		forest = {
