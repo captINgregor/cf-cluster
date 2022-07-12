@@ -16,7 +16,8 @@
  airmobile:0 "Airmobile"
  general_aviation_battalion:0 "Aviation Support Company"
  category_scout_plane:0 "Reconnaissance Aircraft"
- 
+ militia:0 "Militia"
+ garrison:0 "Garrison"
  #######################################
  #######################################
  #######################################
