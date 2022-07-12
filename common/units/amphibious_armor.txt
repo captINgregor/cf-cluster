@@ -34,8 +34,6 @@ sub_units = {
 		max_strength = 2
 		weight = 1
 		supply_consumption = 0.2
-		supply_consumption = 0.50
-		supply_consumption_factor = 0.075
 
 		forest = {
 		    attack = -0.25
@@ -103,8 +101,7 @@ sub_units = {
 		training_time = 220
 		max_strength = 2
 		weight = 1
-		supply_consumption = 0.3
-		supply_consumption_factor = 0.05
+		supply_consumption = 0.2
 
 		forest = {
 		    attack = -0.2
@@ -171,8 +168,7 @@ sub_units = {
 		training_time = 220
 		max_strength = 2
 		weight = 1
-		supply_consumption = 0.5
-		supply_consumption_factor = 0.065
+		supply_consumption = 0.2
 
 		forest = {
 		    attack = -0.2
@@ -239,8 +235,7 @@ sub_units = {
 		training_time = 220
 		max_strength = 2
 		weight = 1
-		supply_consumption = 0.55
-		supply_consumption_factor = 0.08
+		supply_consumption = 0.2
 
 		forest = {
 		    attack = -0.2

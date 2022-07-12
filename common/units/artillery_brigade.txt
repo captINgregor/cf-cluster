@@ -33,8 +33,7 @@ sub_units = {
 		training_time = 120
 		weight = 0.5
 		
-		supply_consumption = 0.18
-		supply_consumption_factor = 0.04
+		supply_consumption = 0.21
 
 		
 		forest = {
@@ -99,7 +98,7 @@ sub_units = {
 			category_artillery
 		}
 
-		combat_width = 1
+		combat_width = 3
 		transport = motorized_equipment
 		manpower = 500
 		need = {
@@ -112,8 +111,7 @@ sub_units = {
 		default_morale = 0.1
 		training_time = 120
 		weight = 0.5
-		supply_consumption = 0.16
-		supply_consumption_factor = 0.03
+		supply_consumption = 0.25
 		
 		maximum_speed = -0.25
 		
@@ -162,9 +160,10 @@ sub_units = {
 	
 	
 	rocket_artillery_brigade = {
+		abbreviation = "RRT"
 		sprite = "artillery"
 		map_icon_category = infantry
-		priority = 100
+		priority = 1199
 		ai_priority = 100
 		active = yes
 		
@@ -178,9 +177,10 @@ sub_units = {
 		categories = {
 			category_army
 			category_line_artillery
+			category_artillery
 		}		
 
-		combat_width = 1
+		combat_width = 3
 
 		need = {
 			rocket_artillery_equipment = 36
@@ -189,16 +189,15 @@ sub_units = {
 		manpower = 500
 		max_organisation = 0
 		default_morale = 0.1
-		max_strength = 1
+		max_strength = 0.6
 		training_time = 120
 		weight = 0.5
 
-		supply_consumption = 0.25
-		supply_consumption_factor = 0.04
+		supply_consumption = 0.22
 		
 		forest = {
-			attack = -0.1
-			movement = -0.1
+			attack = -0.2
+			movement = -0.2
 		}
 
 		hills = {
@@ -210,113 +209,29 @@ sub_units = {
 		}
 
 		jungle = {
-			attack = -0.15
-			movement = -0.1
-		}
-
-		marsh = {
-			attack = -0.1
-			movement = -0.15
-		}
-
-		fort = {
-			attack = 0.2
-		}
-
-		river = {
-			attack = -0.1
-			movement = -0.1
-		}
-
-		amphibious = {
-			attack = -0.2
-		}
-		
-		urban = {
-			attack = 0.2
-		}
-		
-
-	}
-	
-	motorized_rocket_brigade = {
-		sprite = motorized
-		map_icon_category = infantry
-		priority = 1199
-		ai_priority = 100
-		active = no
-		
-		type = {
-			artillery
-			motorized
-			rocket
-		}
-
-		group = mobile
-		
-		categories = {
-			category_army
-			category_line_artillery
-		}		
-
-		combat_width = 3
-
-		need = {
-			motorized_rocket_equipment = 36
-		}
-		
-		manpower = 500
-		max_organisation = 0
-		default_morale = 0.1
-		max_strength = 1
-		training_time = 120
-		weight = 0.5
-		
-		supply_consumption = 0.35
-		supply_consumption_factor = 0.06
-		
-		forest = {
-			attack = -0.1
-			movement = -0.5
-		}
-
-		hills = {
-			movement = -0.05
-		}
-
-		mountain = {
+			attack = -0.25
 			movement = -0.2
 		}
 
-		jungle = {
-			attack = -0.15
-			movement = -0.3
-		}
-
 		marsh = {
-			attack = -0.1
+			attack = -0.2
 			movement = -0.3
 		}
 
 		fort = {
-			attack = 0.2
-		}
-
-		river = {
-			attack = -0.1
-			movement = -0.1
-		}
-
-		amphibious = {
-			attack = -0.2
-		}
-		
-		urban = {
 			attack = 0.1
 		}
-		
 
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
 	}
+
 	mot_rocket_artillery_brigade = {
 		abbreviation = "TRA"
 		sprite = "artillery"
@@ -375,6 +290,82 @@ sub_units = {
 		marsh = {
 			attack = -0.2
 			movement = -0.3
+		}
+
+		fort = {
+			attack = 0.1
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+	}
+	
+	motorized_rocket_brigade = {
+		abbreviation = "MRA"
+		sprite = motorized
+		map_icon_category = infantry
+		priority = 1199
+		ai_priority = 100
+		active = no
+		
+		type = {
+			artillery
+			motorized
+			rocket
+		}
+
+		group = mobile
+		
+		categories = {
+			category_army
+			category_line_artillery
+			category_artillery
+		}		
+
+		combat_width = 3
+
+		need = {
+			motorized_rocket_equipment = 20
+			motorized_equipment = 15
+		}
+		
+		manpower = 500
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.6
+		training_time = 120
+		weight = 0.5
+
+		
+		supply_consumption = 0.25
+		
+		forest = {
+			attack = -0.1
+			movement = -0.5
+		}
+
+		hills = {
+			movement = -0.05
+		}
+
+		mountain = {
+			movement = -0.2
+		}
+
+		jungle = {
+			attack = -0.25
+			movement = -0.5
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.5
 		}
 
 		fort = {
