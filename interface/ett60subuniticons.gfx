@@ -3,5 +3,26 @@ spriteTypes = {
 	spriteType = { name = "GFX_unit_airmobile_icon_medium"								textureFile = "gfx/interface/counters/divisions_large/unit_airmobile_icon.dds" noOfFrames = 2 }	
 	spriteType = { name = "GFX_unit_general_aviation_battalion_icon_medium"				textureFile = "gfx/interface/counters/divisions_large/unit_general_aviation_icon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_airmobile_icon_medium_white"						textureFile = "gfx/interface/counters/divisions_small/onmap_unit_airmobile_icon.dds" noOfFrames = 2 }
+	spriteType = {
+		name = "GFX_unit_garrison_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_garrison_icon.dds"
+		noOfFrames = 2
+	}
 
+	spriteType = {
+		name = "GFX_unit_militia_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_militia_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_garrison_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_garrison_icon.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_unit_militia_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_militia_icon.dds"
+		noOfFrames = 2
+	}
 }
