@@ -1,7 +1,7 @@
 NDefines.NGame.LAG_DAYS_FOR_LOWER_SPEED = 999
 NDefines.NGame.LAG_DAYS_FOR_PAUSE = 999
 NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 15
-NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 36
+NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 72
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 25 -- Performance enhancer. --TW/WTT
 NDefines.NGame.GAME_SPEED_SECONDS = { 0.35, 0.15, 0.1, 0.035, 0.0 }
 ---Diplomacy
