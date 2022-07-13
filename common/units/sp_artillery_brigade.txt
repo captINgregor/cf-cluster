@@ -31,7 +31,6 @@ sub_units = {
 		training_time = 180
 		weight = 1
 		supply_consumption = 0.18
-        supply_consumption_factor = 0.05
 		
 		breakthrough = -0.85
 
@@ -54,12 +53,7 @@ sub_units = {
 		urban = {
 			attack = 0.2
 		}
-		dense_urban = {
-			attack = 0.4
-		}
-		town = {
-			attack = 0.1
-		}
+
 		river = { 
 			attack = -0.2
 			movement = -0.2
@@ -99,7 +93,6 @@ sub_units = {
 		training_time = 180
 		weight = 1.25
 		supply_consumption = 0.22
-        supply_consumption_factor = 0.06
 		
 		breakthrough = -0.85
 
@@ -135,12 +128,6 @@ sub_units = {
 		}
 		urban = {
 			attack = 0.3
-		}
-		dense_urban = {
-			attack = 0.6
-		}
-		town = {
-			attack = 0.15
 		}
 		fort = {
 			attack = 0.8
@@ -178,7 +165,6 @@ sub_units = {
 		max_strength = 1.0
 		weight = 1.5
 		supply_consumption = 0.40
-        supply_consumption_factor = 0.1
 
 		breakthrough = -0.85
 
@@ -216,15 +202,144 @@ sub_units = {
 		urban = {
 			attack = 1.6
 		}
-		dense_urban = {
-			attack = 2.0
-		}
-		town = {
-			attack = 1.0
-		}
 		fort = {
 			attack = 3.6
 		}
 	}
+	super_heavy_sp_artillery_brigade = {
+		abbreviation = "SAR"
+		sprite = heavy_armor
+		map_icon_category = armored
+		priority = 1798
+		ai_priority = 100
+		active = yes
+		
+		type = {
+			armor
+			artillery
+		}
+		
+		group = armor
+		
+		categories = {
+			category_all_armor
+			category_army
+		}
+		
+
+		combat_width = 3
+
+		need = {
+			super_heavy_tank_artillery_chassis = 40
+		}
+		manpower = 500
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.6
+		training_time = 180
+		weight = 1.75
+		supply_consumption = 0.8
+
+		breakthrough = -0.25
+
+		suppression = 1.25
+
+		forest = {
+		    attack = -0.5
+			movement = -0.4
+		}
+		hills = {
+		    attack = -0.3
+		}
+		mountain = 	{
+		    attack = -0.4
+		}
+		jungle = {
+		    attack = -0.7
+			movement = -0.4
+		}
+		marsh = {
+		    attack = -0.5 
+			movement = -0.2
+		}
+		urban = {
+			attack = -0.6
+			defence = -0.2
+		}
+		river = { 
+			attack = -0.5
+			movement = -0.5
+		}
+		amphibious = { 
+			attack = -1.0
+		}
+	}
 	
+	modern_sp_artillery_brigade = {
+		abbreviation = "OAR"
+		sprite = medium_armor
+		map_icon_category = armored
+		priority = 1796
+		ai_priority = 100
+		active = yes
+		
+		type = {
+			armor
+			artillery
+		}
+		
+		group = armor
+		
+		categories = {
+			category_all_armor
+			category_army
+		}
+
+		combat_width = 3
+
+		need = {
+			modern_tank_artillery_chassis = 50
+		}
+		manpower = 500
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.6
+		training_time = 180
+		weight = 1.5
+		supply_consumption = 0.5
+		
+		breakthrough = -0.25
+
+		suppression = 1.5
+
+		forest = {
+		    attack = -0.3
+			movement = -0.4
+		}
+		hills = 	{
+		    attack = -0.1
+		}
+		mountain = 	{
+		    attack = -0.2
+		}
+		jungle = {
+		    attack = -0.4
+			movement = -0.4
+		}
+		marsh = {
+		    attack = -0.1 
+			movement = -0.1
+		}
+		urban = {
+			attack = -0.4
+			defence = -0.1
+		}
+		river = { 
+			attack = -0.2 
+			movement = -0.2
+		}
+		amphibious = { 
+			attack = -0.7
+		}
+	}
 }

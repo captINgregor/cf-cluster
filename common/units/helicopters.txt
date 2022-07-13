@@ -88,7 +88,7 @@ sub_units = {
 		}
 		plains = {
 			attack = 0.1
-			defense = -0.05
+			defence = -0.05
 		}
 
 		hardness = 0.2
