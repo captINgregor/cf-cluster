@@ -405,15 +405,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_unit_level"
-		texturefile = "gfx/interface/unit_level.dds"
-		noOfFrames = 52
+		texturefile = "gfx/interface/unit_level_1.dds"
+		noOfFrames = 8
 	}
 
-	SpriteType = {
-		name = "GFX_unit_level_air"
-		texturefile = "gfx/interface/unit_level_air.dds"
-		noOfFrames = 5
-	}
 
 	spriteType = {
 		name = "GFX_unit_leader_portrait_frame"
