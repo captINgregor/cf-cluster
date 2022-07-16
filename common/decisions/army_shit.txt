@@ -1,0 +1,79 @@
+army_shit = {
+	paramarines_decision = {
+		icon = generic_propaganda
+
+		allowed = {
+			always = yes
+		}
+
+		available = {
+			OR = {
+				AND = {
+					ROOT = { tag = USA }
+					has_completed_focus = USA_airborne_divisions
+					has_tech = marines
+					has_tech = paratroopers
+				}
+				AND = {
+					ROOT = { tag = ENG }
+					has_completed_focus = ENG_special_air_service
+					has_tech = marines
+					has_tech = paratroopers
+				}
+			}
+		}
+
+		visible = {
+			OR = {
+				ROOT = { tag = USA }
+				ROOT = { tag = ENG }
+			}
+		}
+		cost = 10
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_technology = { 
+				paramarines = 1
+				popup = no
+			}
+		}
+	}
+
+	arditi_decision = {
+		icon = generic_propaganda 
+
+		allowed = {
+			always = yes
+		}
+
+		availiable = {
+			AND = {
+				ROOT = { tag = ITA }
+				has_completed_focus = ITA_special_forces
+			}
+		}
+
+		visible = {
+			ROOT = { tag = ITA }
+		}
+
+		cost = 10
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_technology = {
+				arditi_battalion = 1
+				popup = no
+			} 
+		}
+	}
+}

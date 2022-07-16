@@ -539,6 +539,7 @@ technologies = {
 
 		enable_subunits = {
 			paratrooper
+
 		}
 		
 		path = {
@@ -2839,6 +2840,32 @@ technologies = {
 		enable_subunits = {
 			penal_battalion
    
+		}
+	}
+
+	paramarines = {
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			paramarine
+		}
+	}
+	
+	arditi_battalion = {
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			arditi
 		}
 	}
 }
