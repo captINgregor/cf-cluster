@@ -3067,7 +3067,7 @@ focus_tree = {
 				activate_mission = GER_barbarossa_mission_lenin
 				activate_mission = GER_barbarossa_mission_kiev
 				add_timed_idea = {
-					idea = GER_barbarossa
+					idea = GER_barb
 					days = 180
 				}
 			}
@@ -3082,7 +3082,7 @@ focus_tree = {
 					activate_mission = GER_barbarossa_mission_lenin
 					activate_mission = GER_barbarossa_mission_kiev
 					add_timed_idea = {
-						idea = GER_barbarossa
+						idea = GER_barb
 						days = 180
 					}
 				}
