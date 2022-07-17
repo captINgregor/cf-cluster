@@ -3020,7 +3020,7 @@ focus_tree = {
 		x = 1
 		y = 4
 		relative_position_id = GER_anti_comitern_pact
-		cost = 10
+		cost = 2
 		historical_ai = {
 			NOT = {
 				any_home_area_neighbor_country = {
@@ -3059,21 +3059,31 @@ focus_tree = {
 		completion_reward = {
 			IF = {
 				limit = { SOV = { has_civil_war = no } }
-				create_wargoal = {
-					type = annex_everything
+				declare_war_on = {
 					target = SOV
-					expire = 0
+					type = annex_everything
+				}
+				activate_mission = GER_barbarossa_mission_moscow
+				activate_mission = GER_barbarossa_mission_lenin
+				activate_mission = GER_barbarossa_mission_kiev
+				add_timed_idea = {
+					idea = GER_barbarossa
+					days = 180
 				}
 			}
 			ELSE = {
 				every_country = {
 					limit = { original_tag = SOV }
-					GER = {
-						create_wargoal = {
-							type = annex_everything
-							target = PREV
-							expire = 0
-						}
+					declare_war_on = {
+						target = PREV
+						type = annex_everything
+					}
+					activate_mission = GER_barbarossa_mission_moscow
+					activate_mission = GER_barbarossa_mission_lenin
+					activate_mission = GER_barbarossa_mission_kiev
+					add_timed_idea = {
+						idea = GER_barbarossa
+						days = 180
 					}
 				}
 			}

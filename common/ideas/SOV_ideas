@@ -1,0 +1,58 @@
+ideas = {
+    SOV_summer_off = {
+		allowed = {
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = communism
+		}
+
+		removal_cost = -1
+
+		picture = generic_acquire_tanks
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.10
+			defense_bonus_against = 0.05
+		}
+
+		modifier = {
+			supply_consumption_factor = -0.1
+			planning_speed = 0.25
+			no_supply_grace = 48
+			terrain_penalty_reduction = 0.1
+		}
+
+	}
+
+    SOV_winter_off = {
+		allowed = {
+			always = no
+		}
+
+		allowed_civil_war = {
+			has_government = communism
+		}
+
+		removal_cost = -1
+
+		picture = generic_acquire_tanks
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.10
+			defense_bonus_against = 0.05
+		}
+
+		modifier = {
+            winter_attrition = -0.1
+			supply_consumption_factor = -0.1
+			planning_speed = 0.25
+			no_supply_grace = 48
+			terrain_penalty_reduction = 0.1
+		}
+
+	}
+}
