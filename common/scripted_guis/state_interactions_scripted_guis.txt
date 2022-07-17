@@ -469,6 +469,7 @@ scripted_gui = {
 
 				check_variable = { ROOT.political_power > 49.99 }
 				check_variable = { ROOT.command_power > 24.99 }
+				check_variable = { date > 1940.1.1 }
 			}
 		}	
 

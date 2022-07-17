@@ -2,7 +2,7 @@ opinion_modifiers = {
 	### EMBARGO RELATIONS ###
 	cw_embargo_trade = {
 		trade = yes
-		value = -100
+		value = -1000
 	}
 	cw_embargo_relations_initiator = {
 		value = -30	
