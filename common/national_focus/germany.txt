@@ -3015,6 +3015,9 @@ focus_tree = {
 		}
 		
 		available = {
+			has_army_manpower = {
+				size = 1200000
+			}
 			is_subject = no
 		}
 		x = 1
@@ -3067,8 +3070,8 @@ focus_tree = {
 				activate_mission = GER_barbarossa_mission_lenin
 				activate_mission = GER_barbarossa_mission_kiev
 				add_timed_idea = {
-					idea = GER_barb
-					days = 180
+					idea = GER_barbarossa
+					days = 120
 				}
 			}
 			ELSE = {
@@ -3082,8 +3085,8 @@ focus_tree = {
 					activate_mission = GER_barbarossa_mission_lenin
 					activate_mission = GER_barbarossa_mission_kiev
 					add_timed_idea = {
-						idea = GER_barb
-						days = 180
+						idea = GER_barbarossa
+						days = 120
 					}
 				}
 			}
@@ -3691,6 +3694,10 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
+			add_timed_idea = {
+				idea = GER_blitzkrieg
+				days = 60
+			}
 			#limit wargoals to when it makes sense to give them. No faction, war or non exist
 			if = { 
 				limit = {
@@ -4495,7 +4502,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_around_maginot
-		cost = 10
+		cost = 2
 		bypass = {
 			OR = {
 				NOT = { country_exists = FRA }

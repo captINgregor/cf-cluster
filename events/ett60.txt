@@ -22,3 +22,31 @@ country_event = {
 						
 	}		
 }
+
+country_event = {
+	id = ett60.2
+
+	title = "Unternehmen Barbarossa"
+	desc = "what did you expect, a cookie?"
+	
+	fire_only_once = yes
+
+	trigger = {
+		AND = {
+			tag = GER
+			has_war_with = SOV
+			NOT = { has_government = fascism }
+		}
+	}
+
+	option = {
+		name = "cool"
+		activate_mission = GER_barbarossa_mission_moscow
+		activate_mission = GER_barbarossa_mission_lenin
+		activate_mission = GER_barbarossa_mission_kiev
+		add_timed_idea = {
+			idea = GER_barbarossa
+			days = 120
+		}
+	}
+}

@@ -17,6 +17,7 @@ ideas = {
 				minimum_training_level = 1
 				autonomy_gain = -0.5
 				mic_to_overlord_factor = 0.75
+				cic_to_overlord_factor = 0.75
 				conscription_factor = 0.0
 				autonomy_manpower_share = 0.75
 				recruitable_population_factor = -0.75

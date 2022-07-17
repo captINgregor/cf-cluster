@@ -210,7 +210,7 @@ operations = {
 			tag = GER
 			has_war_with = SOV
 			NOT = { has_idea = GER_summer_off }
-			NOT = { has_idea = GER_barb }
+			NOT = { has_idea = GER_barbarossa }
 		}
 		
 		days_remove = 14
