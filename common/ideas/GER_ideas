@@ -1,5 +1,5 @@
 ideas = {
-	GER_barbarossa = {
+	GER_barb = {
 		allowed = {
 			always = no
 		}
