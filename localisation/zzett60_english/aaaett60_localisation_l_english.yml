@@ -41,8 +41,6 @@
  paramarines:0 "Paramarines"
  arditi_battalion:0 "Arditi"
  ENG_not_activiate_home_guard:0 "Has not activated the Home Guard"
- ENG_home_guard:0 "Deploy the Home Guard"
- ENG_homeguard_tt:0 "Will deploy §Y40 Militia divisions§! in London"
  GER_volksturm_tt:0 "Has not deployed the Volksturm"
  GER_volk_tt:0 "Will deploy §Y30 Militia divisions§! in Berlin"
  #######################################
