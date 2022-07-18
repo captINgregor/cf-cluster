@@ -1,5 +1,6 @@
 division_template = {
 	name = "Volksturm"
+	is_locked = yes
 	regiments = {
 		militia = { x = 0 y = 0 }
 		militia = { x = 0 y = 1 }
@@ -17,9 +18,7 @@ division_template = {
 
 	}
 	support = {
-		engineer = { x = 0 y = 1 }   
 		recon = { x = 0 y = 2 }
-		logistics_company  = { x = 0 y = 3 }
 		anti_air = { x = 0 y = 0 }
 	}
 }
@@ -28,151 +27,301 @@ units = {
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 	division = {
 		location = 6521
 		division_template = "Volksturm"
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "GER" } 
+			anti_tank_equipment_1 = { owner = "GER" }
+			anti_air_equipment_1 = { owner = "GER" }
+		}
 		start_experience_factor = 0.1
 	}
 }

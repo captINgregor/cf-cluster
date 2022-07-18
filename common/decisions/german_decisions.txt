@@ -254,19 +254,17 @@ operations = {
 			GER = {
 				surrender_progress > 0.25
 			}
+
 		}
 
 		fire_only_once = yes
 
 		visible = {
-			tag = GER
-			any_enemy_country = {
-				every_state = {
-					limit = {
-						is_core_of = GER
-					}
-					is_controlled_by = PREV
+			any_state = {
+				limit = {
+					is_core_of = GER
 				}
+				NOT = { is_controlled_by = GER }
 			}
 		}
 
