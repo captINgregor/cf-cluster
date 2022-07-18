@@ -1,3 +1,7 @@
+AST_australasia = {
+	color = rgb { 57 143 97 }
+	color_ui = rgb { 74 186 126 }
+}
 
 HAW_JAP_GG = {
 	color = rgb { 217 150 100 }

@@ -5333,44 +5333,27 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GER_improve_national_spirit_tooltip
-				OR = {
-					GER = { controls_state = 126 }
-					any_other_country = {
-						is_in_faction_with = GER
-						controls_state = 126
-					}
-				}
-				OR = {
+				#OR = {
+				#	GER = { controls_state = 126 }
+				#	any_other_country = {
+				#		is_in_faction_with = GER
+				#		controls_state = 126
+				#	}
+				#}
+				#OR = {
 					GER = { controls_state = 16 }
 					any_other_country = {
 						is_in_faction_with = GER
 						controls_state = 16
 					}
-				}
-			}
-		}
-		cancel = {
-			AND = {
-				has_war = no
-				126 = {
-					owner = {
-						NOT = { tag = GER }
-						NOT = { is_in_faction_with = GER }
-					}
-				}
-				16 = {
-					owner = {
-						NOT = { tag = GER }
-						NOT = { is_in_faction_with = GER }
-					}
-				}
+				#}
 			}
 		}
 		cancel_if_invalid = no
 		x = 5
 		y = 1
 		relative_position_id = GER_anschluss
-		cost = 10
+		cost = 2
 		ai_will_do = {
 			factor = 10
 		}	

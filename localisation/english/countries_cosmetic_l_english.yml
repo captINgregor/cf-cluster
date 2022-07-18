@@ -1,5 +1,12 @@
 ﻿l_english:
 
+ AST_australasia:0 "Australasia"
+ AST_australasia_democratic:0 "Commonwealth of Australasia"
+ AST_australasia_democratic_DEF:0 "the Commonwealth of Australasia"
+ AST_australasia_communism:0 "Australasian Commune"
+ AST_australasia_communism:0 "the Australasian Commune"
+ AST_australasia_ADJ:0 "Australasian"
+
  GER_greater_german_reich_fascism:0 "Großdeutsches Reich"
  GER_greater_german_reich_fascism_DEF:0 "the Großdeutsches Reich"
 

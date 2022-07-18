@@ -50,7 +50,7 @@ army_shit = {
 			always = yes
 		}
 
-		availiable = {
+		available = {
 			AND = {
 				ROOT = { tag = ITA }
 				has_completed_focus = ITA_special_forces

@@ -13,6 +13,9 @@ political_actions = {
 		}
 		visible = {
 			is_in_faction = no
+			ROOT = {
+				is_major = yes
+			}
 		}
 
 		cost = 0
