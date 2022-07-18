@@ -7,6 +7,10 @@ operations = {
         }
 
         available = {
+            custom_trigger_tooltip = { tooltip = ENG_not_activate_home_guard }
+            hidden_trigger = {
+                NOT = { has_country_flag = ENG_activated_home_guard }
+            }
 			any_state = {
 				limit = {
 					is_core_of = ENG
@@ -16,18 +20,20 @@ operations = {
         }
 
         fire_only_once = yes
+        
+        days_remove = 14
 
-        allowed = {
+        visible = {
             ENG = {
-                any_enemy_country = {
-                    is_major = yes
-                }
+                has_war = yes
             }
         }
 
-        complete_effect = {
+        remove_effect = {
+            custom_effect_tooltip = ENG_homeguard_tt
             hidden_effect = {
                 load_oob = ENG_home_guard
+                set_country_flag = ENG_activated_home_guard
             }
         }
     }

@@ -260,6 +260,9 @@ operations = {
 		fire_only_once = yes
 
 		visible = {
+			custom_trigger_tooltip = {
+				tooltip = GER_volksturm_tt
+			}
 			any_state = {
 				limit = {
 					is_core_of = GER
@@ -271,6 +274,7 @@ operations = {
 		days_remove = 30
 
 		remove_effect = {
+			custom_effect_tooltip = GER_volk_tt
 			hidden_effect = {
 				load_oob = GER_volk 
 			}
