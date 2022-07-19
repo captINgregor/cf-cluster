@@ -184,8 +184,6 @@ sub_units = {
 			mechanized_equipment = 65
 			motorized_equipment = 25
 			infantry_equipment = 140
-			squad_equipment = 30
-			radio_equipment = 17
 		}
 
 		forest = {
@@ -235,7 +233,6 @@ sub_units = {
 
 		need = {
 			medium_tank_chassis = 45
-			radio_equipment = 14
 		}
 		manpower = 500
 		max_organisation = 30
@@ -271,9 +268,6 @@ sub_units = {
 		urban = {
 			attack = -0.1
 		}
-		dense_urban = {
-			attack = -0.2
-		}
 		river = { 
 			attack = -0.4
 			movement = -0.4
@@ -308,7 +302,6 @@ sub_units = {
 
 		need = {
 			heavy_tank_chassis = 45
-			radio_equipment = 14
 		}
 
 		manpower = 500
@@ -352,9 +345,6 @@ sub_units = {
 		urban = {
 			attack = -0.05
 		}
-		dense_urban = {
-			attack = -0.1
-		}
 		amphibious = { 
 			attack = -2.0
 		}
@@ -387,7 +377,6 @@ sub_units = {
 
 		need = {
 			light_tank_destroyer_chassis = 20
-			radio_equipment = 14
 		}
 		manpower = 500
 		max_organisation = 20
@@ -453,7 +442,6 @@ sub_units = {
 
 		need = {
 			medium_tank_destroyer_chassis = 20
-			radio_equipment = 14
 		}
 		manpower = 500
 		max_organisation = 20
@@ -518,7 +506,6 @@ sub_units = {
 
 		need = {
 			heavy_tank_destroyer_chassis = 20
-			radio_equipment = 14
 		}
 		manpower = 500
 		max_organisation = 20
@@ -580,7 +567,6 @@ sub_units = {
 
 		need = {
 			light_tank_artillery_chassis = 20
-			radio_equipment = 14
 		}
 		manpower = 500
 		max_organisation = 20
@@ -614,12 +600,6 @@ sub_units = {
 		urban = {
 			attack = 0.2
 		}
-		dense_urban = {
-			attack = 0.4
-		}
-		town = {
-			attack = 0.1
-		}
 		river = { 
 			attack = -0.2
 			movement = -0.2
@@ -651,7 +631,6 @@ sub_units = {
 
 		need = {
 			medium_tank_artillery_chassis = 20
-			radio_equipment = 14
 		}
 		manpower = 500
 		max_organisation = 20
@@ -684,12 +663,6 @@ sub_units = {
 		}
 		urban = {
 			attack = 0.3
-		}
-		dense_urban = {
-			attack = 0.6
-		}
-		town = {
-			attack = 0.15
 		}
 		river = { 
 			attack = -0.25
@@ -727,8 +700,6 @@ sub_units = {
 
 		need = {
 			anti_tank_equipment = 14
-			horse_equipment = 24
-			radio_equipment = 12
 		}
 		manpower = 500
 		max_organisation = 15
@@ -804,9 +775,8 @@ sub_units = {
 		combat_width = 1
 		transport = motorized_equipment
 		need = {
-			anti_tank_equipment = 14
-			motorized_equipment = 16
-			radio_equipment = 12
+			anti_tank_equipment = 36
+			motorized_equipment = 24
 		}
 		manpower = 500
 		max_organisation = 15
@@ -886,7 +856,6 @@ sub_units = {
 		need = {
 			heavy_anti_tank_equipment = 14
 			motorized_equipment = 24
-			radio_equipment = 12
 		}
 		manpower = 500
 		max_organisation = 15
@@ -966,8 +935,6 @@ sub_units = {
 		manpower = 500
 		need = {
 			artillery_equipment = 14
-			horse_equipment = 24
-			radio_equipment = 12
 		}
 		
 		max_strength = 1
@@ -1017,13 +984,6 @@ sub_units = {
 			attack = 0.1
 		}
 		
-		dense_urban = {
-			attack = 0.2
-		}
-		
-		town = {
-			attack = 0.05
-		}
 
 		amphibious = {
 			attack = -0.2
@@ -1056,7 +1016,6 @@ sub_units = {
 		need = {
 			artillery_equipment = 14
 			motorized_equipment = 16
-			radio_equipment = 12
 		}
 		
 		soft_attack = 0.50
@@ -1108,13 +1067,6 @@ sub_units = {
 			attack = 0.1
 		}
 		
-		dense_urban = {
-			attack = 0.2
-		}
-		
-		town = {
-			attack = 0.05
-		}
 
 		amphibious = {
 			attack = -0.2
@@ -1147,7 +1099,6 @@ sub_units = {
 		need = {
 			heavy_artillery_equipment = 14
 			motorized_equipment = 24
-			radio_equipment = 12
 		}
 		
 		max_strength = 1
@@ -1189,14 +1140,6 @@ sub_units = {
 		urban = {
 			attack = 0.3
 		}
-		
-		dense_urban = {
-			attack = 0.6
-		}
-		
-		town = {
-			attack = 0.1
-		}
 
 		fort = {
 			attack = 1.4
@@ -1212,64 +1155,4 @@ sub_units = {
 		}
 	}
 	
-	ss_hq_company = {
-		sprite = infantry
-		map_icon_category = infantry
-		priority = 0
-		ai_priority = 0
-		active = no
-
-		type = {
-			infantry
-			support
-		}
-		
-		group = support
-		
-		categories = {
-			category_support_battalions
-			category_army
-		}
-	
-		combat_width = 0
-	
-		#Size Definitions
-		max_strength = 5
-		max_organisation = 180
-		default_morale = 0.7
-		manpower = 500
-		training_time = 120
-
-		#Misc Abilities
-		weight = 0.2
-		supply_consumption = 0.1
-		can_be_parachuted = yes
-		
-		defense = -0.5
-		breakthrough = -0.5
-		soft_attack = -0.5
-		hard_attack = -0.5
-		air_attack = 1.0
-		
-		initiative = 0.05
-		casualty_trickleback = -0.25
-		experience_loss_factor = -0.20
-		
-		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
-		
-		maximum_speed = 2.0
-		
-		essential = {
-			infantry_equipment
-			motorized_equipment
-			radio_equipment
-		}
-
-		need = {
-			infantry_equipment = 15
-			motorized_equipment = 15
-			radio_equipment = 15
-		}
-
-	}
 }

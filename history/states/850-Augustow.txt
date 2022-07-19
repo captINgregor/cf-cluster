@@ -1,0 +1,26 @@
+state={
+	id=850
+	name="STATE_850"
+
+	history={
+		owner = POL
+		
+		buildings = {
+			infrastructure = 3
+			
+
+		}
+		add_core_of = POL
+		add_claim_by = LIT
+
+	}
+
+	provinces={
+		400
+	}
+	manpower=1088200
+	buildings_max_level_factor=1.000
+	state_category=pastoral 
+
+	local_supplies=5.0 
+}

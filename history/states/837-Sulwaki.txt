@@ -1,0 +1,25 @@
+state={
+	id=837
+	name="STATE_837"
+
+	history={
+		owner = POL
+		victory_points = {
+			3254 1
+		}
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = POL
+		add_claim_by = LIT
+	}
+
+	provinces={
+		3254
+	}
+	manpower=69000
+	buildings_max_level_factor=1.000
+	state_category=pastoral 
+
+	local_supplies=5.0 
+}

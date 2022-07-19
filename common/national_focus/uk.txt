@@ -1524,7 +1524,6 @@ focus_tree = {
 		prerequisite = { focus = ENG_anti_sub_weapons }
 		prerequisite = { focus = ENG_refitting_effort }
 		prerequisite = { focus = ENG_repair_yards }
-		available = { has_completed_focus = ENG_war_cabinet }
 		x = -5
 		y = 1
 		cost = 1

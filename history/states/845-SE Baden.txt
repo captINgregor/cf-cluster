@@ -1,0 +1,34 @@
+state={
+	id=845
+	name="STATE_845"
+	
+
+	state_category = large_city
+	history={
+		owner = GER
+		
+		buildings = {
+			infrastructure = 3
+
+		}
+		add_core_of = GER
+		1939.1.1 = {
+			buildings = {
+				arms_factory = 1
+
+			}
+
+		}
+
+		
+
+	}
+
+	provinces={
+		3679 13126 6934
+	}
+	manpower=156854
+	buildings_max_level_factor=1.000
+
+	local_supplies=0.0 
+}

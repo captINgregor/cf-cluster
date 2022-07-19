@@ -1,0 +1,30 @@
+state={
+	id=854
+	name="STATE_854"
+	resources = {
+		oil=2
+	}
+
+	history={
+		owner = POL
+		buildings = {
+            infrastructure = 2
+
+		}
+		add_core_of = POL
+		add_core_of = UKR
+		1941.1.1 = {
+			owner = SOV
+			controller = SOV
+
+		}
+
+	}
+
+	provinces={
+		3434 13243
+	}
+	manpower=247867
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

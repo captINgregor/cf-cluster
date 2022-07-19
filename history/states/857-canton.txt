@@ -1,0 +1,32 @@
+state={
+	id=857
+	name="STATE_857"
+	manpower = 17835200
+	state_category = city
+
+	history={
+		owner = ENG
+		add_core_of = GXC
+		add_core_of = CHI
+		add_core_of = PRC
+		
+		buildings = {
+			industrial_complex = 1
+			1047 = {
+				naval_base = 5
+				coastal_bunker = 1
+				bunker = 1
+			}
+		}
+		victory_points = {
+			1047 5
+		}
+	}
+
+	provinces={
+		1047
+	}
+
+	local_supplies=1.0 
+}
+

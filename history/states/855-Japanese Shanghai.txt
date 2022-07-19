@@ -1,0 +1,25 @@
+state={
+	id=855
+	name="STATE_855"
+
+	history={
+		owner = JAP
+		buildings = {
+            infrastructure = 2
+			10918 = {
+				naval_base = 2
+				bunker = 1
+			}
+		}
+		add_core_of = CHI
+		add_core_of = PRC
+
+	}
+
+	provinces={
+		10918
+	}
+	manpower=7257867
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

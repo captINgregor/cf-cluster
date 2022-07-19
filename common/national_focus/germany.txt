@@ -1264,7 +1264,7 @@ focus_tree = {
 		completion_reward = {
 			add_resource = {
 				type = aluminium
-				amount = 280
+				amount = 24
 				state = 43
 			}
 		}
@@ -1295,7 +1295,7 @@ focus_tree = {
 		completion_reward = {
 			add_resource = {
 				type = oil
-				amount = 200
+				amount = 20
 				state = 46
 			}
 		}
@@ -1314,6 +1314,7 @@ focus_tree = {
 		}
 
 		available = {
+			is_in_faction_with = ROM
 			NOT = { has_war_with = ROM }
 		}
 
@@ -1667,8 +1668,11 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			set_technology = {
-				amerikabomber = 1
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.75
+				uses = 1
+				category = cat_strategic_bomber
 			}
 		}
 	}
@@ -2146,6 +2150,9 @@ focus_tree = {
 	focus = {
 		id = GER_rhineland
 		icon = GFX_goal_generic_military_sphere
+		mutually_exclusive = {
+			focus = GER_oppose_hitler
+		}
 		x = 32
 		y = 0
 		cost = 5
