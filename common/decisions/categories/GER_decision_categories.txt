@@ -22,9 +22,6 @@ GER_share_generals = {
 	}
 }
 
-<<<<<<< Updated upstream
-
-=======
 GER_share_tanks_category = {
 	icon = military_operation
 
@@ -38,7 +35,6 @@ GER_share_tanks_category = {
 
 
 }
->>>>>>> Stashed changes
 
 GER_mefo_bills_category = {
 	icon = ger_mefo_bills

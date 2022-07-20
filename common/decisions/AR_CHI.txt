@@ -10,7 +10,7 @@ foreign_politics = {
 
 		visible = {
 			SHX = {
-				has_capitulated
+				has_capitulated = yes
 				exists = yes
 			}
 		}
