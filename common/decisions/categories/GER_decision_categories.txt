@@ -22,7 +22,23 @@ GER_share_generals = {
 	}
 }
 
+<<<<<<< Updated upstream
 
+=======
+GER_share_tanks_category = {
+	icon = military_operation
+
+	picture = GFX_decision_cat_picture_ger_case_anton
+
+	allowed = {
+		OR = {
+			tag = ROM tag = JAP tag = SPR tag = HUN tag = BUL tag = FIN tag = MAN tag = ITA
+		}
+	}
+
+
+}
+>>>>>>> Stashed changes
 
 GER_mefo_bills_category = {
 	icon = ger_mefo_bills
