@@ -154,7 +154,7 @@ operations = {
 
 	}
 
-	FIN_capture_t26 = {
+	FIN_capture_bt = {
 
 		icon = generic_operation
 
@@ -164,7 +164,7 @@ operations = {
 
 		available = {
 			has_equipment = {
-				sov_light_tank_chassis_t26 > 24
+				light_tank_chassis_1 > 24
 			}
 		}
 
@@ -178,7 +178,7 @@ operations = {
 		
 		complete_effect = {
 			add_equipment_to_stockpile = {
-				type = sov_light_tank_chassis_t26
+				type = light_tank_chassis_1
 				amount = -25
 				producer = SOV
 			}
@@ -186,8 +186,7 @@ operations = {
 
 		remove_effect = {
 			set_technology = {
-				sov_light_tank_1 = 1
-				sov_t26_upgrade = 1
+				light_tank_chassis_1 = 1
 			}
 		}
 	}
@@ -202,7 +201,7 @@ operations = {
 
 		available = {
 			has_equipment = {
-				sov_medium_tank_chassis_t28 > 24
+				heavy_tank_chassis_1 > 24
 			}
 		}
 
@@ -216,7 +215,7 @@ operations = {
 		
 		complete_effect = {
 			add_equipment_to_stockpile = {
-				type = sov_medium_tank_chassis_t28
+				type = heavy_tank_chassis_1
 				amount = -25
 				producer = SOV
 			}
@@ -224,55 +223,7 @@ operations = {
 
 		remove_effect = {
 			set_technology = {
-				sov_heavy_tank_1 = 1
-			}
-		}
-	}
-
-	FIN_capture_bt = {
-
-		icon = generic_operation
-
-		allowed = {
-			tag = FIN
-		}
-
-		available = {
-			OR = {
-				has_equipment = {
-					sov_light_tank_chassis_bt5 > 24
-				}
-				has_equipment = {
-					sov_light_tank_chassis_bt7 > 24
-				}
-			}
-		}
-
-		fire_only_once = yes
-
-		days_remove = 30
-		
-		modifier = {
-			industrial_capacity_factory = -0.05
-		}
-		
-		complete_effect = {
-			add_equipment_to_stockpile = {
-				type = sov_light_tank_chassis_bt7
-				amount = -25
-				producer = SOV
-			}
-			add_equipment_to_stockpile = {
-				type = sov_light_tank_chassis_bt5
-				amount = -25
-				producer = SOV
-			}
-		}
-
-		remove_effect = {
-			set_technology = {
-				sov_bt_tank_1 = 1
-				sov_bt_tank_2 = 1
+				heavy_tank_chassis_1 = 1
 			}
 		}
 	}
@@ -287,7 +238,7 @@ operations = {
 
 		available = {
 			has_equipment = {
-				sov_medium_tank_chassis_t34 > 24
+				medium_tank_chassis_2 > 24
 			}
 		}
 
@@ -301,7 +252,7 @@ operations = {
 		
 		complete_effect = {
 			add_equipment_to_stockpile = {
-				type = sov_medium_tank_chassis_t34
+				type = medium_tank_chassis_2
 				amount = -25
 				producer = SOV
 			}
@@ -309,8 +260,7 @@ operations = {
 
 		remove_effect = {
 			set_technology = {
-				sov_medium_tank_1 = 1
-				sov_medium_tank_2 = 1
+				medium_tank_chassis_2 = 1
 			}
 		}
 	}
