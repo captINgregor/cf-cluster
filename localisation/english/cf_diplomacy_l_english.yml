@@ -1,0 +1,555 @@
+﻿l_english:
+  EMPTY_SPACE_TOOLTIP:0 ""
+
+  EDA_EMPTY_SPACE_1_TITLE:0 ""
+  EDA_EMPTY_SPACE_1_ACTION_DESC:0 ""
+
+  EDA_EMPTY_SPACE_2_TITLE:0 ""
+  EDA_EMPTY_SPACE_2_ACTION_DESC:0 ""
+
+  EDA_EMPTY_SPACE_3_TITLE:0 ""
+  EDA_EMPTY_SPACE_3_ACTION_DESC:0 ""
+
+  EDA_EMPTY_SPACE_4_TITLE:0 ""
+  EDA_EMPTY_SPACE_4_ACTION_DESC:0 ""
+
+  EDA_EMPTY_SPACE_5_TITLE:0 ""
+  EDA_EMPTY_SPACE_5_ACTION_DESC:0 ""
+
+###############################################################################
+
+#####################
+# Opinion Modifiers #
+#####################
+  demilitarized_country_modifier:0 "Demilitarized by Overlord"
+  remilitarized_country_modifier:0 "Remilitarized by Overlord"
+
+  complemented_country_modifier:0 "Complemented"
+  insulted_country_modifier:0 "Insulted"
+
+  denounced_country_modifier:0 "Denounced War Goal(s)"
+  major_supported_country_modifier:0 "Supported War Goal(s)"
+  minor_supported_country_modifier:0 "Supported War Goal(s)"
+
+  given_building_country_modifier:0 "Recieved Building"
+  given_manpower_country_modifier:0 "Recieved Manpower"
+
+  # Countries Cosmetic
+  COUNTRY_subject:0 "$OVERLORDADJ$ $NONIDEOLOGY$"
+  COUNTRY_subject_DEF:0 "the $OVERLORDADJ$ $NONIDEOLOGY$"
+  COUNTRY_subject_ADJ:0 "$OVERLORDADJ$ $NONIDEOLOGYADJ$"
+  
+  # Ideas
+  war_reparations:0 "War Reparations"
+  war_reparations_desc:0 "This country is currently paying war reparations to [?war_reps_to.GetNameDef]"
+  conditional_surrender:0 "Conditional surrender"
+  
+  # Decisions
+  pd_pay_war_reparations:0 "Paying war reparations to [From.GetNameDef]"
+  
+  # Diplomatic actions
+  OFFER_PEACE_DEAL_TITLE:0 "Offer peace deal"  
+  OFFER_PEACE_DEAL_ACTION_DESC:0 "Offer a peace deal to the country. We can offer proposal based on our war score."
+  
+  # Send peace offer gui
+  PD_TAKE_TAB:0 "Make a demand"
+  PD_GIVE_TAB:0 "Make an offer"
+  PD_PUPPET:0 "Give to puppet state"
+  PD_DEMILITARIZE:0 "Demilitarize"
+  PD_LIBERATE:0 "Liberate / Return"
+  TOTAL_COST:0 "Total cost: [?Root.pd_total_cost|Y0] £victory_points"
+  
+  # Recieve peace offer gui
+  PD_OFFER_PEACE_DEAL_RECEIVE:0 "§Y[Root.GetName]§! has offered §Y[This.GetName]§! the following peace deal proposal:"
+  PD_STATE_LIST_ENTRY:0 "§Y[This.GetName]§!"
+  
+  # Scripted loc
+ 
+  pd_description_root_takes:0 "Offer a peace deal to the country."
+  #original text "Offer a peace deal to the country. Only proposals within our war score can be sent (current war score: [?Root.vp@PREV|Y0] £victory_points )"
+  pd_description_root_gives:0 "Offer conditional surrender to the country. [Root.GetName] cannot cease to exist as a result of the deal!"
+  
+  pd_take_state:0 "Take state"
+  pd_give_state:0 "Give state"  
+  
+  pd_war_reperations_root_gets:0 "War reparations [?Root.pd_wr_cost|Y0] £victory_points"
+  pd_war_reperations_root_pays:0 "War reparations §G-§![?Root.pd_wr_cost|G0] £victory_points"
+  
+  pd_disarm_this:0 "Disarm nation [?Root.pd_disarm_cost|Y0] £victory_points"
+  pd_disarm_root:0 "Disarm nation §G-§![?Root.pd_disarm_cost|G0] £victory_points"
+  
+  pd_state_cost_value:0 "[This.GetName] [This.Owner.GetFlag] [?pts|Y0] £victory_points"
+  pd_state_refund_value:0 "[This.GetName] [This.Owner.GetFlag] [?pts|G0] £victory_points"
+
+  pd_ai_will_accept_yes:0 "§YThey will accept§!"
+  pd_ai_will_accept_no:0 "§YThey will NOT accept§!"
+  
+  pd_recieve_take_good:0 "§Y[This.GetName]§! §Gwill take the following states:§!"
+  pd_recieve_take_bad:0 "§Y[Root.GetName]§! §Rwill take the following states:§!"
+  
+  pd_recieve_puppet_good:0 "§Y[This.GetName]§! §Gwill puppet the following states:§!"
+  pd_recieve_puppet_bad:0 "§Y[Root.GetName]§! §Rwill puppet the following states:§!"
+  
+  pd_recieve_demilitarize_good:0 "§Y[Root.GetName]§! §Gwill demilitarize the following states:§!"
+  pd_recieve_demilitarize_bad:0 "§Y[This.GetName]§! §Rwill demilitarize the following states:§!"
+  
+  pd_recieve_liberate_good:0 "§Y[Root.GetName]§! §Gwill return/liberate the following states:§!"
+  pd_recieve_liberate_bad:0 "§Y[This.GetName]§! §Rwill return/liberate the following states:§!"
+  
+  pd_war_reperations_good:0 "§Y[Root.GetName]§! §Gwill pay war reperations to§! §Y[This.GetName]§!"
+  pd_war_reperations_bad:0 "§Y[This.GetName]§! §Rwill pay war reperations to§! §Y[Root.GetName]§!"
+  
+  pd_disarm_good:0 "§Y[Root.GetName]§! §Gwill disarm§!"
+  pd_disarm_bad:0 "§Y[This.GetName]§! §Rwill disarm our nation§!"
+  
+  # Other
+  pd_waiting_response:0 "Awaiting response"
+  
+  # AI condition names
+  pd_base_reluctance:0 "Base reluctance"
+  pd_close_to_surrender:0 "Close to surrender" 
+  pd_war_support:0 "War support" 
+  pd_stability:0 "Stability"
+  pd_relative_war_score:0 "Relative war score"
+  pd_strength_ratio:0 "Strength ratio"
+  pd_is_major:0 "Major country"
+  pd_in_faction:0 "In faction"
+  pd_proposal_cost:0 "Proposal cost"
+  pd_geopolitical_situation:0 "Geopolitical situation"
+
+ RENAME_FACTION_TOPBAR:0 "Rename a faction by Yard1"
+ RENAME_FACTION_DISPLAY:0 "[This.RENAME_FACTION_DISPLAY_SL]"
+ RENAME_FACTION_START:0 "Type on your keyboard, max 32 chars\nbackspace to delete, close tab to update name"
+ RENAME_IN_PROGRESS:0 "[This.GET_CHAR_1][This.GET_CHAR_2][This.GET_CHAR_3][This.GET_CHAR_4][This.GET_CHAR_5][This.GET_CHAR_6][This.GET_CHAR_7][This.GET_CHAR_8][This.GET_CHAR_9][This.GET_CHAR_10][This.GET_CHAR_11][This.GET_CHAR_12][This.GET_CHAR_13][This.GET_CHAR_14][This.GET_CHAR_15][This.GET_CHAR_16][This.GET_CHAR_17][This.GET_CHAR_18][This.GET_CHAR_19][This.GET_CHAR_20][This.GET_CHAR_21][This.GET_CHAR_22][This.GET_CHAR_23][This.GET_CHAR_24][This.GET_CHAR_25][This.GET_CHAR_26][This.GET_CHAR_27][This.GET_CHAR_28][This.GET_CHAR_29][This.GET_CHAR_30][This.GET_CHAR_31][This.GET_CHAR_32]"
+ RENAME_FACTION_OPEN_TT:0 "Click to rename faction"
+ RENAME_FACTION_BUTTON_TT:0 "Rename faction to your name"
+ CHANGE_LANGUAGE_TT:0 "Change keyboard language\n\nSome characters from other alphabets might not display properly due to how the game handles fonts"
+
+ 
+ ST_STATE_MARK_FOR_TRANSFER:0 "§HMark State for Transfer§!\nMark the selected state so it can be transfered \n"
+ ST_STATE_UNMARK_FOR_TRANSFER:0 "§HUnmark State§!\nUnmarks the selected state\n"
+ mark_state_yes:0 ""
+ mark_state_no:0 "\n  §RMarked!§!"
+ 
+ MARK_ALL_STATES:0 "§HMark All States§!\n\nMark all states of this country\n\n"
+ MARK_ALL_STATES_DELAYED:0 ""
+ 
+ MARK_COLONIES:0 "§HMark Colonies§!\n\nMark all colonial states of this country\n\n"
+ MARK_COLONIES_DELAYED:0 ""
+ 
+ CLEAR_ALL_MARKINGS:0 "§HClear All Marks§!\n\nEvery mark on world will be removed\n\n"
+ CLEAR_ALL_MARKINGS_DELAYED:0 ""
+
+ AWARD_STATES:0 "§HTransfer States§!\n\nTransfer marked states to this country\n\n"
+ AWARD_STATES_DELAYED:0 "§RCannot transfer all owned states!§!"
+ 
+ ST_TOOLTIP_on:0 "§HActivate 'State Transfer Tool'§!"
+ ST_TOOLTIP_off:0 "§HDeactivate 'State Transfer Tool'§!"
+ transfer_states_on:0 "State Transfer Tool: £trigger_no"
+ transfer_states_off:0 "State Transfer Tool: £trigger_yes"
+ 
+ mark_status_marked:0   "     Unmark State "
+ mark_status_unmarked:0 "      Mark State  "
+ 
+ RULE_ALLOW_SUBJECT_TRANSFERS:0 "Transfer states between AI subjects"
+ RULE_ALLOW_SUBJECT_TRANSFERS_FREE_DESC:0 "All types of subjects"
+ RULE_ALLOW_SUBJECT_TRANSFERS_LOW_AUTONOMY_ONLY_DESC:0 "Only low autonomy subjects (below colony level)"
+ RULE_ALLOW_SUBJECT_TRANSFERS_BLOCKED_DESC:0 "Prohibit transfer of subjects' states"
+ 
+ RULE_USE_NEW_TOOL:0 "Use new version of the mod"
+ 
+ GIVE_STATE_ACTION_TITLE:0 "Give states"
+ GIVE_STATE_ACTION_ACTION_DESC:0 "Give states to the chosen country"
+ TAKE_STATE_ACTION_TITLE:0 "Take states"
+ TAKE_STATE_ACTION_ACTION_DESC:0 "Take states from the chosen country"
+ 
+ TRANSFER_STATE_DESC:0 "Select states that will be transferred"
+
+ transfer_navy_mod:0 "Transfer Navy"
+  transfer_navy_mod_desc:0 "There are two kinds of decisons: \n\n(1)§YTransfer puppets' Navy§!. You can take control your puppet's navy, don't need to annex the country. For example, UK can take over Australia's and Canada's navy at the start of the game, but RAJ don't have ships at start, so you can't take over RAJ's navy.\n\n(2)§YTransfer losers' Navy§!. Use this decision first and your enemy surrender to YOU. Then the loser will transfer their navy to you. §YIf they surrender to others, then you can't get their navy.§!\nThis decision can work in §GKaiserreich§! (It seems this decision doesn't work with Deutsches Reich) . §RIf you cannot make sure the loser will surrender to you, I suggest you puppet them in the peace conference and take over their navy with the first decision§!"
+ transfer_your_subject_navy:0 "Take Over [From.GetAdjective] Navy"
+ transfer_your_capitulated_enemies_navy:0 "Take Over [From.GetAdjective] Navy §YAfter Surrender§!"
+ transfer_your_capitulated_enemies_navy_custom_effect:0 "The loser will transfer their navy to you.§YIf they surrender to others, then you can't get their navy.§!"
+ capitulation_transfer_navy:0 "§Yhave not planned to transfer losers'navy§!"
+ nothad_transfer_subject_navy:0 "§Yhave not transfered puppets'navy§!"
+
+ TS_RECALL_DIPLO_TITLE:0 "Recall Volunteers"
+ TS_RECALL_DIPLO_ACTION_DESC:0 "Recall our volunteers from this nation.\n\nThis will cause us to have a lower standing with them." 
+
+ TS_recall_volunteers_LOC:0 "Would you like to recall our volunteers from\n\n§Y[From.Getname]?§!\n\nThis will be seen as a betrayal of our prior agreement to help them."
+ TS_recall_volunteers_TITLE:0 "[ROOT.GetAdjective] Volunteers Recalled"
+ TS_recall_volunteers_DESC:0 "§Y[ROOT.GetName]§!\n\nHas decided recall their volunteers.\n\nAs a result, they've not only failed to provide something that they promised us, but they've potentially opened up massive holes in our frontline."
+ 
+ TS_betrayed_volunteers:0 "Recalled Forces Promised To Us!"
+
+ #ОПЕРАТИВНИКИ
+ RULE_GROUP_NEW_SETUP:0 "§GNew Setup§!"
+ NUM_OF_OPERATIVE_SLOT_STATUS:0 "Configuring the number of operatives"
+ RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_5_DESC:0 "For every 5 factories, 1 operative slot will be given."
+ RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_10_DESC:0 "For every 10 factories, 1 operative slot will be given."
+ RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_15_DESC:0 "For every 15 factories, 1 operative slot will be given."
+ RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_20_DESC:0 "For every 20 factories, 1 operative slot will be given."
+ RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_30_DESC:0 "For every 30 factories, 1 operative slot will be given."
+ RULE_OPTION_NUM_OF_OPERATIVE_SLOT_PER_50_DESC:0 "For every 50 factories, 1 operative slot will be given."
+ operative_slot_idea_dyn:0 "From industry"
+ #МАКСИМУМ ОПЕРАТИВНИКОВ
+ NUM_OF_MAXIMUM_OPERATIVE_STATUS:0 "Setting the maximum number of operatives from industry size"
+ RULE_OPTION_DEFAULT_NUM_OF_MAXIMUM_OPERATIVE_STATUS_DESC:0 "The number of operatives is limited to the default value of the game and is equal to 500."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_5_DESC:0 "The maximum number of operatives from the industry size is 5."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_10_DESC:0 "The maximum number of operatives from the industry size is 10."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_15_DESC:0 "The maximum number of operatives from the industry size is 15."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_20_DESC:0 "The maximum number of operatives from the industry size is 20."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_25_DESC:0 "The maximum number of operatives from the industry size is 25."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_30_DESC:0 "The maximum number of operatives from the industry size is 30."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_50_DESC:0 "The maximum number of operatives from the industry size is 50."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_75_DESC:0 "The maximum number of operatives from the industry size is 75."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_100_DESC:0 "The maximum number of operatives from the industry size is 100."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_150_DESC:0 "The maximum number of operatives from the industry size is 150."
+ RULE_OPTION_NUM_OF_MAXIMUM_OPERATIVE_200_DESC:0 "The maximum number of operatives from the industry size is 200."
+ 
+ Allow_Send_Volunteers_Yes:0 "Set the Rule: Can Send Volunteers!"
+ Allow_Send_Volunteers_Yes.desc:0 "We can now help other nations with our troops!"
+
+ EDA_PUPPET_INDEPENDENCE_TITLE:0 "Grant Independence"
+ EDA_PUPPET_INDEPENDENCE_ACTION_DESC:0 "Remove this country from under your rule."
+ EDA_PUPPET_INDEPENDENCE_SEND_DESC:0 "Grant §Y[This.GetName]§! independence from us."
+ EDA_PUPPET_INDEPENDENCE_TOOLTIP_1:0 "§Y[This.GetName]§! is not demilitarized. " 
+
+######################################################################
+ EDA_PUPPET_REMILITARIZE_TITLE:0 "Remilitarize Puppet"
+ EDA_PUPPET_REMILITARIZE_ACTION_DESC:0 "Remilitarize this countries military and allow it to start deploying divisions."
+ EDA_PUPPET_REMILITARIZE_SEND_DESC:0 "Reinstate §Y[This.GetName]§!'s military and allow it to start deploying new divisions.\n\n It will take §R45§! days for the §Rlowered§! to remilitarize. During that time, we wil be unable to demilitarize it."
+ EDA_PUPPET_REMILITARIZE_TOOLTIP_1:0 "§Y[This.GetName]§! has not been demilitarized recently." 
+
+######################################################################
+ EDA_PUPPET_DEMILITARIZE_TITLE:0 "Demilitarize Puppet"
+ EDA_PUPPET_DEMILITARIZE_ACTION_DESC:0 "Demilitarize this countries military and stop it from deploying any new divisions."
+ EDA_PUPPET_DEMILITARIZE_SEND_DESC:0 "Disband the §Y[This.GetName]§! military and restrict it from creating a military. This will also result in them having a §Rlowered§! opinion of us.\n\n It will take §R30§! days for the §Y[This.GetName]§! to demilitarize. During that time, we wil be unable to remilitarize it."
+ EDA_PUPPET_DEMILITARIZE_TOOLTIP_1:0 "§Y[This.GetName]§! has not been remilitarized recently."
+
+
+EDA_RELATION_COMPLEMENT_TITLE:0 "Send a Complement"
+EDA_RELATION_COMPLEMENT_ACTION_DESC:0 "Send a message to this country that includes a complement in hopes of increasing their opinion of us."
+EDA_RELATION_COMPLEMENT_TOOLTIP_1:0 "We have not sent a relation action to §Y[THIS.GetName]§! in the past §Y30§! days."
+EDA_RELATION_COMPLEMENT_TOOLTIP_2:0 "We are not at §Rwar§! with §Y[THIS.GetName]§!."
+
+EDA_RELATION_COMPLEMENT_SEND_DESC:0 "Send a message that complements §Y[THIS.GetName]§!. \n\n Will result in a slight §Gincreased§! opinion of us."
+###########################################################################
+
+
+
+EDA_RELATION_INSULT_TITLE:0 "Send a Insult"
+EDA_RELATION_INSULT_ACTION_DESC:0 "Send a message to this country that includes an insult that will decrease their opinion of us."
+EDA_RELATION_INSULT_TOOLTIP_1:0 "We have not sent a relation action to §Y[THIS.GetName]§! in the past §Y30§! days."
+
+EDA_RELATION_INSULT_SEND_DESC:0 "Send a message that insults §Y[THIS.GetName]§!. \n\n Will result in a slight §Gdecreased§! opinion of us."
+###########################################################################
+
+
+
+EDA_RELATION_GIVE_CIV_TITLE:0 "Send a Civilian Factory"
+EDA_RELATION_GIVE_CIV_ACTION_DESC:0 "Give this country one of our civilian factories."
+EDA_RELATION_GIVE_CIV_TOOLTIP_1:0 "We have not sent a relation action to §Y[THIS.GetName]§! in the past §Y30§! days."
+EDA_RELATION_GIVE_CIV_TOOLTIP_2:0 "We have not sent a building to §Y[THIS.GetName]§! in the past §Y15§! days."
+EDA_RELATION_GIVE_CIV_TOOLTIP_3:0 "We have have more than §Y1§! civilian factory avaliable."
+
+EDA_RELATION_GIVE_CIV_SEND_DESC:0 "Remove §Y1§! of our civilian factories and send it to §Y[THIS.GetName]§!. \n\n Will result in a slight §Gincreased§! opinion of us and we will be unable to send another building for §Y30§! days."
+###########################################################################
+
+
+
+EDA_RELATION_GIVE_MIL_TITLE:0 "Send a Military Factory"
+EDA_RELATION_GIVE_MIL_ACTION_DESC:0 "Give this country one of our military factories."
+EDA_RELATION_GIVE_MIL_TOOLTIP_1:0 "We have not sent a relation action to §Y[THIS.GetName]§! in the past §Y30§! days."
+EDA_RELATION_GIVE_MIL_TOOLTIP_2:0 "We have not sent a building to §Y[THIS.GetName]§! in the past §Y15§! days."
+EDA_RELATION_GIVE_MIL_TOOLTIP_3:0 "We have have more than §Y1§! military factory avaliable."
+
+EDA_RELATION_GIVE_MIL_SEND_DESC:0 "Remove §Y1§! of our military factories and send it to §Y[THIS.GetName]§!. \n\n Will result in a slight §Gincreased§! opinion of us and we will be unable to send another building for §Y30§! days."
+###########################################################################
+
+
+
+EDA_RELATION_GIVE_DOCK_TITLE:0 "Send a Dockyard"
+EDA_RELATION_GIVE_DOCK_ACTION_DESC:0 "Give this country one of our dockyards."
+EDA_RELATION_GIVE_DOCK_TOOLTIP_1:0 "We have not sent a relation action to §Y[THIS.GetName]§! in the past §Y30§! days."
+EDA_RELATION_GIVE_DOCK_TOOLTIP_2:0 "We have not sent a building to §Y[THIS.GetName]§! in the past §Y15§! days."
+EDA_RELATION_GIVE_DOCK_TOOLTIP_3:0 "We have have more than §Y1§! dockyard avaliable."
+
+EDA_RELATION_GIVE_DOCK_SEND_DESC:0 "Remove §Y1§! of our dockyards and send it to §Y[THIS.GetName]§!. \n\n Will result in a slight §Gincreased§! opinion of us and we will be unable to send another building for §Y30§! days."
+###########################################################################
+
+
+
+EDA_RELATION_GIVE_MANPOWER_TITLE:0 "Send Manpower"
+EDA_RELATION_GIVE_MANPOWER_ACTION_DESC:0 "Give this country §Y10,000§! manpower from our manpower pool."
+EDA_RELATION_GIVE_MANPOWER_TOOLTIP_1:0 "We have not sent a relation action to §Y[THIS.GetName]§! in the past §Y30§! days."
+EDA_RELATION_GIVE_MANPOWER_TOOLTIP_2:0 "We have not sent manpower to §Y[THIS.GetName]§! in the past §Y45§! days"
+EDA_RELATION_GIVE_MANPOWER_TOOLTIP_3:0 "We have have more than §Y25,000§! manpower avaliable."
+EDA_RELATION_GIVE_MANPOWER_TOOLTIP_4:0 "§Y[THIS.GetName]§! is our puppet or is in a faction with us."
+
+EDA_RELATION_GIVE_MANPOWER_SEND_DESC:0 "Transfer §Y10,000§! of our manpower to §Y[THIS.GetName]§!. \n\n Will result in a slight §Gincreased§! opinion of us and we will be unable to send more manpower for §Y45§! days."
+###########################################################################
+
+
+
+EDA_RELATION_REQUEST_MANPOWER_TITLE:0 "Request Manpower"
+EDA_RELATION_REQUEST_MANPOWER_ACTION_DESC:0 "Request that this country gives us §Y10,000§! manpower from their manpower pool."
+EDA_RELATION_REQUEST_MANPOWER_TOOLTIP_1:0 "We have not sent a relation action to §Y[THIS.GetName]§! in the past §Y30§! days."
+EDA_RELATION_REQUEST_MANPOWER_TOOLTIP_2:0 "We have not requested manpower in the past §Y45§! days"
+EDA_RELATION_REQUEST_MANPOWER_TOOLTIP_3:0 "§Y[THIS.GetName]§! has more than §Y25,000§! manpower avaliable."
+EDA_RELATION_REQUEST_MANPOWER_TOOLTIP_4:0 "§Y[THIS.GetName]§! is our puppet or is in a faction with us."
+
+EDA_RELATION_REQUEST_MANPOWER_SEND_DESC:0 "Request that §Y10,000§! of §Y[THIS.GetName]'s§! manpower be transfered to us. \n\n We will be unable to request more manpower for §Y45§! days."
+
+eda_request_manpower_ai_base:0 "Base Reluctance"
+eda_request_manpower_ai_is_puppet:0 "§Y[THIS.GetName]§! is our puppet"
+eda_request_manpower_ai_high_opinion:0 "§Y[THIS.GetName]§! has an opinion higher than §G60§! of us"
+eda_request_manpower_ai_med_opinion:0 "§Y[THIS.GetName]§! has an opinion between §G60§! and §G30§! of us"
+eda_request_manpower_ai_low_opinion:0 "§Y[THIS.GetName]§! has an opinion between §G30§! and §G0§! of us"
+eda_request_manpower_ai_negative_opinion:0 "§Y[THIS.GetName]§! has an opinion lower than §R0§! of us"
+eda_request_manpower_ai_is_at_war:0 "§Y[THIS.GetName]§! is at war and we are not fighting alongside them."
+###########################################################################
+
+ REQUEST_RESOURCE_RIGHTS_TITLE:0 "Request resource rights"
+ REQUEST_RESOURCE_RIGHTS_ACTION_DESC:0 "Ask for rights to the resources in one of their states.\n\n§RIf they accept, you can choose the state via state interactions.§!"
+ REQUEST_RESOURCE_RIGHTS_SEND_DESC:0 "Asking for resource rights from the\n§Y[From.Getname]?§!\nwill give us direct access to the resources in a state of our choice!"
+ REQUEST_RESOURCE_RIGHTS_RECEIVE_DESC:0 "We have been asked to give resource rights to the\n§Y[Root.Getname]?§!\n\nIf we accept, they will be free to choose a state with which to exploit!"
+ REQUEST_RESOURCE_RIGHTS_ACCEPT:0 "They Accepted"
+ REQUEST_RESOURCE_RIGHTS_ACCEPT_DESC:0 "They accepted our offer and we can now request the resources in a state of our choice via state interactions!"
+ REQUEST_RESOURCE_RIGHTS_REJECT:0 "They Refused"
+ REQUEST_RESOURCE_RIGHTS_REJECT_DESC:0 "They refused our request to the rights of their resources! We should try to improve relations before asking again."
+ request_resource_rights_ai_condition:0 "Is AI"
+ request_resource_rights1_opmod:0 "Relation: Resource Rights"
+ 
+ #REQUEST_RESOURCE_RIGHTS_BREAK_TITLE:0 "Break trade agreement"
+ #REQUEST_RESOURCE_RIGHTS_BREAK_ACTION_DESC:0 "Break your trade agreement with this country."
+ #REQUEST_RESOURCE_RIGHTS_BREAK_SEND_DESC:0 "Breaking your trade agreement with the\n§Y[From.Getname]?§!\ncould disrupt our trade! Are you sure?"
+ #REQUEST_RESOURCE_RIGHTS_BREAK_RECEIVE_DESC:0 "The §Y[Root.Getname]?§! have broken our trade agreement!"
+ #request_resource_rights_break1_opmod:0 "Broken trade agreement"
+ 
+ #request_resource_rights_war_dec_on_action_tt:0 "Remove §YTrade Agreement§!"
+ 
+ allow_coring_button:0 "Allow Coring Button?"
+ allow_coring_button_option_yes:0 "Yes"
+ allow_coring_button_option_yes_desc:0 "Enables coring of states with more than 85% compliance"
+ allow_coring_button_option_no:0 "No"
+ allow_coring_button_option_no_desc:0 "Coring disabled"
+ 
+ STATE_INTERACTIONS_TITLE:0 "§HState Interactions:§!\n[This.GetName]"
+ CORING1_BUTTON_TT:0 "§HIntegrate [This.GetName]§!\n\nWith state population less than §H50k§!, this action costs £pol_power §H10§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is not a core\n   State compliance is §H>85%§!\n   Coring allowed by game rule"
+ CORING2_BUTTON_TT:0 "§HIntegrate [This.GetName]§!\n\nWith state population between §H50k§! and §H100k§!, this action costs £pol_power §H15§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is not a core\n   State compliance is §H>85%§!\n   Coring allowed by game rule"
+ CORING3_BUTTON_TT:0 "§HIntegrate [This.GetName]§!\n\nWith state population between §H100k§! and §H250k§!, this action costs £pol_power §H25§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is not a core\n   State compliance is §H>85%§!\n   Coring allowed by game rule"
+ CORING4_BUTTON_TT:0 "§HIntegrate [This.GetName]§!\n\nWith state population between §H250k§! and §H500k§!, this action costs £pol_power §H50§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is not a core\n   State compliance is §H>85%§!\n   Coring allowed by game rule"
+ CORING5_BUTTON_TT:0 "§HIntegrate [This.GetName]§!\n\nWith state population between §H500k§! and §H1M§!, this action costs £pol_power §H75§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is not a core\n   State compliance is §H>85%§!\n   Coring allowed by game rule"
+ CORING6_BUTTON_TT:0 "§HIntegrate [This.GetName]§!\n\nWith state population between §H1M§! and §H5M§!, this action costs £pol_power §H100§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is not a core\n   State compliance is §H>85%§!\n   Coring allowed by game rule"
+ CORING7_BUTTON_TT:0 "§HIntegrate [This.GetName]§!\n\nWith state population between §H5M§! and §H10M§!, this action costs £pol_power §H150§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is not a core\n   State compliance is §H>85%§!\n   Coring allowed by game rule"
+ CORING8_BUTTON_TT:0 "§HIntegrate [This.GetName]§!\n\nWith state population greater than §H10M§!, this action costs £pol_power §H250§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is not a core\n   State compliance is §H>85%§!\n   Coring allowed by game rule"
+ CORING_BUTTON_TRIGGER1_TT:0 "Owns and fully controls state"
+ CORING_BUTTON_TRIGGER2_TT:0 "Is not a core"
+ CORING_BUTTON_TRIGGER3_TT:0 "State compliance is §H>85%§!"
+ CORING_BUTTON_TRIGGER4_TT:0 "Coring allowed by game rule"
+
+ UNCORING1_BUTTON_TT:0 "§HAbandon core of [This.GetName]§!\n\nWith state population less than §H50k§!, this action costs £pol_power §H5§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is a core\n   Is not the current capital\n   Uncoring allowed by game rule"
+ UNCORING2_BUTTON_TT:0 "§HAbandon core of [This.GetName]§!\n\nWith state population between §H50k§! and §H100k§!, this action costs £pol_power §H10§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is a core\n   Is not the current capital\n   Uncoring allowed by game rule"
+ UNCORING3_BUTTON_TT:0 "§HAbandon core of [This.GetName]§!\n\nWith state population between §H100k§! and §H250k§!, this action costs £pol_power §H15§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is a core\n   Is not the current capital\n   Uncoring allowed by game rule"
+ UNCORING4_BUTTON_TT:0 "§HAbandon core of [This.GetName]§!\n\nWith state population between §H250k§! and §H500k§!, this action costs £pol_power §H20§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is a core\n   Is not the current capital\n   Uncoring allowed by game rule"
+ UNCORING5_BUTTON_TT:0 "§HAbandon core of [This.GetName]§!\n\nWith state population between §H500k§! and §H1M§!, this action costs £pol_power §H25§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is a core\n   Is not the current capital\n   Uncoring allowed by game rule"
+ UNCORING6_BUTTON_TT:0 "§HAbandon core of [This.GetName]§!\n\nWith state population between §H1M§! and §H5M§!, this action costs £pol_power §H30§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is a core\n   Is not the current capital\n   Uncoring allowed by game rule"
+ UNCORING7_BUTTON_TT:0 "§HAbandon core of [This.GetName]§!\n\nWith state population between §H5M§! and §H10M§!, this action costs £pol_power §H35§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is a core\n   Is not the current capital\n   Uncoring allowed by game rule"
+ UNCORING8_BUTTON_TT:0 "§HAbandon core of [This.GetName]§!\n\nWith state population greater than §H10M§!, this action costs £pol_power §H40§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is a core\n   Is not the current capital\n   Uncoring allowed by game rule"
+ UNCORING_BUTTON_TRIGGER1_TT:0 "Owns and fully controls state"
+ UNCORING_BUTTON_TRIGGER2_TT:0 "Is a core"
+ UNCORING_BUTTON_TRIGGER3_TT:0 "Is not the current capital"
+ UNCORING_BUTTON_TRIGGER4_TT:0 "Uncoring allowed by game rule"
+
+ MOVE_CAPITAL_BUTTON_TT:0 "§HMove capital to [This.GetName]§!\n\nThis action costs £pol_power §H200§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   Is a core\n   Is not the current capital"
+ MOVE_CAPITAL_BUTTON_TRIGGER1_TT:0 "Owns and fully controls state"
+ MOVE_CAPITAL_BUTTON_TRIGGER2_TT:0 "Is a core"
+ MOVE_CAPITAL_BUTTON_TRIGGER2_TT:0 "Is not the current capital"
+
+ REQUEST_RESOURCE_RIGHTS_BUTTON_TT:0 "§HRequest resource rights to [This.GetName]§!\n\nThis action costs £pol_power §H25§!.\n\n§HAll of the following must be true:§!\n   Is a foreign state\n   State does not have foreign resource rights\n   Is allowed to request resource rights"
+ REQUEST_RESOURCE_RIGHTS_BUTTON_TRIGGER1_TT:0 "Foreign state"
+ REQUEST_RESOURCE_RIGHTS_BUTTON_TRIGGER2_TT:0 "State does not have foreign resource rights"
+ REQUEST_RESOURCE_RIGHTS_BUTTON_TRIGGER3_TT:0 "Is allowed to request resource rights"
+
+ REMOVE_RESOURCE_RIGHTS_BUTTON_TT:0 "§HRemove resource rights from [This.GetName]§!\n\nThis action costs £pol_power §H25§!.\n\n§HAll of the following must be true:§!\n   Owns and fully controls state\n   State has foreign resource rights"
+ REMOVE_RESOURCE_RIGHTS_BUTTON_TRIGGER1_TT:0 "Owns and fully controls state"
+ REMOVE_RESOURCE_RIGHTS_BUTTON_TRIGGER2_TT:0 "State has foreign resource rights"
+
+ BORDER_WAR_BUTTON_TT:0 "§HStart border war for [This.GetName]§!\n\nThis action costs £pol_power §H50§! and £command_power §H25§!.\n\n§HAll of the following must be true:§!\n   Attacker: Not a subject\n   Defender: Neutral and foreign state\n   Defender: Neighbouring state\n   Attacker: Did not border war recently (1 yr)[Root.GetBorderWarAllowedTooltip]\n   Defender: Not been attacked recently (6 mo.)[Root.GetBorderWarDefenderAllowedTooltip]"
+ BORDER_WAR_BUTTON_TRIGGER1_TT:0 "£trigger_yes Attacker is not a subject"
+ BORDER_WAR_BUTTON_TRIGGER2_TT_Y:0 "£trigger_yes Foreign state"
+ BORDER_WAR_BUTTON_TRIGGER2_TT_N:0 "£trigger_no Foreign state"
+ BORDER_WAR_BUTTON_TRIGGER3_TT_Y:0 "£trigger_yes Neighbouring state"
+ BORDER_WAR_BUTTON_TRIGGER3_TT_N:0 "£trigger_no Neighbouring state"
+ BORDER_WAR_BUTTON_TRIGGER4_TT_Y:0 "£trigger_yes Did not trigger a border war in the last year"
+ BORDER_WAR_BUTTON_TRIGGER4_TT_N:0 "£trigger_no Did not trigger a border war in the last year [Root.GetBorderWarAllowedTooltip]"
+ BORDER_WAR_BUTTON_TRIGGER5_TT:0 "Defender has not been attacked in the last six months"
+ string_border_war_allowed_in_this_many_days:0 "\n      §Y[?Root.next_border_war_allowed_in_this_many_days]§! days remaining"
+ string_border_war_defender_allowed_in_this_many_days:0 "\n      §Y[?Root.next_border_war_defender_allowed_in_this_many_days]§! days remaining"
+
+###############
+# Support War #
+###############
+EDA_WAR_SUPPORT_TITLE:0 "Support War"
+EDA_WAR_SUPPORT_ACTION_DESC:0 "Support this country's war goal(s)"
+EDA_WAR_SUPPORT_SEND_DESC:0 "Formally announce that we support §Y[THIS.GetName]'s§! offensive war. \n\n Will result in an §Gincreased§! opinion from §Y[THIS.GetName]§! and will §Gincrease§! their war support."
+
+EDA_WAR_SUPPORT_TOOLTIP_1:0 "We have not voiced our opinion on §Y[THIS.GetName]'s§! war."
+EDA_WAR_SUPPORT_TOOLTIP_2:0 "§Y[THIS.GetName]§! is not at war with us."
+###########################################################################
+
+
+
+################
+# Denounce War #
+################
+EDA_WAR_DENOUNCE_TITLE:0 "Denounce War"
+EDA_WAR_DENOUNCE_ACTION_DESC:0 "Denounce this country's war goal(s)"
+EDA_WAR_DENOUNCE_SEND_DESC:0 "Formally announce that we disapprove of §Y[THIS.GetName]'s§! offensive war. \n\n Will result in an §Gdecreased§! opinion from §Y[THIS.GetName]§!."
+
+EDA_WAR_DENOUNCE_TOOLTIP_1:0 "We have not voiced our opinion on §Y[THIS.GetName]'s§! war."
+EDA_WAR_DENOUNCE_TOOLTIP_2:0 "§Y[THIS.GetName]§! is not at war with us."
+
+EDA_GENERAL_RULES:0 "Enhanced Diplomatic Actions - General Rules"
+EDA_PUPPET_RULES:0 "Enhanced Diplomatic Actions - Puppet Rules"
+EDA_RELATION_RULES:0 "Enhanced Diplomatic Actions - Relation Rules"
+EDA_WAR_RULES:0 "Enhanced Diplomatic Actions - War Rules"
+
+#################
+# General Rules #
+#################
+
+  EDA_EMPTY_SPACE:0 "Clear Action Dividers"
+  EMPTY_SPACE_ACTION_ALLOWED_TEXT:0 "Enabled"
+  EMPTY_SPACE_ACTION_ALLOWED_DESC:0 "Enables the "dividers" between each diplomatic action group in order to organize things."
+  EMPTY_SPACE_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  EMPTY_SPACE_ACTION_NOT_ALLOWED_DESC:0 "Disables the "dividers" between each diplomatic action group."
+
+  EDA_PUPPET_ACTIONS:0 "Puppet Actions"
+  PUPPET_ANY_ACTION_ALLOWED_TEXT:0 "Enabled"
+  PUPPET_ANY_ACTION_ALLOWED_DESC:0 "Enables the puppet action category. This is §Rrequired§! in order for any puppet actions to work. \n\n To enable specific puppet actions, you will need to enable them in the §YEnahnced Diplomatic Actions - Puppet Rules§! category."
+  PUPPET_ANY_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  PUPPET_ANY_ACTION_NOT_ALLOWED_DESC:0 "Disables the puppet action category. If you plan on using any puppet actions, you will need this to be §Renabled§!."
+
+  EDA_RELATION_ACTIONS:0 "Relation Actions"
+  RELATION_ANY_ACTION_ALLOWED_TEXT:0 "Enabled"
+  RELATION_ANY_ACTION_ALLOWED_DESC:0 "Enables the relation action category. This is §Rrequired§! in order for any relation actions to work. \n\n To enable specific relation actions, you will need to enable them in the §YEnahnced Diplomatic Actions - Relation Rules§! category."
+  RELATION_ANY_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  RELATION_ANY_ACTION_NOT_ALLOWED_DESC:0 "Disables the relation action category. If you plan on using any relation actions, you will need this to be §Renabled§!."
+
+  EDA_WAR_ACTIONS:0 "War Actions"
+  WAR_ANY_ACTION_ALLOWED_TEXT:0 "Enabled"
+  WAR_ANY_ACTION_ALLOWED_DESC:0 "Enables the war action category. This is §Rrequired§! in order for any war actions to work. \n\n To enable specific war actions, you will need to enable them in the §YEnahnced Diplomatic Actions - War Rules§! category."
+  WAR_ANY_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  WAR_ANY_ACTION_NOT_ALLOWED_DESC:0 "Disables the war action category. If you plan on using any war actions, you will need this to be §Renabled§!."
+
+
+
+################
+# Puppet Rules #
+################
+
+  EDA_PUPPET_INDEPENDENCE:0 "Grant Puppet Independence"
+  PUPPET_INDEPENDENCE_ACTION_ALLOWED_TEXT:0 "Enabled"
+  PUPPET_INDEPENDENCE_ACTION_ALLOWED_DESC:0 "Enables the Puppet Independence Action. This action allows the puppet overlord to give independence to its puppet quickly and easily. \n\n Make sure you have §Renabled§! the §YPuppet Actions§! rule in the §YEnahnced Diplomatic Actions - General Rules§! category."
+  PUPPET_INDEPENDENCE_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  PUPPET_INDEPENDENCE_ACTION_NOT_ALLOWED_DESC:0 "Disables the the Puppet Independence Action. This action allows the puppet overlord to give independence to its puppet quickly and easily."
+
+  EDA_PUPPET_MILITARIZE:0 "Puppet Militarization Actions"
+  PUPPET_MILITARIZE_ACTION_ALLOWED_TEXT:0 "Enabled"
+  PUPPET_MILITARIZE_ACTION_ALLOWED_DESC:0 "Enables the Puppet Militarization Actions. These actions include the Demilitarize and Remilitarize which allow you to stop the puppet from creating new division and delete andy current ones. \n\n Make sure you have §Renabled§! the §YPuppet Actions§! rule in the §YEnahnced Diplomatic Actions - General Rules§! category."
+  PUPPET_MILITARIZE_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  PUPPET_MILITARIZE_ACTION_NOT_ALLOWED_DESC:0 "Disables the Puppet Militarization Actions. These actions include the Demilitarize and Remilitarize which allow you to stop the puppet from creating new division and delete andy current ones."
+
+
+
+##################
+# Relation Rules #
+##################
+
+  EDA_RELATION_COMPLEMENT:0 "Complement Action"
+  RELATION_COMPLEMENT_ACTION_ALLOWED_TEXT:0 "Enabled"
+  RELATION_COMPLEMENT_ACTION_ALLOWED_DESC:0 "Enables the Country Complement Action. This action allows a country to complement another and increase their opinion of the original country. \n\n Make sure you have §Renabled§! the §YRelation Actions§! rule in the §YEnahnced Diplomatic Actions - General Rules§! category."
+  RELATION_COMPLEMENT_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  RELATION_COMPLEMENT_ACTION_NOT_ALLOWED_DESC:0 "Disables the Country Complement Action. This action allows a country to complement another and increase their opinion of the original country."
+
+  EDA_RELATION_INSULT:0 "Insult Action"
+  RELATION_INSULT_ACTION_ALLOWED_TEXT:0 "Enabled"
+  RELATION_INSULT_ACTION_ALLOWED_DESC:0 "Enables the Country Insult Action. This action allows a country to insult another and decrease their opinion of the original country. \n\n Make sure you have §Renabled§! the §YRelation Actions§! rule in the §YEnahnced Diplomatic Actions - General Rules§! category."
+  RELATION_INSULT_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  RELATION_INSULT_ACTION_NOT_ALLOWED_DESC:0 "Disables the Country Insult Action. This action allows a country to insult another and decrease their opinion of the original country."
+
+  EDA_RELATION_GIVE_INDUSTRIES:0 "Give Industries Actions"
+  RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED_TEXT:0 "Enabled"
+  RELATION_GIVE_INDUSTRIES_ACTION_ALLOWED_DESC:0 "Enables the Give Industries Actions. These actions allow a country to send factories or dockyard to another and increase their opinion of the original country. \n\n Make sure you have §Renabled§! the §YRelation Actions§! rule in the §YEnahnced Diplomatic Actions - General Rules§! category."
+  RELATION_GIVE_INDUSTRIES_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  RELATION_GIVE_INDUSTRIES_ACTION_NOT_ALLOWED_DESC:0 "Disables the Give Industries Actions. These actions allow a country to send factories or dockyard to another and increase their opinion of the original country."
+
+  EDA_RELATION_MANPOWER:0 "Manpower Actions"
+  RELATION_MANPOWER_ACTION_ALLOWED_TEXT:0 "Enabled"
+  RELATION_MANPOWER_ACTION_ALLOWED_DESC:0 "Enables the Manpower Actions. These actions allow a country to send or request manpower from another country. \n\n Make sure you have §Renabled§! the §YRelation Actions§! rule in the §YEnahnced Diplomatic Actions - General Rules§! category."
+  RELATION_MANPOWER_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  RELATION_MANPOWER_ACTION_NOT_ALLOWED_DESC:0 "Disables the Manpower Actions. These actions allow a country to send or request manpower from another country."
+
+
+
+#############
+# War Rules #
+#############
+
+  EDA_WAR_OPINION:0 "War Opinion Actions"
+  WAR_OPINION_ACTION_ALLOWED_TEXT:0 "Enabled"
+  WAR_OPINION_ACTION_ALLOWED_DESC:0 "Enables the War Opinion Actions. These actions allow a country to voice its opinion in on a country's offensive war. \n\n Make sure you have §Renabled§! the §YWar Actions§! rule in the §YEnahnced Diplomatic Actions - General Rules§! category."
+  WAR_OPINION_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  WAR_OPINION_ACTION_NOT_ALLOWED_DESC:0 "Disables the War Opinion Actions. These actions allow a country to voice its opinion in on a country's offensive war."  
+
+  EDA_WAR_PEACE_DEAL:0 "Peace Deal Action"
+  WAR_PEACE_DEAL_ACTION_ALLOWED_TEXT:0 "Enabled"
+  WAR_PEACE_DEAL_ACTION_ALLOWED_DESC:0 "Enables the Peace Deal Action. This action allows a country to offer or demand peace with a country it is at war with. \n\n Make sure you have §Renabled§! the §YWar Actions§! rule in the §YEnahnced Diplomatic Actions - General Rules§! category."
+  WAR_PEACE_DEAL_ACTION_NOT_ALLOWED_TEXT:0 "Disabled"
+  WAR_PEACE_DEAL_ACTION_NOT_ALLOWED_DESC:0 "Disables the Peace Deal Action. This action allows a country to offer or demand peace with a country it is at war with."  
+
+###############
+# Support War #
+###############
+  war_support_event.1.title:0 "[ROOT.GetName] Recieves Support For Its War!"
+  war_support_event.1.desc:0 "[FROM.GetName] has officially announced its support for [ROOT.GetName]'s war goal. It is still unclear though if [FROM.GetName] plans on giving financial or military aid to [ROOT.GetName] as well."
+  war_support_event.1.a:0 "Makes Sense"
+  war_support_event.1.b:0 "That Can't be good"
+  war_support_event.1.c:0 "Interesting"
+
+
+##################
+# Disapprove War #
+##################
+  war_disapproval_event.1.title:0 "[ROOT.GetName] Recieves Disapproval For Its War!"
+  war_disapproval_event.1.desc:0 "[FROM.GetName] has officially announced its disapproval for [ROOT.GetName]'s war goal. It is still unclear how [ROOT.GetName] will respond to this disapproval."
+  war_disapproval_event.1.a:0 "What a Change"
+  war_disapproval_event.1.b:0 "[ROOT.GetName] Better Watch Out"
+  war_disapproval_event.1.c:0 "Won't Affect Much"
+
+ CW_EMBARGO_TITLE:0 "£embargo_texticon£ Impose Embargo"
+ CW_EMBARGO_ACTION_DESC:0 "Impose an embargo on this nation which will prevent them from buying resources from us.\n\nThis will not prevent us from buying resources from them unless they embargo us as well.\n\n§YNote:§! You cannot use this option on countries that have the §YClosed Economy§! trade law since the embargo would not have any effect on them." 
+ CW_EMBARGO_LOC:0 "Would you like to impose an embargo on\n\n§Y[From.Getname]?§!\n\nThis will prevent them from buying resources from us.\nThey may retaliate and embargo us in return."
+ CW_EMBARGO_INITIATED_TITLE:0 "[ROOT.GetAdjective] Embargo"
+ CW_EMBARGO_INITIATED_DESC:0 "§Y[ROOT.GetName]§!\n\nHas decided to impose an embargo on our nation.\n\nAs a result we can no longer buy resources from them but they are free to buy resources from us unless we embargo them as well."
+ CW_CANCEL_EMBARGO_TITLE:0 "£unembargo_texticon£ Revoke Embargo"
+ CW_CANCEL_EMBARGO_ACTION_DESC:0 "Remove the embargo we have placed on this nation, this will allow them once more to trade with us for resources."
+ CW_CANCEL_EMBARGO_LOC:0 "Would you like to lift the embargo imposed on\n\n§Y[From.Getname]?§!\n\nThis will allow them to trade with us freely.[FROM.UNSC_SANCTIONS_WARNING]"
+ CW_CANCEL_EMBARGO_INITIATED_TITLE:0 "[ROOT.GetAdjective] Embargo Lifted"
+ CW_CANCEL_EMBARGO_INITIATED_DESC:0 "The §Y[ROOT.GetName]§!\n\nHas decided to lift the economic embargo against us.\n\nThis will improve our relations and allow us to buy resources from them.[CW_CHECK_COUNTER_EMBARGO]"
+ CW_WE_ARE_EMBARGO_THEM:0 "\n\n§RNote:§! this will not automatically cancel the embargo we currently have imposed on them!"
+ CW_CHECK_IS_EMBARGOED_BY_US:0 "Is embargoed by us."
+
+ CW_THEY_EMBARGO_TT:0 "Show [THIS.GetAdjective] Embargo's."
+ CW_THEY_EMBARGO_TTL:0 "Click to see countries that are embargoed by [THIS.GetNameDef]."
+ CW_THEY_EMBARGO_AGAINST_TT:0 "Show Embargo's against [THIS.GetNameDef]."
+ CW_THEY_EMBARGO_AGAINST_TTL:0 "Click to see countries that have an active embargo against [THIS.GetNameDef]."
+ CW_EMBARGO_AGAINST_US:0 "Embargo's Against [THIS.GetNameDef]"
+ CW_OUR_EMBARGOS:0 "[THIS.GetAdjective] Embargo's"
+
+ cw_embargo_trade:0 "Embargoing Us"
+ cw_embargo_relations_target:0 "Embargoing us"
+ cw_embargo_relations_initiator:0 "Embargoing Them"
+ cw_embargo_lifter:0 "Lifted Embargo"
