@@ -1661,8 +1661,6 @@ special_projects = {
 	}
 }
 
-<<<<<<< Updated upstream
-=======
 GER_share_tanks_category = {
 	
 	GER_share_p4 = {
@@ -2097,7 +2095,6 @@ GER_share_generals = {
 	}
 }
 
->>>>>>> Stashed changes
 GER_propaganda_campaigns = {
 	GER_german_students = { # ID = 2
 		priority = 12
