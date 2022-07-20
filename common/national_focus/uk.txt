@@ -7872,10 +7872,13 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		prerequisite = { focus = ENG_home_defence }
+		prerequisite = { 
+			focus = ENG_home_defence 
+			focus = ENG_global_defense
+		}
 		icon = GFX_goal_generic_construct_military
-		x = 4
-		y = 1
+		x = -10
+		y = 4
 		offset = {
 			x = 1
 			y = 0
@@ -7908,11 +7911,11 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		prerequisite = { focus = ENG_war_cabinet }
+		prerequisite = { focus = ENG_home_defence }
 		icon = GFX_goal_generic_trade
-		x = 0
+		x = 4
 		y = 1
-		relative_position_id = ENG_war_cabinet
+		relative_position_id = ENG_home_defence
 		cost = 6
 		ai_will_do = {
 			factor = 1
@@ -11106,7 +11109,7 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = ENG_no_further_appeasement
-			focus = ENG_home_defence
+			focus = ENG_issue_gasmasks
 		}
 		available_if_capitulated = yes
 		continue_if_invalid = yes
@@ -11208,51 +11211,12 @@ focus_tree = {
 			custom_effect_tooltip = ENG_mil_arms_purchases_tt
 		}
 	}
-	
-	focus = {
-		id = ENG_tizard_mission
-		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = ENG_arms_purchases }
-		available = {				
-			has_government = democratic
-			any_other_country = {
-				has_war_with = ROOT
-				NOT = { has_government = democratic }
-				num_of_factories > 30
-			}
-			NOT = {
-				has_war_with = USA
-			}
-			USA = { 
-				has_government = ROOT
-				has_war = no
-				NOT = {
-					OR = {
-						has_idea = undisturbed_isolation
-						has_idea = isolation
-					}
-				}
-			}
-		} 
-		x = 0
-		y = 1
-		relative_position_id = ENG_arms_purchases
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-		search_filters = {FOCUS_FILTER_RESEARCH}	
-		completion_reward = {
-			USA = {
-				country_event = britain.1
-			}
-		}
-	}
+
 	
 	focus = {
 		id = ENG_destroyers_for_bases
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = ENG_tizard_mission }
+		prerequisite = { focus = ENG_arms_purchases }
 		bypass = {
 			NOT = { 696 = { is_controlled_by = ENG } }
 			NOT = { 331 = { is_controlled_by = ENG } }
@@ -11265,7 +11229,7 @@ focus_tree = {
 
 		x = 0
 		y = 1
-		relative_position_id = ENG_tizard_mission
+		relative_position_id = ENG_arms_purchases
 		cost = 5
 
 		search_filters = {FOCUS_FILTER_ANNEXATION}
