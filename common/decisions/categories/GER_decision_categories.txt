@@ -22,17 +22,7 @@ GER_share_generals = {
 	}
 }
 
-GER_share_tanks = {
-	icon = military_operation
 
-	picture = GFX_decision_cat_picture_ger_case_anton
-
-	allowed = {
-		OR = {
-			tag = ROM tag = JAP tag = SPR tag = HUN tag = BUL tag = FIN tag = MAN tag = ITA
-		}
-	}
-}
 
 GER_mefo_bills_category = {
 	icon = ger_mefo_bills
@@ -106,6 +96,18 @@ GER_military_buildup = {
 # 	}
 # }
 
+GER_share_tanks = {
+	icon = military_operation
+
+	picture = GFX_decision_cat_picture_ger_case_anton
+
+	allowed = {
+		OR = {
+			tag = ROM tag = JAP tag = SPR tag = HUN tag = BUL tag = FIN tag = MAN tag = ITA
+		}
+	}
+}
+
 GER_propaganda_campaigns = {
 	priority = 100
 
@@ -118,5 +120,10 @@ GER_propaganda_campaigns = {
 	}
 
 	visible = {
+		has_government = fascism
+	}
+	
+	available = {
+		has_idea = GER_joseph_goebbels
 	}
 }

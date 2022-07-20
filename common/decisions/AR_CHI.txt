@@ -1,0 +1,41 @@
+
+
+foreign_politics = {
+
+	CHI_integrate_shanxi = {
+
+		icon = infiltrate_state
+
+		allowed = { original_tag = PRC}
+
+		visible = {
+			SHX = {
+				has_capitulated
+				exists = yes
+			}
+		}
+
+		ai_will_do = {
+			base = 75
+		}
+
+		cost = 50
+
+		fire_only_once = no
+
+		complete_effect = {
+			effect_tooltip = {
+				annex_country = {
+					target = SHX
+					transfer_troops = yes
+				}
+				SHX = { custom_effect_tooltip = needs_approval }
+			}
+			hidden_effect = {
+				SHX = {
+					country_event = { id = AR_china.4 }
+				}
+			}
+		}
+	}
+}

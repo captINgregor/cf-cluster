@@ -462,6 +462,41 @@ country_event = {
 		GER = {
 			add_to_faction = ITA
 			country_event = { id = wtt_germany.12 }
+			transfer_state = 39
+			transfer_state = 736
+			if = {
+				limit = {
+					153 = {
+						is_core_of = GER
+					}
+				}
+				39 = {
+					add_core_of = GER
+				}
+			}
+			if = {
+				limit = {
+					YUG = {
+						owns_state = 103
+					}
+				}
+				YUG = {
+					transfer_state = 163
+				}
+			}
+			else_if = {
+				limit = {
+					CRO = {
+						owns_state = 103
+					}
+				}
+				CRO = {
+					transfer_state = 163
+				}
+			}
+			else = {
+				transfer_state = 163
+			}
 		}
 	}
 }

@@ -24,6 +24,7 @@ operations = {
 				owns_state = 146
 				owns_state = 147
 			}
+			has_war_with = SOV
 		}
 		
 		complete_effect = {
@@ -149,8 +150,6 @@ operations = {
 		ai_will_do = {
 			factor = 50
 		}
-
-
 
 	}
 

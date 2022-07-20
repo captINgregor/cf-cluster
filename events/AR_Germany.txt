@@ -1,0 +1,1702 @@
+﻿###########################
+# German Events
+###########################
+
+add_namespace = AR_germany
+
+# Memel for Guarantees acceptance event for Germany
+country_event = {
+	id = AR_germany.1006
+	title = AR_germany.1006.t
+	desc = AR_germany.1006.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# Great
+	option = {
+		name = AR_germany.1006.a
+		transfer_state = 188
+		add_state_core = 188
+		add_ideas = anti_soviet_pact
+		LIT = { 
+			add_ideas = anti_soviet_pact
+			add_opinion_modifier = { target = GER modifier = danzig_for_guarantees }
+		}
+		hidden_effect = {
+			news_event = { id = wtt_news.1002 hours = 6 }
+			LIT = {
+				add_ai_strategy = {
+					type = befriend
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = ENG
+					value = -200
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ENG
+					value = -200
+				}
+			}
+		}
+	}
+}
+
+#East Prussia for Alliance
+country_event = {
+	id = AR_germany.1007
+	title = AR_germany.1007.t
+	desc = AR_germany.1007.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# Accept
+	option = {
+		name = AR_germany.1007.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		LIT = {
+			country_event = { id = AR_germany.1013 days = 1 }
+		}
+	}
+
+	# Decline
+	option = {
+		name = AR_germany.1007.b
+		ai_chance = {
+			#factor = 50
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio < 1 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				GER = { strength_ratio = { tag = SOV ratio > 0.8 } }
+			}
+			modifier = {
+				factor = 0
+				GER = { strength_ratio = { tag = SOV ratio > 0.8 } }
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+		}
+		GER = {
+			country_event = { id = AR_germany.1009 days = 1 }
+		}
+	}
+}
+
+# East Prussia for Alliance acceptance event for Germany
+country_event = {
+	id = AR_germany.1008
+	title = AR_germany.1008.t
+	desc = AR_germany.1008.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# Great
+	option = {
+		name = AR_germany.1008.a
+		LIT = {
+			transfer_state = 763
+			add_state_core = 763
+		}
+		POL = {
+			transfer_state = 5
+			add_state_core = 5
+		}
+		add_ideas = anti_soviet_pact
+		POL = { 
+			add_ideas = anti_soviet_pact
+			add_opinion_modifier = { target = GER modifier = danzig_for_guarantees }
+		}
+		LIT = { 
+			add_ideas = anti_soviet_pact
+			add_opinion_modifier = { target = GER modifier = danzig_for_guarantees }
+		}
+		GER = { add_to_faction = LIT}
+		GER = { add_to_faction = POL}
+		hidden_effect = {
+			news_event = { id = wtt_news.1003 hours = 6 }
+			POL = {
+				add_ai_strategy = {
+					type = befriend
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = ENG
+					value = -200
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ENG
+					value = -200
+				}
+			}
+			LIT = {
+				add_ai_strategy = {
+					type = befriend
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = ENG
+					value = -200
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ENG
+					value = -200
+				}
+			}
+		}
+	}
+}
+
+# East Prussia rejection event for Germany
+country_event = {
+	id = AR_germany.1009
+	title = AR_germany.1009.t
+	desc = AR_germany.1009.desc
+	picture = GFX_report_event_poland_rejects
+
+	is_triggered_only = yes
+
+	# Oh Well
+	option = {
+		ai_chance = {
+			factor = 25
+		}
+		name = AR_germany.1009.a
+	}
+
+	# Renegotiate
+	option = {
+		name = AR_germany.1009.b
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = East_prussia_declined
+		country_event = { id = AR_germany.1011 }
+	}
+}
+
+
+# Memel for Guarantees rejection event for Germany
+country_event = {
+	id = AR_germany.1010
+	title = AR_germany.1010.t
+	desc = AR_germany.1010.d
+	picture = GFX_report_event_poland_rejects
+
+	is_triggered_only = yes
+
+	# We will never let go of our claims!
+	option = {
+		name = AR_germany.1010.a
+		ai_chance = {
+			factor = 50
+		}
+		188 = { add_claim_by = GER }
+		add_named_threat = { threat = 3 name = GER_demand_memel_threat }
+		LIT = {
+			country_event = { id = baltic.4 }
+		}
+	}
+
+	# Give it up
+	option = {
+		name = AR_germany.1010.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Secure our Eastern Borders
+country_event = {
+	id = AR_germany.1011
+	title = AR_germany.1011.t
+	desc = AR_germany.1011.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+
+	# Danzig and Memel for Guarantees
+	option = {
+		name = AR_germany.1011.a
+
+		ai_chance = {
+			modifier = {
+				factor = 1
+				has_completed_focus = GER_focus_on_small_germany
+			}
+		}
+		
+		effect_tooltip = {
+			add_ideas = anti_soviet_pact
+
+			GER = { transfer_state = 188 }
+			LIT = { add_ideas = anti_soviet_pact }
+			LIT = { custom_effect_tooltip = needs_approval }
+			
+			GER = { transfer_state = 85 }
+			GER = { transfer_state = 807 }
+			GER = { transfer_state = 86 }
+			GER = { transfer_state = 762 }
+			POL = { add_ideas = anti_soviet_pact }
+			POL = { add_opinion_modifier = { target = GER modifier = danzig_for_guarantees } }
+			POL = { custom_effect_tooltip = needs_approval }
+
+		}
+
+		POL = { country_event = { id = AR_germany.14 days = 1 } }
+		LIT = { country_event = { id = AR_germany.1014 days = 1 } }
+	}
+
+	# East Prussia for Alliance
+	option = {
+		name = AR_germany.1011.b
+
+		trigger = {
+			NOT = {
+				has_country_flag = East_prussia_declined
+			}
+			is_faction_leader = yes
+			is_in_faction = yes
+		}
+
+		ai_chance = {
+			modifier = {
+				factor = 1
+				has_completed_focus = GER_focus_on_greater_germany
+			}
+		}
+		
+		effect_tooltip = {
+			POL = { transfer_state = 763 }
+			LIT = { transfer_state = 5 }
+			GER = { 
+				add_to_faction = LIT
+				add_to_faction = POL
+			}
+			custom_effect_tooltip = needs_approval
+		}
+
+		POL = { country_event = { id = AR_germany.1007 days = 1 } }
+	}
+}
+
+#Promise Slovakia
+country_event = {
+	id = AR_germany.1012
+	title = AR_germany.1012.t
+	desc = AR_germany.1012.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# Accept
+	option = {
+		name = AR_germany.1007.a
+		ai_chance = {
+			factor = 50
+		}
+		effect_tooltip = {
+			transfer_state = 664
+			transfer_state = 71
+			transfer_state = 70
+			transfer_state = 73
+
+			GER = {add_to_faction = HUN}
+		}
+		hidden_effect = {
+			add_state_claim = 664
+			add_state_claim = 71
+			add_state_claim = 70
+			add_state_claim = 73
+		}
+		GER = {country_event = AR_germany.1016}
+	}
+
+	# Decline
+	option = {
+		name = AR_germany.1007.b
+		ai_chance = {
+			#factor = 50
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio < 1 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				GER = { strength_ratio = { tag = CZE ratio > 0.8 } }
+			}
+			modifier = {
+				factor = 0
+				GER = { strength_ratio = { tag = CZE ratio > 0.8 } }
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+		}
+		GER = {
+			country_event = { id = AR_germany.1015 days = 1 }
+		}
+	}
+}
+
+
+
+#East Prussia for Alliance LIT
+country_event = {
+	id = AR_germany.1013
+	title = AR_germany.1007.t
+	desc = AR_germany.1007.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# Accept
+	option = {
+		name = AR_germany.1007.a
+		ai_chance = {
+			factor = 50
+		}
+		effect_tooltip = {
+			LIT = { transfer_state = 763 }
+
+			GER = { add_to_faction = LIT}
+		}
+		
+		GER = {
+			country_event = { id = AR_germany.1008 days = 1 }
+		}
+		
+		
+		
+	}
+
+	# Decline
+	option = {
+		name = AR_germany.1007.b
+		ai_chance = {
+			#factor = 50
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio < 1 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				GER = { strength_ratio = { tag = SOV ratio > 0.8 } }
+			}
+			modifier = {
+				factor = 0
+				GER = { strength_ratio = { tag = SOV ratio > 0.8 } }
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+		}
+		GER = {
+			country_event = { id = AR_germany.1009 days = 1 }
+		}
+	}
+}
+
+# Memel for Guarantees event 
+country_event = {
+	id = AR_germany.1014
+	title = AR_germany.14.t
+	desc = AR_germany.14.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# Accept
+	option = {
+		name = AR_germany.14.a
+		ai_chance = {
+			factor = 50
+		}
+		effect_tooltip = {
+			
+			GER = { transfer_state = 188 }
+			GER = { add_ideas = anti_soviet_pact }
+			add_ideas = anti_soviet_pact
+			add_opinion_modifier = { target = GER modifier = danzig_for_guarantees }
+		}
+	
+		GER = {
+		country_event = { id = AR_germany.1006 days = 1 }
+		}
+			
+		
+	}
+
+	# Decline
+	option = {
+		name = AR_germany.14.b
+		ai_chance = {
+			#factor = 50
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio < 1 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				GER = { strength_ratio = { tag = SOV ratio > 0.8 } }
+			}
+			modifier = {
+				factor = 0
+				GER = { strength_ratio = { tag = SOV ratio > 0.8 } }
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+		}
+		
+	
+		GER = {
+		country_event = { id = AR_germany.1010 days = 1 }
+		}
+		
+	}
+}
+
+# Promise Slovakia rejected event for Germany
+country_event = {
+	id = AR_germany.1015
+	title = AR_germany.1015.t
+	desc = AR_germany.1015.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# Oh Well
+	option = {
+		ai_chance = {
+			factor = 25
+		}
+		name = AR_germany.1009.a
+	}
+}
+
+# Promise Slovakia acceptance event for Germany
+country_event = {
+	id = AR_germany.1016
+	title = AR_germany.1016.t
+	desc = AR_germany.1016.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# Great
+	option = {
+		name = AR_germany.1008.a
+		add_to_faction = HUN
+		hidden_effect = {
+			set_country_flag = promise_slovakia
+			HUN = {
+				add_ai_strategy = {
+					type = befriend
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = ENG
+					value = -200
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = ENG
+					value = -200
+				}
+			}
+			
+		}
+	}
+}
+
+# Event for Italy Launching Coup democratic
+country_event = {
+	id = AR_germany.1017
+	title = AR_germany.1017.t
+	desc = AR_germany.1017.d
+	picture = GFX_report_event_french_resistance_02
+
+	is_triggered_only = yes
+
+	# It is done (no choice needed because decision was taken in previous focus's events)
+	option = {
+		name = AR_germany.11.a
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		swap_ideas = {
+			remove_idea = GER_preparing_ITA_coup3
+			add_idea = GER_preparing_ITA_coup4
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = "GER"			
+			value = 200
+		}	
+		GER = {
+			add_to_faction = ITA
+			country_event = { id = AR_germany.12 }
+		}
+		set_global_flag = ita_coup
+	}
+}
+
+country_event = { #German Pressure on the benelux
+	id = AR_germany.1044
+	title = AR_germany.1044.t
+	desc = AR_germany.1044.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #fine
+		name = AR_germany.1043.a 
+		ai_chance = {
+			factor = 50
+		}
+		
+	}
+
+	option = { #NOPE
+		name = AR_germany.1043.b
+		ai_chance = {
+			#factor = 50
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio < 1 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				GER = { strength_ratio = { tag = FRA ratio > 0.8 } }
+			}
+			modifier = {
+				factor = 0
+				GER = { strength_ratio = { tag = FRA ratio > 0.8 } }
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				GER = { strength_ratio = { tag = ENG ratio > 0.8 } }
+			}
+			modifier = {
+				factor = 0
+				GER = { strength_ratio = { tag = ENG ratio > 0.8 } }
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+		}
+		GER = {
+			country_event = {
+				id = AR_germany.1045
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #not accepted
+	id = AR_germany.1045
+	title = AR_germany.1045.t
+	desc = AR_germany.1045.desc
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	is_triggered_only = yes
+
+	option = { #NOPE
+		name = AR_germany.1043.a
+		ai_chance = {
+			#factor = 50
+			modifier = {
+				factor = 35
+				strength_ratio = { tag = FROM ratio < 1 }
+			}
+			modifier = {
+				factor = 100000
+				strength_ratio = { tag = FROM ratio > 1 }
+			}
+			modifier = {
+				factor = 1
+				strength_ratio = { tag = FROM ratio < 0.5 }
+			}
+			
+		}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+			expire = 0
+		}
+	}
+
+	option = { #FINE
+		name = AR_germany.1043.b
+		ai_chance = {
+			factor = 35
+		}
+	}
+}
+
+country_event = { #Lit
+	id = AR_germany.1046
+	title = AR_germany.1046.t
+	desc = AR_germany.1046.desc
+	picture = GFX_report_event_hitler_parade
+
+	is_triggered_only = yes
+
+	option = { #fine
+		name = AR_germany.1046.a 
+		ai_chance = {
+			factor = 50
+		}
+		effect_tooltip = {
+
+			LIT = {
+				transfer_state = 848
+				transfer_state = 849
+				transfer_state = 784
+				transfer_state = 850
+
+			}
+			POL = { custom_effect_tooltip = needs_approval }
+		}	
+		GER = {
+			puppet = LIT
+			country_event = { id = AR_germany.1051 }
+		}
+		LIT = {
+			add_state_claim = 848
+			add_state_claim = 849
+			add_state_core = 837
+			add_state_claim = 850
+			set_cosmetic_tag = GREATER_LIT
+			set_politics = {
+				ruling_party = neutrality
+			}
+			set_party_name = {
+				ideology = neutrality
+				name = LIT_von_urach_party
+				long_name = LIT_von_urach_party
+			}
+			promote_character = LIT_karl_gero
+		}
+		POL = {
+			country_event = {
+				id = AR_germany.1047
+				days = 0
+			} 
+		}
+	}
+
+	option = { #NOPE
+		name = AR_germany.1043.b
+		GER = {
+			country_event = {
+				id = AR_germany.1045
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #POL-Lit
+	id = AR_germany.1047
+	title = AR_germany.1047.t
+	desc = AR_germany.1047.desc
+	picture = GFX_report_event_hitler_parade
+
+	is_triggered_only = yes
+
+	option = { #fine
+		ai_chance = {
+			factor = 50
+		}
+
+		name = AR_germany.1047.a 
+		LIT = {
+			transfer_state = 848
+			transfer_state = 849
+			transfer_state = 784
+			transfer_state = 837
+			transfer_state = 850
+			add_state_core = 837
+			add_state_core = 848
+			add_state_core = 849
+			add_state_core = 850
+		}
+		GER = {
+			country_event = { id = AR_germany.1051 }
+		}
+	}
+
+	option = { #NOPE
+		ai_chance = {
+			#factor = 50
+			modifier = {
+				factor = 35
+				strength_ratio = { tag = GER ratio < 1 }
+			}
+			modifier = {
+				factor = 100000
+				strength_ratio = { tag = GER ratio > 1 }
+			}
+			modifier = {
+				factor = 1
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+			
+		}
+
+		name = AR_germany.1043.b
+		LIT = {
+			add_state_claim = 848
+			add_state_claim = 849
+			add_state_claim = 850
+			add_state_core = 837
+		}
+		GER = {
+			country_event = {
+				id = AR_germany.1045
+				days = 1
+			}
+
+		}
+	}
+}
+
+country_event = { #Lat
+	id = AR_germany.1048
+	title = AR_germany.1048.t
+	desc = AR_germany.1048.desc
+	picture = GFX_report_event_hitler_parade
+
+	is_triggered_only = yes
+
+	option = { #fine
+		name = AR_germany.1048.a 
+		ai_chance = {
+			factor = 50
+		}
+		GER = { country_event = { id = AR_germany.1051 } }
+		EST = { country_event = { id = AR_germany.1049 } }
+	}
+
+	option = { #NOPE
+		name = AR_germany.1048.b
+		GER = {
+			country_event = {
+				id = AR_germany.1045
+				days = 1
+			}
+		}
+		EST = { country_event = { id = AR_germany.1049 } }
+		set_global_flag = lat_declines
+	}
+}
+country_event = { #est
+	id = AR_germany.1049
+	title = AR_germany.1049.t
+	desc = AR_germany.1049.desc
+	picture = GFX_report_event_hitler_parade
+	is_triggered_only = yes
+
+	option = { #fine
+		name = AR_germany.1049.a 
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						is_ai = no
+						LAT = { is_ai = yes }
+					}
+					has_global_flag = lat_declines
+				}
+				
+			}
+			GER = {
+				puppet = EST
+				country_event = { id = AR_germany.1051 }
+			}
+			if = {
+				limit = {
+					has_global_flag = lat_declines
+				}
+				EST = {
+					add_state_claim = 12
+					add_state_claim = 810
+					add_state_claim = 808
+					add_state_claim = 190
+					add_state_claim = 809
+					set_cosmetic_tag = BAL_UNIFIED
+					set_politics = {
+						ruling_party = neutrality
+					}
+				}
+				else = {
+					EST = {
+						set_cosmetic_tag = BAL_UNIFIED
+						set_politics = {
+							ruling_party = neutrality
+						}
+						annex_country = {
+    						target = LAT
+   							transfer_troops = yes
+						}
+						hidden_effect = {
+							add_state_core = 12
+							add_state_core = 810
+							add_state_core = 808
+							add_state_core = 190
+							add_state_core = 809
+						}
+					}
+				}
+			}
+			else = {
+				GER = {
+					puppet = LAT
+					country_event = { id = AR_germany.1051 }
+				}
+				LAT = {
+					set_cosmetic_tag = BAL_UNIFIED
+					set_politics = {
+						ruling_party = neutrality
+					}
+					annex_country = {
+    					target = EST
+   						transfer_troops = yes
+					}
+					hidden_effect = {
+						add_state_core = 191
+						add_state_core = 13
+						add_state_core = 811
+						add_state_core = 813
+						add_state_core = 812
+					}
+				}
+				
+			}
+		}
+		
+	}
+
+	option = { #NOPE
+		name = AR_germany.1049.b
+		GER = {
+			country_event = {
+				id = AR_germany.1045
+				days = 1
+			}
+		}
+		LAT = {
+			set_cosmetic_tag = BAL_UNIFIED
+			set_politics = {
+				ruling_party = neutrality
+			}
+			add_state_claim = 191
+			add_state_claim = 13
+			add_state_claim = 811
+			add_state_claim = 813
+			add_state_claim = 812
+		}
+	}
+}
+country_event = { #south jutland demanded
+	id = AR_germany.1050
+	title = AR_germany.1050.t
+	desc = AR_germany.1050.desc
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = { #fine
+		ai_chance = {
+			factor = 35
+		}
+		name = AR_germany.1050.a 
+		ai_chance = {
+			factor = 50
+		}
+		GER = {
+			transfer_state = 836
+			add_state_core = 836
+			country_event = { id = AR_germany.1051 }
+		}
+		
+	}
+
+	option = { #NOPE
+		name = AR_germany.1050.b
+		ai_chance = {
+			#factor = 50
+			modifier = {
+				factor = 35
+				strength_ratio = { tag = GER ratio < 1 }
+			}
+			modifier = {
+				factor = 100000
+				strength_ratio = { tag = GER ratio > 1 }
+			}
+			modifier = {
+				factor = 1
+				strength_ratio = { tag = GER ratio < 0.5 }
+			}
+			
+		}
+		GER = {
+			country_event = {
+				id = AR_germany.1045
+				days = 1
+			}
+			add_state_claim = 836
+		}
+		
+	}
+}
+
+country_event = { #accepted
+	id = AR_germany.1051
+	title = AR_germany.1051.t
+	desc = AR_germany.1051.desc
+	picture = GFX_report_event_hitler_handshake
+
+	is_triggered_only = yes
+
+	option = { #GREAT
+		name = AR_germany.1051.a
+		add_opinion_modifier = {
+    		target = FROM
+   			modifier = GER_accepted_offer
+		}
+	}
+}
+
+country_event = { #HRE just formed
+	id = AR_germany.1052
+	title = AR_germany.1052.t
+	desc = AR_germany.1052.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #federalisation
+		name = AR_germany.1052.a 
+		ai_chance = {
+			factor = 50
+		}
+		add_ideas = {
+			GER_federalised_state
+		}
+	}
+
+	option = { #Centralisation
+		name = AR_germany.1052.b
+		ai_chance = {
+			factor = 50
+		}
+		add_ideas = {
+			GER_centralised_state
+		}
+	}
+}
+
+country_event = { #Sell our navy
+	id = AR_germany.1053
+	title = AR_germany.1053.t
+	desc = AR_germany.1053.desc
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	is_triggered_only = yes
+
+	option = { #Sell our submarines
+		name = AR_germany.1053.a 
+		trigger = {
+			has_equipment = {
+   				submarine > 15
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		send_equipment = {
+    		equipment = submarine
+   			amount = 15
+    		target = ENG
+		}
+	}
+
+	option = { #Sell our Destroyers
+		name = AR_germany.1053.b
+		trigger = {
+			has_equipment = {
+   				destroyer > 15
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		send_equipment = {
+    		equipment = destroyer
+   			amount = 15
+    		target = ENG
+		}
+	}
+
+	option = { #Sell our Dreadnoughts
+		name = AR_germany.1053.c
+		trigger = {
+			has_equipment = {
+   				battle_cruiser > 5
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		send_equipment = {
+    		equipment = battle_cruiser
+   			amount = 5
+    		target = ENG
+		}
+	}
+}
+
+country_event = { #what do with the monarchy
+	id = AR_germany.1054
+	title = AR_germany.1054.t
+	desc = AR_germany.1054.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #abolish
+		name = AR_germany.10544.a 
+		ai_chance = {
+			factor = 50
+		}
+		hidden_effect = {
+			set_country_flag = GER_abolish_monarchy
+			country_event = { id = AR_germany.1056 days = 5 }
+		}
+	}
+
+	option = { #compromise
+		name = AR_germany.1054.b
+		ai_chance = {
+			factor = 50
+		}
+		hidden_effect = {
+			set_country_flag = GER_compromised_monarchy
+			country_event = { id = AR_germany.1056 days = 5 }
+		}
+	}
+}
+
+country_event = { #what do with the socialists
+	id = AR_germany.1055
+	title = AR_germany.1055.t
+	desc = AR_germany.1055.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #allow
+		name = AR_germany.1055.a 
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 70
+				communism > 0.4
+			}
+		}
+		if = {
+			limit = {
+				communism > 0.4
+			}
+			add_political_power = 75
+			add_stability = -0.01
+			else = {
+				add_political_power = 30
+				add_stability = -0.03
+			}
+		}
+		hidden_effect = {
+			country_event = { id = AR_germany.1057 days = 5 }
+			set_country_flag = GER_commie_parties_allowed
+		}
+	}
+
+	option = { #ban
+		name = AR_germany.1055.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 70
+				communism < 0.3
+			}
+		}
+		add_ideas = {
+			GER_banned_communism
+		}
+		if = {
+			limit = {
+				communism > 0.4
+			}
+			add_political_power = -75
+			add_stability = 0.03
+			else = {
+				add_political_power = -30
+				add_stability = 0.01
+			}
+		}
+		hidden_effect = {
+			country_event = { id = AR_germany.1057 days = 5 }
+		}
+	}
+}
+
+country_event = { #centralisation, or federalisation
+	id = AR_germany.1056
+	title = AR_germany.1056.t
+	desc = AR_germany.1056.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #federalisation
+		name = AR_germany.1052.a 
+		ai_chance = {
+			factor = 50
+		}
+		add_ideas = {
+			GER_federalised_state
+		}
+		hidden_effect = {
+			country_event = { id = AR_germany.1055 days = 5 }
+		}
+	}
+
+	option = { #Centralisation
+		name = AR_germany.1052.b
+		ai_chance = {
+			factor = 20
+		}
+		add_ideas = {
+			GER_centralised_state
+		}
+		hidden_effect = {
+			country_event = { id = AR_germany.1055 days = 5 }
+		}
+	}
+}
+
+country_event = { #deciding our foreign policy
+	id = AR_germany.1057
+	title = AR_germany.1057.t
+	desc = AR_germany.1057.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #looking outwards
+		name = AR_germany.1057.a 
+		ai_chance = {
+			factor = 50
+		}
+		add_political_power = 25
+		hidden_effect = {
+			country_event = { id = AR_germany.1058 days = 5 }
+		}
+	}
+}
+
+country_event = { #faction
+	id = AR_germany.1058
+	title = AR_germany.1058.t
+	desc = AR_germany.1058.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #On Our Own
+		name = AR_germany.1058.a 
+		
+		ai_chance = {
+			factor = 40
+		}
+		hidden_effect = {
+			set_country_flag = GER_faction_alone
+			country_event = { id = AR_germany.1059 days = 5 }
+		}
+	}
+
+	option = { #Join The Allies
+		name = AR_germany.1058.b
+		trigger = {
+			OR = {
+				ENG = {
+					has_government = democratic
+					is_faction_leader = yes
+				}
+				FRA = {
+					has_government = democratic
+					is_faction_leader = yes
+				}
+				USA = {
+					has_government = democratic
+					is_faction_leader = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+		hidden_effect = {
+			set_country_flag = GER_accepted_british
+			country_event = { id = AR_germany.1059 days = 5 }
+		}
+	}
+}
+
+country_event = { #our status with bolshevism
+	id = AR_germany.1059
+	title = AR_germany.1059.t
+	desc = AR_germany.1059.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #a horrible stain on this world
+		name = AR_germany.1059.a 
+		ai_chance = {
+			factor = 50
+		}
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					has_government = communism
+					is_major = yes
+				}
+				add_ai_strategy = {
+					type = contain
+					id = "GER"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = prepare_for_war 
+					id = "GER"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = antagonize 
+					id = "GER"
+					value = 100
+				}
+			}
+			country_event = { id = AR_germany.1060 days = 5 }
+		}
+	}
+
+	option = { #Reluctantly accept them
+		name = AR_germany.1059.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 3
+				communism > 0.3
+			}
+		}
+		hidden_effect = {
+			set_country_flag = GER_reluctant_bolshevism
+			add_popularity = {
+   				ideology = communism
+    			popularity = 0.01
+			}
+			country_event = { id = AR_germany.1060 days = 5 }
+		}
+	}
+}
+
+country_event = { #our status with nazism
+	id = AR_germany.1060
+	title = AR_germany.1060.t
+	desc = AR_germany.1060.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #a horrible stain on this world
+		name = AR_germany.1059.a 
+		ai_chance = {
+			factor = 50
+		}
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					has_government = fascism
+					is_major = yes
+				}
+				add_ai_strategy = {
+					type = contain
+					id = "GER"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = prepare_for_war 
+					id = "GER"
+					value = 100
+				}
+				add_ai_strategy = {
+					type = antagonize 
+					id = "GER"
+					value = 100
+				}
+			}
+			country_event = { id = AR_germany.1061 days = 5 }
+		}
+	}
+
+	option = { #Reluctantly accept them
+		name = AR_germany.1059.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_popularity = {
+   				ideology = fascism
+    			popularity = 0.02
+			}
+			ITA = {
+				add_ai_strategy = {
+					type = invade 
+					id = "GER"
+					value = -100
+				}
+			}
+			country_event = { id = AR_germany.1061 days = 5 }
+		}
+	}
+}
+
+country_event = { #intervention in foreign affairs
+	id = AR_germany.1061
+	title = AR_germany.1061.t
+	desc = AR_germany.1061.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #We must protect german interests
+		name = AR_germany.1061.a 
+		ai_chance = {
+			factor = 50
+		}
+		add_war_support = 0.05
+		if = {
+			limit = {
+				has_dlc = "La Resistance"
+			}
+			add_ideas = {
+				GER_bnd_funding
+			}
+			else = {
+				add_ideas = {
+					GER_bnd_funding2
+				}
+			}
+		}
+		
+	}
+
+	option = { #we must not meddle in foreign affairs
+		name = AR_germany.1061.b
+		ai_chance = {
+			factor = 50
+		}
+		add_stability = 0.05
+		add_political_power = 25
+		add_ideas = {
+			neutrality_idea
+		}
+	}
+}
+
+country_event = { #a new german republic
+	id = AR_germany.1062
+	title = AR_germany.1062.t
+	desc = AR_germany.1062.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #Einigkeit und Recht und Freiheit.
+		name = AR_germany.1062.a 
+		ai_chance = {
+			factor = 50
+		}
+		add_war_support = 0.05
+		add_stability = 0.05
+		add_political_power = 70
+		hidden_effect = {
+			set_country_flag = GER_new_constitution
+		}
+	}
+}
+
+country_event = { #first german elections
+	id = AR_germany.1063
+	title = AR_germany.1063.t
+	desc = AR_germany.1063.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #Elect Conservative Konrad Adenaur
+		name = AR_germany.1063.a 
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				has_country_flag = GER_compromised_monarchy
+			}
+		}
+		promote_character = GER_konrad_adenauer
+		set_party_name = { ideology = democratic long_name = GER_democratic_party_fdp_long name = GER_democratic_party_fdp }
+	}
+	option = { #Elect Liberal Theodor Heuss
+		name = AR_germany.1063.a 
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				has_country_flag = GER_abolish_monarchy
+			}
+		}
+		promote_character = GER_theodor_heuss
+		set_party_name = { ideology = democratic long_name = GER_democratic_party_cdu_long name = GER_democratic_party_cdu }
+
+	}
+	option = { #Elect Social Democratic Kurt Schumacher
+		name = AR_germany.1063.c
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 2
+				has_country_flag = GER_reluctant_bolshevism
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = GER_abolish_monarchy
+			}
+			modifier = {
+				factor = 2
+				has_country_flag = GER_commie_parties_allowed
+			}
+		}
+		promote_character = GER_kurt_schumacher
+		set_party_name = { ideology = democratic long_name = GER_democratic_party_sdp_long name = GER_democratic_party_sdp }
+	}
+}
+
+country_event = { #germany wants us to invest in them
+	id = AR_germany.1064
+	title = AR_germany.1064.t
+	desc = AR_germany.1064.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #Of course,
+		name = AR_germany.1064.a 
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_timed_idea = {
+    		idea = GER_investing
+   			days = 70
+		}
+		
+		GER = {
+			random_owned_state = {
+				limit = {
+					is_controlled_by = GER
+					is_core_of = GER
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = { id = AR_germany.1065 }
+		}
+		
+	}
+
+	option = { #we must focus on ourselves
+		name = AR_germany.1064.b
+		ai_chance = {
+			factor = 25
+		}
+		country_event = { id = AR_germany.1066 }
+	}
+}
+
+country_event = { #FROM accepts
+	id = AR_germany.1065
+	title = AR_germany.1065.t
+	desc = AR_germany.1065.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #they accept
+		name = AR_germany.1065.a 
+		ai_chance = {
+			factor = 50
+		}
+		add_war_support = 0.05
+	}
+}
+
+country_event = { #FROM declines
+	id = AR_germany.1066
+	title = AR_germany.1066.t
+	desc = AR_germany.1066.desc
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = { #they accept
+		name = AR_germany.1066.a 
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+
+add_namespace = AR_news_germany
+
+
+country_event = { #Total War
+	id = AR_news_germany.1
+	title = AR_news_germany.1.t
+	desc = AR_news_germany.1.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	option = { #WOLT IHR DEN TOTALEN KRIEG
+		name = AR_news_germany.1.a
+		add_war_support = 0.05
+		trigger = {
+			original_tag = GER
+		}
+	}
+
+	option = { #Hopefully this can end the war
+		name = AR_news_germany.1.b
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			OR = {
+				is_in_faction_with = GER
+				is_friend_or_potential_friend_of_GER = yes
+			}
+		}
+	}
+
+	option = { #This will not save them from their doom
+		name = AR_news_germany.1.c
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			GER {
+				surrender_limit > 0.1
+			}
+			NOT = {
+				is_friend_or_potential_friend_of_GER = yes
+			}
+		}
+	}
+
+	option = { #We can still defeat them
+		name = AR_news_germany.1.d
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			GER {
+				surrender_limit < 0.1
+			}
+			NOT = {
+				is_friend_or_potential_friend_of_GER = yes
+			}
+		}
+	}
+
+}

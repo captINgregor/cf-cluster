@@ -107,10 +107,11 @@ focus_tree = {
 		id = GER_coal_liquidization2
 		icon = GFX_goal_generic_oil_factory
 		prerequisite = { focus = GER_coal_liquidization }
-		x = 0
+		prerequisite = { focus = GER_synthetic_rubber }
+		x = 1
 		y = 2
 		relative_position_id = GER_coal_liquidization
-		cost = 5
+		cost = 8
 		ai_will_do = {
 			factor = 4
 		}
@@ -122,13 +123,6 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 63 }
-				limit = {
-					free_building_slots = {
-						building = synthetic_refinery
-						size > 2
-						include_locked = yes
-					}
-				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = synthetic_refinery
@@ -138,13 +132,6 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 60 }
-				limit = {
-					free_building_slots = {
-						building = synthetic_refinery
-						size > 2
-						include_locked = yes
-					}
-				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = synthetic_refinery
@@ -152,7 +139,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-
 		}
 	}
 	
@@ -237,7 +223,7 @@ focus_tree = {
 		
 		completion_reward = {
         	modify_building_resources = {
-        	   building = synthetic_rubber_refinery
+        	   building = synthetic_refinery
         	   resource = rubber
         	   amount = 1
         	}
@@ -246,63 +232,12 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = GER_synthetic_rubber2
-		icon = GFX_rubber_2
-		prerequisite = { focus = GER_synthetic_rubber }
-		x = 0
-		y = 2
-		relative_position_id = GER_synthetic_rubber
-		cost = 5
-		ai_will_do = {
-			factor = 4
-		}
-		available = {
-			has_tech = rubber_processing
-		}
-		
-		completion_reward = {
-			random_owned_controlled_state = {
-				prioritize = { 67 }
-				limit = {
-					free_building_slots = {
-						building = synthetic_refinery
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = synthetic_rubber_refinery
-					level = 2
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				prioritize = { 59 }
-				limit = {
-					free_building_slots = {
-						building = synthetic_refinery
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = synthetic_rubber_refinery
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	focus = {
 		id = GER_ig_farben
 		icon = GFX_ig_farben
-		prerequisite = { focus = GER_synthetic_rubber2 focus = GER_coal_liquidization2 }
-		x = -1
+		prerequisite = { focus = GER_coal_liquidization2 }
+		x = 0
 		y = 1
-		relative_position_id = GER_synthetic_rubber2
+		relative_position_id = GER_coal_liquidization2
 		cost = 5
 		ai_will_do = {
 			factor = 4
@@ -982,32 +917,18 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = { 51 }
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = steel_refinery
+					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
 			}
 			random_owned_controlled_state = {
 				prioritize = { 59 }
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = steel_refinery
+					type = arms_factory
 					level = 2
 					instant_build = yes
 				}
@@ -1238,6 +1159,9 @@ focus_tree = {
 		available = {
 			is_in_faction_with = ROM
 			NOT = { has_war_with = ROM }
+			ROM = {
+				is_ai = yes
+			}
 		}
 
 		bypass = {
@@ -2084,6 +2008,9 @@ focus_tree = {
 		bypass = {
 			42 = { is_demilitarized_zone = no }
 			51 = { is_demilitarized_zone = no }
+			840 = { is_demilitarized_zone = no }
+			843 = { is_demilitarized_zone = no }
+			842 = { is_demilitarized_zone = no }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2091,6 +2018,9 @@ focus_tree = {
 		completion_reward = {
 			42 = { set_demilitarized_zone = no }
 			51 = { set_demilitarized_zone = no }
+			840 = { set_demilitarized_zone = no }
+			843 = { set_demilitarized_zone = no }
+			842 = { set_demilitarized_zone = no }
 			custom_effect_tooltip = GER_rhineland_ultimatum
 			add_political_power = 120
 			army_experience = 5
@@ -2759,6 +2689,52 @@ focus_tree = {
 
 		}
 	}
+
+	focus = {
+		id = GER_reintegrate_east_2
+		icon = GFX_ger_prevent_deal
+		prerequisite = { focus = GER_reintegrate_east}
+
+		available = {
+			controls_state = 98
+			controls_state = 87
+			controls_state = 839
+			controls_state = 838
+			controls_state = 850
+			controls_state = 837
+			custom_trigger_tooltip = {
+				tooltip = GER_average_compliance_over_40
+			}
+		}
+		
+		x = 0
+		y = 1
+		relative_position_id = GER_reintegrate_east
+		cost = 5
+		ai_will_do = {
+			factor = 10	
+			modifier = {
+				factor = 0
+				date < 1939.1.1
+			}
+		}	
+		completion_reward = {
+			transfer_state = 98
+			transfer_state = 87
+			transfer_state = 839
+			transfer_state = 838
+			transfer_state = 97
+			transfer_state = 850
+			transfer_state = 837
+			add_state_core = 98
+			add_state_core = 87
+			add_state_core = 839
+			add_state_core = 838
+			add_state_core = 97
+			add_state_core = 850
+			add_state_core = 837
+		}
+	}
 	
 	focus = {
 		id = GER_prepare_barb
@@ -2789,76 +2765,123 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-			98 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							controls_state = 98
+							controls_state = 86
+							controls_state = 85
+							controls_state = 87
+							controls_state = 88
+							controls_state = 90
+							controls_state = 92
+							controls_state = 763
+							controls_state = 5
+						}
+						any_allied_country = { 
+							controls_state = 98
+							controls_state = 86
+							controls_state = 85
+							controls_state = 87
+							controls_state = 88
+							controls_state = 90
+							controls_state = 92
+							controls_state = 763
+							controls_state = 5
+						} 
+					}
 				}
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
+				98 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				88 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				92 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				10 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				5 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				763 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
-			88 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}
-			92 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}
-			10 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}
-			5 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}
-			763 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
+			else = {
+				every_controlled_state = {
+					limit = {
+						any_neighbor_state = { 
+							is_controlled_by = SOV
+						}
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -2871,45 +2894,15 @@ focus_tree = {
 		
 		available = {
 			has_army_manpower = { size > 1199999 }
-			OR = {
-				AND = {
-					date > 1939.3.1
-					date < 1939.8.1
-				}
-				AND = {
-					date > 1940.3.1
-					date < 1940.8.1
-				}
-				AND = {
-					date > 1941.3.1
-					date < 1941.8.1
-				}
-				AND = {
-					date > 1942.3.1
-					date < 1942.8.1
-				}
-				AND = {
-					date > 1943.3.1
-					date < 1943.8.1
-				}
-				AND = {
-					date > 1944.3.1
-					date < 1944.8.1
-				}
-				AND = {
-					date > 1945.3.1
-					date < 1945.8.1
-				}
-				AND = {
-					date > 1946.3.1
-					date < 1946.8.1
-				}
-			}
 			if = {
 				limit = {
 					GER  = { is_ai = yes }
 				}
-				FRA  = { has_capitulated = yes }
+				NOT = {
+					any_home_area_neighbor_country = {
+						has_war_with = ROOT
+					}
+				}
 			}
 		}
 
@@ -4013,13 +4006,12 @@ focus_tree = {
 		id = GER_operation_tannenbaum
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = GER_danzig_or_war }
-		mutually_exclusive = { focus = GER_swiss_banks }
 		available = {
 			is_puppet = no
+			country_exists = SWI
 			NOT = { is_in_faction_with = SWI }
 		}
 		bypass = {
-			NOT = { country_exists = SWI }
 			has_war_with = SWI
 		}
 		cancel_if_invalid = yes
@@ -4032,7 +4024,20 @@ focus_tree = {
 			factor = 10
 			modifier = {
 				factor = 0
-				is_historical_focus_on = yes
+				NOT = {
+					any_home_area_neighbor_country = {
+						NOT = {
+							tag = SWI
+						}
+						OR = {
+							has_war_with = ROOT
+							has_government = communism
+							any_owned_state = {
+								is_claimed_by = ROOT
+							}
+						}
+					}
+				}
 			}
 		}
 		
@@ -4048,15 +4053,13 @@ focus_tree = {
 		id = GER_swiss_banks
 		icon = GFX_GER_swiss_money_laundry
 		prerequisite = { focus = GER_danzig_or_war }
-		mutually_exclusive = { focus = GER_operation_tannenbaum }
 		available = {
 			is_puppet = no
-			NOT = { is_in_faction_with = SWI }
+			country_exists = SWI
+			NOT = {
+				has_war_with = SWI
+			}
 			has_completed_focus = GER_plunder_west
-		}
-		bypass = {
-			NOT = { country_exists = SWI }
-			has_war_with = SWI
 		}
 		cancel_if_invalid = yes
 		x = -5
@@ -4065,10 +4068,6 @@ focus_tree = {
 		cost = 5
 		ai_will_do = {
 			factor = 10
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
 		}
 		
 		completion_reward = {
@@ -4085,6 +4084,7 @@ focus_tree = {
 			is_puppet = no
 			has_full_control_of_state = 8
 			has_full_control_of_state = 28
+			has_full_control_of_state = 835
 			OR = {
 				FRA = { has_capitulated = yes }
 				FRA = { is_subject_of = GER }
@@ -4118,7 +4118,6 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_state_core = 8
 			add_state_core = 28
 			if = {
 				limit = {
@@ -4126,14 +4125,21 @@ focus_tree = {
 				}
 				transfer_state = 28
 			}
-			28 = { set_state_name = "Elsass-Lothringen" }
+			add_state_core = 835
+			if = {
+				limit = {
+					NOT = { owns_state = 835 }
+				}
+				transfer_state = 835
+			}
+			28 = { set_state_name = "Elsaß-Lothringen" }
 			set_province_name = { id = 9503 name = "Strassburg" }
 			set_province_name = { id = 678 name = "Mulhausen" }
 			FRA = {
 				country_event = { id = wtt_germany.63 }
 			}
-			LUX = {
-				country_event = { id = wtt_germany.64 }
+			BEL = {
+				country_event = { id = wtt_germany.63}
 			}
 		}
 	}
@@ -5312,7 +5318,6 @@ focus_tree = {
 		relative_position_id = GER_total_war
 		
 		available = {
-			has_country_flag = todt_death
 		}
 		
 		cancel_if_invalid = yes
@@ -5377,7 +5382,6 @@ focus_tree = {
 		relative_position_id = GER_reorganise_war_industry
 		
 		available = {
-			has_war_with = SOV
 		}
 		
 		cancel_if_invalid = yes
@@ -5496,7 +5500,6 @@ focus_tree = {
 		prerequisite = { focus = GER_mobilise_reich }
 		available = {
 			surrender_progress > 0.1
-			has_war_with = SOV
 		}
 		bypass = {
 		}
@@ -5837,7 +5840,6 @@ focus_tree = {
 			840 = { set_demilitarized_zone = no }
 			842 = { set_demilitarized_zone = no }
 			843 = { set_demilitarized_zone = no }
-			844 = { set_demilitarized_zone = no }
 			add_political_power = 120
 			add_named_threat = { threat = 5 name = GER_oppose_hitler }
 			country_event = { id = wtt_germany.1 }
@@ -6179,7 +6181,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_focus_on_the_true_enemy
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -6417,7 +6419,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = GER_rebuild_the_high_seas_fleet
-		cost = 8
+		cost = 5
 		ai_will_do = {
 			factor = 9
 		}
@@ -6521,7 +6523,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_pride_of_the_modern_germany
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 1
 		}
@@ -6959,7 +6961,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			HUN = { country_event = { id = wtt_germany.1012 }  }
+			HUN = { country_event = { id = AR_germany.1012 }  }
 		}
 	}
 
@@ -7891,7 +7893,14 @@ focus_tree = {
 		
 		completion_reward = {
 			if = {
-				limit = { country_exists = EST }
+				limit = {
+					country_exists = EST 
+					NOT = {
+						EST = {
+							has_government = communism
+						}
+					}
+				}
 				EST = {	
 					add_timed_idea = {
 						idea = GER_safeguard_the_baltic
@@ -7915,7 +7924,14 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { country_exists = LAT }
+				limit = { 
+					country_exists = LAT 
+					NOT = {
+						LAT = {
+							has_government = communism
+						}
+					}
+				}
 				LAT = {
 					add_timed_idea = {
 						idea = GER_safeguard_the_baltic
@@ -7939,7 +7955,14 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { country_exists = LIT }
+				limit = { 
+					country_exists = LIT 
+					NOT = {
+						LIT = {
+							has_government = communism
+						}
+					}
+				}
 				LIT = {
 					add_timed_idea = {
 						idea = GER_safeguard_the_baltic
@@ -7963,7 +7986,14 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { country_exists = FIN }
+				limit = { 
+					country_exists = FIN 
+					NOT = {
+						FIN = {
+							has_government = communism
+						}
+					}
+				}
 				FIN = {
 					add_timed_idea = {
 						idea = GER_safeguard_the_baltic
@@ -7988,7 +8018,14 @@ focus_tree = {
 				}
 			}	
 			if = {
-				limit = { country_exists = ROM }
+				limit = { 
+					country_exists = ROM 
+					NOT = {
+						ROM = {
+							has_government = communism
+						}
+					}
+				}
 				ROM = {
 					add_timed_idea = {
 						idea = GER_safeguard_the_baltic
@@ -11161,8 +11198,8 @@ focus_tree = {
 	focus = {
 		id = GER_naval_rearmament
 		icon = GFX_goal_generic_build_navy
-		x = 43
-		y = 3
+		x = 20
+		y = 7
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -11625,14 +11662,17 @@ focus_tree = {
 		id = GER_japan_friend
 		icon = GFX_goal_indyclone_befriend_japan
 		available = {
-			AND = {
-				country_exists = JAP
-				JAP = { is_puppet = no }
-				NOT = { has_war_with = JAP }
+			country_exists = JAP
+			JAP = { 
+				is_puppet = no 
+				has_government = fascism
 			}
+			NOT = { has_war_with = JAP }
 		}
-		x = 20
-		y = 7
+		prerequisite = { focus = GER_rhineland }
+		x = 7
+		y = 1
+		relative_position_id = GER_rhineland
 		cost = 3
 
 		available_if_capitulated = yes
@@ -11670,11 +11710,12 @@ focus_tree = {
 		id = GER_japan_friend2
 		icon = GFX_goal_military_agreement_germany
 		available = {
-			AND = {
-				country_exists = JAP
-				JAP = { is_puppet = no }
-				NOT = { has_war_with = JAP }
+			country_exists = JAP
+			JAP = { 
+				is_puppet = no 
+				has_government = fascism
 			}
+			NOT = { has_war_with = JAP }
 		}
 		prerequisite = { focus = GER_japan_friend }
 		x = 0
@@ -11694,14 +11735,17 @@ focus_tree = {
 		id = GER_italy_friend
 		icon = GFX_focus_chi_reach_out_to_italy
 		available = {
-			AND = {
-				country_exists = ITA
-				ITA = { is_puppet = no }
-				NOT = { has_war_with = ITA }
+			country_exists = ITA
+			ITA = { 
+				is_puppet = no 
+				has_government = fascism
 			}
+			NOT = { has_war_with = ITA }
 		}
-		x = 22
-		y = 7
+		prerequisite = { focus = GER_rhineland }
+		x = 9
+		y = 1
+		relative_position_id = GER_rhineland
 		cost = 3
 		
 
@@ -11720,11 +11764,12 @@ focus_tree = {
 		id = GER_italy_friend2
 		icon = GFX_ger_alliance_with_italy
 		available = {
-			AND = {
-				country_exists = ITA
-				ITA = { is_puppet = no }
-				NOT = { has_war_with = ITA }
+			country_exists = ITA
+			ITA = { 
+				is_puppet = no 
+				has_government = fascism
 			}
+			NOT = { has_war_with = ITA }
 		}
 		prerequisite = { focus = GER_italy_friend }
 		x = 0
@@ -11746,11 +11791,18 @@ focus_tree = {
 		id = GER_tripartite
 		icon = GFX_goal_indyclone_the_axis
 		available = {
-			AND = {
-				country_exists = ITA
-				ITA = { is_puppet = no }
-				NOT = { has_war_with = ITA }
+			country_exists = ITA
+			ITA = { 
+				is_puppet = no 
+				has_government = fascism
 			}
+			NOT = { has_war_with = ITA }
+			country_exists = JAP
+			JAP = { 
+				is_puppet = no 
+				has_government = fascism
+			}
+			NOT = { has_war_with = JAP }
 		}
 		prerequisite = { focus = GER_japan_friend2 }
 		prerequisite = { focus = GER_italy_friend2 }
