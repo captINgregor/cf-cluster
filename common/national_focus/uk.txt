@@ -11108,7 +11108,6 @@ focus_tree = {
 			}
 		}
 		prerequisite = {
-			focus = ENG_no_further_appeasement
 			focus = ENG_issue_gasmasks
 		}
 		available_if_capitulated = yes
