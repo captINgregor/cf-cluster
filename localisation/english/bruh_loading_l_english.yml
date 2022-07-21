@@ -15,7 +15,7 @@
  LOAD_FLAGS:1 "Screenshotting Large Encirclements"
  PROC_FLAGS:1 "Posting Encirclements on Reddit"
  LOADING_MAIN_MENU:1 "Fighting a Land War in the Congo"
- INIT_MAP_LOGIC:1 "Trying Out a New Strategy"
+ INIT_MAP_LOGIC:1 "Turning Debug Off"
  INIT_GAMESTATE:1 "Losing Fleet to Naval Bombers"
  PRECALC_NAVAL_DIST:1 "Ending the Game in 1942"
  LOADING_GUI:1 "Grinding Too Much in Ethiopia"
