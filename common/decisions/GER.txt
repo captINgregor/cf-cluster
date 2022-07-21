@@ -1874,7 +1874,7 @@ wunderwaffe = {
 			civilian_factory_use = 10
 		}
 		remove_effect = {
-			add_technology = {
+			set_technology = {
 				anti_ship_missile_1 = 1
 			}
 			add_ideas = GER_wunder_fritz_x
