@@ -10146,11 +10146,7 @@ ENG_develop_the_empire = {
 					is_subject_of = ENG
 				}
 			}
-			has_completed_focus = ENG_commonwealth_ties
-		}
-
-		visible = {
-			has_completed_focus = ENG_develop_the_empire
+			has_completed_focus = uk_commonwealth_focus
 		}
 
 		fire_only_once = yes
@@ -10223,12 +10219,9 @@ ENG_develop_the_empire = {
 					is_subject_of = ENG
 				}
 			}
-			has_completed_focus = ENG_commonwealth_ties
+			has_completed_focus = uk_commonwealth_focus
 		}
 
-		visible = {
-			has_completed_focus = ENG_develop_the_empire
-		}
 
 		fire_only_once = yes
 
@@ -10300,12 +10293,9 @@ ENG_develop_the_empire = {
 					is_subject_of = ENG
 				}
 			}
-			has_completed_focus = ENG_commonwealth_ties
+			has_completed_focus = uk_commonwealth_focus
 		}
 
-		visible = {
-			has_completed_focus = ENG_develop_the_empire
-		}
 
 		fire_only_once = yes
 
@@ -10377,11 +10367,7 @@ ENG_develop_the_empire = {
 					is_subject_of = ENG
 				}
 			}
-			has_completed_focus = ENG_commonwealth_ties
-		}
-
-		visible = {
-			has_completed_focus = ENG_develop_the_empire
+			has_completed_focus = uk_commonwealth_focus
 		}
 
 		fire_only_once = yes
@@ -10454,12 +10440,9 @@ ENG_develop_the_empire = {
 					is_subject_of = ENG
 				}
 			}
-			has_completed_focus = ENG_develop_colonies
+			has_completed_focus = uk_commonwealth_focus
 		}
 
-		visible = {
-			has_completed_focus = ENG_develop_the_empire
-		}
 
 		fire_only_once = yes
 

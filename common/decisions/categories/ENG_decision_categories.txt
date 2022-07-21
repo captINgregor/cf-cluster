@@ -107,6 +107,10 @@ ENG_develop_the_empire = {
 	allowed = {
 		original_tag = ENG
 	}
+
+	visible = {
+		has_completed_focus = uk_commonwealth_focus
+	}
 }
 
 ENG_persian_corridor = {
