@@ -6301,6 +6301,50 @@ focus_tree = {
 	}
 
 	focus = {
+		id = GER_danzig_for_guarantees
+		icon = GFX_focus_generic_polish_deal
+		prerequisite = {
+			focus = GER_focus_on_small_germany
+		}
+		available = { 
+			is_subject = no
+			NOT = { has_war_with = POL }
+			NOT = { is_in_faction_with = POL }
+		}
+		bypass = {
+			OR = {
+				AND = {
+					POL = { has_war = yes }
+					NOT = { has_war_with = POL }
+				}
+				AND = {
+					POL = { is_subject = yes }
+					NOT = { POL = { is_subject_of = GER } }
+				}
+				POL = { exists = no }
+				AND = {
+					owns_state = 85
+					owns_state = 86
+					owns_state = 762
+					owns_state = 807
+				}
+			}
+		}
+		cancel_if_invalid = yes
+		x = 3
+		y = 1
+		relative_position_id = GER_focus_on_small_germany
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			POL = { country_event = { id = wtt_germany.14 } }
+		}
+	}
+
+	focus = {
 		id = GER_japan_friendnd
 		icon = GFX_goal_generic_military_deal
 		text = GER_japan_friend
