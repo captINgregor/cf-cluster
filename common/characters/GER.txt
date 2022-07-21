@@ -28,6 +28,21 @@ characters={
 		}
 	}
 
+
+	GER_von_papen={
+		name=GER_von_papen
+		portraits={
+			army={
+				small="GFX_portrait_ger_von_papen"
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = { elected_monarchist_puppet }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
 	GER_wilhelm_pieck={
 		name=GER_wilhelm_pieck
 		portraits={
