@@ -831,84 +831,84 @@ sub_units = {
 		}
 	}
 	
-	ss_heavy_anti_tank_brigade = {
-		sprite = anti_tank
-		map_icon_category = infantry
-		priority = 100
-		ai_priority = 100
-		active = no
+	#ss_heavy_anti_tank_brigade = {
+	#	sprite = anti_tank
+	#	map_icon_category = infantry
+	#	priority = 100
+	#	ai_priority = 100
+	#	active = no
+	#	
+	#	type = {
+	#		motorized
+	#		anti_tank
+	#	}
 		
-		type = {
-			motorized
-			anti_tank
-		}
-		
-		group = ss
-		
-		categories = {
-			category_front_line
-			category_army
-			category_line_artillery
-		}		
-		
-		combat_width = 1
-		transport = motorized_equipment
-		need = {
-			heavy_anti_tank_equipment = 14
-			motorized_equipment = 24
-		}
-		manpower = 500
-		max_organisation = 15
-		default_morale = 0.15
-		max_strength = 1
-		training_time = 120
-		weight = 0.5
+	#	group = ss
+	#	
+	#	categories = {
+	#		category_front_line
+	#		category_army
+	#		category_line_artillery
+	#	}		
+	#	
+	#	combat_width = 1
+	#	transport = motorized_equipment
+	#	need = {
+	#		heavy_anti_tank_equipment = 14
+	#		motorized_equipment = 24
+	#	}
+	#	manpower = 500
+	#	max_organisation = 15
+	#	default_morale = 0.15
+	#	max_strength = 1
+	#	training_time = 120
+	#	weight = 0.5
+#
+#		supply_consumption = 0.10
+#		supply_consumption_factor = 0.025
+#		
+#		soft_attack = 0.15
+#		hard_attack = 0.55
+#		ap_attack = 0.15
+#		
+#		maximum_speed = -0.30
+#
+#		forest = {
+#			attack = -0.1
+#			movement = -0.2
+#		}
+#
+#		hills = {
+#			movement = -0.05
+#		}
+#
+#		mountain = {
+#			movement = -0.2
+#		}
+#
+#		jungle = {
+#			attack = -0.15
+#			movement = -0.2
+#		}
+#
+#		marsh = {
+#			attack = -0.1
+#			movement = -0.15
+#		}
 
-		supply_consumption = 0.10
-		supply_consumption_factor = 0.025
-		
-		soft_attack = 0.15
-		hard_attack = 0.55
-		ap_attack = 0.15
-		
-		maximum_speed = -0.30
-
-		forest = {
-			attack = -0.1
-			movement = -0.2
-		}
-
-		hills = {
-			movement = -0.05
-		}
-
-		mountain = {
-			movement = -0.2
-		}
-
-		jungle = {
-			attack = -0.15
-			movement = -0.2
-		}
-
-		marsh = {
-			attack = -0.1
-			movement = -0.15
-		}
-
-		fort = {
-			attack = 0.1
-		}
-
-		river = {
-			attack = -0.1
-			movement = -0.1
-		}
-
-		amphibious = {
-			attack = -0.2
-		}
-	}
+#		fort = {
+#			attack = 0.1
+#		}
+#
+#		river = {
+#			attack = -0.1
+#			movement = -0.1
+#		}
+#
+#		amphibious = {
+#			attack = -0.2
+#		}
+#	}
 	
 	ss_artillery_brigade = {
 		sprite = artillery
