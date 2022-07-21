@@ -1,5 +1,11 @@
 ﻿l_english:
 
+ 
+
+ GER_german_republic:0 "Federal Republic of Germany"
+ GER_german_republic_DEF:0 "the Federal Republic of Germany"
+ GER_german_republic_ADJ:0 "German"
+
  AST_australasia:0 "Australasia"
  AST_australasia_democratic:0 "Commonwealth of Australasia"
  AST_australasia_democratic_DEF:0 "the Commonwealth of Australasia"
@@ -7,8 +13,8 @@
  AST_australasia_communism:0 "the Australasian Commune"
  AST_australasia_ADJ:0 "Australasian"
 
- GER_greater_german_reich_fascism:0 "Großdeutsches Reich"
- GER_greater_german_reich_fascism_DEF:0 "the Großdeutsches Reich"
+ GER_greater_german_reich_fascism:0 "Großgermanisches Reich"
+ GER_greater_german_reich_fascism_DEF:0 "the Großgermanisches Reich der Deutscher Nation"
 
  EGY_ITA_fascism_subject_autonomy_dominion:0 "Kingdom of Egypt"
  EGY_ITA_fascism_subject_autonomy_dominion_DEF:0 "the Kingdom of Egypt"

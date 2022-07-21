@@ -1130,6 +1130,7 @@ country_event = { #what do with the monarchy
 		}
 		hidden_effect = {
 			set_country_flag = GER_abolish_monarchy
+			set_cosmetic_tag = GER_germany_republic
 			country_event = { id = AR_germany.1056 days = 5 }
 		}
 	}
@@ -1141,6 +1142,7 @@ country_event = { #what do with the monarchy
 		}
 		hidden_effect = {
 			set_country_flag = GER_compromised_monarchy
+			set_cosmetic_tag = GER_germany_monarchy
 			country_event = { id = AR_germany.1056 days = 5 }
 		}
 	}
