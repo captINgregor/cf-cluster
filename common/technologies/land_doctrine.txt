@@ -3894,7 +3894,7 @@ technologies = {
 		
 		max_planning = 0.15
 		
-		xor = { global_path berlin_path warsaw_path}
+		xor = { global_path berlin_path warsaw_path }
 		
 		dependencies = {
 			infantry_equipment_4 = 1
@@ -4239,7 +4239,7 @@ technologies = {
 			infantry_equipment_4 = 1
 		}
 		
-		xor = { brussels_path berlin_path warsaw_path}
+		xor = { brussels_path berlin_path warsaw_path }
 		
 		path = {
 			leads_to_tech = military_schools 

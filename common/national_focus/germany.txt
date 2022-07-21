@@ -304,10 +304,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -616,10 +616,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -631,40 +631,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1516,7 +1486,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = bomber_bonus
-				bonus = 0.75
+				bonus = 1
 				uses = 1
 				category = cat_strategic_bomber
 			}
@@ -6820,6 +6790,7 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
+			add_timed_idea = { idea = GER_blitzkrieg days = 75 }
 			if = { 
 				limit = {
 					country_exists = BEL
@@ -7664,6 +7635,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_timed_idea = { idea = GER_blitzkrieg days = 60 }
 			if = {
 				limit = {
 					country_exists = SWI
@@ -7735,6 +7707,7 @@ focus_tree = {
 		}	
 		completion_reward = {
 			#limit wargoals to when it makes sense to give them. No faction, war or non exist
+			add_timed_idea = { idea = GER_blitzkrieg days = 60 }
 			if = { 
 				limit = {
 					country_exists = BEL
