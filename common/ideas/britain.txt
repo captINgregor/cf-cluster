@@ -291,6 +291,31 @@ ideas = {
 			traits = { popular_figurehead }
 			
 		}
+		
+		ENG_war_cabinet_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				trade_laws_cost_factor = -0.25
+				economy_cost_factor = -0.25
+				high_command_cost_factor = -0.25
+				air_chief_cost_factor = -0.25
+				army_chief_cost_factor = -0.25
+				navy_chief_cost_factor = -0.25
+			}
+
+			picture = eng_guided_by_britain
+			
+			removal_cost = -1	
+
+		}
 
 		ENG_the_war_to_end_all_wars = {
 			
