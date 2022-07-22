@@ -902,11 +902,6 @@ focus_tree = {
 				producer = GER
 			}
 			add_equipment_to_stockpile = {
-				type = squad_equipment
-				amount = 2000
-				producer = GER
-			}
-			add_equipment_to_stockpile = {
 				type = artillery_equipment
 				amount = 500
 				producer = GER
@@ -917,7 +912,7 @@ focus_tree = {
 				producer = GER
 			}
 			add_equipment_to_stockpile = {
-				type = ger_light_tank_chassis_p2
+				type = light_tank_chassis
 				amount = 400
 				producer = GER 
 				variant_name = "PzKpfw II A"
@@ -1257,10 +1252,6 @@ focus_tree = {
 				amount = 1200
 			}
 			add_equipment_to_stockpile = {
-				type = squad_equipment
-				amount = 500
-			}
-			add_equipment_to_stockpile = {
 				type = artillery_equipment
 				amount = 50
 			}
@@ -1269,16 +1260,8 @@ focus_tree = {
 				amount = 50
 			}
 			add_equipment_to_stockpile = {
-					type = horse_equipment
-					amount = 300
-			}
-			add_equipment_to_stockpile = {
 					type = support_equipment
 					amount = 100
-			}
-			add_equipment_to_stockpile = {
-					type = radio_equipment
-					amount = 50
 			}
 			add_equipment_to_stockpile = {
 				type = anti_air_equipment

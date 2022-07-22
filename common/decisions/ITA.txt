@@ -217,7 +217,7 @@ operations = {
 				transfer_state = 559
 				set_cosmetic_tag = ETH_ITA
 				create_country_leader = {
-					name = "Fresh Prince Amedeo"
+					name = "Prince Amedeo"
 					picture = "gfx/leaders/ITA/Portrait_Duke_of_Aosta.dds"
 					expire = "1965.1.1"
 					ideology = fascism_ideology
@@ -230,20 +230,10 @@ operations = {
 					amount = 20000
 					producer = ITA
 				}
-				add_equipment_to_stockpile = {
-					type = squad_equipment_0
-					amount = 5000
-					producer = ITA
-				}
-				add_equipment_to_stockpile = {
-					type = horse_equipment_0
-					amount = 5000
-					producer = ITA
-				}
 			}
 			set_autonomy = { target = ETH autonomy_state = autonomy_reichskommissariat }
 			create_corps_commander = {
-				name = "Fresh Prince Amedeo"
+				name = "Prince Amedeo"
 				picture = "Portrait_Duke_of_Aosta.dds"
 				traits = { politically_connected }
 				skill = 2

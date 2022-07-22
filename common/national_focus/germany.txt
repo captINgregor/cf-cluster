@@ -1785,12 +1785,12 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 10
-			add_tech_bonus = {
-				name = art_bonus
-				bonus = 0.75
-				uses = 2
-				category = heavy_artillery
-			}
+			#add_tech_bonus = {
+			#	name = art_bonus
+			#	bonus = 0.75
+			#	uses = 2
+			#	category = heavy_artillery
+			#}
 			add_tech_bonus = {
 				name = art_bonus
 				bonus = 0.75
@@ -2362,6 +2362,61 @@ focus_tree = {
 	}
 
 	focus = {
+		id = GER_anti_comitern_pact
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = GER_demand_memel  }
+		x = 0
+		y = 2
+		relative_position_id = GER_demand_memel
+		cost = 10
+		available = {
+			is_subject = no
+			NOT = { has_government = communism }
+			NOT = { is_in_faction_with = SOU }
+		}
+		bypass = {
+
+			SOU = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SOU = { add_opinion_modifier = { target = ROOT modifier = pact_against_us } }
+			add_named_threat = { threat = 2 name = GER_anti_comitern_pact }
+			every_other_country = {
+				limit = {
+					NOT = { tag = GER }
+					NOT = { has_war_with = GER }
+					NOT = { is_in_faction_with = SOU }
+					is_subject = no
+					OR = {
+						capital_scope = {
+								is_on_continent = europe
+						}
+						capital_scope = {
+								is_on_continent = asia
+						}
+						num_of_factories > 30
+					}
+					OR = {
+						has_government = fascism 
+						AND = {
+							is_neighbor_of = SOU
+							NOT = { has_government = communism }
+						}
+					}
+				}
+				country_event = germany.5
+			}
+		}
+	}
+
+	focus = {
 		id = GER_danzig_or_war
 		icon = GFX_GER_curtail_poland
 		prerequisite = { focus = GER_demand_memel }
@@ -2706,6 +2761,60 @@ focus_tree = {
 		}
 	}
 	
+	focus = {
+		id = GER_soviet_ally
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = GER_danzig_or_war}
+		mutually_exclusive = { focus = GER_ussr_war_goal }
+		available = {
+			is_subject = no
+			has_government = fascism
+			has_war = no
+			SOV = {
+				has_war = no
+				NOT = { has_war_with = GER }
+				is_subject = no
+			}
+		}
+		bypass = {
+			SOV = {
+				is_in_faction_with = GER
+			}
+		}
+		x = -9
+		y = 1
+		relative_position_id = GER_danzig_or_war
+		cost = 10
+		ai_will_do = {
+			factor = 0.01
+			modifier = {
+				factor = 0
+				NOT = { is_in_faction_with = POL }
+				country_exists = POL
+			}			
+			modifier = {
+				factor = 0
+				OR = {
+					has_war_with = POL
+					has_war_with = FRA
+				}
+			}				
+		}	
+		completion_reward = {
+			if = {
+				limit = { is_faction_leader = yes }
+				custom_effect_tooltip = ger_sov_buddies_tooltip_2
+			}
+			custom_effect_tooltip = ger_sov_buddies_tooltip
+			add_ideas = soviet_german_friendship
+			SOV = {
+				add_opinion_modifier = { target = GER modifier = ger_sov_alliance_focus }
+				add_ideas = soviet_german_friendship
+				country_event = germany.89
+			}
+		}
+	}
+
 	focus = {
 		id = GER_prepare_barb
 		icon = GFX_ger_prepare_to_invade_union
@@ -3711,16 +3820,9 @@ focus_tree = {
 			}
 			add_named_threat = { threat = 5 name = GER_end_of_czechoslovakia }
 			hidden_effect = {
-				set_technology = { ger_cze_tank_1 = 1 }
-				set_technology = { ger_cze_tank_2 = 1 }
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
 					amount = 10000
-					producer = CZE
-				}
-				add_equipment_to_stockpile = {
-					type = squad_equipment_0
-					amount = 2000
 					producer = CZE
 				}
 				add_equipment_to_stockpile = {
@@ -3736,35 +3838,6 @@ focus_tree = {
 				add_equipment_to_stockpile = {
 					type = motorized_equipment
 					amount = 2000
-					producer = CZE
-				}
-				create_equipment_variant = {
-					name = "LT-35"
-					type = ger_light_tank_chassis_p35
-					parent_version = 0
-					modules = {
-						main_armament_slot = tank_small_gun_1
-						turret_type_slot = tank_light_turret_1
-						armor_type_slot = tank_riveted_armor
-						engine_type_slot = tank_gasoline_engine
-					}
-					icon = "gfx/interface/technologies/tanks/ger/ger_cze_tank_1.dds"
-				}
-				create_equipment_variant = {
-					name = "PzKpfw 38(t)"
-					type = ger_light_tank_chassis_p38
-					parent_version = 0
-					modules = {
-						main_armament_slot = tank_small_gun_2
-						turret_type_slot = tank_light_turret_2
-						armor_type_slot = tank_riveted_armor
-						engine_type_slot = tank_gasoline_engine
-					}
-					icon = "gfx/interface/technologies/tanks/ger/ger_cze_tank_2.dds"
-				}
-				add_equipment_to_stockpile = {
-					type = ger_light_tank_chassis_p38
-					amount = 300
 					producer = CZE
 				}
 				
@@ -4212,11 +4285,6 @@ focus_tree = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_1
 				amount = 10000
-				producer = FRA
-			}
-			add_equipment_to_stockpile = {
-				type = squad_equipment_0
-				amount = 2000
 				producer = FRA
 			}
 			add_equipment_to_stockpile = {
@@ -5587,17 +5655,14 @@ focus_tree = {
 						infantry = { x = 2 y = 1 }
 						infantry = { x = 2 y = 2 }
 
-						artillery_brigade = { x = 3 y = 0}
-						anti_tank_brigade = { x = 3 y = 1}
+						anti_tank_brigade = { x = 3 y = 0}
 
 					}
 					support = {
-						hq_company = { x = 0 y = 0 } 
 						engineer = { x = 0 y = 1 }   
 						recon = { x = 0 y = 2 }
 						logistics_company  = { x = 0 y = 3 }
-						anti_air = { x = 1 y = 0 }
-						logistics_company_horse = { x = 1 y = 1 }
+						anti_air = { x = 0 y = 0 }
 					}
 				}
 				random_owned_controlled_state = {
@@ -8289,6 +8354,16 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+			add_timed_idea = {
+				idea = GER_barbarossa
+				days = 120
+			}
+							
+			remove_ideas = GER_good_weather_army
+			
+			activate_mission = GER_barbarossa_mission_moscow
+			activate_mission = GER_barbarossa_mission_kiev
+			activate_mission = GER_barbarossa_mission_lenin
 			
 			every_other_country = {
 				limit = {

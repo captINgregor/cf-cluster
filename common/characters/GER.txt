@@ -778,13 +778,13 @@ characters={
 		}
 	}
 	GER_walter_krüger={
-		name="Claus von Stauffenberg"
+		name=GER_walter_kruger
 		portraits={
 			army={
 				small="gfx/interface/ideas/idea_GER_walter_kruger.dds"
 			}
 			army={
-				large="gfx/leaders/GER/cruise.dds"
+				large=GFX_portrait_GER_walter_kruger
 			}
 		}
 		corps_commander={

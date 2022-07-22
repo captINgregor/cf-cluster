@@ -166,6 +166,31 @@ focus_tree = {
 	}
 
 	focus = {
+		id = maud_focus
+		available = { is_in_faction_with = USA }
+		prerequisite = { focus = tizard_mission_focus }
+		icon = GFX_focus_wonderweapons
+		x = 0
+		y = 1
+		relative_position_id = tizard_mission_focus
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = maud_focus
+				bonus = 1.0
+				uses = 1
+				category = nuclear
+			}
+		}
+	}
+	
+	focus = {
 		id = ENG_general_rearmament
 		icon = GFX_goal_generic_consumer_goods
 		prerequisite = { focus = limited_rearmament_focus }
