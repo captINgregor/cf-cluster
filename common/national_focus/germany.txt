@@ -2817,6 +2817,9 @@ focus_tree = {
 	focus = {
 		id = GER_prepare_barb
 		icon = GFX_ger_prepare_to_invade_union
+		mutually_exclusive = {
+			focus = GER_soviet_ally
+		}
 		prerequisite = { focus = GER_danzig_or_war }
 		
 		available = {
