@@ -1073,7 +1073,7 @@ country_event = { #Sell our navy
 		ai_chance = {
 			factor = 50
 		}
-		send_equipment = {
+		transfer = {
     		equipment = submarine
    			amount = 15
     		target = ENG
@@ -1677,8 +1677,8 @@ country_event = { #Total War
 			factor = 20
 		}
 		trigger = {
-			GER {
-				surrender_limit > 0.1
+			GER = {
+				surrender_progress > 0.1
 			}
 			NOT = {
 				is_friend_or_potential_friend_of_GER = yes
@@ -1692,8 +1692,8 @@ country_event = { #Total War
 			factor = 20
 		}
 		trigger = {
-			GER {
-				surrender_limit < 0.1
+			GER = {
+				surrender_progress < 0.1
 			}
 			NOT = {
 				is_friend_or_potential_friend_of_GER = yes

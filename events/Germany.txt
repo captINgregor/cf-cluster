@@ -4026,7 +4026,7 @@ country_event = {
 		# Göring becomes the new Fascist leader of Germany
 		kill_country_leader = yes
 		add_stability = 0.1
-		GER_hermann_goring = {
+		GER_herman_goring = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
@@ -4160,7 +4160,7 @@ country_event = {
 		name = germany.73.c
 		# Göring becomes the new Fascist leader of Germany
 		kill_country_leader = yes
-		GER_hermann_goring = {
+		GER_herman_goring = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
