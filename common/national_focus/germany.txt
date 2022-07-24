@@ -5348,6 +5348,12 @@ focus_tree = {
 			add_political_power = 200
 			custom_effect_tooltip = unlock_propaganda_campaign_tt
 			unlock_decision_tooltip = GER_plow_prop
+			hidden_effect = {
+				news_event = {
+					id = AR_news_germany.1
+					days = 0
+				}
+			}
 		}
 	}
 	
@@ -5556,14 +5562,8 @@ focus_tree = {
 			custom_effect_tooltip = unlock_propaganda_campaign_tt
 			unlock_decision_tooltip = GER_ensieg_prop
 			add_ideas = GER_volksturm_idea
-			set_technology = {
-				militia_tech = 1
-			}
 			hidden_effect = {
 				load_oob = GER_volk
-				GER = {
-					scoped_sound_effect = "children"
-				}
 			}
 		}
 	}

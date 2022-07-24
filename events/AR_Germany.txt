@@ -1063,54 +1063,36 @@ country_event = { #Sell our navy
 
 	is_triggered_only = yes
 
-	option = { #Sell our submarines
+	option = { #Sell all of our submarines
 		name = AR_germany.1053.a 
-		trigger = {
-			has_equipment = {
-   				submarine > 15
-			}
-		}
 		ai_chance = {
-			factor = 50
+			factor = 25
 		}
-		transfer = {
-    		equipment = submarine
-   			amount = 15
-    		target = ENG
+		transfer_ship = {
+			type = submarine
+			target = ENG
 		}
 	}
 
 	option = { #Sell our Destroyers
 		name = AR_germany.1053.b
-		trigger = {
-			has_equipment = {
-   				destroyer > 15
-			}
-		}
 		ai_chance = {
 			factor = 50
 		}
-		send_equipment = {
-    		equipment = destroyer
-   			amount = 15
-    		target = ENG
+		transfer_ship = {
+			type = destroyer
+			target = ENG
 		}
 	}
 
 	option = { #Sell our Dreadnoughts
 		name = AR_germany.1053.c
-		trigger = {
-			has_equipment = {
-   				battle_cruiser > 5
-			}
-		}
 		ai_chance = {
-			factor = 50
+			factor = 40
 		}
-		send_equipment = {
-    		equipment = battle_cruiser
-   			amount = 5
-    		target = ENG
+		transfer_ship = {
+			type = battle_cruiser
+			target = ENG
 		}
 	}
 }
