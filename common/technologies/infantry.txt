@@ -2843,6 +2843,25 @@ technologies = {
 		}
 	}
 
+	motti = {
+
+		category_all_infantry = {
+			forest = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.1
+			}
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 2.0
+		start_year = 1942
+		
+	}
+	
 	paramarines = {
 		allow = {
 			always = no

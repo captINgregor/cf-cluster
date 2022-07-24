@@ -1919,7 +1919,7 @@ wunderwaffe = {
 
         available = {
             NOT = { has_country_flag = GER_wunderwaffe_flag }
-            has_tech = ger_heavy_tank_1
+            has_tech = improved_heavy_tank_chassis
             date > 1942.6.1 
            
             
