@@ -296,6 +296,43 @@ ideas = {
 				consumer_goods_factor = -0.02
 			}
 		}
+
+		GER_preparing_ITA_coup3 = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+
+			modifier = {
+				democratic_drift = 0.1
+			}
+		}
+
+		GER_preparing_ITA_coup4 = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+
+			modifier = {
+				democratic_drift = 0.2
+			}
+		}
+
 		GER_no_scientists_in_military = {
 			allowed = {
 				always = yes
