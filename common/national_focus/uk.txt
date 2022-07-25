@@ -631,7 +631,7 @@ focus_tree = {
 				bonus = 0.75
 				ahead_reduction = 0.5
 				uses = 1
-				technology = fighter4
+				technology = fighter3
 			}
 		}
 	}

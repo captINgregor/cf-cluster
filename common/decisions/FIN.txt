@@ -185,7 +185,7 @@ operations = {
 
 		remove_effect = {
 			set_technology = {
-				light_tank_chassis_1 = 1
+				basic_light_tank_chassis = 1
 			}
 		}
 	}
@@ -222,7 +222,7 @@ operations = {
 
 		remove_effect = {
 			set_technology = {
-				heavy_tank_chassis_1 = 1
+				basic_heavy_tank_chassis = 1
 			}
 		}
 	}
@@ -259,7 +259,7 @@ operations = {
 
 		remove_effect = {
 			set_technology = {
-				medium_tank_chassis_2 = 1
+				improved_medium_tank_chassis = 1
 			}
 		}
 	}
