@@ -2010,7 +2010,6 @@ GER_share_generals = {
 		
 		visible = {
 			tag = GER
-			HUN = { has_completed_focus = HUN_german_cooperation }
 			NOT = { has_country_flag = GER_send_hun }
 		}
 

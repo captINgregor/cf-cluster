@@ -9,7 +9,7 @@ prospect_for_resources = {
 		}
 		
 		available = {
-			has_completed_focus = ITA_oil_prospecting
+			has_completed_focus = ITA_prospect_for_oil
 			OR = {
 				NOT = { has_country_flag = ITA_lib_3 }
 				has_tech = excavation1
