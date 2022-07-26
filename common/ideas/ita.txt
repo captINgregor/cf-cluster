@@ -1,0 +1,595 @@
+ideas = {
+	country = {
+		papacy = {
+			
+			picture = SPR_appropriate_church_riches
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+				NOT = {
+					has_government = communism 
+				}
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1	
+				political_power_gain = 0.5			
+			}
+		}
+		
+		mafia1 = {
+			
+			#picture = GFX_italy_mafia1
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+
+				political_power_gain = -0.05
+				political_advisor_cost_factor = 0.25
+			}
+		}
+		
+		mafia2 = {
+			
+			#picture = GFX_italy_mafia2
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+	
+				political_power_gain = -0.1
+				political_advisor_cost_factor = 0.3
+				trade_laws_cost_factor = 0.25
+				mobilization_laws_cost_factor = 0.25
+				economy_cost_factor = 0.25					
+			}
+		}
+		
+		mafia3 = {
+			
+			#picture = GFX_italy_mafia3
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+
+				political_power_gain = -0.15
+				political_advisor_cost_factor = 0.5
+				trade_laws_cost_factor = 0.5
+				mobilization_laws_cost_factor = 0.5
+				economy_cost_factor = 0.5	
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		mafia4 = {
+			
+			#picture = GFX_italy_mafia4
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.1	
+				political_power_gain = -0.2
+				production_speed_buildings_factor = -0.1
+				global_building_slots_factor = -0.1
+				consumer_goods_factor = 0.05
+				political_advisor_cost_factor = 0.5
+				trade_laws_cost_factor = 0.5
+				mobilization_laws_cost_factor = 0.5
+				economy_cost_factor = 0.5
+		
+			}
+		}
+		
+		mafia5 = {
+			
+			#picture = GFX_italy_mafia5
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.2
+				political_power_gain = -0.3
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = -0.3
+				global_building_slots_factor = -0.15
+				political_advisor_cost_factor = 0.5
+				trade_laws_cost_factor = 0.5
+				mobilization_laws_cost_factor = 0.5
+				economy_cost_factor = 0.5
+	
+			}
+		}
+		
+		mafia_destroyed = {
+			
+			picture = generic_spy_intel
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.1		
+			}
+		}
+		
+		military_incompetence = {
+			
+			picture = chi_army_corruption
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			research_bonus = {
+				land_doctrine = -0.25
+			}
+			modifier = {
+				command_power_gain_mult = -0.5
+				max_command_power = -30
+				experience_gain_army = -0.5
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+				mobilization_speed = -0.2
+			}
+		}
+		
+		military_incompetence2 = {
+			
+			picture = chi_army_corruption
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			research_bonus = {
+				land_doctrine = -0.15
+			}
+			modifier = {
+				command_power_gain_mult = -0.2
+				max_command_power = -10
+				experience_gain_army = -0.2
+				mobilization_speed = -0.1
+			}
+		}
+		
+		military_incompetence3 = {
+			
+			picture = generic_manpower_bonus
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.1
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army = 0.1
+				mobilization_speed = 0.1
+			}
+		}
+		
+		workers_culture = {
+			
+			picture = generic_manpower_bonus
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+			}
+			
+			research_bonus = {
+		
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+		
+		topple_monarchies = {
+			
+			picture = trotskyite_plot_purged
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				justify_war_goal_time = -0.5
+			}
+		}
+		
+		topple_dictatorship = {
+			
+			picture = generic_intel_bonus
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				justify_war_goal_time = -0.25
+				generate_wargoal_tension = -1
+				war_support_factor = 0.05
+			}
+		}
+		
+		battle_lira = {
+			
+			picture = SPR_seize_the_gold_reserves
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		battle_birth = {
+			
+			picture = generic_manpower_bonus
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 0.015
+			}
+		}
+		
+		battle_land = {
+			
+			picture = generic_production_bonus
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				global_building_slots_factor = 0.15
+			}
+		}
+		
+		economic_miracle = {
+			
+			picture = SPR_seize_the_gold_reserves
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_infrastructure_factor = 0.10
+			}
+		}
+		
+		economic_miracle2 = {
+			
+			picture = SPR_seize_the_gold_reserves
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.15
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		
+		economic_miracle3 = {
+			
+			picture = SPR_seize_the_gold_reserves
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.2
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.2
+				production_speed_infrastructure_factor = 0.15
+			}
+		}
+		
+		italian_constitution = {
+			
+			picture = generic_pp_unity_bonus
+			allowed = {
+				original_tag = "ITA"
+			}
+
+			available = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = 0.25
+				stability_factor = 0.1
+			}
+		}
+		
+		ITA_espionage = {
+			picture = generic_spy_political
+			allowed = {
+				original_tag = ITA
+			}
+
+			allowed_civil_war = {
+				tag = ITA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+				civilian_intel_factor = 0.05
+				enemy_operative_capture_chance_factor = 0.05
+				intelligence_agency_defense = 0.2
+			}
+		}
+		
+		ITA_espionage2 = {
+			picture = generic_spy_political
+			allowed = {
+				original_tag = ITA
+			}
+
+			allowed_civil_war = {
+				tag = ITA
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			
+			modifier = {
+				operative_slot = 1
+				civilian_intel_factor = 0.1
+				army_intel_factor = 0.05
+				navy_intel_factor = 0.05
+				airforce_intel_factor = 0.05
+				enemy_operative_capture_chance_factor = 0.10
+				intelligence_agency_defense = 0.3
+			}
+		}
+		
+		ITA_fighter_production = {
+		
+			allowed = {
+				original_tag = ITA
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = air_support_focus
+			
+			removal_cost = -1
+
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+	}
+}

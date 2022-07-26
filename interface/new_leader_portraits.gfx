@@ -1,0 +1,11 @@
+spriteTypes = {
+
+	# leaders we need to override in DLC go in this file
+	
+	### GER
+	
+	spriteType = {
+		name = "GFX_portrait_ger_Erwin_Rommel"
+		texturefile = "gfx/leaders/GER/Portrait_Germany_Erwin_Rommel.dds"		
+	}
+}

@@ -1,0 +1,18 @@
+ITA_mafia_catagory = {
+	icon = power_struggle
+	icon = border_conflicts
+	
+	scripted_gui = ita_paranoia_system_ui
+	
+	allowed = {
+		original_tag = ITA
+		
+		or = {
+				has_idea =  mafia1
+				has_idea =  mafia2
+				has_idea =  mafia3
+				has_idea =  mafia4
+				has_idea =  mafia5
+			}
+	}	
+}

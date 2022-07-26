@@ -1,0 +1,50 @@
+﻿###########################
+# News Events
+###########################
+
+add_namespace = news
+
+#yugoslavia denies italy
+news_event = {
+	id = news.42069
+	title = news.1.title
+	desc = news.1.desc
+	picture = GFX_news_event_047
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.1.a
+		#text = "Oh No..."
+	}
+}
+
+#yugoslavia accepts italy
+news_event = {
+	id = news.42070
+	title = news.2.title
+	desc = news.2.desc
+	picture = GFX_news_event_047
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.2.a
+		#text = "Oh No..."
+	}
+}
+
+#italian elections
+news_event = {
+	id = news.42071
+	title = news.3.title
+	desc = news.3.desc
+	picture = GFX_news_event_047
+	
+	is_triggered_only = yes
+
+	option = {
+		name = news.3.a
+		#text = "Very Interesting"
+	}
+}

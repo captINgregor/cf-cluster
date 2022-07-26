@@ -1,0 +1,65 @@
+spriteTypes = {	
+	SpriteType = { 
+		name = "GFX_goal_albania"
+		texturefile = "gfx/interface/goals/focus_italy_albania.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_goal_atk_greece"
+		texturefile = "gfx/interface/goals/focus_atk_greece.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_goal_newyugo1"
+		texturefile = "gfx/interface/goals/focus_yugo3.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_goal_newyugo_2"
+		texturefile = "gfx/interface/goals/focus_yugo2.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_goal_communist_italy"
+		texturefile = "gfx/interface/goals/focus_communist_italy.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_goal_communist_italy2"
+		texturefile = "gfx/interface/goals/focus_communist_italy2.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_goal_atk_yemen"
+		texturefile = "gfx/interface/goals/focus_atk_yemen.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_goal_triumph_in_africa"
+		texturefile = "gfx/interface/goals/focus_tri_africa.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_goal_failure_in_africa"
+		texturefile = "gfx/interface/goals/focus_fail_africa.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_goal_peace_with_etheopia"
+		texturefile = "gfx/interface/goals/focus_peace_eth.dds"
+	}
+	
+	SpriteType = { 
+		name = "GFX_gorilla"
+		texturefile = "gfx/interface/goals/gorilla.dds"
+	}
+	SpriteType = { 
+		name = "GFX_king_italy"
+		texturefile = "gfx/interface/goals/king_italy.dds"
+	}
+	SpriteType = { 
+		name = "GFX_dev_africa"
+		texturefile = "gfx/interface/goals/dev_africa.dds"
+	}
+
+}

@@ -1,0 +1,20 @@
+leader_traits = {
+	
+	il_duce = {
+		random = no
+		war_support_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ita_war_hero = {
+		war_support_factor = 0.05
+		stability_factor = 0.05
+		army_core_attack_factor = 0.2
+		army_core_defence_factor = 0.2
+	}
+	
+	
+}

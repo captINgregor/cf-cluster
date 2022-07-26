@@ -30,16 +30,16 @@ ITA_historical_plan = {
 	ai_national_focuses = {
 		ITA_ethiopian_war_logistics 				#March 10 1936	
 		ITA_victoryinETH 							#May 20 1936	
-		ITA_industrial_effort 						#July 30 1936	
+		#ITA_industrial_effort 						#July 30 1936	
 		ITA_army_primacy 							#October 10 1936
 		ITA_mare_nostrum 							#October 10 1936	
 		ITA_light_ship_effort 						#December 20 1936	
-		ITA_industrial_effort_2 					#February 30 1937	
+		##ITA_industrial_effort_2 					#February 30 1937	
 		ITA_modernized_artillery 					#May 10 1937	
 		ITA_air_innovation 							#July 20 1937	
 		ITA_slovenia_dalmatia_claims 				#September 30 1937	
 		ITA_modernized_army 						#December 10 1937
-		ITA_fortification_effort 					#February 20 1938	
+		#ITA_fortification_effort 					#February 20 1938	
 		ITA_extra_tech_slot 						#April 30 1938	
 		ITA_special_forces 							#July 10 1938	
 		ITA_capital_ships 							#September 20 1938

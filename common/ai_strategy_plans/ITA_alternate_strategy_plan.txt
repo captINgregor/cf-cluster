@@ -23,16 +23,16 @@ ITA_alternate_plan_1 = {
 	ai_national_focuses = {
 		ITA_ethiopian_war_logistics 				#March 10 1936	
 		ITA_victoryinETH 							#May 20 1936	
-		ITA_industrial_effort 						#July 30 1936	
+		#ITA_industrial_effort 						#July 30 1936	
 		ITA_army_primacy 							#October 10 1936
 		ITA_mare_nostrum 							#October 10 1936	
 		ITA_light_ship_effort 						#December 20 1936	
-		ITA_industrial_effort_2 					#February 30 1937	
+		#ITA_industrial_effort_2 					#February 30 1937	
 		ITA_modernized_artillery 					#May 10 1937	
 		ITA_air_innovation 							#July 20 1937	
 		ITA_slovenia_dalmatia_claims 				#September 30 1937	
 		ITA_modernized_army 						#December 10 1937
-		ITA_fortification_effort 					#February 20 1938	
+		#ITA_fortification_effort 					#February 20 1938	
 		ITA_extra_tech_slot 						#April 30 1938	
 		ITA_special_forces 							#July 10 1938	
 		ITA_capital_ships 							#September 20 1938
@@ -101,16 +101,16 @@ ITA_alternate_plan_2 = {
 	ai_national_focuses = {
 		ITA_ethiopian_war_logistics 					#March 10 1936	
 		ITA_victoryinETH 								#May 20 1936	
-		ITA_industrial_effort 							#July 30 1936	
+		#ITA_industrial_effort 							#July 30 1936	
 		ITA_army_primacy 								#October 10 1936
 		ITA_mare_nostrum 								#October 10 1936	
 		ITA_light_ship_effort 							#December 20 1936	
-		ITA_industrial_effort_2 						#February 30 1937	
+		##ITA_industrial_effort_2 						#February 30 1937	
 		ITA_modernized_artillery 						#May 10 1937	
 		ITA_air_innovation 								#July 20 1937	
 		ITA_slovenia_dalmatia_claims 					#September 30 1937	
 		ITA_modernized_army 							#December 10 1937
-		ITA_fortification_effort 						#February 20 1938	
+		#ITA_fortification_effort 						#February 20 1938	
 		ITA_extra_tech_slot 							#April 30 1938	
 		ITA_special_forces 								#July 10 1938	
 		ITA_capital_ships 								#September 20 1938
@@ -184,16 +184,16 @@ ITA_alternate_plan_3 = {
 	ai_national_focuses = {
 		ITA_ethiopian_war_logistics 				#March 10 1936	
 		ITA_victoryinETH 							#May 20 1936	
-		ITA_industrial_effort 						#July 30 1936	
+		##ITA_industrial_effort 						#July 30 1936	
 		ITA_army_primacy 							#October 10 1936
 		ITA_mare_nostrum 							#October 10 1936	
 		ITA_light_ship_effort 						#December 20 1936	
-		ITA_industrial_effort_2 					#February 30 1937	
+		##ITA_industrial_effort_2 					#February 30 1937	
 		ITA_modernized_artillery 					#May 10 1937	
 		ITA_air_innovation 							#July 20 1937	
 		ITA_slovenia_dalmatia_claims 				#September 30 1937	
 		ITA_modernized_army 						#December 10 1937
-		ITA_fortification_effort 					#February 20 1938	
+		#ITA_fortification_effort 					#February 20 1938	
 		ITA_extra_tech_slot 						#April 30 1938	
 		ITA_special_forces 							#July 10 1938	
 		ITA_capital_ships 							#September 20 1938
@@ -215,8 +215,8 @@ ITA_alternate_plan_3 = {
 		ITA_libyan_refineries 						#October 30 1941	
  		ITA_libyan_infrastructure					#January 10 1942
  		ITA_greece_war_goal							#March 20 1942
- 		ITA_anti_uk_war_goals						#May 30 1942	
- 		ITA_japan_friend							#August 10 1942
+ 		#ITA_anti_uk_war_goals						#May 30 1942	
+ 		#ITA_japan_friend							#August 10 1942
  													#October 20 1942	
  													#December 30 1942	
  													#March 10 1943
@@ -275,16 +275,16 @@ ITA_alternate_plan_4 = {
 		ITA_greece_war_goal							#July 30 1936	
 		ITA_ethiopian_war_logistics 				#October 10 1936
 		ITA_victoryinETH 							#October 10 1936	
-		ITA_industrial_effort 						#December 20 1936	
+		#ITA_industrial_effort 						#December 20 1936	
 		ITA_army_primacy 							#February 30 1937	
 		ITA_mare_nostrum 							#May 10 1937	
 		ITA_light_ship_effort 						#July 20 1937	
-		ITA_industrial_effort_2 					#September 30 1937
+		#ITA_industrial_effort_2 					#September 30 1937
 		ITA_modernized_artillery 					#December 10 1937
 		ITA_air_innovation 							#February 20 1938	
 		ITA_slovenia_dalmatia_claims 				#April 30 1938	
 		ITA_modernized_army 						#July 10 1938	
-		ITA_fortification_effort 					#September 20 1938
+		#ITA_fortification_effort 					#September 20 1938
 		ITA_extra_tech_slot 						#November 30 1938
 		ITA_special_forces 							#February 10 1939	
 		ITA_capital_ships 							#April 20 1939	
@@ -305,8 +305,8 @@ ITA_alternate_plan_4 = {
 		ITA_prospect_for_oil 						#March 20 1942
 		ITA_libyan_refineries 						#May 30 1942	
  		ITA_libyan_infrastructure					#August 10 1942
- 		ITA_anti_uk_war_goals						#October 20 1942	
- 		ITA_japan_friend							#December 30 1942	
+ 		#ITA_anti_uk_war_goals						#October 20 1942	
+ 		#ITA_japan_friend							#December 30 1942	
  													#March 10 1943
  													#May 20 1943	
  													#July 30 1943			
@@ -352,8 +352,8 @@ ITA_alternate_plan_fascist = {
 
 	ai_national_focuses = {
 		ITA_ethiopian_war_logistics
-		ITA_industrial_effort
-		ITA_industrial_effort_2	
+		#ITA_industrial_effort
+		#ITA_industrial_effort_2	
 		ITA_extra_tech_slot
 		ITA_victoryinETH
 		#1937

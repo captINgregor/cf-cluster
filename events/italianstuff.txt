@@ -1,0 +1,302 @@
+﻿add_namespace = ita
+
+
+#Italy demands slovenia and dalmatia
+country_event = {
+	id = italy.1000
+	title = italy.1000.t
+	desc = italy.1000.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#yes
+	option = {
+		name = italy.1000.a
+		ai_chance = { 
+			factor = 80
+			}
+		ITA = {
+				if = {
+					limit = { YUG = { owns_state = 102 } }
+					transfer_state = 102
+				}
+				if = {
+					limit = { YUG = { owns_state = 103 } }
+					transfer_state = 103
+				}						
+			}
+		hidden_effect = {
+			news_event = { id = itaf_news.42069 }
+		}
+	}
+	#no
+	option = {
+		name = italy.1000.b
+		ITA = {
+			create_wargoal = {
+				type = take_state_focus
+				target = YUG
+				expire = 0
+				generator = { 102 103 }
+			}
+		}
+		hidden_effect = {
+			news_event = { id = itaf_news.42070 }
+		}
+	}
+}
+
+#Italy demands our integration
+country_event = {
+	id = italy.1001
+	title = italy.1001.t
+	desc = italy.1001.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#yes
+	option = {
+		name = italy.1001.a
+			ITA = {
+					set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_colony
+					freedom_level = 0.2
+					}
+				}
+	}
+	#no
+	option = {
+		name = italy.1001.b
+		ITA = {
+			create_wargoal = {
+				type = annex_everything
+				target = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = italy.1001.c
+		ITA = {
+			annex_country = { target = ROOT transfer_troops = yes }
+		}
+	}
+}
+
+#italy requests rommel
+country_event = {
+	id = italy.1002
+	title = italy.1002.t
+	desc = italy.1002.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#yes
+	option = {
+		name = italy.1002.a
+		remove_unit_leader = 4
+		ITA = { country_event = { id = italy.1003 days = 5 } }
+	}
+	#no
+	option = {
+		name = italy.1002.b
+		ITA = { country_event = { id = italy.1004 days = 5 } }
+	}
+}
+
+#germany yes
+country_event = {
+	id = italy.1003
+	title = italy.1003.t
+	desc = italy.1003.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = italy.1003.a
+			create_corps_commander = {
+				name = "Erwin Rommel"
+				gfx = GFX_portrait_ger_Erwin_Rommel
+				traits = { trickster trait_reckless war_hero armor_officer media_personality }
+				skill = 4
+				id = 69420
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 2
+				logistics_skill = 3
+			}
+	}
+}
+
+#germany no
+country_event = {
+	id = italy.1004
+	title = italy.1004.t
+	desc = italy.1004.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = italy.1004.a
+		ITA = { add_opinion_modifier = { target = GER modifier = medium_decrease } }
+	}
+}
+
+#italy election
+country_event = {
+	id = italy.1005
+	title = italy.1005.t
+	desc = italy.1005.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#democratic
+	option = {
+		name = italy.1005.a
+
+		add_stability = 0.1
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		
+		hidden_effect = {
+			kill_country_leader = yes
+		}
+		
+		create_country_leader = {
+			name = "Ferruccio Parri"
+			desc = "POLITICS_BENITO_MUSSOLINI_DESC"
+			picture = "GFX_portrait_italy_ferruccio_parri"
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				
+			}
+		}
+			
+		news_event = { id = itaf_news.42071 }
+	}
+	#communist
+	option = {
+		name = italy.1005.b
+		add_stability = -0.1
+		add_political_power = 50
+		set_politics = { ruling_party = communism elections_allowed = yes }
+		news_event = { id = itaf_news.42071 }
+	}
+}
+
+#italy joins commintern
+country_event = {
+	id = italy.1006
+	title = italy.1006.t
+	desc = italy.1006.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#yes
+	option = {
+		name = italy.1006.a
+		ITA = { country_event = { id = italy.1007 days = 5 } }
+	}
+	#no
+	option = {
+		name = italy.1006.b
+		ITA = { country_event = { id = italy.1008 days = 5 } }
+	}
+}
+
+country_event = {
+	id = italy.1007
+	title = italy.1007.t
+	desc = italy.1007.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#yes
+	option = {
+		name = italy.1007.a
+		SOV = { add_to_faction = ITA }
+	}
+}
+
+country_event = {
+	id = italy.1008
+	title = italy.1008.t
+	desc = italy.1008.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#yes
+	option = {
+		name = italy.1008.a
+		ITA = { add_opinion_modifier = { target = SOV modifier = medium_decrease } }
+	}
+}
+
+#italy joins allies
+country_event = {
+	id = italy.1010
+	title = italy.1010.t
+	desc = italy.1010.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#yes
+	option = {
+		name = italy.1010.a
+		ENG = { add_to_faction = ITA }
+	}
+	#no
+	option = {
+		name = italy.1010.b
+		ITA = { country_event = { id = italy.1009 days = 5 } }
+	}
+}
+#no
+country_event = {
+	id = italy.1009
+	title = italy.1009.t
+	desc = italy.1009.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	#yes
+	option = {
+		name = italy.1009.a
+		ITA = { add_opinion_modifier = { target = ENG modifier = medium_decrease } }
+	}
+}
+

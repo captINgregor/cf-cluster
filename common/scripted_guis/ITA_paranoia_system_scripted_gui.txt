@@ -1,0 +1,13 @@
+scripted_gui = {
+
+	ita_paranoia_system_ui = {
+		context_type = decision_category
+		window_name = "ita_paranoia_system_ui_window"
+
+		properties = {
+
+			
+		}
+	}
+	
+}

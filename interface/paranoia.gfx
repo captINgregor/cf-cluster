@@ -1,0 +1,72 @@
+
+#### Paranoia assets ####
+
+spriteTypes = {	
+
+	### Basic assets ###
+				
+	spriteType = {
+		name = "GFX_SOV_paranoia_meter"
+		texturefile = "gfx/interface/paranoia/SOV_paranoia_meter.dds"
+		legacy_lazy_load = no
+		noOfFrames = 21
+	}
+	spriteType = {
+		name = "GFX_SOV_paranoia_needle"
+		texturefile = "gfx/interface/paranoia/SOV_paranoia_needle.dds"
+		legacy_lazy_load = no
+		noOfFrames = 21
+	}
+	spriteType = {
+		name = "GFX_SOV_paranoia_bg"
+		texturefile = "gfx/interface/paranoia/SOV_paranoia_bg.dds"
+		legacy_lazy_load = no
+	}
+
+	### Photos ###
+
+	spriteType = {
+		name = "GFX_paranoia_photo"
+		texturefile = "gfx/interface/paranoia/paranoia_portrait_strip.dds"
+		legacy_lazy_load = no
+		noOfFrames = 12
+	}	
+	
+	
+	
+	spriteType = {
+		name = "GFX_ITA_paranoia_bg"
+		texturefile = "gfx/interface/paranoia/ITA_paranoia_bg.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_ITA_mafia_lvl2_bg"
+		texturefile = "gfx/interface/paranoia/mafia_bar_1.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_ITA_mafia_lvl3_bg"
+		texturefile = "gfx/interface/paranoia/mafia_bar_2.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ITA_mafia_lvl4_bg"
+		texturefile = "gfx/interface/paranoia/mafia_bar_3.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_ITA_mafia_lvl5_bg"
+		texturefile = "gfx/interface/paranoia/mafia_bar_4.dds"
+		legacy_lazy_load = no
+	}
+	
+	spriteType = {
+		name = "GFX_ITA_mafia_border_bg"
+		texturefile = "gfx/interface/paranoia/mafia_bar_border.dds"
+		legacy_lazy_load = no
+	}
+
+}

@@ -1,0 +1,41 @@
+spriteTypes = {	
+
+
+
+	#spriteType = {
+	#	name = "GFX_idea_traits_strip"
+	#	texturefile = "gfx/interface/ideas/idea_traits_strip.dds"
+	#	noOfFrames = 15		
+	#}
+	
+	spriteType = { 
+		name = "GFX_idea_mafia1"
+		texturefile = "gfx/interface/ideas/mafia1.dds"
+	}
+	
+	spriteType = { 
+		name = "GFX_idea_mafia2"
+		texturefile = "gfx/interface/ideas/mafia2.dds"
+	}
+	
+	spriteType = { 
+		name = "GFX_idea_mafia3"
+		texturefile = "gfx/interface/ideas/mafia3.dds"
+	}
+	
+	spriteType = { 
+		name = "GFX_idea_mafia4"
+		texturefile = "gfx/interface/ideas/mafia4.dds"
+	}
+	
+	spriteType = { 
+		name = "GFX_idea_mafia5"
+		texturefile = "gfx/interface/ideas/mafia5.dds"
+	}
+
+
+	spriteType = { 
+		name = "GFX_idea_army_xp_guy"
+		texturefile = "gfx/interface/ideas/idea_generic_air_europe_2.dds"
+	}
+}
