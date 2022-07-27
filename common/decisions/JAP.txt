@@ -1415,109 +1415,42 @@ political_actions = {
 }
 
 operations = {
-
 	
-	# SOV_border_war_JAP = {
-
-	# 	icon = border_war
-
-	# 	allowed = { always = no }
-
-	# 	available = {
-	# 		any_other_country = {
-	# 			original_tag = TIB
-	# 			has_government = fascism
-	# 			has_war = no
-	# 		}
-	# 	}
-
-	# 	days_mission_timeout = 90
-
-	# 	fire_only_once = yes
-
-	# 	is_good = no
+	JAP_tora_tora_tora = {
 		
-	# 	complete_effect = {
-	# 		country_event = soviet.1113
-	# 	}
-	# }
+		allowed = {
+			original_tag = JAP
+		}
+
+		icon = decision_generic_naval
+
+		available = {
+			OR = {
+				has_war_with = HOL
+				has_war_with = ENG
+				has_war_with = USA
+				has_war_with = FRA
+			}
+		}
+
+		is_good = no
 	
-	# SOV_border_war_TIB = {
-
-	# 	icon = border_war
-
-	# 	allowed = { always = no }
-
-	# 	available = {
-	# 		has_war = no
-	# 	}
-
-	# 	days_mission_timeout = 88
-
-	# 	fire_only_once = yes
-
-	# 	is_good = no
-		
-	# 	timeout_effect = {
-	# 		if = {
-	# 			limit = {
-	# 				322 = {
-	# 					CONTROLLER = {
-	# 						has_government = fascism			
-	# 					}
-	# 				}
-	# 			}
-	# 			TIB = {
-	# 				transfer_state = 322
-	# 			}
-	# 		}
-	# 		if = {
-	# 			limit = {
-	# 				758 = {
-	# 					CONTROLLER = {
-	# 						has_government = fascism				
-	# 					}
-	# 				}
-	# 			}	
-	# 			TIB = {
-	# 				transfer_state = 758
-	# 			}
-	# 		}
-	# 		random_other_country = {
-	# 			limit = {
-	# 				original_tag = TIB
-	# 				has_government = communism
-	# 			}
-	# 			white_peace = TIB
-	# 		}
-
-	# 	}
-	# }
+		fire_only_once = yes
 	
-	# SOV_border_war_warning_JAP = {
-
-	# 	icon = border_war
+		days_mission_timeout = 180
+	
+		activation = {
+			has_completed_focus = JAP_strike_on_the_southern_resource_area
+		}
 		
-	# 	allowed = {
-	# 		always = no
-	# 	}
-
-	# 	available = {
-	# 		TIB = {
-	# 			has_war = yes
-	# 		}
-	# 	}
-
-	# 	days_mission_timeout = 180
-	# 	fire_only_once = yes
-
-	# 	is_good = no
-
-	# 	timeout_effect = {
-	# 		add_war_support = -0.1
-	# 		add_stability = -0.1
-	# 	}
-	# }
+		visible = {
+			has_completed_focus = JAP_strike_on_the_southern_resource_area
+		}
+	
+		complete_effect = {
+			add_timed_idea = { idea = JAP_tora_tora_tora_idea days = 180 }
+		}
+	}
 
 
 	#first border incident
@@ -1535,7 +1468,7 @@ operations = {
 			NOT = {
 				has_war_with = SOV
 				is_in_faction_with = SOV
-				has_non_aggression_pact_with = SOV	
+				has_non_aggression_pact_with = SOV
 				SOV = { is_puppet_of = JAP }
 			}
 			527 = {
@@ -1552,23 +1485,24 @@ operations = {
 		}
 
 		highlight_states = {
-			highlight_state_targets = {
+	 		highlight_state_targets = {
 				state = 408
 				state = 527
-			}
+			} 
 		}
+		
 		fire_only_once = yes
 		ai_will_do = {
 			factor = 1
 			modifier = {
 				is_historical_focus_on = yes
 				date < 1939.1.1
-				factor = 0	
-			}	
-			modifier = { # We won't do this if we are supporting the opposition	
-				OR = {	
-					SOV = { has_country_flag = SOV_CSW_transfer_vladivostok_flag }	
-					SOV = { has_country_flag = SOV_CSW_transfer_sakhalin_flag }	
+				factor = 0
+			}
+			modifier = { # We won't do this if we are supporting the opposition
+				OR = {
+					SOV = { has_country_flag = SOV_CSW_transfer_vladivostok_flag }
+					SOV = { has_country_flag = SOV_CSW_transfer_sakhalin_flag }
 				}
 				factor = 0
 			}
@@ -1651,7 +1585,7 @@ operations = {
 		icon = border_war
 
 		allowed = { always = no } #Activated from effect
-		visible = { hidden_trigger = { NOT = { has_border_war_with = JAP } } }	
+		visible = { hidden_trigger = { NOT = { has_border_war_with = JAP } } }
 		cancel_if_not_visible = yes 
 
 		available = {
@@ -1707,9 +1641,9 @@ operations = {
 
 		highlight_states = {
 			highlight_state_targets = {
-					state = 527
-					state = 408
-			}
+				state = 527
+				state = 408
+			} 
 		}
 
 		ai_will_do = {
@@ -1771,9 +1705,9 @@ operations = {
 
 		highlight_states = {
 			highlight_state_targets = {
-					state = 527
-					state = 408			
-			}
+				state = 527
+				state = 408	
+			} 
 		}
 
 		ai_will_do = {
@@ -1828,9 +1762,9 @@ operations = {
 		
 		highlight_states = {
 			highlight_state_targets = {
-					state = 408
-					state = 527
-			}
+				state = 408
+				state = 527
+			} 
 		}
 
 		ai_will_do = {
@@ -1883,20 +1817,20 @@ operations = {
 
 		ai_will_do = {
 			base = 0
-			 modifier = {
-			 	add = 100 	
-			 	is_historical_focus_on = no 	
-			 }	
-			 modifier = {	
-			 	add = 50 	
-			 	AND = {	
-			 		tag = JAP 	
-			 		has_completed_focus = JAP_support_the_kodoha_faction	
-			 	}	
-			 }	
-			 modifier = {	
-			 	factor = 0	
-			 	has_war = yes 	
+			modifier = {
+				add = 100 
+				is_historical_focus_on = no 
+			}
+			modifier = {
+				add = 50 
+				AND = {
+					tag = JAP 
+					has_completed_focus = JAP_support_the_kodoha_faction
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war = yes 
 			}
 		}
 
@@ -1910,46 +1844,46 @@ operations = {
 					defender = 408
 					defender_modifier = 0.15
 					combat_width = 100
-				}	
-				JAP = {	
-					set_country_flag = {	
-						flag = WTT_border_conflict_escalate_to_war_cooldown	
-						days = 60	
-						value = 1	
-					}	
-					remove_targeted_decision = { target = SOV decision = JAP_border_conflict_escalate_conflict }	
-				}	
-				set_country_flag = {	
-					flag = WTT_border_conflict_escalate_to_war_cooldown	
-					days = 60	
-					value = 1	
-				}	
-				custom_effect_tooltip = in_60_days	
+				}
+				JAP = {
+					set_country_flag = {
+						flag = WTT_border_conflict_escalate_to_war_cooldown
+						days = 60
+						value = 1
+					}
+					remove_targeted_decision = { target = SOV decision = JAP_border_conflict_escalate_conflict }
+				}
+				set_country_flag = {
+					flag = WTT_border_conflict_escalate_to_war_cooldown
+					days = 60
+					value = 1
+				}
+				custom_effect_tooltip = in_60_days
 				activate_targeted_decision = { target = JAP decision = JAP_border_conflict_escalate_to_war }
 			}
-			else = {	
-				set_border_war_data = {	
-					attacker = 527	
-					defender = 408	
-					attacker_modifier = 0.15	
-					combat_width = 100	
-				}	
-				SOV = {	
-					set_country_flag = {	
-						flag = WTT_border_conflict_escalate_to_war_cooldown	
-						days = 60	
-						value = 1	
-					}	
-					remove_targeted_decision = { target = JAP decision = JAP_border_conflict_escalate_conflict }	
-				}	
-				set_country_flag = {	
-					flag = WTT_border_conflict_escalate_to_war_cooldown	
-					days = 60	
-					value = 1	
-				}	
-				custom_effect_tooltip = in_60_days	
-				activate_targeted_decision = { target = SOV decision = JAP_border_conflict_escalate_to_war }	
-			}	
+			else = {
+				set_border_war_data = {
+					attacker = 527
+					defender = 408
+					attacker_modifier = 0.15
+					combat_width = 100
+				}
+				SOV = {
+					set_country_flag = {
+						flag = WTT_border_conflict_escalate_to_war_cooldown
+						days = 60
+						value = 1
+					}
+					remove_targeted_decision = { target = JAP decision = JAP_border_conflict_escalate_conflict }
+				}
+				set_country_flag = {
+					flag = WTT_border_conflict_escalate_to_war_cooldown
+					days = 60
+					value = 1
+				}
+				custom_effect_tooltip = in_60_days
+				activate_targeted_decision = { target = SOV decision = JAP_border_conflict_escalate_to_war }
+			}
 			
 		}
 	}
@@ -1965,8 +1899,8 @@ operations = {
 			NOT = { has_country_flag = WTT_border_conflict_escalate_to_war_cooldown }
 			has_border_war_with = FROM
 		}
-		cancel_trigger = {	
-			NOT = { has_border_war = yes }	
+		cancel_trigger = {
+			NOT = { has_border_war = yes }
 		}
 
 		highlight_states = {
@@ -1980,24 +1914,24 @@ operations = {
 
 		ai_will_do = {
 			base = 0
-			 modifier = {	
-			 	add = 100 	
-			 	is_historical_focus_on = no 	
-			 }	
-			 modifier = {	
-			 	add = 50 	
-			 	AND = {	
-			 		tag = JAP 	
-			 		has_completed_focus = JAP_support_the_kodoha_faction	
-			 	}	
-			 }	
-			 modifier = {	
-			 	factor = 0	
-			 	has_war = yes 	
-			 }
+			modifier = {
+				add = 100 
+				is_historical_focus_on = no 
+			}
+			modifier = {
+				add = 50 
+				AND = {
+					tag = JAP 
+					has_completed_focus = JAP_support_the_kodoha_faction
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war = yes 
+			}
 		}
 
-		days_remove = 15
+		days_remove = 10
 
 		fire_only_once = yes #Reactivation handled in effect
 
@@ -2008,23 +1942,24 @@ operations = {
 				limit = { original_tag = SOV }
 				408 = { save_event_target_as = their_state }
 				527 = { save_event_target_as = our_state }
-				JAP = {	
-					country_event = { id = japan_border_conflict.6 hours = 1 }	
-					hidden_effect = {	
-						remove_targeted_decision = { target = SOV decision = JAP_border_conflict_escalate_to_war }	
-					}	
+				JAP = {
+					country_event = { id = japan_border_conflict.6 hours = 1 }
+					hidden_effect = {
+						remove_targeted_decision = { target = SOV decision = JAP_border_conflict_escalate_to_war }
+					}
 			 	}
 			}
 			else = {
 				527 = { save_event_target_as = our_state }
 				408 = { save_event_target_as = their_state }
-				SOV = {	
-					country_event = { id = japan_border_conflict.5 hours = 1 }	
-					hidden_effect = {	
-						remove_targeted_decision = { target = JAP decision = JAP_border_conflict_escalate_to_war }	
-					}	
-				}
+				SOV = {
+					country_event = { id = japan_border_conflict.5 hours = 1 }
+					hidden_effect = {
+						remove_targeted_decision = { target = JAP decision = JAP_border_conflict_escalate_to_war }
+					}
+			 	}
 			}
+			
 		}
 
 		remove_effect = {
@@ -2099,6 +2034,48 @@ operations = {
 				}
 			}
 		}
+	}
+
+	JAP_war_with_soviet_union = {
+
+		icon = generic_ignite_civil_war
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+
+		}
+
+		visible = {
+			is_in_faction_with = GER
+			GER = { has_completed_focus = GER_mol_rib_pact }
+			GER = { NOT = { has_war_with = SOV } }
+			NOT = { has_war_with = SOV }
+			has_completed_focus = JAP_preemptive_war
+		}
+
+		fire_only_once = yes
+
+
+		modifier = {
+
+		}
+
+		days_remove = 0
+		days_re_enable = 0
+
+		cost = 25
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			declare_war_on = { target = SOV type = annex_everything }
+			GER = { country_event = { id = wtt_japan.115 hours = 6 } }
+		}		
 	}
 }
 
