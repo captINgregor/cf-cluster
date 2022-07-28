@@ -1,13 +1,13 @@
 guiTypes = {
 	containerWindowType = {
-		name = "equipment_designer_medium_tank_chassis_0_ger"
+		name = "equipment_designer_light_tank_chassis_2_sov"
 		# NOTE: to keep aligned with the window "equipment_modules" in tank_designer_view.gui
 		position = { x=0 y=0 }
 		size = { width=508 height=248 }
 
 		iconType = {
 			name = "equipment_image_overlay"
-			spriteType = "GFX_TC_medium_tank_chassis_0_ger"
+			spriteType = "GFX_TC_light_tank_chassis_2_sov"
 			position = { x=0 y=0 }
 		}
 
@@ -35,7 +35,7 @@ guiTypes = {
 
 					iconType = {
 						name = "blueprint"
-						spriteType = "GFX_TM_medium_chassis_0_main_armament_slot_ger"
+						spriteType = "GFX_TM_light_tank_chassis_2_main_armament_slot_sov"
 						position = { x=0 y=0 }
 					}
 				}
@@ -61,7 +61,7 @@ guiTypes = {
 
 					iconType = {
 						name = "blueprint"
-						spriteType = "GFX_TM_medium_chassis_0_turret_type_slot_ger"
+						spriteType = "GFX_TM_light_tank_chassis_2_turret_type_slot_sov"
 						position = { x=0 y=0 }
 					}
 				}
@@ -73,39 +73,16 @@ guiTypes = {
 				name = "special_type_slot_1"
 				position = { x=0 y=0 }
 				size = { width=100% height=100% }
-
-				#### MODULE: Todo ####
 			}
 			containerWindowType = {
 				name = "special_type_slot_2"
 				position = { x=0 y=0 }
 				size = { width=100% height=100% }
-
-				containerWindowType = {
-					name = "special_type_slot_2"
-					position = { x=0 y=0 }
-					size = { width=100% height=100% }
-				}
-
-				containerWindowType = {
-					name = "special_type_slot_2@highlight"
-					position = { x=0 y=0 }
-					size = { width=100% height=100% }
-
-					iconType = {
-						name = "blueprint"
-						spriteType = "GFX_TM_interwar_medium_chassis_0_special_type_slot_ger"
-						position = { x=0 y=0 }
-					}
-				}
-				#### MODULE: Todo ####
 			}
 			containerWindowType = {
 				name = "special_type_slot_3"
 				position = { x=0 y=0 }
 				size = { width=100% height=100% }
-
-				#### MODULE: Todo ####
 			}
 			containerWindowType = {
 				name = "special_type_slot_4"
@@ -121,6 +98,7 @@ guiTypes = {
 				position = { x=0 y=0 }
 				size = { width=100% height=100% }
 
+
 				containerWindowType = {
 					name = "suspension_type_slot"
 					position = { x=0 y=0 }
@@ -134,10 +112,11 @@ guiTypes = {
 
 					iconType = {
 						name = "blueprint"
-						spriteType = "GFX_TM_medium_chassis_0_suspension_type_slot_ger"
+						spriteType = "GFX_TM_light_tank_chassis_2_suspension_type_slot_sov"
 						position = { x=0 y=0 }
 					}
 				}
+
 
 			}
 
@@ -166,7 +145,7 @@ guiTypes = {
 
 					iconType = {
 						name = "blueprint"
-						spriteType = "GFX_TM_medium_tank_chassis_armor_type_slot_fra"
+						spriteType = "GFX_TM_light_tank_chassis_armor_type_slot_fra"
 						position = { x=0 y=0 }
 					}
 				}
@@ -198,7 +177,7 @@ guiTypes = {
 
 					iconType = {
 						name = "blueprint"
-						spriteType = "GFX_TM_medium_tank_chassis_engine_type_slot_fra"
+						spriteType = "GFX_TM_light_tank_chassis_engine_type_slot_fra"
 						position = { x=0 y=0 }
 					}
 				}
