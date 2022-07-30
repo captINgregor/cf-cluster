@@ -35,7 +35,10 @@ country_event = {
 		AND = {
 			tag = GER
 			has_war_with = SOV
-			NOT = { has_government = fascism }
+			NOT = { 
+				has_government = fascism 
+				has_defensive_war = yes
+			}
 		}
 	}
 
