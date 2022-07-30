@@ -1215,6 +1215,7 @@ SOV_the_politburo_good_dynamic_modifier = {
 	operative_slot = SOV_the_politburo_operative_slot # 1 -> Behead the Snake
 	political_advisor_cost_factor = SOV_the_politburo_political_advisor_cost_factor #-0.15 -> Freedom of Debate, Unity of Action
 	opinion_gain_monthly_same_ideology_factor = SOV_the_politburo_opinion_gain_monthly_same_ideology_factor #0.25 -> The Construction of Communism
+	party_popularity_stability_factor = SOV_the_politburo_party_popularity_stability_factor #0.25 -> Stalins Cult of Personality
 }
 
 SOV_factionalism_modifier = { 

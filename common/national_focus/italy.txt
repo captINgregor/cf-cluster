@@ -1282,8 +1282,8 @@ focus_tree = {
 			NOT = { country_exists = GRE }
 		}
 		will_lead_to_war_with = GRE
-		x = 0
-		y = 3
+		x = -1
+		y = 2
 		relative_position_id = ITA_pact_of_steel
 		cost = 10
 		ai_will_do = {
@@ -1336,7 +1336,7 @@ focus_tree = {
 		id = ITA_greece_friend
 		icon = GFX_focus_generic_befriend_greece
 		prerequisite = { focus = ITA_italy_first }
-		mutually_exclusive = { focus = ITA_greece_war_goal focus = ITA_turkey_friend }
+		mutually_exclusive = { focus = ITA_greece_war_goal }
 		x = -1
 		y = 2
 		relative_position_id = ITA_italy_first
@@ -1387,7 +1387,8 @@ focus_tree = {
 	focus = {
 		id = ITA_claims_on_turkey
 		icon = GFX_focus_TUR_the_montreux_convention
-		prerequisite = { focus = ITA_greece_friend }
+		prerequisite = { focus = ITA_greece_friend focus = ITA_greece_war_goal }
+		mutually_exclusive = { focus = ITA_turkey_friend }
 		available = {
 			TUR = {
 				owns_state = 342
@@ -1501,11 +1502,11 @@ focus_tree = {
 	focus = {
 		id = ITA_turkey_friend
 		icon = GFX_focus_generic_befriend_turkey
-		prerequisite = { focus = ITA_italy_first }
-		mutually_exclusive = { focus = ITA_greece_friend }
-		x = 1
-		y = 2
-		relative_position_id = ITA_italy_first
+		prerequisite = { focus = ITA_greece_war_goal }
+		mutually_exclusive = { focus = ITA_claims_on_turkey }
+		x = 0
+		y = 1
+		relative_position_id = ITA_greece_war_goal
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -1591,236 +1592,6 @@ focus_tree = {
 		}
 	}
 	
-	focus = {
-		id = ITAF_change_sides
-		icon = GFX_focus_hol_war_on_pacifism
-		prerequisite = { focus = ITA_pact_of_steel }
-		available = {
-			surrender_progress > 0.5
-			has_war_with = ENG
-			is_in_faction_with = GER
-		}
-		
-		bypass = {
-
-		}
-
-		available_if_capitulated = yes
-		relative_position_id = ITA_pact_of_steel
-		x = -4
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT}
-
-		completion_reward = {
-		hidden_effect = {
-			remove_unit_leader = 42070
-			remove_unit_leader = 9999
-			}
-			GER = {
-					set_autonomy = {
-						target = PREV
-						autonomous_state = autonomy_integrated_puppet
-					freedom_level = 0.2
-				}
-			}
-			start_civil_war = {
-				ruling_party = democratic
-				ideology = fascism
-				size = 0.5
-				#capital = 
-				states = { 158 159 161 160 736 39 }
-			}
-			
-			#if = {
-			#	limit = {
-			#		any_other_country = {
-			#			original_tag = ITA
-			#			has_government = fascism
-			#		}
-			#	}
-			#}
-			
-
-			ENG = { add_to_faction = ITA }
-			
-
-			hidden_effect = {
-				kill_country_leader = yes
-				complete_national_focus = ITAF_democratic
-				complete_national_focus = ITAF_anti_fascism
-				complete_national_focus = ITAF_officers_revolt
-				#complete_national_focus = ITAF_election
-			create_field_marshal = {
-					name = "Pietro Badoglio"
-					picture = "Portrait_Italy_Pietro_Badoglio.dds"
-					traits = { defensive_doctrine old_guard politically_connected inflexible_strategist }
-					skill = 1
-					attack_skill = 1
-					defense_skill = 1
-					planning_skill = 1
-					logistics_skill = 1
-				}
-				
-				random_other_country = {
-					limit = { 
-						original_tag = ITA 
-						has_government = fascism
-					}
-					set_cosmetic_tag = ITAGP
-				}
-			}
-			
-			create_country_leader = {
-				name = "Pietro Badoglio"
-				desc = "POLITICS_ADOLF_HITLER_DESC"
-				picture = "Portrait_Italy_Pietro_Badoglio.dds"
-				ideology = conservatism
-				traits = {
-
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = ITAF_naples_days
-		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
-		prerequisite = { focus = ITAF_change_sides }
-		available = {
-		}
-		
-		bypass = {
-
-		}
-
-		available_if_capitulated = yes
-		relative_position_id = ITA_pact_of_steel
-		x = -4
-		y = 5
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT}
-
-		completion_reward = {
-
-					division_template = {
-						name = "Anti-Facist Militias"
-						priority = 2
-						division_names_group = ROM_INF_01
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 0 y = 2 }
-				
-		    	   		 	infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
-						}
-						support = {
-
-						}
-					}
-
-				
-				random_owned_controlled_state = {
-					limit = { ROOT = { has_full_control_of_state = PREV } }
-					prioritize = { 117 }
-					create_unit = {
-						division = "name = \"Anti-Facist Militias\" division_template = \"Anti-Facist Militias\" start_experience_factor = 0.5" 
-						owner = ITA
-					}
-					prioritize = { 117 }
-					create_unit = {
-						division = "name = \"Anti-Facist Militias\" division_template = \"Anti-Facist Militias\" start_experience_factor = 0.5" 
-						owner = ITA
-					}
-					prioritize = { 117 }
-					create_unit = {
-						division = "name = \"Anti-Facist Militias\" division_template = \"Anti-Facist Militias\" start_experience_factor = 0.5" 
-						owner = ITA
-					}
-					prioritize = { 117 }
-					create_unit = {
-						division = "name = \"Anti-Facist Militias\" division_template = \"Anti-Facist Militias\" start_experience_factor = 0.5" 
-						owner = ITA
-					}
-				}
-		}
-	}
-
-	focus = {
-		id = ITAF_co_billigerent_army
-		icon = GFX_focus_chi_army_reform
-		prerequisite = { focus = ITAF_naples_days}
-		available = {
-		}
-		
-		bypass = {
-
-		}
-
-		available_if_capitulated = yes
-		relative_position_id = ITA_pact_of_steel
-		x = -4
-		y = 6
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT}
-
-		completion_reward = {
-					add_tech_bonus = {
-						name = land_doc_bonus
-						bonus = 1.0
-						uses = 2
-						category = land_doctrine
-					}
-					division_template = {
-						name = "Co-belligerent Forces"
-						priority = 2
-						division_names_group = ROM_INF_01
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 0 y = 2 }
-				
-		    	   		 	infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
-							
-							infantry = { x = 2 y = 0 }
-							artillery_brigade = { x = 2 y = 1 }
-							artillery_brigade = { x = 2 y = 2 }
-						}
-						support = {
-							engineer = { x = 0 y = 0 }
-						}
-					}
-
-				
-				random_owned_controlled_state = {
-					limit = { ROOT = { has_full_control_of_state = PREV } }
-					prioritize = { 117 }
-					create_unit = {
-						division = "name = \"Anti-Facist Militias\" division_template = \"Anti-Facist Militias\" start_experience_factor = 0.5" 
-						owner = ITA
-					}
-					prioritize = { 117 }
-					create_unit = {
-						division = "name = \"Anti-Facist Militias\" division_template = \"Anti-Facist Militias\" start_experience_factor = 0.5" 
-						owner = ITA
-					}
-				}
-		}
-	}
-
 	focus = {
 		id = ITA_secret_weapons
 		icon = GFX_goal_generic_secret_weapon
@@ -3564,7 +3335,7 @@ focus_tree = {
 		}
 		
 		bypass = {
-			NOT = { country_exists = ETH }
+			NOT = { has_war_with = ETH }
 		}
 
 		available_if_capitulated = yes

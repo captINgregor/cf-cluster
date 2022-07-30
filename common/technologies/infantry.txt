@@ -885,6 +885,7 @@ technologies = {
 		category_special_forces = {
 			acclimatization_hot_climate_gain_factor = 0.05
 			acclimatization_cold_climate_gain_factor = 0.05
+			terrain_penalty_reduction = 0.1
 		}
 		
 		#dependencies = {

@@ -218,13 +218,6 @@
  germany.104.b:0 "Give them Southeastern France"
  germany.104.d:0 "Italy is asking for French lands after joining the war. What should we give them?"
  germany.104.f:0 "Nothing"
- germany.1044.t:0 "Germany Attempts Coup!"
- germany.1044.d:0 "In the early hours of the morning, German panzers and SS units move throughout our nation, securing every major city they can. Hitler's ironically named "Operation Axis" attempts to see an end to an independant Italy, but first they need to capture Mussolini. With the arrival of German forces in key administrative buildings, many partisans and anti-Mussolini fascists have began to rose up, because of this, they capture Mussolini before Hitler did. As German forces try to force through the building where they have kept Mussolini it appears..."
- germany.1044.a:0 "... they reach Mussolini before the partisans were able to kill him"
- germany.1044.b:0 "... the partisans kill Mussolini before the Germans were able to save him"
- germany.1045.t:0 "Italians Resist Coup!"
- germany.1045.d:0 "Before we were able to secure German forces over Italy, it seems anti-Mussolini forces have secured it first. With the assassination of Mussolini, and the hanging of him upside down, it seems that Italians are a brave fighting force."
- germany.1045.a:0 "Not another front..."
  anschluss_mefo_bills_double_reduction:0 "Modify §YMEFO Bills§! by £political_power_texticon  §G+0.10§! Daily Political Power Gain\n"
  
  ### IDEAS ###
@@ -361,6 +354,7 @@
  SS_armour_template_6:0 "§YSS Schwere Panzer Division (vollgep.)§!"
  GER_michaels_coup_tt:0 "§YWe will attempt to negotiate a ceasefire with the Allies§!"
  GER_occupy_hungary_tt:0 "§YAttempt to assert greater control over Hungary, however, if this fails Hungary may sign a ceasefire with the Allies§!"
+ GER_occupy_italy_tt:0 "§YAttempt to assert greater control over Italy, however, if this fails Italy may sign a ceasefire with the Allies§!"
  GER_cossacks_tt:0 "Create §Y10 Cossack cavalry divisions§! in the Ukraine"
  GER_waffen_ss_tt:0 "§YAllows for the recruitment of Waffen SS divisions.§!"
  todt_death:0 "Todt has died"

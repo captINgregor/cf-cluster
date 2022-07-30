@@ -2334,14 +2334,8 @@ focus_tree = {
 			86 = { add_claim_by = GER }
 			762 = { add_claim_by = GER }
 			add_named_threat = { threat = 3 name = GER_demand_memel_threat }
-			if = {
-				limit = {
-					LIT = { 
-						owns_state = 188
-						controls_state = 188 
-					}
-				}
-				LIT = {
+			188 = {
+				controller = {
 					country_event = { id = baltic.4 }
 				}
 			}

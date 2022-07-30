@@ -3892,6 +3892,14 @@ country_event = {
 
 		add_opinion_modifier = { target = SOV modifier = border_conflict_reconciled }
 		transfer_state = 655
+		if = {
+			limit = {
+				SOV = {
+					owns_state = 537
+				}
+			}
+			transfer_state = 537
+		}
 		diplomatic_relation = {
 			country = SOV
 			relation = non_aggression_pact

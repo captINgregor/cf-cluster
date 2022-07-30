@@ -4283,6 +4283,107 @@ focus_tree = {
 				uses = 2
 				category = support_tech
 			}
+
+			219 ={
+				if = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						is_controlled_by = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					random_controlled_state = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			195 = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						is_controlled_by = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					random_controlled_state = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+
+			217 ={
+				if = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+						is_controlled_by = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				else = {
+					random_controlled_state = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -5645,7 +5746,7 @@ focus_tree = {
 	focus = {
 		id = SOV_impregnable_forts
 		icon = GFX_goal_generic_fortify_city
-		prerequisite = { focus = SOV_improve_the_stalin_line focus = SOV_the_molotov_line focus = SOV_the_defense_of_moscow }
+		prerequisite = { focus = SOV_improve_the_stalin_line focus = SOV_the_molotov_line focus = SOV_the_defense_of_moscow focus = SOV_protect_the_white_sea_baltic_canal focus = SOV_far_east_fortification}
 		x = -1
 		y = 2
 		relative_position_id = SOV_improve_the_stalin_line
@@ -6668,6 +6769,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_to_variable = { SOV_the_red_army_special_forces_cap = 0.1 }
+			add_to_variable = { SOV_the_red_army_experience_gain_army_factor = 0.05 }
+			add_to_variable = { SOV_the_red_army_experience_loss_factor = -0.1 }
 			add_to_variable = { SOV_the_red_army_land_doctrine_cost_factor = -0.1 }
 			custom_effect_tooltip = SOV_the_glory_of_the_red_army_ns_tt
 
@@ -7690,6 +7793,8 @@ focus_tree = {
 				character = SOV_iosif_stalin
 				ruling_only = yes
 			}
+			add_to_variable = { SOV_the_politburo_party_popularity_stability_factor = -0.02 }
+			
 			add_stability = 0.05
 			add_war_support = 0.1
 		}
@@ -10944,7 +11049,7 @@ focus_tree = {
 			# Modify Factionalism - change tooltip if changing values!!!
 			custom_effect_tooltip = SOV_cooperation_against_stalin_factionalism_tt 
 			add_to_variable = { SOV_factionalism_political_advisor_cost_factor = -0.15 }
-			add_to_variable = { SOV_factionalism_political_power_factor = -0.05 }
+			add_to_variable = { SOV_factionalism_political_power_factor = -0.02 }
 			add_to_variable = { SOV_factionalism_popularity_stability_cost_factor = -0.1 }
 		}
 	}
@@ -11095,7 +11200,7 @@ focus_tree = {
 		completion_reward = {
 			# Modify Factionalism - change tooltip if changing values!!!
 			custom_effect_tooltip = SOV_return_democracy_to_the_party_factionalism_tt
-			add_to_variable = { SOV_factionalism_political_power_factor = -0.05 }
+			add_to_variable = { SOV_factionalism_political_power_factor = -0.03 }
 			IF = {
 				limit = { SOV_is_left_opposition = yes }
 				custom_effect_tooltip = SOV_return_democracy_to_the_party_unlock_right_tt 
@@ -14347,6 +14452,11 @@ ai_will_do = {
 				SOV_is_free_chinese_tag = yes
 				has_war_with = JAP
 			}
+			NOT = {
+				JAP = {
+					has_government = communism
+				}
+			}
 			is_subject = no
 		}
 		
@@ -15068,6 +15178,11 @@ ai_will_do = {
 			is_subject = no
 			JAP = {
 				SOV_is_valid_subject = yes
+			}
+			NOT = {
+				USA = {
+					has_government = communism
+				}
 			}
 		}
 		
