@@ -2581,7 +2581,7 @@ focus_tree = {
 			}
 		}
 		
-		x = 3
+		x = 2
 		y = 1
 		relative_position_id = GER_danzig_or_war
 		cost = 1
@@ -2674,7 +2674,7 @@ focus_tree = {
 			controls_state = 807
 		}
 		
-		x = 5
+		x = 4
 		y = 1
 		relative_position_id = GER_danzig_or_war
 		cost = 5
@@ -2992,8 +2992,6 @@ focus_tree = {
 				idea = GER_barbarossa
 				days = 120
 			}
-							
-			remove_ideas = GER_good_weather_army
 			
 			activate_mission = GER_barbarossa_mission_moscow
 			activate_mission = GER_barbarossa_mission_kiev
@@ -3022,7 +3020,7 @@ focus_tree = {
 				limit = {
 					is_core_of = SOV
 				}
-				add_compliance = 20
+				add_compliance = 15
 			}
 			hidden_effect = {
 				GER = {
@@ -3415,7 +3413,7 @@ focus_tree = {
 	focus = {
 		id = GER_around_maginot
 		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = GER_danzig_or_war }
+		prerequisite = { focus = GER_war_with_france }
 		
 		available = {
 			
@@ -3464,9 +3462,9 @@ focus_tree = {
 		will_lead_to_war_with = HOL
 		will_lead_to_war_with = LUX
 		will_lead_to_war_with = FRA
-		x = 1
+		x = -3
 		y = 1
-		relative_position_id = GER_danzig_or_war
+		relative_position_id = GER_war_with_france
 		cost = 1	
 		completion_reward = {
 			#limit wargoals to when it makes sense to give them. No faction, war or non exist
@@ -3521,22 +3519,124 @@ focus_tree = {
 				SPR = { has_government = communism }
 			}
 		}
+		mutually_exclusive = { focus = GER_nationalist_spain_ally }
 		completion_reward = {
-			
-			ENG = {add_to_faction = SPR }
 			declare_war_on = {
-					target = SPR
-					type = annex_everything
-				}
+				target = SPR
+				type = annex_everything
+			}
 		}
 		cost = 1
 		relative_position_id = GER_around_maginot
-		x = 0 
+		x = 1
 		y = 1
 	}
 
-
-	
+	focus = {
+		id = GER_nationalist_spain_ally
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = GER_around_maginot}
+		available = {
+			if = {
+				limit = {
+					NOT = { has_dlc = "La Resistance" }
+				}
+				SPR = { has_civil_war = no }
+				any_other_country = {
+					original_tag = SPR
+					has_government = fascism
+					NOT = { has_war_with = GER }
+					NOT = { is_in_faction_with = GER }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				SPA = {
+					exists = yes
+					has_civil_war = no
+					NOT = { has_war_with = GER }
+					NOT = { is_in_faction_with = GER }
+					NOT = { has_completed_focus = SPA_join_the_allies }
+				}
+			}
+			FRA = {
+				OR = {
+					exists = no
+					has_capitulated = yes
+					has_government = fascism
+				}
+			}
+		}
+		mutually_exclusive = { focus = GER_secure_spain }
+		#bypass = {
+		#	any_other_country = {
+		#		original_tag = SPR
+		#		has_government = fascism
+		#		is_in_faction_with = GER
+		#	}
+		#}
+		x = -1
+		y = 1
+		relative_position_id = GER_around_maginot
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					is_historical_focus_on = yes
+					date < 1942.01.01
+					surrender_progress > 0
+					AND = {
+						has_war_with = ENG
+						ENG = { surrender_progress < 0.2 }
+					}
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					OR = { 
+						AND = {
+							NOT = { has_dlc = "La Resistance" }
+							NOT = { country_exists = SPR }
+							SPR = { NOT = { has_government = fascism } }
+						}
+						AND = {
+							has_dlc = "La Resistance"
+							NOT = { country_exists = SPA }
+						}
+					}
+				}
+				custom_effect_tooltip = GER_nationalist_spain_ally_tt
+			}
+			if = {
+				limit = {
+					NOT = { has_dlc = "La Resistance" }
+				}
+				random_other_country = {
+					limit = {
+						original_tag = SPR
+						has_government = fascism
+					}
+					remove_ideas = SPA_recovering_from_civil_war
+					add_opinion_modifier = { target = GER modifier = ger_spa_alliance_focus }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				SPA = {
+					remove_ideas = SPA_recovering_from_civil_war
+					add_opinion_modifier = { target = GER modifier = ger_spa_alliance_focus }
+				}
+			}
+		}
+	}
 	
 	focus = {
 		id = GER_demand_sudetenland
@@ -4000,7 +4100,7 @@ focus_tree = {
 			is_puppet = no			
 			NOT = { is_in_faction_with = FRA }
 		}
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = GER_danzig_or_war
 		cost = 1
@@ -4111,7 +4211,7 @@ focus_tree = {
 	focus = {
 		id = GER_reintegrate_luxemburg_and_alsace_lorraine
 		icon = GFX_goal_indyclone_alsace_lorraine
-		prerequisite = { focus = GER_war_with_france }
+		prerequisite = { focus = GER_avenge_versailles }
 		available = {
 			is_puppet = no
 			has_full_control_of_state = 8
@@ -4141,9 +4241,9 @@ focus_tree = {
 		bypass = {
 		}
 		cancel_if_invalid = yes
-		x = 0
+		x = 5
 		y = 1
-		relative_position_id = GER_war_with_france
+		relative_position_id = GER_avenge_versailles
 		cost = 5
 		ai_will_do = {
 			factor = 10
@@ -4179,7 +4279,7 @@ focus_tree = {
 	focus = {
 		id = GER_avenge_versailles
 		icon = GFX_GER_curtail_france
-		prerequisite = { focus = GER_danzig_or_war }
+		prerequisite = { focus = GER_war_with_france }
 		available = {
 			has_full_control_of_state = 16
 		}
@@ -4187,8 +4287,8 @@ focus_tree = {
 		}
 		cancel_if_invalid = yes
 		x = 0
-		y = 3
-		relative_position_id = GER_danzig_or_war
+		y = 2
+		relative_position_id = GER_war_with_france
 		cost = 5
 		ai_will_do = {
 			factor = 10
@@ -4997,22 +5097,24 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_state_core = 39
-			if = {
-				limit = {
-					NOT = { owns_state = 39 }
+			effect_tooltip = {
+				GER = {
+					puppet = ITA
 				}
-				transfer_state = 39
-			}
-			ITA = { 
-				set_cosmetic_tag = ITA_ISR 
-				remove_ideas = victor_emmanuel
-				add_ideas = ITA_german_occupation
-				set_capital =  { state = 159 }
+				ITA = { 
+					set_cosmetic_tag = ITA_ISR 
+					remove_ideas = victor_emmanuel
+					add_ideas = ITA_german_occupation
+					set_capital =  { state = 159 }
+				}
+				ITA = {
+					custom_effect_tooltip = unlock_propaganda_campaign_tt
+					unlock_decision_tooltip = ITA_serivizio_prop
+					custom_effect_tooltip = needs_approval
+				}
 			}
 			ITA = {
-				custom_effect_tooltip = unlock_propaganda_campaign_tt
-				unlock_decision_tooltip = ITA_serivizio_prop
+				country_event = { id = germany.1044 }
 			}
 		}
 	}
@@ -5124,7 +5226,7 @@ focus_tree = {
 		bypass = {
 		}
 		cancel_if_invalid = yes
-		x = 4
+		x = 3
 		y = 1
 		relative_position_id = GER_avenge_versailles
 		cost = 5
@@ -5162,8 +5264,8 @@ focus_tree = {
 		id = GER_make_wunderwaffe2
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = GER_make_wunderwaffe }
-		x = -1
-		y = 1
+		x = 0
+		y = 2
 		relative_position_id = GER_make_wunderwaffe
 		cost = 5
 		available = {
@@ -5273,7 +5375,7 @@ focus_tree = {
 		id = GER_share_tanks
 		icon = GFX_goal_share_tanks
 		prerequisite = { focus = GER_avenge_versailles }
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = GER_avenge_versailles
 		cost = 1

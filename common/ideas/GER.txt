@@ -3,19 +3,19 @@ ideas = {
 	country = {
 		
 		GER_good_weather_army = {
-		allowed = {
-			original_tag = GER
-		
-		}
+			allowed = {
+				original_tag = GER
+			}
 
-		removal_cost = 1
+			removal_cost = 1
 
-		picture = can_wartime_prices_and_trade_board
-		
-		modifier = {
-			acclimatization_cold_climate_gain_factor = -9.99
-		}
-		
+			picture = can_wartime_prices_and_trade_board
+			
+			modifier = {
+				acclimatization_cold_climate_gain_factor = -9.99
+				winter_attrition = 0.15
+			}
+			
 		}
 
 		GER_blitzkrieg = {
