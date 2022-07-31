@@ -175,9 +175,8 @@ ideas = {
 			ledger = army
 			modifier = {
 				unit_cavalry_design_cost_factor = -1
-				cavalry_defence_factor = 0.08
-				cavalry_attack_factor = 0.1
-				cavalry_speed_factor = 0.1
+				cavalry_defence_factor = 0.12
+				cavalry_attack_factor = 0.15
 				supply_combat_penalties_on_core_factor = -0.2
 			}
 			ai_will_do = {

@@ -117,38 +117,50 @@ operations = {
 		available = {
 			OR = {
 				divisions_in_state = { state = 158 size > 0 } 
-				NOT = {
-					is_controlled_by = ITA
+				158 = {
+					NOT = {
+						is_controlled_by = ITA
+					}
 				}
 			}
 			OR = {
 				divisions_in_state = { state = 2 size > 0 } 
-				NOT = {
-					is_controlled_by = ITA
+				2 = {
+					NOT = {
+						is_controlled_by = ITA
+					}
 				}
 			}
 			OR = {
 				divisions_in_state = { state = 162 size > 0 } 
-				NOT = {
-					is_controlled_by = ITA
+				162 = {
+					NOT = {
+						is_controlled_by = ITA
+					}
 				}
 			}
 			OR = {
 				divisions_in_state = { state = 115 size > 0 } 
-				NOT = {
-					is_controlled_by = ITA
+				115 = {
+					NOT = {
+						is_controlled_by = ITA
+					}
 				}
 			}
 			OR = {
 				divisions_in_state = { state = 117 size > 0 } 
-				NOT = {
-					is_controlled_by = ITA
+				117 = {
+					NOT = {
+						is_controlled_by = ITA
+					}
 				}
 			}
 			OR = {
 				divisions_in_state = { state = 160 size > 0 } 
-				NOT = {
-					is_controlled_by = ITA
+				160 = {
+					NOT = {
+						is_controlled_by = ITA
+					}
 				}
 			}
 		}
@@ -568,7 +580,7 @@ GER_reichskommissariats = {
 
 		visible = {
 			has_government = fascism
-			OR {
+			OR = {
 				controls_state = 37
 				controls_state = 99
 				controls_state = 836
@@ -638,7 +650,7 @@ GER_reichskommissariats = {
 
 		visible = {
 			has_government = fascism
-			OR {
+			OR = {
 				controls_state = 7
 				controls_state = 35
 				controls_state = 36

@@ -857,9 +857,10 @@ ideas = {
 				original_tag = ITA
 			}
 			
-			available = {
-				has_completed_focus = ITA_beretta
-			}
+			
+			#available = {
+			#	has_completed_focus = ITA_beretta
+			#}
 			
 			cost = 75
 			

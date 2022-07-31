@@ -4039,17 +4039,19 @@ focus_tree = {
 				}
 				else = {
 					random_controlled_state = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
 						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
 					}
 				}
 			}
@@ -4205,17 +4207,19 @@ focus_tree = {
 				}
 				else = {
 					random_controlled_state = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
 						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
 					}
 				}
 			}
@@ -4238,17 +4242,19 @@ focus_tree = {
 				}
 				else = {
 					random_controlled_state = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
 						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
 					}
 				}
 			}
@@ -4272,17 +4278,19 @@ focus_tree = {
 				}
 				else = {
 					random_controlled_state = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
 						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
 					}
 				}
 			}
@@ -4335,17 +4343,19 @@ focus_tree = {
 				}
 				else = {
 					random_controlled_state = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
 						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
 					}
 				}
 			}
@@ -4368,17 +4378,19 @@ focus_tree = {
 				}
 				else = {
 					random_controlled_state = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
 						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
 					}
 				}
 			}
@@ -4402,17 +4414,19 @@ focus_tree = {
 				}
 				else = {
 					random_controlled_state = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
 						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
 					}
 				}
 			}
@@ -7829,16 +7843,16 @@ focus_tree = {
 				character = SOV_iosif_stalin
 				ruling_only = yes
 			}
-			add_to_variable = { SOV_the_politburo_party_popularity_stability_factor = -0.02 }
-			
-			add_stability = 0.05
-			add_war_support = 0.1
 		}
 		
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_PROPAGANDA}
 
 		completion_reward = {
 			add_to_variable = { SOV_the_politburo_political_power_factor = 0.05 }
+			add_to_variable = { SOV_the_politburo_party_popularity_stability_factor = -0.02 }
+			
+			add_stability = 0.05
+			add_war_support = 0.1
 			add_political_power = 25
 
 			custom_effect_tooltip = unlock_propaganda_campaign_tt

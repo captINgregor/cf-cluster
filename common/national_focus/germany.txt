@@ -2822,7 +2822,7 @@ focus_tree = {
 		available = {
 			num_owned_neighbour_states = {
 				owner = SOV
-				count = 3
+				count > 3
 			}
 		}
 		
@@ -3416,239 +3416,6 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = GER_around_maginot
-		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = GER_war_with_france }
-		
-		available = {
-			OR = {
-				NOT = { HOL = { is_in_faction_with = GER } }
-				NOT = { BEL = { is_in_faction_with = GER } }
-				NOT = { LUX = { is_in_faction_with = GER } }
-			}
-		}
-
-		bypass = {
-			HOL = {
-				OR = {
-					exists = no
-					is_in_faction_with = GER
-					has_war_with = ROOT
-				}
-			}
-			BEL = {
-				OR = {
-					exists = no
-					is_in_faction_with = GER
-					has_war_with = ROOT
-				}
-			}
-			LUX = {
-				OR = {
-					exists = no
-					is_in_faction_with = GER
-					has_war_with = ROOT
-				}
-			}
-		}
-
-		historical_ai = {
-			date > 1939.1.1
-			has_war_with = FRA
-			NOT = {
-				FRA = {
-					has_capitulated = yes
-				}
-			}
-			NOT = {
-				any_home_area_neighbor_country = {
-					NOT = { tag = FRA }
-					has_war_with = ROOT
-					surrender_progress < 0.5
-				}
-			}
-		}
-		will_lead_to_war_with = BEL
-		will_lead_to_war_with = HOL
-		will_lead_to_war_with = LUX
-		will_lead_to_war_with = FRA
-		x = -3
-		y = 1
-		relative_position_id = GER_war_with_france
-		cost = 1	
-		completion_reward = {
-			#limit wargoals to when it makes sense to give them. No faction, war or non exist
-			if = { 
-				limit = {
-					country_exists = BEL
-					NOT = { BEL = { is_in_faction_with = GER } }
-					NOT = { has_war_with = BEL }
-				}
-				declare_war_on = {
-					target = BEL
-					type = annex_everything
-				}
-			}
-			if =  {
-				limit = {
-					country_exists = HOL
-					NOT = { HOL = { is_in_faction_with = GER } }
-					NOT = { has_war_with = HOL }
-				}
-				declare_war_on = {
-					target = HOL
-					type = annex_everything
-				}
-			}
-			if = {
-				limit = {
-					country_exists = LUX
-					NOT = { LUX = { is_in_faction_with = GER } }
-					NOT = { has_war_with = LUX }
-				}
-				declare_war_on = {
-					target = LUX
-					type = annex_everything
-				}		
-			}
-			hidden_effect = {
-				news_event = { hours = 6 id = news.234 }
-			}
-			add_timed_idea = { idea = GER_blitzkrieg days = 60 }
-		}
-	}
-
-	focus = {
-		id = GER_secure_spain
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		prerequisite = { focus = GER_around_maginot }
-		available = {
-			FRA = { has_capitulated = yes }
-			OR = {
-				SPR = { has_government = democratic }
-				SPR = { has_government = communism }
-			}
-		}
-		mutually_exclusive = { focus = GER_nationalist_spain_ally }
-		completion_reward = {
-			declare_war_on = {
-				target = SPR
-				type = annex_everything
-			}
-		}
-		cost = 1
-		relative_position_id = GER_around_maginot
-		x = 1
-		y = 1
-	}
-
-	focus = {
-		id = GER_nationalist_spain_ally
-		icon = GFX_goal_generic_major_alliance
-		prerequisite = { focus = GER_around_maginot}
-		available = {
-			if = {
-				limit = {
-					NOT = { has_dlc = "La Resistance" }
-				}
-				SPR = { has_civil_war = no }
-				any_other_country = {
-					original_tag = SPR
-					has_government = fascism
-					NOT = { has_war_with = GER }
-					NOT = { is_in_faction_with = GER }
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				SPA = {
-					exists = yes
-					has_civil_war = no
-					NOT = { has_war_with = GER }
-					NOT = { is_in_faction_with = GER }
-					NOT = { has_completed_focus = SPA_join_the_allies }
-				}
-			}
-			FRA = {
-				OR = {
-					exists = no
-					has_capitulated = yes
-					has_government = fascism
-				}
-			}
-		}
-		mutually_exclusive = { focus = GER_secure_spain }
-		#bypass = {
-		#	any_other_country = {
-		#		original_tag = SPR
-		#		has_government = fascism
-		#		is_in_faction_with = GER
-		#	}
-		#}
-		x = -1
-		y = 1
-		relative_position_id = GER_around_maginot
-		cost = 10
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 0
-				OR = {
-					is_historical_focus_on = yes
-					date < 1942.01.01
-					surrender_progress > 0
-					AND = {
-						has_war_with = ENG
-						ENG = { surrender_progress < 0.2 }
-					}
-				}
-			}
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					OR = { 
-						AND = {
-							NOT = { has_dlc = "La Resistance" }
-							NOT = { country_exists = SPR }
-							SPR = { NOT = { has_government = fascism } }
-						}
-						AND = {
-							has_dlc = "La Resistance"
-							NOT = { country_exists = SPA }
-						}
-					}
-				}
-				custom_effect_tooltip = GER_nationalist_spain_ally_tt
-			}
-			if = {
-				limit = {
-					NOT = { has_dlc = "La Resistance" }
-				}
-				random_other_country = {
-					limit = {
-						original_tag = SPR
-						has_government = fascism
-					}
-					remove_ideas = SPA_recovering_from_civil_war
-					add_opinion_modifier = { target = GER modifier = ger_spa_alliance_focus }
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				SPA = {
-					remove_ideas = SPA_recovering_from_civil_war
-					add_opinion_modifier = { target = GER modifier = ger_spa_alliance_focus }
-				}
-			}
-		}
-	}
-	
-	focus = {
 		id = GER_demand_sudetenland
 		icon = GFX_goal_demand_sudetenland
 		prerequisite = { focus = GER_anschluss }
@@ -4101,7 +3868,6 @@ focus_tree = {
 		}
 	}
 
-
 	focus = {
 		id = GER_war_with_france
 		icon = GFX_goal_generic_major_war
@@ -4143,6 +3909,239 @@ focus_tree = {
 				}
 		}
 	}	
+
+	focus = {
+		id = GER_around_maginot
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = GER_war_with_france }
+		
+		available = {
+			OR = {
+				NOT = { HOL = { is_in_faction_with = GER } }
+				NOT = { BEL = { is_in_faction_with = GER } }
+				NOT = { LUX = { is_in_faction_with = GER } }
+			}
+		}
+
+		bypass = {
+			HOL = {
+				OR = {
+					exists = no
+					is_in_faction_with = GER
+					has_war_with = ROOT
+				}
+			}
+			BEL = {
+				OR = {
+					exists = no
+					is_in_faction_with = GER
+					has_war_with = ROOT
+				}
+			}
+			LUX = {
+				OR = {
+					exists = no
+					is_in_faction_with = GER
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		historical_ai = {
+			date > 1939.1.1
+			has_war_with = FRA
+			NOT = {
+				FRA = {
+					has_capitulated = yes
+				}
+			}
+			NOT = {
+				any_home_area_neighbor_country = {
+					NOT = { tag = FRA }
+					has_war_with = ROOT
+					surrender_progress < 0.5
+				}
+			}
+		}
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = HOL
+		will_lead_to_war_with = LUX
+		will_lead_to_war_with = FRA
+		x = -3
+		y = 1
+		relative_position_id = GER_war_with_france
+		cost = 1	
+		completion_reward = {
+			#limit wargoals to when it makes sense to give them. No faction, war or non exist
+			if = { 
+				limit = {
+					country_exists = BEL
+					NOT = { BEL = { is_in_faction_with = GER } }
+					NOT = { has_war_with = BEL }
+				}
+				declare_war_on = {
+					target = BEL
+					type = annex_everything
+				}
+			}
+			if =  {
+				limit = {
+					country_exists = HOL
+					NOT = { HOL = { is_in_faction_with = GER } }
+					NOT = { has_war_with = HOL }
+				}
+				declare_war_on = {
+					target = HOL
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					country_exists = LUX
+					NOT = { LUX = { is_in_faction_with = GER } }
+					NOT = { has_war_with = LUX }
+				}
+				declare_war_on = {
+					target = LUX
+					type = annex_everything
+				}		
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.234 }
+			}
+			add_timed_idea = { idea = GER_blitzkrieg days = 60 }
+		}
+	}
+
+	focus = {
+		id = GER_secure_spain
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = GER_around_maginot }
+		available = {
+			FRA = { has_capitulated = yes }
+			OR = {
+				SPR = { has_government = democratic }
+				SPR = { has_government = communism }
+			}
+		}
+		mutually_exclusive = { focus = GER_nationalist_spain_ally }
+		completion_reward = {
+			declare_war_on = {
+				target = SPR
+				type = annex_everything
+			}
+		}
+		cost = 1
+		relative_position_id = GER_around_maginot
+		x = 1
+		y = 1
+	}
+
+	focus = {
+		id = GER_nationalist_spain_ally
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = GER_around_maginot}
+		available = {
+			if = {
+				limit = {
+					NOT = { has_dlc = "La Resistance" }
+				}
+				SPR = { has_civil_war = no }
+				any_other_country = {
+					original_tag = SPR
+					has_government = fascism
+					NOT = { has_war_with = GER }
+					NOT = { is_in_faction_with = GER }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				SPA = {
+					exists = yes
+					has_civil_war = no
+					NOT = { has_war_with = GER }
+					NOT = { is_in_faction_with = GER }
+					NOT = { has_completed_focus = SPA_join_the_allies }
+				}
+			}
+			FRA = {
+				OR = {
+					exists = no
+					has_capitulated = yes
+					has_government = fascism
+				}
+			}
+		}
+		mutually_exclusive = { focus = GER_secure_spain }
+		#bypass = {
+		#	any_other_country = {
+		#		original_tag = SPR
+		#		has_government = fascism
+		#		is_in_faction_with = GER
+		#	}
+		#}
+		x = -1
+		y = 1
+		relative_position_id = GER_around_maginot
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					is_historical_focus_on = yes
+					date < 1942.01.01
+					surrender_progress > 0
+					AND = {
+						has_war_with = ENG
+						ENG = { surrender_progress < 0.2 }
+					}
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					OR = { 
+						AND = {
+							NOT = { has_dlc = "La Resistance" }
+							NOT = { country_exists = SPR }
+							SPR = { NOT = { has_government = fascism } }
+						}
+						AND = {
+							has_dlc = "La Resistance"
+							NOT = { country_exists = SPA }
+						}
+					}
+				}
+				custom_effect_tooltip = GER_nationalist_spain_ally_tt
+			}
+			if = {
+				limit = {
+					NOT = { has_dlc = "La Resistance" }
+				}
+				random_other_country = {
+					limit = {
+						original_tag = SPR
+						has_government = fascism
+					}
+					remove_ideas = SPA_recovering_from_civil_war
+					add_opinion_modifier = { target = GER modifier = ger_spa_alliance_focus }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				SPA = {
+					remove_ideas = SPA_recovering_from_civil_war
+					add_opinion_modifier = { target = GER modifier = ger_spa_alliance_focus }
+				}
+			}
+		}
+	}
 
 	focus = {
 		id = GER_operation_tannenbaum
@@ -4203,6 +4202,30 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = GER_swiss_gold
 			add_offsite_building = { type = arms_factory level = 5 }
+		}
+	}
+	
+	focus = {
+		id = GER_avenge_versailles
+		icon = GFX_GER_curtail_france
+		prerequisite = { focus = GER_war_with_france }
+		available = {
+			has_full_control_of_state = 16
+		}
+		bypass = {
+		}
+		cancel_if_invalid = yes
+		x = 0
+		y = 2
+		relative_position_id = GER_war_with_france
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = triumphant_will
+			add_political_power = 200
 		}
 	}
 
@@ -4271,30 +4294,6 @@ focus_tree = {
 			BEL = {
 				country_event = { id = wtt_germany.63}
 			}
-		}
-	}
-	
-	focus = {
-		id = GER_avenge_versailles
-		icon = GFX_GER_curtail_france
-		prerequisite = { focus = GER_war_with_france }
-		available = {
-			has_full_control_of_state = 16
-		}
-		bypass = {
-		}
-		cancel_if_invalid = yes
-		x = 0
-		y = 2
-		relative_position_id = GER_war_with_france
-		cost = 5
-		ai_will_do = {
-			factor = 10
-		}
-		
-		completion_reward = {
-			add_ideas = triumphant_will
-			add_political_power = 200
 		}
 	}
 	
