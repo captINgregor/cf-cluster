@@ -2,86 +2,113 @@ German_historical = {
 	name = "German historical plan"
 	desc = "Essentially historical behaviour for Germany"
 
-	enable = {
+	allowed = {
 		original_tag = GER
+	}
+	enable = {
+		or = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					not = { has_dlc = "Waking the Tiger" }
+					has_game_rule = {
+						rule = GER_ai_behavior
+						option = DEFAULT
+					}
+				}	
+			}
+			has_country_flag = GER_AI_RANDOM_FASCIST
+			has_game_rule = {
+				rule = GER_ai_behavior
+				option = FASCIST
+			}
+		}
+	}
+	abort = {
+		OR = {
+			SWE = {
+				has_government = communism #prio 1, crush Sweden
+			}
+			SOV = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			ENG = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = HUN
+				has_completed_focus = HUN_invite_the_habsburg_prince
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = FRA
+				OR = {
+					has_completed_focus = FRA_utilize_the_leagues
+					has_completed_focus = FRA_invite_communist_ministers
+					has_completed_focus = FRA_leftist_rhetoric
+					has_completed_focus = FRA_right_wing_rhetoric
+				}
+			}
+			any_country_with_original_tag = {
+				original_tag_to_check = USA
+				OR = {
+					has_completed_focus = USA_war_plan_red
+					has_completed_focus = USA_war_plan_white
+				}
+			}
+		}
 	}
 
 	ai_national_focuses = {
-		GER_volksturm
-		GER_defend_berlin
+		# grab as fast as you can if available
+		GER_around_maginot
+
 		GER_rhineland
 		GER_four_year_plan
-		GER_autobahn
-		GER_civ_1
-		GER_civ_2
-		GER_org_todt
-		GER_oade
-		GER_steel_werke
-		GER_reichsarbeit
-		GER_abwehr
-		GER_extra_research
-		GER_luft
-		GER_fighter_effort
-		GER_heer
-		GER_bewegungskrieg
-		GER_panzer
-		GER_grosraumwirtschaft
-		GER_expand_mefo
-		# grab whicher was picked via descsion
-		GER_rearm_fast
-		GER_rearm_slow
-		GER_rearm_fast2
-		GER_rearm_slow2
-		GER_rearm_fast3
-		GER_rearm_slow3
-		# End Rearm
-		GER_anschluss
-		GER_demand_sudetenland
-		GER_rearmed_and_ready
-		GER_first_vienna_award
-		GER_end_of_czechoslovakia
-		GER_second_vienna_award
-		GER_mech
-		GER_cas_air_effort
-		GER_air_doc
-		GER_demand_memel
+		GER_west_wall
 		GER_autarky
-		GER_synthetic_rubber
-		GER_fighter_effort2
-		GER_cas_air_effort2
-		GER_luft_2
-		GER_auftragstaktik
-		GER_mol_rib_pact
-		#Danzig
-		GER_danzig_or_war
-		GER_align_hungary
-		GER_around_maginot
-		GER_war_with_france
-		GER_avenge_versailles
-		GER_plunder_west
-		GER_swiss_banks
-		GER_mobilise_reich
-		GER_coal_liquidization
-		GER_sweden_trade
-		GER_panzer2
-		GER_lessons_of_war
-		GER_reintegrate_east
-		GER_weserubung
-		GER_prepare_barb
-		GER_improved_command
-		GER_share_tanks
-		GER_west_research
+		GER_anti_comitern_pact
+		#1937
+		GER_hermann_goring_werke
+		GER_army_innovation
 		GER_soviet_treaty
-		GER_reintegrate_luxemburg_and_alsace_lorraine
-		#Barb
-		GER_barb
-		GER_mobilise_reich
-		GER_total_war
-		GER_atlantikwall
-		GER_synthetic_rubber2
-		GER_make_wunderwaffe
+		GER_kdf_wagen
 		GER_coal_liquidization
-		GER_appoint_speer
+		#1938
+		GER_anschluss
+		GER_synthetic_rubber
+		GER_army_innovation_2
+		GER_demand_sudetenland
+		GER_first_vienna_award
+		#1939
+		GER_demand_memel
+		GER_end_of_czechoslovakia
+		GER_mol_rib_pact
+		GER_weserubung
+		GER_danzig_or_war
+		#1940
+		GER_war_with_france
+		GER_autobahn
+		GER_german_war_economy
+		GER_second_vienna_award
+		GER_extra_tech_slot		
+		#1941
+		GER_rocketry_focus
+		GER_italy_ally
+		GER_japan_friend
+		GER_naval_air_effort
+		GER_air_innovation
+		#1942
+		GER_tactical_air_effort
+		GER_ussr_war_goal
+		GER_air_innovation_2
+		GER_naval_rearmament
+		GER_naval_effort
+		GER_atlantikwall
+		GER_wunderwaffe
 	}
 
 	research = {
@@ -114,60 +141,8 @@ German_historical = {
 		value = 111
 	}
 
-	ai_strategy = {
-		type = prepare_for_war
-		id = POL
-		value = 100
-	}
-	ai_strategy = {
-		type = prepare_for_war
-		id = FRA
-		value = 60
-	}
-	ai_strategy = {
-        type = consider_weak
-        id = FRA
-        value = 10
-    }
-	ai_strategy = {
-        type = conquer
-        id = FRA
-        value = 10
-    }
-	ai_strategy = {
-        type = declare_war
-        id = FRA
-        value = 10
-    }
-	ai_strategy = {
-		type = send_volunteers_desire
-		id = SPR
-		value = 100000
-	}
-	ai_strategy = {
-		type = dockyard_to_military_factory_ratio
-		value = 1
-	}
-	
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = HUN
-		value = 1000
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = ITA
-		value = 1000
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = ROM
-		value = 1000
-	}
-
 	focus_factors = {
 		GER_rhineland = 1.0
-		GER_war_with_france = 10000.0
 	}
 
 }

@@ -2,9 +2,11 @@ CAN_historical = {
 	name = "Canadian historical plan"
 	desc = ""
 
-	enable = {
+	allowed = {
 		original_tag = CAN
 		has_dlc = "Together for Victory"
+	}
+	enable = {
 		OR = {
 			AND = {
 				is_historical_focus_on = yes
@@ -55,6 +57,7 @@ CAN_historical = {
 		CAN_bits_and_pieces_program						#1940
 		CAN_john_inglis_and_company						#1937, expanded throughout the war
 		CAN_red_deer_training_camp						#1939
+		CAN_the_plan									#1939
 		CAN_alberta_coal_towns							#1940s
 		CAN_national_steel_car							#1930s
 		CAN_retool_angus_shops							#1940s
@@ -81,7 +84,7 @@ CAN_historical = {
 		CAN_degauss_ship_hulls							#
 		CAN_united_shipyards							#
 		CAN_fund_fairchilds_development					#
-		#CAN_the_rocky_mountain_rangers					#1940s
+		CAN_the_rocky_mountain_rangers					#1940s
 		#CAN_habakkuk_carrier							#1942
 		CAN_maritime_colonial_railway					#
 		CAN_cookie_carriers								#

@@ -1,107 +1,105 @@
-Japanese_Historical = {
-    enable = {
-        original_tag = JAP
-    }
-    ai_national_focuses = {
-        JAP_secure_china
-        JAP_warrior_spirit
-        JAP_strengthen_the_divine_wind
-        JAP_arrest_the_traitors
-        JAP_purge_the_kodoha_faction
-        JAP_national_mobilization_law
-        JAP_guide_the_zaibatsus
-        JAP_expand_the_big_four
-        JAP_new_naval_estimates
-        JAP_control
-        JAP_nation_defence_state
-        JAP_kokura_arsenal
-        JAP_spiritual_mobilisation
-        JAP_austerity
-        JAP_war_ministry
-        JAP_expand_the_showa_steel_works
-        JAP_develop_aluminum_sources
-        JAP_prepare_expansion
-        JAP_combat_militarism
-        JAP_combat_gekokoju
-        JAP_new_shipyards
-        JAP_yasuda
-        JAP_liaison_conference
-        JAP_intervene_in_china
-        JAP_bank_loans
-        JAP_sumitomo
-        JAP_mining_expansion
-        JAP_promote_rivalry
-        JAP_light_industry_development
-        JAP_heavy_industry_development
-        JAP_control_the_army
-        JAP_technlogical_supremacy
-        JAP_appoint_tojo
-        JAP_supremacy_of_the_battlefleet
-        JAP_modern_subs
-        JAP_long_lance_torpedoes
-        JAP_mitsubishi_deal
-        JAP_mitsubishi_factories
-        JAP_mitsui
-        JAP_mitsui_dockyards
-        JAP_cruiser_modernization
-        JAP_escort_carriers
-        JAP_the_zero
-        JAP_unified_fighter_development
-        JAP_lessons_of_war
-        JAP_doctrine_lessons
-        JAP_infantry_lessons
-        JAP_air_innovations
-        JAP_strike_south_doctrine
-        JAP_pressure_siam
-        JAP_befriend_siam
-        JAP_expand_army
-        JAP_expand_marines
-        JAP_build_up_china
-        JAP_build_up_islands
-        JAP_modern_escorts
-        JAP_fleet_air_arm
-        JAP_bomber_modernization
-        JAP_strike_the_west
-    }
+JAP_historical_plan = {
+	name = "Japan historical plan"
+	desc = "Historical behavior for Japan"
 
-    ai_strategy = {
-		type = prepare_for_war
-		id = CHI
-		value = 100
+	allowed = {
+		original_tag = JAP
 	}
-    ai_strategy = {
-		type = prepare_for_war
-		id = PRC
-		value = 100
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				OR = {
+					not = { has_dlc = "Waking the Tiger" }
+					has_game_rule = {
+						rule = JAP_ai_behavior
+						option = DEFAULT
+					}
+				}
+			}
+			has_game_rule = {
+				rule = JAP_ai_behavior
+				option = FASCIST
+			}
+			has_country_flag = JAP_AI_RANDOM_FASCIST
+		}
+		MAN = {
+			is_ai = yes
+		}
 	}
-    ai_strategy = {
-        type = consider_weak
-        id = "CHI"
-        value = 20
-    }
-    ai_strategy = {
-        type = consider_weak
-        id = "PRC"
-        value = 20
-    }
-    ai_strategy = {
-		type = ignore
-		id = SOV
+	abort = {
+		MAN = {
+			has_completed_focus = MAN_assertiveness
+		}
 	}
-    ai_strategy = {
-		type = send_volunteers_desire
-		id = SPR
-		value = 100000
+
+	ai_national_focuses = {
+		JAP_purge_the_kodoha_faction #March 10 1936	
+		JAP_army_expansion_law #May 20 1936	
+		JAP_guide_the_zaibatsus #July 30 1936	
+		JAP_new_naval_estimates #October 10 1936	
+		JAP_army_expansion #December 20 1936	
+		#1937
+		JAP_liaison_conference #February 30 1937	
+		JAP_greater_east_asian_co_prosperity_sphere #May 10 1937	
+		JAP_intervene_in_china #July 20 1937	
+		JAP_fighter_modernization #September 30 1937	
+		JAP_carrier_warfare_experiments #December 10 1937	
+		#1938
+		JAP_supremacy_of_technology #February 20 1938	
+		JAP_national_mobilization_law #April 30 1938	
+		JAP_national_research_policy #July 10 1938	
+		JAP_nationalize_war_industry #September 20 1938	
+		JAP_national_defense_state #August 10 1942	
+		#1939
+		JAP_spiritual_mobilization #October 20 1942	
+		JAP_small_arms_modernization #June 30 1939	
+		JAP_cruiser_modernization #November 30 1938	
+		JAP_long_lance_torpedoes #February 10 1939	
+		JAP_bicycle_battalions #April 20 1939	
+		#1940
+		JAP_torpedo_cruisers #September 10 1939	
+		JAP_strike_south_doctrine #November 20 1939	
+		JAP_agility_focus #January 30 1940	
+		JAP_first_air_fleet #April 10 1940	
+		JAP_the_zero #June 20 1940	
+		#1941
+		JAP_sign_tripartite_pact #August 30 1940	
+		JAP_bomber_modernization #November 10 1940	
+		JAP_non_aggression_pact_with_the_soviet_union #March 30 1941	
+		JAP_secure_the_philippines #August 20 1941	
+		JAP_strike_on_the_southern_resource_area #October 30 1941	
+		#1942
+		JAP_range_focus #January 20 1941	
+		JAP_modern_artillery #June 10 1941	
+		JAP_alliance_with_siam #January 10	
+		JAP_strategic_bomber_effort #March 20 1942	
+		JAP_modern_escorts #May 30 1942	
+		#1943
+		JAP_warrior_spirit #December 30 1942	
+		JAP_coal_liquification #March 10 1943	
+		JAP_exploit_the_southern_resource_area #May 20 1943	
+		JAP_secure_china #July 30 1943	
+		JAP_jet_prototypes
+		JAP_strengthen_the_divine_wind
+		JAP_armored_divisions
 	}
-    ai_strategy = {
-		type = invade
-		id = CHI
-		value = 50
+
+	research = {
+
 	}
-    ai_strategy = {
-		type = invade
-		id = PRC
-		value = 50
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
 	}
 
 }
