@@ -2,11 +2,9 @@ RAJ_historical = {
 	name = "Indian historical plan"
 	desc = ""
 
-	allowed = {
+	enable = {
 		original_tag = RAJ
 		has_dlc = "Together for Victory"
-	}
-	enable = {
 		OR = {
 			AND = {
 				is_historical_focus_on = yes
@@ -48,14 +46,11 @@ RAJ_historical = {
 		RAJ_royal_indian_navy								
 		RAJ_lions_of_the_great_war							
 		RAJ_cripps_mission									
-		RAJ_ishapore_arsenal								
-		RAJ_two_nation_theory								
+		RAJ_ishapore_arsenal															
 		RAJ_british_army_support							
 		RAJ_indian_gentlemen_officers						
 		RAJ_princely_state_donations						
-		RAJ_imperial_service_troops							
-		RAJ_raf_funding										
-		RAJ_navy_funding									
+		RAJ_imperial_service_troops																
 		RAJ_army_motorization								
 		RAJ_british_pilot_training							
 		RAJ_expand_air_bases								

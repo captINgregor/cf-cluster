@@ -2,11 +2,9 @@ SAF_historical = {
 	name = "South African historical plan"
 	desc = ""
 
-	allowed = {
+	enable = {
 		original_tag = SAF
 		has_dlc = "Together for Victory"
-	}
-	enable = {
 		OR = {
 			AND = {
 				is_historical_focus_on = yes
@@ -45,7 +43,6 @@ SAF_historical = {
 		SAF_armament_effort
 		SAF_equipment_effort
 		SAF_mechanization_effort
-		SAF_commemorate_the_battle_of_blood_river
 		SAF_work_for_all_poor
 		SAF_war_measures_act 								#should probably do this as soon as possible
 		SAF_emergency_workers
@@ -53,8 +50,7 @@ SAF_historical = {
 		SAF_perfect_the_cab_rank_technique
 		SAF_secure_the_cape_sea_route	
 		SAF_q_services_corps
-		SAF_csir 
-		SAF_joint_air_training_scheme
+		SAF_csir
 		SAF_reconstitute_the_cape_corps	
 		SAF_seaward_defence_force
 		SAF_protect_the_trade

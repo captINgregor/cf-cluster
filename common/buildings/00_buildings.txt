@@ -99,7 +99,7 @@ buildings = {
 		disabled_in_dmz = yes
 		icon_frame = 7
 		land_fort = 1
-		max_level = 10
+		max_level = 15
 		value = 1
 	}
 	
@@ -113,7 +113,7 @@ buildings = {
 		only_costal = yes
 		icon_frame = 8
 		naval_fort = 1
-		max_level = 10
+		max_level = 15
 		value = 1
 	}
 
@@ -157,7 +157,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 		
 		show_modifier = yes
-		fuel_gain_from_states = 2.0 #per hour
+		fuel_gain_from_states = 1.0 #per hour
 	}
 
 	fuel_silo = {
