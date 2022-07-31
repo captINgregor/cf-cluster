@@ -352,7 +352,7 @@ ideas = {
 				army_attack_factor = 0.1
 				army_morale_factor = 0.05
 				army_org_factor = -0.1
-				pocket_penalty = 1
+				pocket_penalty = -1
 				attrition = -0.6
 				no_supply_grace = 120
 				supply_consumption_factor = -0.3
@@ -485,31 +485,59 @@ ideas = {
 				OR = {
 					has_tech = mass_assault
 					is_major = no
+					has_civil_war = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_tech = mass_assault
+						}
+					}
+					OR = {
+						NOT = {
+							capital_scope = {
+								is_on_continent = europe
+							}
+						}
+						original_tag = SPR #SCW and for nap
+						original_tag = SPA #SCW and for nap
+						original_tag = IRE #IRA moment
+					}
 				}
 				is_subject = no
 			}
 			available = {
-				any_enemy_country = {
-					is_major = yes
-				}
-				any_owned_state = {
-					NOT = {
-						is_controlled_by = ROOT
+				if = {
+					limit = {
+						has_civil_war = no
 					}
+					any_enemy_country = {
+						is_major = yes
+					}
+					if = {
+						limit = { #checks if you only own one state
+							any_owned_state = {
+								is_capital = no
+							}
+						}
+						any_owned_state = {
+							NOT = {
+								is_controlled_by = ROOT
+							}
+						}
+					}
+					has_defensive_war = yes
 				}
-				has_defensive_war = yes
 			}
 			modifier = {
 				training_time_army_factor = 0.3
 				cas_damage_reduction = 0.3
 				experience_loss_factor = -0.15
-				army_core_attack_factor = 0.01
+				army_core_attack_factor = 0.1
 				army_core_defence_factor = 0.1
 				equipment_capture_factor = 0.15
 				army_attack_factor = -0.1
 				army_defence_factor = -0.05
-				max_command_power_mult = -0.1
-				command_power_gain = -0.05 
 			}
 			ai_will_do = {
 				factor = 2

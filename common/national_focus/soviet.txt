@@ -3946,6 +3946,38 @@ focus_tree = {
 	}
 
 	focus = {
+		id = SOV_desperate_mass_production
+
+		prerequisite = { focus = SOV_found_the_pcdi}
+
+		icon = GFX_goal_generic_defence
+		x = -2
+		y = 1
+		relative_position_id = SOV_found_the_pcdi
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			surrender_progress > 0.1
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		completion_reward = {
+			add_political_power = -50
+			add_stability = -0.05
+			add_war_support = -0.05
+			add_timed_idea = {
+				idea = SOV_desperate_mass_production_idea
+				days = 730
+			}
+		}
+	}
+
+	focus = {
 		id = SOV_pc_of_mechanical_engineering
 
 		icon = GFX_goal_generic_production2
@@ -6277,6 +6309,9 @@ focus_tree = {
 			add_to_variable = { SOV_the_red_army_unit_artillery_brigade_design_cost_factor = -0.1 }
 			add_to_variable = { SOV_the_red_army_army_org_factor = 0.05 }
 			add_to_variable = { SOV_the_red_army_army_org_regain = 0.05 }
+			add_to_variable = { SOV_the_red_army_army_org_regain = 0.05 }
+			add_to_variable = { SOV_the_red_army_training_time_factor = -0.1 }
+			add_to_variable = { SOV_the_red_army_cas_damage_reduction = 0.05 }
 			custom_effect_tooltip = SOV_military_reorganization_ns_tt
 
 			army_experience = 50
@@ -6357,6 +6392,7 @@ focus_tree = {
 			add_to_variable = { SOV_the_red_army_army_org_factor = 0.1 }
 			set_variable = { SOV_the_red_army_experience_gain_army_factor = 0 }
 			set_variable = { SOV_the_red_army_experience_loss_factor = 0 }
+			add_to_variable = { SOV_the_red_army_cas_damage_reduction = 0.05 }
 
 			custom_effect_tooltip = SOV_lessons_of_war_ns_tt
 
@@ -6580,7 +6616,7 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
-			add_to_variable = { SOV_the_red_army_cas_damage_reduction = 0.05 }
+			add_to_variable = { SOV_the_red_army_cas_damage_reduction = 0.1 }
 			add_to_variable = { SOV_the_red_army_max_dig_in = 5 }
 			add_to_variable = { SOV_the_red_army_dig_in_speed_factor = 0.05 }
 			custom_effect_tooltip = SOV_experts_in_camouflage_ns_tt

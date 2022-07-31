@@ -877,6 +877,62 @@ MR_pact_transfer_faction_state_effect = {
 	}
 	if = {
 		limit = {
+			848 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 848
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 848 }
+	}
+	if = {
+		limit = {
+			849 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 849
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 849 }
+	}
+	if = {
+		limit = {
+			850 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 850
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 850 }
+	}
+	if = {
+		limit = {
+			854 = {
+				OR = {
+					is_controlled_by = ROOT
+					any_other_country = {
+						controls_state = 854
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		SOU = { transfer_state = 854 }
+	}
+	if = {
+		limit = {
 			784 = {
 				OR = {
 					is_controlled_by = ROOT

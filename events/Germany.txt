@@ -556,6 +556,46 @@ country_event = {
 						owns_state = 784
 					}
 				}
+				OR = {
+					controls_state = 848
+					any_other_country = {
+						is_in_faction_with = GER
+						GER = {
+							is_faction_leader = yes
+						}
+						controls_state = 848
+					}
+				}
+				OR = {
+					controls_state = 849
+					any_other_country = {
+						is_in_faction_with = GER
+						GER = {
+							is_faction_leader = yes
+						}
+						controls_state = 849
+					}
+				}
+				OR = {
+					controls_state = 850
+					any_other_country = {
+						is_in_faction_with = GER
+						GER = {
+							is_faction_leader = yes
+						}
+						controls_state = 850
+					}
+				}
+				OR = {
+					controls_state = 854
+					any_other_country = {
+						is_in_faction_with = GER
+						GER = {
+							is_faction_leader = yes
+						}
+						controls_state = 854
+					}
+				}
 			}
 			AND = {
 				POL = { has_capitulated = yes }
@@ -640,6 +680,46 @@ country_event = {
 							controls_state = 784
 						}
 					}
+					OR = {
+						controls_state = 848
+						any_other_country = {
+							is_in_faction_with = GER
+							GER = {
+								is_faction_leader = yes
+							}
+							controls_state = 848
+						}
+					}
+					OR = {
+						controls_state = 849
+						any_other_country = {
+							is_in_faction_with = GER
+							GER = {
+								is_faction_leader = yes
+							}
+							controls_state = 849
+						}
+					}
+					OR = {
+						controls_state = 850
+						any_other_country = {
+							is_in_faction_with = GER
+							GER = {
+								is_faction_leader = yes
+							}
+							controls_state = 850
+						}
+					}
+					OR = {
+						controls_state = 854
+						any_other_country = {
+							is_in_faction_with = GER
+							GER = {
+								is_faction_leader = yes
+							}
+							controls_state = 854
+						}
+					}
 				}
 			}
 		}
@@ -679,6 +759,10 @@ country_event = {
 						controls_state = 97
 						controls_state = 89
 						controls_state = 784
+						controls_state = 849
+						controls_state = 848
+						controls_state = 850
+						controls_state = 854
 					}
 				}
 			}
@@ -696,6 +780,10 @@ country_event = {
 						controls_state = 97
 						controls_state = 89
 						controls_state = 784
+						controls_state = 849
+						controls_state = 848
+						controls_state = 850
+						controls_state = 854
 					}
 				}
 				if = {
@@ -908,6 +996,30 @@ country_event = {
 				}
 				add_state_claim = 766 #SOUTHERN BESSARABIA (ROM)
 			}
+			if = {
+				limit = {
+					NOT = { owns_state = 848 }
+				}
+				add_state_claim = 848
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 849 }
+				}
+				add_state_claim = 849
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 850 }
+				}
+				add_state_claim = 850
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 854 }
+				}
+				add_state_claim = 854
+			}
 			effect_tooltip = {
 				create_wargoal = {
 					type = annex_everything
@@ -962,6 +1074,10 @@ country_event = {
 							controls_state = 97
 							controls_state = 89
 							controls_state = 784
+							controls_state = 849
+							controls_state = 848
+							controls_state = 850
+							controls_state = 854
 						}
 					}
 				}
@@ -979,6 +1095,10 @@ country_event = {
 							controls_state = 97
 							controls_state = 89
 							controls_state = 784
+							controls_state = 849
+							controls_state = 848
+							controls_state = 850
+							controls_state = 854
 						}
 					}
 					if = {
@@ -1188,6 +1308,30 @@ country_event = {
 				}
 				add_state_claim = 766 #SOUTHERN BESSARABIA (ROM)
 			}
+			if = {
+				limit = {
+					NOT = { owns_state = 848 }
+				}
+				add_state_claim = 848
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 849 }
+				}
+				add_state_claim = 849
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 850 }
+				}
+				add_state_claim = 850
+			}
+			if = {
+				limit = {
+					NOT = { owns_state = 854 }
+				}
+				add_state_claim = 854
+			}
 			effect_tooltip = {
 				create_wargoal = {
 					type = annex_everything
@@ -1389,6 +1533,30 @@ country_event = {
 					}
 					add_state_claim = 766 #SOUTHERN BESSARABIA (ROM)
 				}
+				if = {
+					limit = {
+						NOT = { owns_state = 848 }
+					}
+					add_state_claim = 848
+				}
+				if = {
+					limit = {
+						NOT = { owns_state = 849 }
+					}
+					add_state_claim = 849
+				}
+				if = {
+					limit = {
+						NOT = { owns_state = 850 }
+					}
+					add_state_claim = 850
+				}
+				if = {
+					limit = {
+						NOT = { owns_state = 854 }
+					}
+					add_state_claim = 854
+				}
 				effect_tooltip = {
 					create_wargoal = {
 						type = annex_everything
@@ -1414,7 +1582,7 @@ country_event = {
 		if = {
 			limit = {
 				SOU = {
-					controls_state = 93
+					controls_state = 93s
 					controls_state = 94
 				}
 			}

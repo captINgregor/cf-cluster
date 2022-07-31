@@ -2574,6 +2574,22 @@ focus_tree = {
 				NOT = {country_exists = ENG}
 			}
 		}
+
+		historical_ai = {
+			date > 1939.1.1
+			has_war_with = ENG
+			NOT = {
+				ENG = {
+					has_capitulated = yes
+				}
+			}
+			NOT = {
+				any_home_area_neighbor_country = {
+					has_war_with = ROOT
+					surrender_progress < 0.5
+				}
+			}
+		}
 		
 		x = 2
 		y = 1
@@ -2804,15 +2820,10 @@ focus_tree = {
 		prerequisite = { focus = GER_danzig_or_war }
 		
 		available = {
-			controls_state = 98
-			controls_state = 86
-			controls_state = 85
-			controls_state = 87
-			controls_state = 88
-			controls_state = 90
-			controls_state = 92
-			controls_state = 763
-			controls_state = 5
+			num_owned_neighbour_states = {
+				owner = SOV
+				count = 3
+			}
 		}
 		
 		x = -7
@@ -3410,7 +3421,6 @@ focus_tree = {
 		prerequisite = { focus = GER_war_with_france }
 		
 		available = {
-			
 			OR = {
 				NOT = { HOL = { is_in_faction_with = GER } }
 				NOT = { BEL = { is_in_faction_with = GER } }
@@ -3444,6 +3454,12 @@ focus_tree = {
 
 		historical_ai = {
 			date > 1939.1.1
+			has_war_with = FRA
+			NOT = {
+				FRA = {
+					has_capitulated = yes
+				}
+			}
 			NOT = {
 				any_home_area_neighbor_country = {
 					NOT = { tag = FRA }
@@ -4147,23 +4163,11 @@ focus_tree = {
 		relative_position_id = GER_danzig_or_war
 		cost = 1
 		ai_will_do = {
-			factor = 10
+			factor = 0
 			modifier = {
-				factor = 0
-				NOT = {
-					any_home_area_neighbor_country = {
-						NOT = {
-							tag = SWI
-						}
-						OR = {
-							has_war_with = ROOT
-							has_government = communism
-							any_owned_state = {
-								is_claimed_by = ROOT
-							}
-						}
-					}
-				}
+				add = 10
+				date > 1945.1.1
+				has_war = no
 			}
 		}
 		
