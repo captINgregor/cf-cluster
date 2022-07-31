@@ -4147,6 +4147,7 @@ focus_tree = {
 		id = GER_operation_tannenbaum
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = GER_danzig_or_war }
+		mutually_exclusive = { focus= GER_swiss_banks }
 		available = {
 			is_puppet = no
 			country_exists = SWI
@@ -4181,6 +4182,7 @@ focus_tree = {
 	focus = {
 		id = GER_swiss_banks
 		icon = GFX_GER_swiss_money_laundry
+		mutually_exclusive = { focus = GER_operation_tannenbaum }
 		prerequisite = { focus = GER_danzig_or_war }
 		available = {
 			is_puppet = no
@@ -4262,7 +4264,7 @@ focus_tree = {
 		bypass = {
 		}
 		cancel_if_invalid = yes
-		x = 5
+		x = 6
 		y = 1
 		relative_position_id = GER_avenge_versailles
 		cost = 5
@@ -5223,7 +5225,7 @@ focus_tree = {
 		bypass = {
 		}
 		cancel_if_invalid = yes
-		x = 3
+		x = 4
 		y = 1
 		relative_position_id = GER_avenge_versailles
 		cost = 5
@@ -5232,7 +5234,11 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 1.5
+				uses = 1
+				category = electronics
+			}
 		}
 	}
 	
@@ -5261,8 +5267,8 @@ focus_tree = {
 		id = GER_make_wunderwaffe2
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = GER_make_wunderwaffe }
-		x = 0
-		y = 2
+		x = -1
+		y = 1
 		relative_position_id = GER_make_wunderwaffe
 		cost = 5
 		available = {
@@ -5321,7 +5327,7 @@ focus_tree = {
 		id = GER_improved_command
 		icon = GFX_ger_fur_das_vaterland
 		prerequisite = { focus = GER_avenge_versailles }
-		x = 7
+		x = 8
 		y = 1
 		relative_position_id = GER_avenge_versailles
 		cost = 5
