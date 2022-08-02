@@ -30,7 +30,7 @@ USA_foreign_support = {
 	}
 	visible = {
 		OR = {
-			has_completed_focus = USA_invite_foreign_support
+			always = no
 			tag = CSA
 		}
 	}
@@ -60,11 +60,7 @@ USA_intervention_mandate = {
 		original_tag = USA
 	}
 	visible = {
-		OR = {
-			has_completed_focus = USA_focus_on_europe
-			has_completed_focus = USA_focus_on_asia
-			has_completed_focus = USA_reinforce_monroe_doctrine
-		}
+		has_completed_focus = USA_reinforce_monroe_doctrine
 	}
 }
 USA_honor_the_confederacy = {
@@ -77,17 +73,53 @@ USA_honor_the_confederacy = {
 	}
 	visible = {
 		OR = {
-			has_completed_focus = USA_honor_the_confederacy
+			always = no
 			original_tag = CSA #for civil war in communist path. CSA shouldn't get focus tree
 			has_government = fascism
 		}
-	}
-}
+ 	}
+ }
 USA_decolonisation = {
 	allowed = {
 		original_tag = USA
 	}
 	visible = {
-		has_completed_focus = USA_pacific_decolonisation
+		always = no
 	}
+}
+
+USA_special_research = {
+	
+	allowed = {
+		original_tag = USA
+	}
+}
+
+USA_propaganda_campaigns = {
+	priority = 100
+
+	icon = SOV_propaganda
+
+	scripted_gui = usa_propaganda_campaigns_ui
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible = {
+	}
+}
+
+USA_election_campaigns = {
+	priority = 110
+
+	icon = SOV_propaganda
+
+	scripted_gui = usa_election_campaigns_ui
+
+	allowed = {
+		original_tag = USA
+	}
+
+	visible_when_empty = yes
 }
