@@ -486,29 +486,6 @@ on_actions = {
 					}	
 				}
 			}
-			G4P = {
-				if = {
-					limit = {
-						has_game_rule = {
-							rule = rn_anarchy_new_countries
-							option = RULE_RN_NO_NEW_COUNTRIES
-						}
-					}	
-					swap_ideas = {
-						remove_idea = anarafgbrebw
-						add_idea = anarafgbrebw2
-					}
-				}
-				if = {
-					limit = {
-						has_game_rule = {
-							rule = rn_anarchy_new_countries
-							option = RULE_RN_MOD_NEW_COUNTRIES
-						}
-					}	
-					set_global_flag = new_contries_mod_flag
-				}
-			}
 			if = {
 				limit = {
 					has_game_rule = {

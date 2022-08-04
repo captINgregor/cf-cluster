@@ -21,22 +21,6 @@ ideas = {
 			}
 		}
 		
-		GER_fan_prussian_militarism = {
-			allowed = {
-				always = yes
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			picture = generic_reserve_divisions
-			modifier = {
-				training_time_factor = -0.1
-				conscription = 0.005
-			}
-		}
 		GER_fan_prussian_militarism2 = {
 			name = GER_fan_prussian_militarism
 			allowed = {
