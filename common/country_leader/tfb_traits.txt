@@ -66,10 +66,6 @@ leader_traits = {
 				build_cost_ic = -0.10
 				reliability = 0.10
 			}
-			squad_equipment = {
-				build_cost_ic = -0.10
-				reliability = 0.10
-			}
 		}
 		
 		ai_will_do = {
@@ -1072,15 +1068,15 @@ leader_traits = {
 				ap_attack = 0.1
 				hard_attack = 0.1
 			}
-			light_assault_gun_chassis = {
+			light_sp_artillery_chassis = {
 				soft_attack = 0.1
 				breakthrough = 0.15
 			}
-			medium_assault_gun_chassis = {
+			medium_sp_artillery_chassis = {
 				soft_attack = 0.1
 				breakthrough = 0.15
 			}
-			heavy_assault_gun_chassis = {
+			heavy_sp_artillery_chassis = {
 				soft_attack = 0.1
 				breakthrough = 0.15
 			}
@@ -1201,10 +1197,6 @@ leader_traits = {
 				build_cost_ic = 0.10
 				reliability = 0.20
 			}
-			squad_equipment = {
-				build_cost_ic = -0.05
-				reliability = 0.10
-			}
 		}
 		
 		ai_will_do = {
@@ -1218,10 +1210,6 @@ leader_traits = {
 			infantry_equipment = {
 				soft_attack = 0.05
 				build_cost_ic = -0.10
-				reliability = 0.10
-			}
-			squad_equipment = {
-				build_cost_ic = -0.05
 				reliability = 0.10
 			}
 		}
@@ -4864,7 +4852,7 @@ leader_traits = {
 	armored_car_manufacturer = {
 		random = no
 		equipment_bonus = {
-			armored_car_chassis = {
+			armored_car_equipment = {
 				maximum_speed = 0.1
 				soft_attack = 0.1
 				hard_attack = 0.1
@@ -5146,26 +5134,26 @@ leader_traits = {
 				build_cost_ic = -0.05
 				reliability = 0.05
 			}
-			heavy_artillery_equipment = {
-				build_cost_ic = -0.05
-				reliability = 0.05
-			}
+			# heavy_artillery_equipment = {
+			# 	build_cost_ic = -0.05
+			# 	reliability = 0.05
+			# }
 			anti_air_equipment = {
 				build_cost_ic = -0.05
 				reliability = 0.05
 			}
-			heavy_anti_air_equipment = {
-				build_cost_ic = -0.05
-				reliability = 0.05
-			}
+			# heavy_anti_air_equipment = {
+			# 	build_cost_ic = -0.05
+			# 	reliability = 0.05
+			# }
 			anti_tank_equipment = {
 				build_cost_ic = -0.05
 				reliability = 0.05
 			}
-			heavy_anti_tank_equipment = {
-				build_cost_ic = -0.05
-				reliability = 0.05
-			}
+			# heavy_anti_tank_equipment = {
+			# 	build_cost_ic = -0.05
+			# 	reliability = 0.05
+			# }
 			rocket_artillery_equipment = {
 				build_cost_ic = -0.05
 				reliability = 0.05
@@ -5181,10 +5169,6 @@ leader_traits = {
 		random = no
 		equipment_bonus = {
 			infantry_equipment = {
-				build_cost_ic = -0.05
-				reliability = 0.10
-			}
-			squad_equipment = {
 				build_cost_ic = -0.05
 				reliability = 0.10
 			}
