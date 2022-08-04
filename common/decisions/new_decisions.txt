@@ -10,12 +10,16 @@ political_actions = {
 		
 		cost = 1
 		fire_only_once = yes
-		
-		available = {
+
+		visible = {
 			OR = {
 			has_idea = uninterested
 			has_idea = unindustrialized
 			}
+		}
+		
+		available = {
+			
 		}
 		
 		

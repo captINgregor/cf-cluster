@@ -508,7 +508,10 @@ ideas = {
 			available = {
 				if = {
 					limit = {
-						has_civil_war = no
+						OR = {
+							has_civil_war = no
+							has_tech = mass_assault 
+						}
 					}
 					any_enemy_country = {
 						is_major = yes

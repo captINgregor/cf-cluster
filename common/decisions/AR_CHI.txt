@@ -33,6 +33,9 @@ foreign_politics = {
 			}
 			hidden_effect = {
 				SHX = {
+					country_event = { id = AR_china.1 }
+				}
+				CHI = {
 					country_event = { id = AR_china.4 }
 				}
 			}

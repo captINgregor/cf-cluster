@@ -1,0 +1,115 @@
+﻿add_namespace = AR_china
+
+#chinaasks for annexation
+country_event = {
+	id = AR_china.1
+	title = AR_china.1.t
+	desc = AR_china.1.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# sure
+	option = {
+		name = AR_china.1.a
+		ai_chance = {
+			factor = 50
+		}
+		effect_tooltip = {
+			FROM = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+
+	#nah
+	option = {
+		name = AR_china.1.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0.2
+				OR = {
+					FROM = {
+						is_ai = no
+					}
+				}
+			}
+			modifier = {
+				factor = 0.2
+				communism > 0.35
+			}
+		}
+	}
+}
+
+country_event = { #shanxi accepts
+	id = AR_china.2
+	title = AR_china.2.t
+	desc = AR_china.2.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# great
+	option = {
+		name = AR_china.2.a
+		ai_chance = {
+			factor = 50
+		}
+		FROM = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = SHX
+			}
+			add_core_of = ROOT
+		}
+		hidden_effect = {
+			CHI = {
+				country_event = { id = AR_china.4 }
+			}
+		}
+	}
+}
+
+country_event = { #shanxi declines
+	id = AR_china.3
+	title = AR_china.3.t
+	desc = AR_china.3.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# oof
+	option = {
+		name = AR_china.3.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = { #prc integrats shanxi
+	id = AR_china.4
+	title = AR_china.4.t
+	desc = AR_china.4.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	# we must keep an eye on them
+	option = {
+		name = AR_china.3.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
