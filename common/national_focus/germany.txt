@@ -11814,7 +11814,7 @@ focus_tree = {
 		x = 7
 		y = 1
 		relative_position_id = GER_rhineland
-		cost = 3
+		cost = 5
 
 		available_if_capitulated = yes
 
@@ -11861,7 +11861,7 @@ focus_tree = {
 		prerequisite = { focus = GER_japan_friend }
 		x = 0
 		y = 2
-		cost = 3
+		cost = 5
 		relative_position_id = GER_japan_friend
 
 		available_if_capitulated = yes
@@ -11887,7 +11887,7 @@ focus_tree = {
 		x = 9
 		y = 1
 		relative_position_id = GER_rhineland
-		cost = 3
+		cost = 5
 		
 
 		available_if_capitulated = yes
@@ -11915,7 +11915,7 @@ focus_tree = {
 		prerequisite = { focus = GER_italy_friend }
 		x = 0
 		y = 2
-		cost = 3
+		cost = 5
 		relative_position_id = GER_italy_friend
 		
 

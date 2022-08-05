@@ -15,8 +15,7 @@ ITA_alternate_plan_1 = {
 	abort = {
 		OR = {
 			GER = { has_completed_focus = GER_reestablish_free_elections }
-			GER = { has_completed_focus = GER_expatriate_the_communists }
-			GER = { has_completed_focus = GER_assassinate_mussolini }
+			GER = { has_completed_focus = GER_prepare_italian_coup }
 		}
 	}
 
@@ -89,7 +88,8 @@ ITA_alternate_plan_2 = {
 		original_tag = ITA
 	}
 	enable = {
-		GER = { has_completed_focus = GER_assassinate_mussolini }
+		is_in_faction_with = GER
+		has_government = neutrality
 		has_game_rule = {
 			rule = ITA_ai_behavior
 			option = DEFAULT
@@ -253,17 +253,12 @@ ITA_alternate_plan_4 = {
 			rule = ITA_ai_behavior
 			option = DEFAULT
 		}
-		OR = {
-			AND = {
-				GER = { has_completed_focus = GER_reestablish_free_elections }
-				FRA = { 
-					OR = {
-						has_completed_focus = FRA_review_foreign_policy
-						has_completed_focus = FRA_leftist_rhetoric 
-					}
-				}
+		GER = { has_completed_focus = GER_reestablish_free_elections }
+		FRA = { 
+			OR = {
+				has_completed_focus = FRA_review_foreign_policy
+				has_completed_focus = FRA_leftist_rhetoric 
 			}
-			GER = { has_completed_focus = GER_expatriate_the_communists }
 		}
 	}
 	abort = {

@@ -1925,7 +1925,7 @@ focus_tree = {
 		x = 10
 		y = 0
 		relative_position_id = SOV_infrastructure_effort_nsb
-		cost = 5
+		cost = 2
 
 		ai_will_do = {
 			factor = 1
@@ -5278,7 +5278,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 8
+		cost = 5
 
 		mutually_exclusive = { focus = SOV_improve_the_stalin_line }
 
@@ -5519,7 +5519,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 8
+		cost = 5
 
 		mutually_exclusive = { focus = SOV_the_molotov_line }
 
@@ -5662,7 +5662,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_move_industry_to_the_urals
-		cost = 5
+		cost = 4
 
 		available = {
 			219 = {
@@ -5796,7 +5796,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = SOV_improve_the_stalin_line
-		cost = 8
+		cost = 5
 
 		available = {
 			OR = {
@@ -6016,7 +6016,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 8
+		cost = 5
 
 		available = {
 			OR = {
@@ -6630,7 +6630,7 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
-			add_to_variable = { SOV_the_red_army_cas_damage_reduction = 0.1 }
+			add_to_variable = { SOV_the_red_army_cas_damage_reduction = 0.15 }
 			add_to_variable = { SOV_the_red_army_max_dig_in = 5 }
 			add_to_variable = { SOV_the_red_army_dig_in_speed_factor = 0.05 }
 			custom_effect_tooltip = SOV_experts_in_camouflage_ns_tt
@@ -7522,6 +7522,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = SOV_war_economy_stability_tt
+			add_to_variable = { SOV_the_politburo_good_consumer_goods_factor = -0.03 }
 			if = {
 				limit = {
 					has_war = no
@@ -7853,7 +7854,7 @@ focus_tree = {
 			
 			add_stability = 0.05
 			add_war_support = 0.1
-			add_political_power = 25
+			add_political_power = 100
 
 			custom_effect_tooltip = unlock_propaganda_campaign_tt
 			unlock_decision_tooltip = SOV_propaganda_stalin
