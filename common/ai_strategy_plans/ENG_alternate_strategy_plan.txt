@@ -29,15 +29,15 @@ ENG_alternate_democratic_plan = {
 	ai_national_focuses = {
 		limited_rearmament_focus
 		shadow_scheme_focus
-		air_defense_focus
+		ENG_air_rearmament
 		radar_focus
-		uk_industrial_focus
+		ENG_filler
 		ENG_steady_as_she_goes
 		ENG_global_defense
 		general_rearmament_focus
-		royal_ordinance_focus
-		uk_small_arms_focus
-		uk_extra_tech_slot
+		ENG_nuffield_aero
+		ENG_expand_the_army
+		ENG_general_rearmament
 		ENG_every_man_will_do_his_duty
 		ENG_motion_of_no_confidence
 		ENG_no_further_appeasement
@@ -129,15 +129,15 @@ ENG_alternate_communist_plan = {
 	ai_national_focuses = {
 		limited_rearmament_focus
 		shadow_scheme_focus
-		air_defense_focus
+		ENG_air_rearmament
 		radar_focus
-		uk_industrial_focus
+		ENG_filler
 		ENG_a_change_in_course
 		ENG_concessions_to_the_trade_unions
 		general_rearmament_focus
-		royal_ordinance_focus
-		uk_small_arms_focus
-		uk_extra_tech_slot
+		ENG_nuffield_aero
+		ENG_expand_the_army
+		ENG_general_rearmament
 		ENG_revisit_colonial_policy
 		ENG_guide_the_colonies
 		ENG_towards_dominion_independence
@@ -151,9 +151,9 @@ ENG_alternate_communist_plan = {
 		ENG_the_three_nation_solution
 		ENG_towards_indian_independence
 		ENG_decolonization
-		air_rearmament_focus
-		fighter_command_focus
-		aircraft_production_focus
+		ENG_air_rearmament
+		ENG_fighter_command
+		ENG_air_production_group
 		ENG_the_fate_of_the_royal_family
 		ENG_eliminate_the_upper_class
 		ENG_for_the_good_of_the_revolution
@@ -243,16 +243,16 @@ ENG_alternate_unaligned_plan = {
 	ai_national_focuses = {
 		limited_rearmament_focus
 		shadow_scheme_focus
-		air_defense_focus
+		ENG_air_rearmament
 		radar_focus
-		uk_industrial_focus
+		ENG_filler
 		ENG_a_change_in_course
 		ENG_the_kings_party
 		ENG_god_save_the_king
 		general_rearmament_focus
-		royal_ordinance_focus
-		uk_small_arms_focus
-		uk_extra_tech_slot
+		ENG_nuffield_aero
+		ENG_expand_the_army
+		ENG_general_rearmament
 		uk_empire_focus
 		ENG_reassess_continental_commitments
 		ENG_isolate_the_mediterranean_threat
@@ -265,14 +265,14 @@ ENG_alternate_unaligned_plan = {
 		uk_colonial_focus
 		uk_asia_focus
 		uk_mediterranean_focus
-		ENG_motorized_focus
-		ENG_tank_focus
+		
+		ENG_infantry_tanks
 		ENG_special_air_service
-		naval_rearmament_focus
+		ENG_naval_rearmament
 		ENG_chiefs_of_staff_committee
-		air_rearmament_focus
-		fighter_command_focus
-		aircraft_production_focus
+		ENG_air_rearmament
+		ENG_fighter_command
+		ENG_air_production_group
 		ENG_imperial_conscription
 		ENG_the_sun_never_sets
 		#March 10 1936	
@@ -360,15 +360,15 @@ ENG_alternate_fascist_plan = {
 	ai_national_focuses = {
 		limited_rearmament_focus
 		shadow_scheme_focus
-		air_defense_focus
+		ENG_air_rearmament
 		radar_focus
-		uk_industrial_focus
+		ENG_filler
 		ENG_a_change_in_course
 		ENG_organize_the_blackshirts
 		general_rearmament_focus
-		royal_ordinance_focus
-		uk_small_arms_focus
-		uk_extra_tech_slot
+		ENG_nuffield_aero
+		ENG_expand_the_army
+		ENG_general_rearmament
 		uk_empire_focus
 		ENG_the_british_path_to_fascism
 		ENG_secure_the_italian_alliance
@@ -381,14 +381,14 @@ ENG_alternate_fascist_plan = {
 		uk_colonial_focus
 		uk_asia_focus
 		uk_mediterranean_focus
-		ENG_motorized_focus
-		ENG_tank_focus
+		
+		ENG_infantry_tanks
 		ENG_special_air_service
-		naval_rearmament_focus
+		ENG_naval_rearmament
 		ENG_chiefs_of_staff_committee
-		air_rearmament_focus
-		fighter_command_focus
-		aircraft_production_focus
+		ENG_air_rearmament
+		ENG_fighter_command
+		ENG_air_production_group
 		ENG_imperial_conscription
 		ENG_the_sun_never_sets
 		#March 10 1936	
