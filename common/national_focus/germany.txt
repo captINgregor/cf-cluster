@@ -2820,10 +2820,7 @@ focus_tree = {
 		prerequisite = { focus = GER_danzig_or_war }
 		
 		available = {
-			num_owned_neighbour_states = {
-				owner = SOV
-				count > 3
-			}
+			is_neighbor_of = SOV
 		}
 		
 		x = -7
